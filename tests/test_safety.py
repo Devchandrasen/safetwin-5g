@@ -60,6 +60,15 @@ class SafetyTests(unittest.TestCase):
         payload["evidence_label"] = "simulated"
         self.assertEqual(self.evaluate(payload).decision, Decision.REJECT)
 
+    def test_action_only_evaluation_avoids_fabricated_model_fields(self):
+        record = InterventionRecord.from_dict(valid_payload())
+        result = self.policy.evaluate_action(
+            record.action,
+            environment="sandbox",
+            decision_source="deterministic-runbook",
+        )
+        self.assertEqual(result.decision, Decision.REQUIRE_APPROVAL)
+
 
 if __name__ == "__main__":
     unittest.main()

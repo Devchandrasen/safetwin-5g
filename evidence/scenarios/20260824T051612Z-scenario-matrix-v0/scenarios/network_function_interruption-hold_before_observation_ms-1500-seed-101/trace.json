@@ -1,0 +1,146 @@
+{
+  "action": {
+    "estimated_risk": 0.15,
+    "kind": "nf_process_resume",
+    "parameters": {
+      "signal": "CONT"
+    },
+    "reversible": true,
+    "rollback_plan": "Send STOP to the same recorded Open5GS UPF PID.",
+    "target": "safetwin5g-open5gs/open5gs-upfd",
+    "target_type": "upf"
+  },
+  "approval_id": "b02d4201ce0747fd819816daace0e9ba1b237c27c0b7fc973e7c1210516cd1e9",
+  "checks": {
+    "cleanup_verified": true,
+    "fault_observed": true,
+    "final_cpu_stress_absent": true,
+    "final_upf_running": true,
+    "final_user_plane_available": true,
+    "post_action_user_plane_available": true,
+    "rollback_observed": true,
+    "trace_passed": true
+  },
+  "claim_boundaries": {
+    "hardware": "not measured",
+    "intervention": "sandbox-measured",
+    "model_scores": "not applicable; deterministic runbook",
+    "operator_validation": "not performed",
+    "radio_access": "simulated"
+  },
+  "cleanup_verified": true,
+  "completed_at": "2026-08-24T05:18:36.712356+00:00",
+  "control_events": [
+    {
+      "duration_ms": 91.361,
+      "event": "seeded-pre-fault-jitter",
+      "seed": 101,
+      "started_at": "2026-08-24T05:18:20.049084+00:00"
+    }
+  ],
+  "passed": true,
+  "safety_evaluation": {
+    "decision": "require-human-approval",
+    "policy_version": "phase0-v1",
+    "reasons": [
+      "eligible non-live proposal; explicit human approval is still mandatory"
+    ]
+  },
+  "scenario": {
+    "action_kind": "nf_process_resume",
+    "environment": "sandbox",
+    "fault_family": "network_function_interruption",
+    "fault_parameters": {
+      "hold_before_observation_ms": 1500
+    },
+    "rollback_required": true,
+    "scenario_id": "network_function_interruption-hold_before_observation_ms-1500-seed-101",
+    "seed": 101,
+    "target": "safetwin5g-open5gs/open5gs-upfd"
+  },
+  "stages": [
+    {
+      "metrics": {
+        "configured_packet_loss_pct": 0.0,
+        "core_container_cpu_pct": 0.55,
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 4.674,
+        "rtt_max_ms": 6.297,
+        "rtt_mdev_ms": 0.947,
+        "rtt_min_ms": 2.857,
+        "stress_workers_count": 0.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:18:20.049084+00:00",
+      "stage": "baseline"
+    },
+    {
+      "metrics": {
+        "configured_packet_loss_pct": 0.0,
+        "core_container_cpu_pct": 0.23,
+        "packet_loss_pct": 100.0,
+        "packets_received": 0.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 2.0,
+        "stress_workers_count": 0.0,
+        "upf_process_running": 0.0
+      },
+      "observed_at": "2026-08-24T05:18:25.616846+00:00",
+      "stage": "fault"
+    },
+    {
+      "metrics": {
+        "configured_packet_loss_pct": 0.0,
+        "core_container_cpu_pct": 0.34,
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 3.973,
+        "rtt_max_ms": 6.224,
+        "rtt_mdev_ms": 1.553,
+        "rtt_min_ms": 0.864,
+        "stress_workers_count": 0.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:18:28.929516+00:00",
+      "stage": "post-action"
+    },
+    {
+      "metrics": {
+        "configured_packet_loss_pct": 0.0,
+        "core_container_cpu_pct": 0.19,
+        "packet_loss_pct": 100.0,
+        "packets_received": 0.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 2.0,
+        "stress_workers_count": 0.0,
+        "upf_process_running": 0.0
+      },
+      "observed_at": "2026-08-24T05:18:33.291416+00:00",
+      "stage": "rollback"
+    },
+    {
+      "metrics": {
+        "configured_packet_loss_pct": 0.0,
+        "core_container_cpu_pct": 0.13,
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 4.828,
+        "rtt_max_ms": 6.258,
+        "rtt_mdev_ms": 0.832,
+        "rtt_min_ms": 2.756,
+        "stress_workers_count": 0.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:18:36.712356+00:00",
+      "stage": "final"
+    }
+  ],
+  "started_at": "2026-08-24T05:18:16.407715+00:00"
+}

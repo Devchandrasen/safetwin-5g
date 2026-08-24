@@ -1,0 +1,149 @@
+{
+  "action": {
+    "estimated_risk": 0.05,
+    "kind": "network_impairment_clear",
+    "parameters": {
+      "qdisc": "fq_codel"
+    },
+    "reversible": true,
+    "rollback_plan": "Reapply the scenario's exact netem loss percentage.",
+    "target": "safetwin5g-ue/uesimtun0",
+    "target_type": "ue_tunnel"
+  },
+  "approval_id": "b02d4201ce0747fd819816daace0e9ba1b237c27c0b7fc973e7c1210516cd1e9",
+  "checks": {
+    "cleanup_verified": true,
+    "fault_observed": true,
+    "final_cpu_stress_absent": true,
+    "final_upf_running": true,
+    "final_user_plane_available": true,
+    "post_action_user_plane_available": true,
+    "rollback_observed": true,
+    "trace_passed": true
+  },
+  "claim_boundaries": {
+    "hardware": "not measured",
+    "intervention": "sandbox-measured",
+    "model_scores": "not applicable; deterministic runbook",
+    "operator_validation": "not performed",
+    "radio_access": "simulated"
+  },
+  "cleanup_verified": true,
+  "completed_at": "2026-08-24T05:12:17.232007+00:00",
+  "control_events": [
+    {
+      "duration_ms": 91.361,
+      "event": "seeded-pre-fault-jitter",
+      "seed": 101,
+      "started_at": "2026-08-24T05:12:03.695339+00:00"
+    }
+  ],
+  "passed": true,
+  "safety_evaluation": {
+    "decision": "require-human-approval",
+    "policy_version": "phase0-v1",
+    "reasons": [
+      "eligible non-live proposal; explicit human approval is still mandatory"
+    ]
+  },
+  "scenario": {
+    "action_kind": "network_impairment_clear",
+    "environment": "sandbox",
+    "fault_family": "packet_impairment",
+    "fault_parameters": {
+      "loss_pct": 75
+    },
+    "rollback_required": true,
+    "scenario_id": "packet_impairment-loss_pct-75-seed-101",
+    "seed": 101,
+    "target": "safetwin5g-ue/uesimtun0"
+  },
+  "stages": [
+    {
+      "metrics": {
+        "core_container_cpu_pct": 0.13,
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 5.065,
+        "rtt_max_ms": 7.203,
+        "rtt_mdev_ms": 1.354,
+        "rtt_min_ms": 1.998,
+        "stress_workers_count": 0.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:12:03.695339+00:00",
+      "stage": "baseline"
+    },
+    {
+      "metrics": {
+        "core_container_cpu_pct": 3.01,
+        "packet_loss_pct": 60.0,
+        "packets_received": 4.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 5.494,
+        "rtt_max_ms": 6.751,
+        "rtt_mdev_ms": 0.787,
+        "rtt_min_ms": 4.601,
+        "stress_workers_count": 0.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:12:06.648463+00:00",
+      "stage": "fault"
+    },
+    {
+      "metrics": {
+        "core_container_cpu_pct": 0.48,
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 4.394,
+        "rtt_max_ms": 7.524,
+        "rtt_mdev_ms": 1.155,
+        "rtt_min_ms": 3.102,
+        "stress_workers_count": 0.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:12:10.833201+00:00",
+      "stage": "post-action"
+    },
+    {
+      "metrics": {
+        "core_container_cpu_pct": 0.15,
+        "packet_loss_pct": 60.0,
+        "packets_received": 4.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 4.733,
+        "rtt_max_ms": 6.58,
+        "rtt_mdev_ms": 1.339,
+        "rtt_min_ms": 2.838,
+        "stress_workers_count": 0.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:12:14.082419+00:00",
+      "stage": "rollback"
+    },
+    {
+      "metrics": {
+        "core_container_cpu_pct": 2.67,
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 4.896,
+        "rtt_max_ms": 6.892,
+        "rtt_mdev_ms": 1.175,
+        "rtt_min_ms": 2.82,
+        "stress_workers_count": 0.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:12:17.232007+00:00",
+      "stage": "final"
+    }
+  ],
+  "started_at": "2026-08-24T05:12:01.129758+00:00"
+}

@@ -1,0 +1,155 @@
+{
+  "action": {
+    "estimated_risk": 0.1,
+    "kind": "cpu_stress_stop",
+    "parameters": {
+      "process": "yes",
+      "signal": "TERM"
+    },
+    "reversible": true,
+    "rollback_plan": "Restart the same number of pinned CPU workers.",
+    "target": "safetwin5g-open5gs",
+    "target_type": "core_container"
+  },
+  "approval_id": "b02d4201ce0747fd819816daace0e9ba1b237c27c0b7fc973e7c1210516cd1e9",
+  "checks": {
+    "cleanup_verified": true,
+    "fault_observed": true,
+    "final_cpu_stress_absent": true,
+    "final_upf_running": true,
+    "final_user_plane_available": true,
+    "post_action_user_plane_available": true,
+    "rollback_observed": true,
+    "trace_passed": true
+  },
+  "claim_boundaries": {
+    "hardware": "not measured",
+    "intervention": "sandbox-measured",
+    "model_scores": "not applicable; deterministic runbook",
+    "operator_validation": "not performed",
+    "radio_access": "simulated"
+  },
+  "cleanup_verified": true,
+  "completed_at": "2026-08-24T05:19:48.916892+00:00",
+  "control_events": [
+    {
+      "duration_ms": 91.361,
+      "event": "seeded-pre-fault-jitter",
+      "seed": 101,
+      "started_at": "2026-08-24T05:19:34.917165+00:00"
+    }
+  ],
+  "passed": true,
+  "safety_evaluation": {
+    "decision": "require-human-approval",
+    "policy_version": "phase0-v1",
+    "reasons": [
+      "eligible non-live proposal; explicit human approval is still mandatory"
+    ]
+  },
+  "scenario": {
+    "action_kind": "cpu_stress_stop",
+    "environment": "sandbox",
+    "fault_family": "cpu_saturation",
+    "fault_parameters": {
+      "workers": 2
+    },
+    "rollback_required": true,
+    "scenario_id": "cpu_saturation-workers-2-seed-101",
+    "seed": 101,
+    "target": "safetwin5g-open5gs"
+  },
+  "stages": [
+    {
+      "metrics": {
+        "configured_packet_loss_pct": 0.0,
+        "core_container_cpu_pct": 0.14,
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 5.37,
+        "rtt_max_ms": 8.102,
+        "rtt_mdev_ms": 1.201,
+        "rtt_min_ms": 3.441,
+        "stress_workers_count": 0.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:19:34.917165+00:00",
+      "stage": "baseline"
+    },
+    {
+      "metrics": {
+        "configured_packet_loss_pct": 0.0,
+        "core_container_cpu_pct": 200.39,
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 7.353,
+        "rtt_max_ms": 8.831,
+        "rtt_mdev_ms": 0.987,
+        "rtt_min_ms": 5.724,
+        "stress_workers_count": 2.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:19:38.931485+00:00",
+      "stage": "fault"
+    },
+    {
+      "metrics": {
+        "configured_packet_loss_pct": 0.0,
+        "core_container_cpu_pct": 0.26,
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 6.594,
+        "rtt_max_ms": 9.477,
+        "rtt_mdev_ms": 2.474,
+        "rtt_min_ms": 1.393,
+        "stress_workers_count": 0.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:19:42.287695+00:00",
+      "stage": "post-action"
+    },
+    {
+      "metrics": {
+        "configured_packet_loss_pct": 0.0,
+        "core_container_cpu_pct": 200.4,
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 6.294,
+        "rtt_max_ms": 10.724,
+        "rtt_mdev_ms": 1.889,
+        "rtt_min_ms": 2.994,
+        "stress_workers_count": 2.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:19:45.601182+00:00",
+      "stage": "rollback"
+    },
+    {
+      "metrics": {
+        "configured_packet_loss_pct": 0.0,
+        "core_container_cpu_pct": 2.4,
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 3.325,
+        "rtt_max_ms": 6.583,
+        "rtt_mdev_ms": 1.953,
+        "rtt_min_ms": 0.597,
+        "stress_workers_count": 0.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:19:48.916892+00:00",
+      "stage": "final"
+    }
+  ],
+  "started_at": "2026-08-24T05:19:32.230449+00:00"
+}

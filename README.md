@@ -100,5 +100,5 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 
 ## Immediate next gate
 
-Execute the approved multi-family, multi-severity, multi-seed sandbox scenario
-matrix. No algorithmic result will be called a live-network result.
+Freeze the measured intervention dataset manifest and data-quality report. No
+algorithmic result will be called a live-network result.

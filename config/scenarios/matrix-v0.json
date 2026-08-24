@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "matrix_id": "sandbox-matrix-v0",
+  "environment": "sandbox",
+  "probe": {
+    "destination": "10.45.0.1",
+    "interface": "uesimtun0",
+    "packets": 10,
+    "interval_seconds": 0.1
+  },
+  "families": [
+    {
+      "fault_family": "packet_impairment",
+      "severity_parameter": "loss_pct",
+      "severities": [25, 75],
+      "seeds": [101, 202],
+      "action_kind": "network_impairment_clear",
+      "target": "safetwin5g-ue/uesimtun0"
+    },
+    {
+      "fault_family": "network_function_interruption",
+      "severity_parameter": "hold_before_observation_ms",
+      "severities": [500, 1500],
+      "seeds": [101, 202],
+      "action_kind": "nf_process_resume",
+      "target": "safetwin5g-open5gs/open5gs-upfd"
+    },
+    {
+      "fault_family": "cpu_saturation",
+      "severity_parameter": "workers",
+      "severities": [1, 2],
+      "seeds": [101, 202],
+      "action_kind": "cpu_stress_stop",
+      "target": "safetwin5g-open5gs"
+    }
+  ]
+}

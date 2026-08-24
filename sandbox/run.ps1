@@ -1,6 +1,6 @@
 param(
     [Parameter(Position = 0)]
-    [ValidateSet("build", "up", "down", "status", "logs", "baseline", "capture-stack", "capture-baseline", "intervention")]
+    [ValidateSet("build", "up", "down", "status", "logs", "baseline", "capture-stack", "capture-baseline", "intervention", "matrix")]
     [string] $Command = "status"
 )
 
@@ -43,6 +43,10 @@ switch ($Command) {
     "intervention" {
         & python (Join-Path $sandboxRoot "run_intervention.py")
         if ($LASTEXITCODE -ne 0) { throw "sandbox intervention failed" }
+    }
+    "matrix" {
+        & python (Join-Path $sandboxRoot "run_matrix.py")
+        if ($LASTEXITCODE -ne 0) { throw "sandbox scenario matrix failed" }
     }
     "baseline" {
         & docker exec safetwin5g-ue ip -brief address show uesimtun0

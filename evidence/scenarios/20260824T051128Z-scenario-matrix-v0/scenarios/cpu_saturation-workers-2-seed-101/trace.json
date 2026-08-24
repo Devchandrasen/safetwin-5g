@@ -1,0 +1,150 @@
+{
+  "action": {
+    "estimated_risk": 0.1,
+    "kind": "cpu_stress_stop",
+    "parameters": {
+      "process": "yes",
+      "signal": "TERM"
+    },
+    "reversible": true,
+    "rollback_plan": "Restart the same number of pinned CPU workers.",
+    "target": "safetwin5g-open5gs",
+    "target_type": "core_container"
+  },
+  "approval_id": "b02d4201ce0747fd819816daace0e9ba1b237c27c0b7fc973e7c1210516cd1e9",
+  "checks": {
+    "cleanup_verified": true,
+    "fault_observed": true,
+    "final_cpu_stress_absent": true,
+    "final_upf_running": true,
+    "final_user_plane_available": true,
+    "post_action_user_plane_available": true,
+    "rollback_observed": true,
+    "trace_passed": true
+  },
+  "claim_boundaries": {
+    "hardware": "not measured",
+    "intervention": "sandbox-measured",
+    "model_scores": "not applicable; deterministic runbook",
+    "operator_validation": "not performed",
+    "radio_access": "simulated"
+  },
+  "cleanup_verified": true,
+  "completed_at": "2026-08-24T05:14:38.055752+00:00",
+  "control_events": [
+    {
+      "duration_ms": 91.361,
+      "event": "seeded-pre-fault-jitter",
+      "seed": 101,
+      "started_at": "2026-08-24T05:14:24.544979+00:00"
+    }
+  ],
+  "passed": true,
+  "safety_evaluation": {
+    "decision": "require-human-approval",
+    "policy_version": "phase0-v1",
+    "reasons": [
+      "eligible non-live proposal; explicit human approval is still mandatory"
+    ]
+  },
+  "scenario": {
+    "action_kind": "cpu_stress_stop",
+    "environment": "sandbox",
+    "fault_family": "cpu_saturation",
+    "fault_parameters": {
+      "workers": 2
+    },
+    "rollback_required": true,
+    "scenario_id": "cpu_saturation-workers-2-seed-101",
+    "seed": 101,
+    "target": "safetwin5g-open5gs"
+  },
+  "stages": [
+    {
+      "metrics": {
+        "core_container_cpu_pct": 0.13,
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 6.434,
+        "rtt_max_ms": 10.135,
+        "rtt_mdev_ms": 2.458,
+        "rtt_min_ms": 1.01,
+        "stress_workers_count": 0.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:14:24.544979+00:00",
+      "stage": "baseline"
+    },
+    {
+      "metrics": {
+        "core_container_cpu_pct": 201.3,
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 9.174,
+        "rtt_max_ms": 11.177,
+        "rtt_mdev_ms": 1.295,
+        "rtt_min_ms": 6.922,
+        "stress_workers_count": 2.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:14:28.407405+00:00",
+      "stage": "fault"
+    },
+    {
+      "metrics": {
+        "core_container_cpu_pct": 0.21,
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 6.638,
+        "rtt_max_ms": 10.516,
+        "rtt_mdev_ms": 2.924,
+        "rtt_min_ms": 2.056,
+        "stress_workers_count": 0.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:14:31.671484+00:00",
+      "stage": "post-action"
+    },
+    {
+      "metrics": {
+        "core_container_cpu_pct": 198.79,
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 4.498,
+        "rtt_max_ms": 9.192,
+        "rtt_mdev_ms": 3.645,
+        "rtt_min_ms": 0.628,
+        "stress_workers_count": 2.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:14:34.861948+00:00",
+      "stage": "rollback"
+    },
+    {
+      "metrics": {
+        "core_container_cpu_pct": 0.16,
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "prometheus_targets_up_count": 3.0,
+        "rtt_avg_ms": 4.851,
+        "rtt_max_ms": 6.201,
+        "rtt_mdev_ms": 0.823,
+        "rtt_min_ms": 2.971,
+        "stress_workers_count": 0.0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-08-24T05:14:38.055752+00:00",
+      "stage": "final"
+    }
+  ],
+  "started_at": "2026-08-24T05:14:21.992281+00:00"
+}

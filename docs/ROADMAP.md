@@ -37,7 +37,9 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
 - [x] Define canonical KPIs and units
       (`evidence/verification/20260824T050537Z-canonical-kpis`; 48 tests passed,
       30-cell canonical stage grid with explicit missingness).
-- [ ] Execute at least three fault families at multiple severities and seeds.
+- [x] Execute at least three fault families at multiple severities and seeds
+      (`evidence/scenarios/20260824T051612Z-scenario-matrix-v0`; 12/12 passed;
+      prior 10/12 threshold failure retained at `20260824T051128Z`).
 - [ ] Freeze dataset manifest and data-quality report.
 
 ## Days 31–60 — Baselines and causal twin v0

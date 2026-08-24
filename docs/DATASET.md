@@ -49,3 +49,27 @@ observations remain null with a reason. In the first measured intervention,
 RTT is missing during the fault and rollback stages because 100% packet loss
 produced no replies; it is never imputed as zero. The evidence label is copied
 from the source record without promotion.
+
+## Measured scenario matrix v0
+
+The passing `20260824T051612Z-scenario-matrix-v0` bundle contains 12 approved,
+reversible sandbox scenarios: three distinct fault families, two severities,
+and seeds 101 and 202. Every scenario records baseline, fault, post-action,
+rollback, and final-cleanup observations.
+
+| Fault family | Severities | Replicates | Direct fault observation |
+|---|---|---:|---|
+| packet impairment | configured 25% and 75% loss | 4 | measured loss was 10–20% and 80%, respectively |
+| network-function interruption | UPF held 500 ms and 1500 ms before observation | 4 | UPF state stopped and user-plane loss 100% |
+| CPU saturation | 1 and 2 pinned workers | 4 | approximately 100% and 200% container CPU |
+
+All 12 remediations, rollbacks, and final cleanups passed. The CPU-saturation
+faults produced 0% packet loss in these runs, so they establish controllable
+resource stress but not user-plane harm. No causal-model benefit is claimed.
+
+The earlier `20260824T051128Z-scenario-matrix-v0` attempt is retained as a
+negative result. Its 10-packet samples caused two 25%-loss cases to miss an
+overly rigid 12.5% observation threshold even though cleanup passed. The
+revised runner records the exact qdisc loss setting and uses 20 probes for this
+stochastic family; it requires both exact control state and an observed loss
+increase.

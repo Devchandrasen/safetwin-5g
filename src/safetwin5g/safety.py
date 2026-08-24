@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 from typing import Any, Mapping
 
-from .contracts import InterventionRecord
+from .contracts import ActionProposal, InterventionRecord
 
 
 class Decision(str, Enum):
@@ -48,7 +48,23 @@ class SafetyPolicy:
         return cls(json.loads(path.read_text(encoding="utf-8")))
 
     def evaluate(self, record: InterventionRecord) -> SafetyEvaluation:
-        action = record.action
+        return self.evaluate_action(
+            record.action,
+            environment=record.environment,
+            decision_source=record.decision_source,
+            model_confidence=record.model_confidence,
+            ood_score=record.ood_score,
+        )
+
+    def evaluate_action(
+        self,
+        action: ActionProposal,
+        *,
+        environment: str,
+        decision_source: str,
+        model_confidence: float | None = None,
+        ood_score: float | None = None,
+    ) -> SafetyEvaluation:
         reasons: list[str] = []
         action_policy = self.actions.get(action.kind)
 
@@ -62,9 +78,9 @@ class SafetyPolicy:
                 f"action {action.kind} does not support target type {action.target_type}",
             )
 
-        if record.environment == "live" and not self.allow_live:
+        if environment == "live" and not self.allow_live:
             reasons.append("live actuation is blocked by the current project phase")
-        if action_policy.get("sandbox_only") and record.environment != "sandbox":
+        if action_policy.get("sandbox_only") and environment != "sandbox":
             reasons.append(f"action {action.kind} is restricted to the sandbox")
         if not action.reversible:
             reasons.append("irreversible actions are blocked")
@@ -77,16 +93,19 @@ class SafetyPolicy:
         if reasons:
             return SafetyEvaluation(Decision.REJECT, tuple(reasons), self.policy_version)
 
-        if record.decision_source == "model":
-            assert record.model_confidence is not None
-            assert record.ood_score is not None
-            uncertainty: list[str] = []
-            if record.model_confidence < self.min_confidence:
-                uncertainty.append(
-                    f"model confidence {record.model_confidence:.3f} is below {self.min_confidence:.3f}"
+        if decision_source == "model":
+            if model_confidence is None or ood_score is None:
+                return self._result(
+                    Decision.ABSTAIN,
+                    "model confidence and OOD score are required for model decisions",
                 )
-            if record.ood_score > self.max_ood:
-                uncertainty.append(f"OOD score {record.ood_score:.3f} exceeds {self.max_ood:.3f}")
+            uncertainty: list[str] = []
+            if model_confidence < self.min_confidence:
+                uncertainty.append(
+                    f"model confidence {model_confidence:.3f} is below {self.min_confidence:.3f}"
+                )
+            if ood_score > self.max_ood:
+                uncertainty.append(f"OOD score {ood_score:.3f} exceeds {self.max_ood:.3f}")
             if uncertainty:
                 return SafetyEvaluation(Decision.ABSTAIN, tuple(uncertainty), self.policy_version)
 
