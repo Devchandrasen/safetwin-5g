@@ -1,0 +1,42 @@
+{
+  "causal_identification_status": "not identified for alternative actions",
+  "checks": {
+    "all_final_cleanups_healthy": true,
+    "claim_labels_separated": true,
+    "four_disjoint_splits": true,
+    "four_records_per_family": true,
+    "no_group_crosses_splits": true,
+    "scenario_ids_unique": true,
+    "three_fault_families": true,
+    "twelve_records": true,
+    "two_seeds_per_family": true,
+    "two_severities_per_family": true
+  },
+  "evidence_label": "sandbox-measured",
+  "family_counts": {
+    "cpu_saturation": 4,
+    "network_function_interruption": 4,
+    "packet_impairment": 4
+  },
+  "generated_at": "2026-08-24T05:25:47.366411+00:00",
+  "limitations": [
+    "Only 12 scenarios are available; train/calibration/test/OOD each contain three rows.",
+    "Each fault family has one deterministic remediation, so alternative-action positivity is absent.",
+    "The rollback control is observed after the action, so order and carry-over may confound the paired contrast.",
+    "Seed controls pre-fault timing jitter; Linux netem packet randomness is not explicitly seedable in the pinned image.",
+    "CPU saturation was directly observed but did not cause packet loss in these runs.",
+    "UERANSIM supplies a simulated radio; no hardware or operator data are present."
+  ],
+  "metric_cells": 720,
+  "missing_metric_cells": 32,
+  "passed": true,
+  "radio_evidence_label": "simulated",
+  "record_count": 12,
+  "schema_version": 1,
+  "split_counts": {
+    "calibration": 3,
+    "ood": 3,
+    "test": 3,
+    "train": 3
+  }
+}

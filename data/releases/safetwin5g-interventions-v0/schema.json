@@ -1,0 +1,35 @@
+{
+  "dataset_version": "safetwin5g-interventions-v0",
+  "required_stages": [
+    "baseline",
+    "fault",
+    "post-action",
+    "rollback",
+    "final"
+  ],
+  "schema_version": 1,
+  "split_rule": {
+    "calibration": "lower severity, seed 202",
+    "ood": "higher severity, seed 202",
+    "test": "higher severity, seed 101",
+    "train": "lower severity, seed 101"
+  },
+  "target_definitions": {
+    "cpu_saturation": {
+      "benefit_sign": -1.0,
+      "direction": "lower-is-better",
+      "metric": "stress_workers_count"
+    },
+    "network_function_interruption": {
+      "benefit_sign": 1.0,
+      "direction": "higher-is-better",
+      "metric": "upf_process_running"
+    },
+    "packet_impairment": {
+      "benefit_sign": -1.0,
+      "direction": "lower-is-better",
+      "metric": "packet_loss_pct"
+    }
+  },
+  "unit_of_analysis": "one measured scenario with action-first paired rollback proxy"
+}

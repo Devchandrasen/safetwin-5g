@@ -73,3 +73,21 @@ overly rigid 12.5% observation threshold even though cleanup passed. The
 revised runner records the exact qdisc loss setting and uses 20 probes for this
 stochastic family; it requires both exact control state and an observed loss
 increase.
+
+## Frozen release
+
+`data/releases/safetwin5g-interventions-v0` is the immutable 12-record release.
+Its SHA-256 manifest covers `records.jsonl`, `schema.json`, and the data-quality
+report. Train, calibration, test, and OOD each contain three disjoint scenario
+groups; the OOD split holds the higher severity and seed 202.
+
+The quality audit passes all structural checks and reports 720 expected metric
+cells with 32 missing RTT cells during total-loss stages. It also records that
+alternative-action effects are not identified: each fault family has only one
+remediation, and the measured rollback proxy follows the action in time. Any
+benchmark on this release is feasibility evidence, not a general causal claim.
+
+An initial generated release candidate incorrectly counted only explicit nulls
+and reported zero missing cells. It was not accepted and is retained under
+`evidence/dataset-attempts/20260824T052356Z-invalid-missingness-audit` with an
+invalidation notice.

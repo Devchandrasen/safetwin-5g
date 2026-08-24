@@ -100,5 +100,6 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 
 ## Immediate next gate
 
-Freeze the measured intervention dataset manifest and data-quality report. No
-algorithmic result will be called a live-network result.
+Run the rule, tabular, and temporal baselines on the frozen release, preserving
+the small-sample and causal-identification limits. No algorithmic result will be
+called a live-network result.
