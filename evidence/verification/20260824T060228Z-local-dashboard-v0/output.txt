@@ -1,0 +1,65 @@
+npm warn deprecated eslint@9.39.4: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 496 packages, and audited 497 packages in 24s
+
+165 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+> safetwin-5g-dashboard@0.1.0 build
+> vinext build
+
+
+  vinext build  (Vite 8.2.2)
+
+[1/5] analyze client references...
+transforming...
+✓ 238 modules transformed.
+rendering chunks...
+✓ built in 870ms
+[2/5] analyze server references...
+transforming...
+✓ 85 modules transformed.
+rendering chunks...
+✓ built in 117ms
+[3/5] build rsc environment...
+transforming...
+✓ 230 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 386ms
+[4/5] build client environment...
+transforming...
+✓ 129 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 332ms
+[5/5] build ssr environment...
+transforming...
+✓ 91 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 371ms
+[0m
+  Route (app)
+  ─ ? /
+
+  ? Unknown
+
+  ? Some routes could not be classified. vinext currently uses static analysis
+    and cannot detect dynamic API usage (headers(), cookies(), etc.) at build time.
+    Automatic classification will be improved in a future release.
+
+  Build complete. Run `vinext start` to start the production server.
+
+
+> safetwin-5g-dashboard@0.1.0 lint
+> eslint . --ignore-pattern dist --ignore-pattern .next
+
+found 0 vulnerabilities
+............................................................................................
+----------------------------------------------------------------------
+Ran 92 tests in 0.234s
+
+OK

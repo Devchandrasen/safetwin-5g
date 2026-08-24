@@ -83,7 +83,10 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
 
 ## Phase 5 — Local product and dashboard
 
-- [ ] Build a localhost-only, read-only evidence dashboard.
+- [x] Build a localhost-only, read-only evidence dashboard
+      (`evidence/verification/20260824T060413Z-local-dashboard-v0`; production
+      build and lint passed, full dependency audit found zero vulnerabilities,
+      and 92 repository tests passed).
 - [ ] Add a machine-readable status API and proposal audit view with no
       actuation endpoint.
 - [ ] Run end-to-end local product QA and preserve the smoke-test evidence.

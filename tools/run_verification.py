@@ -8,6 +8,7 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import sys
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -84,7 +85,8 @@ def main() -> int:
         encoding="utf-8",
     )
     print(output_dir)
-    print(result.stdout, end="")
+    sys.stdout.buffer.write(result.stdout.encode("utf-8", errors="replace"))
+    sys.stdout.buffer.flush()
     return result.returncode
 
 

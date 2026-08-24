@@ -87,6 +87,17 @@ Adapt a measured evidence bundle to lossless long-form telemetry:
   .\artifacts\telemetry.jsonl
 ```
 
+Run the localhost-only evidence dashboard:
+
+```powershell
+Set-Location .\dashboard
+npm ci
+npm run dev
+```
+
+The dashboard is read-only and contains no actuation endpoint. See
+[docs/PRODUCT.md](docs/PRODUCT.md) for its evidence and safety boundaries.
+
 ## Research question
 
 > Can an intervention-trained network digital twin estimate the effects of
@@ -97,6 +108,7 @@ Adapt a measured evidence bundle to lossless long-form telemetry:
 
 ```text
 config/                 Versioned action and safety policy
+dashboard/              Local read-only evidence product
 docs/                   Research protocol and execution roadmap
 evidence/               Append-only measured logs and hash manifests
 examples/               Valid, synthetic contract examples
