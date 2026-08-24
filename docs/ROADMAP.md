@@ -34,7 +34,9 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
 - [x] Implement telemetry adapters and scenario runner
       (`evidence/verification/20260824T050325Z-telemetry-scenario-runner`; 43
       tests passed, 377 measured-bundle rows replayed).
-- [ ] Define canonical KPIs and units.
+- [x] Define canonical KPIs and units
+      (`evidence/verification/20260824T050537Z-canonical-kpis`; 48 tests passed,
+      30-cell canonical stage grid with explicit missingness).
 - [ ] Execute at least three fault families at multiple severities and seeds.
 - [ ] Freeze dataset manifest and data-quality report.
 

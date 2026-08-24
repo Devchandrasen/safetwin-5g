@@ -10,6 +10,7 @@ import subprocess
 import sys
 
 from .contracts import InterventionRecord
+from .kpis import canonicalize
 from .safety import SafetyPolicy
 from .store import InterventionStore
 from .telemetry import EvidenceTelemetryAdapter
@@ -101,6 +102,33 @@ def adapt_telemetry(bundle: Path, output: Path) -> int:
     return 0
 
 
+def canonicalize_telemetry(bundle: Path, output: Path) -> int:
+    adapter = EvidenceTelemetryAdapter(bundle)
+    observations = canonicalize(adapter.rows())
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(
+        "".join(
+            json.dumps(item.to_dict(), sort_keys=True, separators=(",", ":")) + "\n"
+            for item in observations
+        ),
+        encoding="utf-8",
+    )
+    print(
+        json.dumps(
+            {
+                "bundle": str(bundle),
+                "output": str(output),
+                "observations": len(observations),
+                "missing": sum(item.status == "missing" for item in observations),
+                "kpis": sorted({item.kpi for item in observations}),
+                "evidence_labels": sorted({item.evidence_label for item in observations}),
+            },
+            indent=2,
+        )
+    )
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="safetwin", description="SafeTwin-5G research CLI")
     commands = parser.add_subparsers(dest="command", required=True)
@@ -113,6 +141,11 @@ def build_parser() -> argparse.ArgumentParser:
     )
     adapt.add_argument("bundle", type=Path)
     adapt.add_argument("output", type=Path)
+    canonical = commands.add_parser(
+        "canonicalize-telemetry", help="derive the versioned canonical KPI grid"
+    )
+    canonical.add_argument("bundle", type=Path)
+    canonical.add_argument("output", type=Path)
     return parser
 
 
@@ -126,4 +159,6 @@ def main(argv: list[str] | None = None) -> int:
         return validate_log(args.path)
     if args.command == "adapt-telemetry":
         return adapt_telemetry(args.bundle, args.output)
+    if args.command == "canonicalize-telemetry":
+        return canonicalize_telemetry(args.bundle, args.output)
     raise AssertionError(f"unhandled command: {args.command}")

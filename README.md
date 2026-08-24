@@ -100,5 +100,5 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 
 ## Immediate next gate
 
-Define canonical KPI names and units before executing the multi-family scenario
+Execute the approved multi-family, multi-severity, multi-seed sandbox scenario
 matrix. No algorithmic result will be called a live-network result.
