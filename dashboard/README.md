@@ -30,3 +30,9 @@ Production verification:
 npm run build
 npm audit
 ```
+
+End-to-end production smoke testing is run from the repository root:
+
+```powershell
+.\.venv\Scripts\python.exe .\tools\run_dashboard_smoke.py
+```

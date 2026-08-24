@@ -1,0 +1,57 @@
+{
+  "checks": {
+    "abstain_count": 6,
+    "actuation_route_status_codes": {
+      "DELETE /api/actuate": 404,
+      "GET /api/actuate": 404,
+      "PATCH /api/actuate": 404,
+      "POST /api/actuate": 404,
+      "PUT /api/actuate": 404
+    },
+    "all_listeners_loopback": true,
+    "applied_action_count": 0,
+    "listening_addresses": [
+      "127.0.0.1"
+    ],
+    "mutation_method_status_codes": {
+      "DELETE /api/proposals": 405,
+      "DELETE /api/status": 405,
+      "PATCH /api/proposals": 405,
+      "PATCH /api/status": 405,
+      "POST /api/proposals": 405,
+      "POST /api/status": 405,
+      "PUT /api/proposals": 405,
+      "PUT /api/status": 405
+    },
+    "proposal_api_content_type": "application/json",
+    "proposal_api_nosniff": "nosniff",
+    "proposal_api_status": 200,
+    "proposal_count": 6,
+    "root_contains_live_lock": true,
+    "root_contains_project_identity": true,
+    "root_contains_proposal_audit": true,
+    "root_contains_social_preview": true,
+    "root_content_type": "text/html; charset=utf-8",
+    "root_status": 200,
+    "status_api_content_type": "application/json",
+    "status_api_nosniff": "nosniff",
+    "status_api_status": 200
+  },
+  "claim_boundary": "Local production HTTP smoke test only. It verifies a read-only product surface over sandbox-derived data; it is not network, hardware, or operator evidence.",
+  "completed_at": "2026-08-24T06:19:22.543177+00:00",
+  "errors": [],
+  "evidence_label": "fixture",
+  "execution_passed": true,
+  "radio_evidence_label": "simulated",
+  "run_id": "20260824T061847Z-dashboard-smoke-v0",
+  "schema_version": 1,
+  "source_data_evidence_label": "sandbox-measured",
+  "source_sha256": {
+    "package_lock": "ac5e88abaf7dcf912c3f3ea883a86fcefd79be2e25a986e445aaf12341ea2298",
+    "page": "b534bcaad3cc298b0da0569a504e64bfa66e3097b97509236a589dc62c9f81fe",
+    "proposals_api": "a26c95d4acc49edefcca973a9e5b85772abd49b0e2d0d437dd246730200fa2dc",
+    "status_api": "79bf69a4155263f109438ca1ffbc8bf6fc0a9b6d29a9b652dddbb5902d3b958e",
+    "status_snapshot": "daccaac807d3a98837434548dd24c1d59684a3df768a6cdc184df7b0ce1d95c6"
+  },
+  "started_at": "2026-08-24T06:18:47.343805+00:00"
+}

@@ -44,3 +44,29 @@ candidate action, gate reason, decision, and execution status. All six remain
 `abstain` and `not-applied`; approval was not requested and the live sentinel
 was rejected. Verification is captured at
 `evidence/verification/20260824T061147Z-product-status-api-v0`.
+
+## End-to-end product QA v0
+
+The production smoke harness starts the built product on port 4173, verifies
+the listener address, probes the page and both read APIs, rejects all mutation
+methods, confirms that no actuation route exists, captures the server log, and
+stops the process tree.
+
+The first production smoke at
+`evidence/product/20260824T061711Z-dashboard-smoke-v0` failed honestly: Vinext
+ignored `--host`, bound to `0.0.0.0`, and the harness compared header names
+case-sensitively. The production script was corrected to `--hostname
+127.0.0.1`, and headers were normalized. The authoritative source-hashed run
+at `evidence/product/20260824T061959Z-dashboard-smoke-v0` passes:
+
+- the only listener is `127.0.0.1`;
+- the page, status API, and proposal API return 200;
+- all POST, PUT, PATCH, and DELETE requests to the read APIs return 405;
+- all tested methods for `/api/actuate` return 404;
+- API responses use JSON and `nosniff`;
+- six proposals remain abstained and zero actions are applied.
+
+The smoke result is `fixture` software evidence over a snapshot whose source
+data is `sandbox-measured` and whose radio remains `simulated`. Final clean
+install/build/lint/audit and 97-test verification is captured at
+`evidence/verification/20260824T062046Z-product-qa-v0`.

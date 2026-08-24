@@ -11,7 +11,7 @@ class DashboardConfigTests(unittest.TestCase):
     def test_scripts_bind_only_to_ipv4_loopback(self):
         package = json.loads((DASHBOARD / "package.json").read_text(encoding="utf-8"))
         self.assertIn("--host 127.0.0.1", package["scripts"]["dev"])
-        self.assertIn("--host 127.0.0.1", package["scripts"]["start"])
+        self.assertIn("--hostname 127.0.0.1", package["scripts"]["start"])
 
     def test_dependencies_are_exact_and_have_no_latest_token(self):
         package = json.loads((DASHBOARD / "package.json").read_text(encoding="utf-8"))

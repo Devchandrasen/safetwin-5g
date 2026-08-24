@@ -91,7 +91,14 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
       actuation endpoint
       (`evidence/verification/20260824T061147Z-product-status-api-v0`; snapshot
       drift check, build, lint, zero-vulnerability audit, and 94 tests passed).
-- [ ] Run end-to-end local product QA and preserve the smoke-test evidence.
+- [x] Run end-to-end local product QA and preserve the smoke-test evidence
+      (`evidence/product/20260824T061959Z-dashboard-smoke-v0`; loopback-only,
+      read routes 200, mutation methods 405, actuation routes 404;
+      `evidence/verification/20260824T062046Z-product-qa-v0`; 97 tests passed).
+
+All locally executable Phase 1-5 roadmap items are complete. The unchecked
+items below require new external authority and are not inferred from local
+software or sandbox evidence.
 
 ## External-authority gates
 

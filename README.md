@@ -10,7 +10,7 @@ in [PROJECT_LOCK.md](PROJECT_LOCK.md).
 
 ## Current status
 
-**Phase 4 complete; Phase 5 local product work next**
+**All locally executable Phase 1-5 roadmap work complete**
 
 Implemented on day one:
 
@@ -38,6 +38,9 @@ promoted and no model-proposed action has been applied.
 The consolidated H1-H3 benchmark decision is therefore no-go for model
 promotion, positive hypothesis claims, and autonomous/live actuation. It is
 go-with-constraints only for continued local sandbox research.
+The local evidence product is read-only, loopback-only, and exposes GET status
+and proposal-audit APIs without an actuation route. Hardware, operator, and
+publication gates remain pending external authorization.
 
 ## Setup
 
@@ -118,8 +121,10 @@ tests/                  Executable correctness checks
 PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 ```
 
-## Immediate next gate
+## Remaining gates
 
-Build a localhost-only, read-only evidence dashboard with a machine-readable
-status API and no actuation endpoint. No algorithmic result will be called a
-live-network result.
+Hardware measurement, independent operator validation, and publication require
+new access or authorization and remain pending. The next local research cycle
+must expand calibration, action positivity, no-fault/harm scenarios, and
+continuous SLA/MTTR windows before revisiting H1-H3. No algorithmic result will
+be called a live-network result.
