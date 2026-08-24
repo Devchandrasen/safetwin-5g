@@ -100,6 +100,6 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 
 ## Immediate next gate
 
-Run leakage, calibration, and negative-control checks before any uncertainty or
-selective-safety evaluation. No algorithmic result will be called a live-network
-result.
+Implement fail-closed uncertainty and OOD scoring; the current unbounded 90%
+calibration must force abstention rather than a confidence claim. No algorithmic
+result will be called a live-network result.

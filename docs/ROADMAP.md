@@ -56,7 +56,10 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
 - [x] Estimate held-out action effects under the identification gate
       (`evidence/benchmarks/20260824T053222Z-heldout-effects-v0`; descriptive
       proxy test MAE 17.000, OOD MAE 13.667; alternative-action ATE blocked).
-- [ ] Run leakage, calibration, and negative-control checks.
+- [x] Run leakage, calibration, and negative-control checks
+      (`evidence/benchmarks/20260824T053419Z-diagnostics-v0`; leakage/placebos
+      pass, but 90% conformal calibration is unbounded at n=3; promotion
+      blocked).
 
 ## Days 61–90 — Selective safety evaluation
 

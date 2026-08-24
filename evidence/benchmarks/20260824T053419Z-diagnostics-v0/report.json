@@ -1,0 +1,77 @@
+{
+  "calibration_checks": {
+    "minimum_recommended_calibration_n_19": false,
+    "nominal_90pct_interval_finite": false
+  },
+  "calibration_residuals": [
+    5.767252387180229,
+    5.256031112369789,
+    4.216688208576482
+  ],
+  "claim_boundary": "Diagnostics on 12 sandbox scenarios. Leakage/placebo checks pass, but nominal 90% calibration is unbounded with n=3.",
+  "completed_at": "2026-08-24T05:34:19.421983+00:00",
+  "dataset_manifest_sha256": "da3a4e2debe143d6b9e11733f4cbc79ae1401470471cadfbff5f739ea4899e59",
+  "decision": "block model promotion; calibration sample is insufficient",
+  "evidence_label": "sandbox-measured",
+  "execution_passed": true,
+  "feature_names": [
+    "fault_family=cpu_saturation",
+    "fault_family=network_function_interruption",
+    "fault_family=packet_impairment",
+    "severity_value",
+    "fault_packet_loss_pct",
+    "fault_core_cpu_pct",
+    "fault_stress_workers_count",
+    "fault_upf_process_running",
+    "fault_configured_packet_loss_pct"
+  ],
+  "final_state_placebo": {
+    "max_absolute_difference_pct": 0.0,
+    "mean_difference_pct": 0.0,
+    "passed": true
+  },
+  "future_outcome_leakage_control": {
+    "max_prediction_change": 0.0,
+    "mutated_fields": [
+      "observed_benefit",
+      "treatment_outcome",
+      "rollback_control_outcome",
+      "post-action metrics",
+      "rollback metrics"
+    ],
+    "passed": true
+  },
+  "group_overlaps": {},
+  "leakage_checks": {
+    "feature_contract_excludes_future_outcomes": true,
+    "future_outcome_mutation_invariant": true,
+    "group_split_overlap_absent": true,
+    "hyperparameters_selected_on_calibration_only": true,
+    "preprocessing_fit_on_train_only": true,
+    "test_and_ood_not_used_for_fit": true
+  },
+  "negative_control_checks": {
+    "final_state_packet_loss_placebo_zero": true,
+    "permutation_control_executed": true
+  },
+  "radio_evidence_label": "simulated",
+  "run_id": "20260824T053419Z-diagnostics-v0",
+  "schema_version": 1,
+  "scientific_readiness_gate_passed": false,
+  "split_conformal_90pct": {
+    "calibration_n": 3,
+    "coverage": 0.9,
+    "radius": null,
+    "rank": 4,
+    "status": "unbounded-insufficient-calibration"
+  },
+  "started_at": "2026-08-24T05:34:19.400431+00:00",
+  "test_label_permutation_control": {
+    "interpretation": "descriptive exact three-row permutation control; not a significance test",
+    "n_permutations": 6,
+    "null_mae_median": 38.410031680506656,
+    "null_mae_min": 17.58996831949334,
+    "observed_is_strictly_better_than_all_permutations": false,
+    "observed_mae": 17.875563186946433
+  }
+}

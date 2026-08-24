@@ -30,3 +30,18 @@ to the deterministic rule. The alternative-action ATE is null and marked
 `not-identified`; the report records exchangeability, positivity, and
 no-carry-over as blockers. H1 remains `not-supported` rather than failed or
 confirmed because dataset v0 cannot identify the target causal contrast.
+
+## Diagnostics v0
+
+Evidence: `evidence/benchmarks/20260824T053419Z-diagnostics-v0`
+
+All six leakage checks passed: scenario groups do not cross splits,
+preprocessing and hyperparameter scopes are correct, future-outcome fields are
+excluded, and mutating post-action/rollback outcomes changes predictions by
+exactly zero. The final-state packet-loss placebo is also exactly zero.
+
+The scientific readiness gate nevertheless fails. Three calibration rows are
+insufficient for a finite 90% split-conformal radius: the required order rank
+is four, so the interval is unbounded. The exact three-row label-permutation
+control did not show ridge MAE strictly better than all permutations. Promotion
+remains blocked.
