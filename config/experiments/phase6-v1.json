@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "experiment_id": "safetwin5g-phase6-v1",
+  "title": "Independent multi-action sandbox evaluation",
+  "environment": "sandbox",
+  "claim_boundaries": {
+    "evidence_label_after_measurement": "sandbox-measured",
+    "hardware_evidence_label": null,
+    "operator_validation": false,
+    "radio_evidence_label": "simulated"
+  },
+  "unit": {
+    "clean_reset_before_each_unit": true,
+    "independent_action_assignment": true,
+    "rollback_required": true,
+    "window_samples_per_stage": 3,
+    "window_sample_interval_seconds": 1,
+    "stages": [
+      "baseline",
+      "fault",
+      "post_action",
+      "recovery"
+    ]
+  },
+  "action_arms": [
+    "effective",
+    "no_action",
+    "negative_control"
+  ],
+  "action_semantics": {
+    "effective": {
+      "packet_impairment": "network_impairment_clear",
+      "network_function_interruption": "nf_process_resume",
+      "cpu_saturation": "cpu_stress_stop",
+      "no_fault": "benign_observe"
+    },
+    "no_action": {
+      "packet_impairment": "observe_only",
+      "network_function_interruption": "observe_only",
+      "cpu_saturation": "observe_only",
+      "no_fault": "observe_only"
+    },
+    "negative_control": {
+      "packet_impairment": "packet_impairment_increase",
+      "network_function_interruption": "unrelated_packet_impairment",
+      "cpu_saturation": "unrelated_packet_impairment",
+      "no_fault": "unnecessary_packet_impairment"
+    }
+  },
+  "faults": [
+    {
+      "family": "packet_impairment",
+      "severity_name": "loss_pct",
+      "development_severities": [20, 50],
+      "ood_severity": 80
+    },
+    {
+      "family": "network_function_interruption",
+      "severity_name": "hold_ms",
+      "development_severities": [400, 1000],
+      "ood_severity": 1800
+    },
+    {
+      "family": "cpu_saturation",
+      "severity_name": "workers",
+      "development_severities": [1, 2],
+      "ood_severity": 3
+    },
+    {
+      "family": "no_fault",
+      "severity_name": "none",
+      "development_severities": [0],
+      "ood_severity": 0
+    }
+  ],
+  "splits": {
+    "train": {
+      "seeds": [101, 202],
+      "workload": "steady"
+    },
+    "calibration": {
+      "seeds": [303],
+      "workload": "steady"
+    },
+    "test": {
+      "seeds": [404],
+      "workload": "steady"
+    },
+    "ood": {
+      "seeds": [505, 606, 707, 808],
+      "workload": "sustained"
+    }
+  },
+  "workloads": {
+    "steady": {
+      "ping_count_per_sample": 5,
+      "ping_interval_seconds": 0.2
+    },
+    "sustained": {
+      "ping_count_per_sample": 12,
+      "ping_interval_seconds": 0.1
+    }
+  },
+  "randomization": {
+    "algorithm": "sha256-sort-within-split",
+    "salt": "safetwin5g-phase6-v1-frozen-20260824",
+    "assignment_hidden_until_execution": false
+  },
+  "safety": {
+    "allow_live_actuation": false,
+    "require_explicit_sandbox_approval": true,
+    "require_allowlisted_mutation": true,
+    "require_pre_action_rollback_plan": true,
+    "require_clean_final_state": true,
+    "abort_on_failed_cleanup": true
+  },
+  "analysis": {
+    "conformal_coverage": 0.9,
+    "minimum_calibration_units": 19,
+    "minimum_non_abstained_coverage": 0.5,
+    "confidence_level": 0.95,
+    "multiplicity_adjustment": "holm-for-H1-H2",
+    "primary_endpoints": [
+      "target_kpi_error",
+      "harmful_action_rate",
+      "sla_violation_duration_seconds",
+      "mttr_seconds"
+    ],
+    "h1_gate": "upper_95pct_ci_of_model_minus_temporal_mae_below_zero",
+    "h2_gate": "upper_95pct_ci_of_selective_minus_always_act_harm_rate_below_zero_and_coverage_at_least_0.5",
+    "h3_gate": "run_only_if_H1_and_H2_pass; otherwise report gated-not-run"
+  },
+  "expected_counts": {
+    "train": 42,
+    "calibration": 21,
+    "test": 21,
+    "ood": 48,
+    "total": 132
+  }
+}

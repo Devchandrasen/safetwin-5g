@@ -96,9 +96,27 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
       read routes 200, mutation methods 405, actuation routes 404;
       `evidence/verification/20260824T062046Z-product-qa-v0`; 97 tests passed).
 
-All locally executable Phase 1-5 roadmap items are complete. The unchecked
-items below require new external authority and are not inferred from local
-software or sandbox evidence.
+## Phase 6 — Identifiable expanded sandbox study
+
+- [x] Preregister an independent multi-action design with no-fault controls,
+      continuous telemetry windows, a true held-out workload/severity split,
+      and explicit H1-H3 decision gates (`docs/PHASE6_PROTOCOL.md`;
+      `config/experiments/phase6-v1.json`; 132 planned units; 21 calibration
+      units; 103 tests passed at
+      `evidence/verification/20260824T073147Z-phase6-preregistration-v1`; the
+      corrected invocation retains the failed environment-only capture at
+      `20260824T073135Z`).
+- [ ] Implement and verify the fail-closed Phase 6 runner and reversible action
+      arms.
+- [ ] Execute the preregistered campaign and freeze intervention dataset v1.
+- [ ] Re-run baselines, causal estimation, uncertainty/OOD/abstention, and
+      H1-H3 gates on the locked v1 data.
+- [ ] Publish the evidence-linked Phase 6 decision and refresh the local
+      read-only dashboard.
+
+All locally executable Phase 1-5 roadmap items are complete. Phase 6 local
+work continues above. The external gates below require new authority and are
+not inferred from local software or sandbox evidence.
 
 ## External-authority gates
 
