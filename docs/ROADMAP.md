@@ -66,6 +66,9 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
 - [x] Add fail-closed calibrated uncertainty and OOD detection
       (`evidence/benchmarks/20260824T053654Z-uncertainty-ood-v0`; 90% interval
       unbounded, 6/6 abstain, test and OOD both severity-shifted).
-- [ ] Evaluate risk-coverage and harmful-action endpoints.
+- [x] Evaluate risk-coverage and harmful-action endpoints
+      (`evidence/benchmarks/20260824T053857Z-selective-evaluation-v0`; coverage
+      0, abstention 1.0; selective harm, AURC, false-remediation, SLA duration,
+      and MTTR correctly undefined).
 - [ ] Integrate the safety gate with sandbox proposals only.
 - [ ] Produce a reproducible benchmark report and go/no-go decision for H1–H3.

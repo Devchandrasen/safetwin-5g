@@ -1,0 +1,43 @@
+{
+  "claim_boundary": "Endpoint availability audit on six held-out sandbox scenarios; undefined metrics remain null and no harm-reduction claim is made.",
+  "completed_at": "2026-08-24T05:38:57.078970+00:00",
+  "dataset_manifest_sha256": "da3a4e2debe143d6b9e11733f4cbc79ae1401470471cadfbff5f739ea4899e59",
+  "endpoints": {
+    "abstention_rate": 1.0,
+    "always_act_harmful_count": 0,
+    "always_act_harmful_rate": 0.0,
+    "coverage": 0.0,
+    "eligible_count": 0,
+    "false_remediation_rate": null,
+    "false_remediation_status": "undefined-no-no-fault-scenarios",
+    "harm_reduction_claim_supported": false,
+    "mean_time_to_recovery_s": null,
+    "mttr_status": "undefined-no-sustained-recovery-window",
+    "risk_coverage_auc": null,
+    "risk_coverage_status": "undefined-unbounded-uncertainty",
+    "scenario_count": 6,
+    "selective_harmful_count": 0,
+    "selective_harmful_rate": null,
+    "sla_duration_status": "undefined-no-continuous-sla-window",
+    "sla_violation_duration_s": null
+  },
+  "evidence_label": "sandbox-measured",
+  "execution_passed": true,
+  "go_no_go": "no-go-for-model-promotion",
+  "hypothesis_status": {
+    "H2": "not-supported",
+    "reason": "zero coverage and no observed harmful actions prevent testing whether abstention materially lowers harm"
+  },
+  "radio_evidence_label": "simulated",
+  "required_next_evidence": [
+    "at least 19 independent calibration scenarios for finite 90% split conformal rank",
+    "no-fault scenarios for false-remediation rate",
+    "scenarios with observed harmful or ineffective actions",
+    "continuous SLA windows for violation duration and sustained recovery",
+    "an uncertainty score with non-degenerate ranking"
+  ],
+  "run_id": "20260824T053857Z-selective-evaluation-v0",
+  "schema_version": 1,
+  "started_at": "2026-08-24T05:38:57.078970+00:00",
+  "uncertainty_manifest_sha256": "a63909dd4640a73226d6de120d62f0d1b97538a5daab919c03b0a8b9b85b1127"
+}

@@ -100,6 +100,6 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 
 ## Immediate next gate
 
-Evaluate risk-coverage and harmful-action endpoints with zero-coverage and
-unobserved-harm cases reported explicitly. No algorithmic result will be called
-a live-network result.
+Integrate uncertainty/OOD outcomes into sandbox proposal evaluation while
+keeping every held-out model proposal abstained and every live action rejected.
+No algorithmic result will be called a live-network result.

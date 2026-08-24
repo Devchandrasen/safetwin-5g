@@ -56,3 +56,15 @@ held-out rows. A development-only severity-range detector flags 3/3 test and
 splits use the higher severity, and the seed/timing difference does not make
 the designated OOD split distinguishable in the observed feature contract.
 The OOD score is a binary design-range indicator, not a calibrated probability.
+
+## Selective endpoint evaluation v0
+
+Evidence: `evidence/benchmarks/20260824T053857Z-selective-evaluation-v0`
+
+The fail-closed operating point has coverage 0 and abstention rate 1.0.
+Selective harmful-action rate and AURC are undefined rather than zero. No
+harmful action is observed in the six held-out traces, so the always-act harm
+rate is 0/6 and harm reduction cannot be tested. False-remediation rate is
+undefined because there are no no-fault scenarios; SLA duration and MTTR are
+undefined because the traces lack continuous and sustained-recovery windows.
+H2 remains `not-supported` and model promotion is a no-go.
