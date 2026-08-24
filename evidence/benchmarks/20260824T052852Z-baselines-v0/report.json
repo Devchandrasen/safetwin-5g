@@ -1,0 +1,174 @@
+{
+  "claim_boundary": "Derived feasibility benchmark on 12 software-sandbox scenarios; no hardware, operator, or general causal superiority claim.",
+  "completed_at": "2026-08-24T05:28:52.635916+00:00",
+  "dataset_manifest_sha256": "da3a4e2debe143d6b9e11733f4cbc79ae1401470471cadfbff5f739ea4899e59",
+  "dataset_version": "safetwin5g-interventions-v0",
+  "evaluation": {
+    "calibration": {
+      "deterministic_rule": {
+        "mae": 1.6666666666666667,
+        "mean_observed_benefit": 7.333333333333333,
+        "mean_prediction": 9.0,
+        "n": 3,
+        "observed_harmful_count": 0,
+        "predicted_harmful_count": 0,
+        "rmse": 2.886751345948129
+      },
+      "tabular_ridge": {
+        "mae": 5.0799905693755,
+        "mean_observed_benefit": 7.333333333333333,
+        "mean_prediction": 12.413323902708834,
+        "n": 3,
+        "observed_harmful_count": 0,
+        "predicted_harmful_count": 0,
+        "rmse": 5.120791690093216
+      },
+      "temporal_persistence": {
+        "mae": 7.333333333333333,
+        "mean_observed_benefit": 7.333333333333333,
+        "mean_prediction": 0.0,
+        "n": 3,
+        "observed_harmful_count": 0,
+        "predicted_harmful_count": 0,
+        "rmse": 11.575836902790225
+      }
+    },
+    "ood": {
+      "deterministic_rule": {
+        "mae": 0.0,
+        "mean_observed_benefit": 26.0,
+        "mean_prediction": 26.0,
+        "n": 3,
+        "observed_harmful_count": 0,
+        "predicted_harmful_count": 0,
+        "rmse": 0.0
+      },
+      "tabular_ridge": {
+        "mae": 14.54603468315395,
+        "mean_observed_benefit": 26.0,
+        "mean_prediction": 12.035512863668986,
+        "n": 3,
+        "observed_harmful_count": 0,
+        "predicted_harmful_count": 0,
+        "rmse": 24.371224777363597
+      },
+      "temporal_persistence": {
+        "mae": 26.0,
+        "mean_observed_benefit": 26.0,
+        "mean_prediction": 0.0,
+        "n": 3,
+        "observed_harmful_count": 0,
+        "predicted_harmful_count": 0,
+        "rmse": 43.32051092342595
+      }
+    },
+    "test": {
+      "deterministic_rule": {
+        "mae": 3.3333333333333335,
+        "mean_observed_benefit": 29.333333333333332,
+        "mean_prediction": 26.0,
+        "n": 3,
+        "observed_harmful_count": 0,
+        "predicted_harmful_count": 0,
+        "rmse": 5.773502691896258
+      },
+      "tabular_ridge": {
+        "mae": 17.875563186946433,
+        "mean_observed_benefit": 29.333333333333332,
+        "mean_prediction": 12.038411781414396,
+        "n": 3,
+        "observed_harmful_count": 0,
+        "predicted_harmful_count": 0,
+        "rmse": 30.142614023105136
+      },
+      "temporal_persistence": {
+        "mae": 29.333333333333332,
+        "mean_observed_benefit": 29.333333333333332,
+        "mean_prediction": 0.0,
+        "n": 3,
+        "observed_harmful_count": 0,
+        "predicted_harmful_count": 0,
+        "rmse": 49.09175083453431
+      }
+    },
+    "train": {
+      "deterministic_rule": {
+        "mae": 3.3333333333333335,
+        "mean_observed_benefit": 12.333333333333334,
+        "mean_prediction": 9.0,
+        "n": 3,
+        "observed_harmful_count": 0,
+        "predicted_harmful_count": 0,
+        "rmse": 5.773502691896258
+      },
+      "tabular_ridge": {
+        "mae": 7.29957406469472,
+        "mean_observed_benefit": 12.333333333333334,
+        "mean_prediction": 12.333333333333334,
+        "n": 3,
+        "observed_harmful_count": 0,
+        "predicted_harmful_count": 0,
+        "rmse": 7.74642349686093
+      },
+      "temporal_persistence": {
+        "mae": 12.333333333333334,
+        "mean_observed_benefit": 12.333333333333334,
+        "mean_prediction": 0.0,
+        "n": 3,
+        "observed_harmful_count": 0,
+        "predicted_harmful_count": 0,
+        "rmse": 20.223748416156685
+      }
+    }
+  },
+  "evidence_label": "sandbox-measured",
+  "hyperparameter_selection_split": "calibration",
+  "passed": true,
+  "preprocessing_fit_split": "train",
+  "promotion_decision": "do-not-promote",
+  "promotion_reasons": [
+    "Only three rows are available in each split.",
+    "The deterministic rule is the test-MAE winner.",
+    "Alternative-action positivity is absent.",
+    "The rollback proxy is action-first and may contain order effects."
+  ],
+  "radio_evidence_label": "simulated",
+  "ridge_alpha": 10.0,
+  "ridge_alpha_trials": [
+    {
+      "alpha": 0.01,
+      "calibration_mae": 5.161478502496487
+    },
+    {
+      "alpha": 0.1,
+      "calibration_mae": 5.148811138342192
+    },
+    {
+      "alpha": 1.0,
+      "calibration_mae": 5.137925866383955
+    },
+    {
+      "alpha": 10.0,
+      "calibration_mae": 5.0799905693755
+    },
+    {
+      "alpha": 100.0,
+      "calibration_mae": 8.64100649863996
+    }
+  ],
+  "run_id": "20260824T052852Z-baselines-v0",
+  "schema_version": 1,
+  "split_sizes": {
+    "calibration": 3,
+    "ood": 3,
+    "test": 3,
+    "train": 3
+  },
+  "started_at": "2026-08-24T05:28:52.633910+00:00",
+  "test_ranking_by_mae": [
+    "deterministic_rule",
+    "tabular_ridge",
+    "temporal_persistence"
+  ],
+  "test_winner": "deterministic_rule"
+}

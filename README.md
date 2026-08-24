@@ -100,6 +100,6 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 
 ## Immediate next gate
 
-Run the rule, tabular, and temporal baselines on the frozen release, preserving
-the small-sample and causal-identification limits. No algorithmic result will be
-called a live-network result.
+Define the causal graph and intervention assumptions, with positivity and
+action-order limitations explicit. No algorithmic result will be called a
+live-network result.

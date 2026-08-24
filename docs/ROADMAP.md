@@ -47,7 +47,9 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
 
 ## Days 31–60 — Baselines and causal twin v0
 
-- [ ] Run rule, tabular, and temporal baselines.
+- [x] Run rule, tabular, and temporal baselines
+      (`evidence/benchmarks/20260824T052852Z-baselines-v0`; deterministic rule
+      wins test MAE 3.333 vs ridge 17.876 and persistence 29.333; no promotion).
 - [ ] Define the causal graph and intervention assumptions.
 - [ ] Estimate held-out action effects.
 - [ ] Run leakage, calibration, and negative-control checks.
