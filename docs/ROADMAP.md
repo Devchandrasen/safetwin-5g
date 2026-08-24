@@ -11,7 +11,7 @@
 
 ## Days 2–14 — Real sandbox gate
 
-- [ ] Start and verify Docker Desktop.
+- [x] Start and verify Docker Desktop (engine 29.4.2 on 2026-08-24).
 - [ ] Pin Open5GS, UERANSIM, Prometheus, and dashboard versions.
 - [ ] Bring up an isolated 5G Standalone software sandbox.
 - [ ] Capture a clean baseline attach/session trace.

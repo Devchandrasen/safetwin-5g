@@ -23,9 +23,9 @@ Implemented on day one:
 - unit tests for contracts, safety decisions, and dataset integrity.
 
 This repository does **not** yet contain evidence from a running Open5GS
-network. Docker is installed on the development machine, but the Docker engine
-was not running at project creation. Fixture, simulation, sandbox, and live
-results must always be labelled separately.
+network. Docker was installed but stopped at project creation; it has now been
+started and verified. Fixture, simulation, sandbox, and live results must always
+be labelled separately.
 
 ## Setup
 
@@ -74,7 +74,6 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 
 ## Immediate next gate
 
-Start Docker Desktop, verify the engine, then bring up an isolated
-Open5GS + UERANSIM + Prometheus sandbox. No algorithmic result will be called a
-live-network result until controlled faults, actions, timestamps, and outcomes
-are captured from that sandbox.
+Bring up an isolated, version-pinned Open5GS + UERANSIM + Prometheus sandbox.
+No algorithmic result will be called a live-network result until controlled
+faults, actions, timestamps, and outcomes are captured from that sandbox.
