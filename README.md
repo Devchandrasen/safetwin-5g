@@ -100,6 +100,6 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 
 ## Immediate next gate
 
-Implement fail-closed uncertainty and OOD scoring; the current unbounded 90%
-calibration must force abstention rather than a confidence claim. No algorithmic
-result will be called a live-network result.
+Evaluate risk-coverage and harmful-action endpoints with zero-coverage and
+unobserved-harm cases reported explicitly. No algorithmic result will be called
+a live-network result.

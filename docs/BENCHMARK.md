@@ -45,3 +45,14 @@ insufficient for a finite 90% split-conformal radius: the required order rank
 is four, so the interval is unbounded. The exact three-row label-permutation
 control did not show ridge MAE strictly better than all permutations. Promotion
 remains blocked.
+
+## Uncertainty and OOD v0
+
+Evidence: `evidence/benchmarks/20260824T053654Z-uncertainty-ood-v0`
+
+The 90% conformal interval is unbounded and forces abstention on all six
+held-out rows. A development-only severity-range detector flags 3/3 test and
+3/3 designated OOD scenarios. This exposes a split-design limitation: both
+splits use the higher severity, and the seed/timing difference does not make
+the designated OOD split distinguishable in the observed feature contract.
+The OOD score is a binary design-range indicator, not a calibrated probability.

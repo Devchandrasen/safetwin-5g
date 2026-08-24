@@ -1,0 +1,67 @@
+{
+  "abstain_count": 6,
+  "calibration": {
+    "calibration_n": 3,
+    "coverage": 0.9,
+    "radius": null,
+    "rank": 4,
+    "status": "unbounded-insufficient-calibration"
+  },
+  "claim_boundary": "Fail-closed uncertainty/OOD feasibility result; OOD score is a design-range indicator, not a calibrated probability.",
+  "completed_at": "2026-08-24T05:36:54.280587+00:00",
+  "dataset_manifest_sha256": "da3a4e2debe143d6b9e11733f4cbc79ae1401470471cadfbff5f739ea4899e59",
+  "eligible_count": 0,
+  "evidence_label": "sandbox-measured",
+  "execution_passed": true,
+  "ood_detector": {
+    "fitted_scenario_ids": [
+      "cpu_saturation-workers-1-seed-101",
+      "cpu_saturation-workers-1-seed-202",
+      "network_function_interruption-hold_before_observation_ms-500-seed-101",
+      "network_function_interruption-hold_before_observation_ms-500-seed-202",
+      "packet_impairment-loss_pct-25-seed-101",
+      "packet_impairment-loss_pct-25-seed-202"
+    ],
+    "kind": "development severity-range detector",
+    "probabilistic_calibration": "not claimed",
+    "severity_ranges": {
+      "cpu_saturation": [
+        1.0,
+        1.0
+      ],
+      "network_function_interruption": [
+        500.0,
+        500.0
+      ],
+      "packet_impairment": [
+        25.0,
+        25.0
+      ]
+    }
+  },
+  "ood_split_is_distinguishable_from_test": false,
+  "promotion_decision": "blocked",
+  "promotion_reasons": [
+    "The nominal 90% conformal interval is unbounded at calibration n=3.",
+    "Both test and designated OOD rows are outside the development severity range.",
+    "The designated OOD split is not distinguishable from test by the current observed design variables."
+  ],
+  "radio_evidence_label": "simulated",
+  "run_id": "20260824T053654Z-uncertainty-ood-v0",
+  "schema_version": 1,
+  "selective_policy": "abstain when interval is unbounded or severity is outside development range",
+  "split_summary": {
+    "ood": {
+      "abstain_count": 3,
+      "n": 3,
+      "ood_count": 3
+    },
+    "test": {
+      "abstain_count": 3,
+      "n": 3,
+      "ood_count": 3
+    }
+  },
+  "started_at": "2026-08-24T05:36:54.280587+00:00",
+  "test_split_is_severity_shifted": true
+}

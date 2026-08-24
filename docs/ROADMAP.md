@@ -63,7 +63,9 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
 
 ## Days 61–90 — Selective safety evaluation
 
-- [ ] Add calibrated uncertainty and out-of-distribution detection.
+- [x] Add fail-closed calibrated uncertainty and OOD detection
+      (`evidence/benchmarks/20260824T053654Z-uncertainty-ood-v0`; 90% interval
+      unbounded, 6/6 abstain, test and OOD both severity-shifted).
 - [ ] Evaluate risk-coverage and harmful-action endpoints.
 - [ ] Integrate the safety gate with sandbox proposals only.
 - [ ] Produce a reproducible benchmark report and go/no-go decision for H1–H3.
