@@ -10,7 +10,7 @@ in [PROJECT_LOCK.md](PROJECT_LOCK.md).
 
 ## Current status
 
-**Phase 4: selective safety evaluation in progress**
+**Phase 4 complete; Phase 5 local product work next**
 
 Implemented on day one:
 
@@ -35,6 +35,9 @@ diagnostic, uncertainty, and selective-safety runs. The deterministic rule
 still beats the learned baselines, alternative-action effects are not
 identified, and all six held-out model proposals abstain. No model has been
 promoted and no model-proposed action has been applied.
+The consolidated H1-H3 benchmark decision is therefore no-go for model
+promotion, positive hypothesis claims, and autonomous/live actuation. It is
+go-with-constraints only for continued local sandbox research.
 
 ## Setup
 
@@ -105,5 +108,6 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 
 ## Immediate next gate
 
-Produce a hash-linked benchmark report with explicit go/no-go decisions for
-H1-H3. No algorithmic result will be called a live-network result.
+Build a localhost-only, read-only evidence dashboard with a machine-readable
+status API and no actuation endpoint. No algorithmic result will be called a
+live-network result.

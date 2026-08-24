@@ -75,4 +75,23 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
       uncertain proposals abstained, zero actions applied, and 6/6 live
       sentinels rejected; 83 tests captured at
       `evidence/verification/20260824T054303Z-safety-integration-v0`).
-- [ ] Produce a reproducible benchmark report and go/no-go decision for H1–H3.
+- [x] Produce a reproducible benchmark report and go/no-go decision for H1–H3
+      (`evidence/benchmarks/20260824T054718Z-benchmark-report-v0`; H1 and H2
+      `not-supported`, H3 `not-tested`; model promotion, live actuation, and
+      positive H1–H3 claims are no-go; 88 tests captured at
+      `evidence/verification/20260824T054807Z-benchmark-report-v0`).
+
+## Phase 5 — Local product and dashboard
+
+- [ ] Build a localhost-only, read-only evidence dashboard.
+- [ ] Add a machine-readable status API and proposal audit view with no
+      actuation endpoint.
+- [ ] Run end-to-end local product QA and preserve the smoke-test evidence.
+
+## External-authority gates
+
+- [ ] Collect `hardware-measured` evidence on identified private-5G hardware
+      (pending hardware access or purchase authorization).
+- [ ] Obtain `operator-validated` evidence in an independent operator
+      environment (pending operator coordination and credentials).
+- [ ] Submit or publish results (pending explicit publication authorization).

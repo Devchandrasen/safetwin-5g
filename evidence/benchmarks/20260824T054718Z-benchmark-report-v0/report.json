@@ -1,0 +1,101 @@
+{
+  "claim_boundary": "Consolidated feasibility decision derived from versioned software-sandbox evidence. Radio remains simulated; no hardware measurement, operator validation, model promotion, or live-network conclusion is claimed.",
+  "completed_at": "2026-08-24T05:47:18.975882+00:00",
+  "dataset": {
+    "record_count": 12,
+    "split_sizes": {
+      "calibration": 3,
+      "ood": 3,
+      "test": 3,
+      "train": 3
+    },
+    "version": "safetwin5g-interventions-v0"
+  },
+  "diagnostic_gate": {
+    "calibration_status": "unbounded-insufficient-calibration",
+    "leakage_checks_passed": true,
+    "scientific_readiness_gate_passed": false
+  },
+  "evidence_label": "sandbox-measured",
+  "execution_passed": true,
+  "hypotheses": {
+    "H1": {
+      "decision": "no-go-for-superiority-claim",
+      "observed": {
+        "alternative_action_ate": null,
+        "alternative_action_status": "not-identified",
+        "deterministic_rule_test_mae": 3.3333333333333335,
+        "heldout_proxy_test_mae": 17.0,
+        "tabular_ridge_test_mae": 17.875563186946433,
+        "temporal_persistence_test_mae": 29.333333333333332
+      },
+      "primary_endpoint": "action-effect prediction error",
+      "reasons": [
+        "The deterministic rule is the held-out MAE winner.",
+        "The held-out effect estimator is not superior to the rule.",
+        "Exchangeability, positivity, and no-carry-over are not established, so the alternative-action effect is not identified.",
+        "The exact small-sample permutation control does not support learned-model superiority."
+      ],
+      "status": "not-supported"
+    },
+    "H2": {
+      "decision": "no-go-for-harm-reduction-claim",
+      "observed": {
+        "abstention_rate": 1.0,
+        "always_act_harmful_rate": 0.0,
+        "coverage": 0.0,
+        "risk_coverage_auc": null,
+        "selective_harmful_rate": null
+      },
+      "primary_endpoint": "harmful remediation rate at declared coverage",
+      "reasons": [
+        "The 90% conformal interval is unbounded with three calibration scenarios.",
+        "Coverage is zero, so selective harmful-action risk and AURC are undefined.",
+        "No harmful action was observed, so harm reduction cannot be tested.",
+        "Both test and designated OOD rows are severity-shifted and are not distinguishable by the current design contract."
+      ],
+      "status": "not-supported"
+    },
+    "H3": {
+      "decision": "no-go-for-operational-value-claim",
+      "observed": {
+        "false_remediation_rate": null,
+        "mean_time_to_recovery_s": null,
+        "model_proposal_actions_applied": 0,
+        "sla_violation_duration_s": null
+      },
+      "primary_endpoint": "SLA duration, MTTR, rollback, and false-remediation rates",
+      "reasons": [
+        "Dataset v0 has no continuous SLA or sustained-recovery windows.",
+        "There are no no-fault scenarios for a false-remediation denominator.",
+        "The approved sandbox intervention used a deterministic runbook, not a twin-assisted comparative policy.",
+        "All held-out model proposals abstained and none was applied."
+      ],
+      "status": "not-tested"
+    }
+  },
+  "overall_decision": {
+    "H1_H2_H3_positive_claims": "no-go",
+    "autonomous_or_live_actuation": "no-go",
+    "local_sandbox_research": "go-with-constraints",
+    "model_promotion": "no-go"
+  },
+  "radio_evidence_label": "simulated",
+  "required_next_evidence": [
+    "At least 19 independent calibration scenarios for a finite nominal 90% split-conformal rank.",
+    "Randomized or counterbalanced action order with alternative eligible actions and positivity.",
+    "No-fault, harmful-action, and ineffective-action scenarios.",
+    "Continuous SLA windows and sustained-recovery timing for SLA duration and MTTR.",
+    "A predeclared rule-versus-twin-assisted, human-governed sandbox comparison before any hardware or operator claim."
+  ],
+  "run_id": "20260824T054718Z-benchmark-report-v0",
+  "safety_lock": {
+    "allow_live_actuation": false,
+    "heldout_proposals_abstained": 6,
+    "heldout_proposals_applied": 0,
+    "require_human_approval": true
+  },
+  "schema_version": 1,
+  "source_evidence_sha256": "ff3516ecf1ba95ce76ed19cfe598ee6f6f4890784603ee35ca66e9369fd36b2b",
+  "started_at": "2026-08-24T05:47:18.921017+00:00"
+}

@@ -82,3 +82,17 @@ execution, and six corresponding live-environment sentinels were rejected.
 This is a proposal-only policy integration result over sandbox-measured traces
 with simulated radio. It is not an applied model remediation, a live-network
 result, a hardware measurement, or an operator validation.
+
+## Consolidated H1-H3 decision v0
+
+Evidence: `evidence/benchmarks/20260824T054718Z-benchmark-report-v0`
+
+The reproducible report verifies and hashes the frozen dataset, approved
+intervention, and six contributing benchmark bundles. H1 and H2 are
+`not-supported`; H3 is `not-tested`. Model promotion, autonomous/live
+actuation, and positive H1-H3 claims are no-go. Continued local sandbox
+research is go-with-constraints so the missing calibration, positivity,
+harm/no-fault, and continuous-time evidence can be collected.
+
+The human-readable `report.md`, machine-readable `report.json`, and exact
+`source-evidence.json` are captured together under the evidence manifest.
