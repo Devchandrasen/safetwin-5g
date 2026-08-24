@@ -106,8 +106,11 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
       `evidence/verification/20260824T073147Z-phase6-preregistration-v1`; the
       corrected invocation retains the failed environment-only capture at
       `20260824T073135Z`).
-- [ ] Implement and verify the fail-closed Phase 6 runner and reversible action
-      arms.
+- [x] Implement and verify the fail-closed Phase 6 runner and reversible action
+      arms (`evidence/scenarios/20260824T073851Z-phase6-pilot-v1`; 3/3
+      sandbox-measured pilot units cover effective, no-action, and negative
+      control arms with clean recovery; 109 tests and the bundle audit passed at
+      `evidence/verification/20260824T074234Z-phase6-runner-v1`).
 - [ ] Execute the preregistered campaign and freeze intervention dataset v1.
 - [ ] Re-run baselines, causal estimation, uncertainty/OOD/abstention, and
       H1-H3 gates on the locked v1 data.
