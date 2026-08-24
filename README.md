@@ -10,7 +10,7 @@ in [PROJECT_LOCK.md](PROJECT_LOCK.md).
 
 ## Current status
 
-**Phase 1: isolated software sandbox gate in progress**
+**Phase 4: selective safety evaluation in progress**
 
 Implemented on day one:
 
@@ -30,6 +30,11 @@ approved deterministic runbook then measured 0% baseline loss, 100% controlled
 loss, 0% after remediation, 100% after rollback, and 0% after final cleanup.
 That intervention record passes the `sandbox-measured` gate; its radio remains
 `simulated`, and it is neither hardware-measured nor operator-validated.
+The frozen 12-intervention dataset now supports reproducible baseline,
+diagnostic, uncertainty, and selective-safety runs. The deterministic rule
+still beats the learned baselines, alternative-action effects are not
+identified, and all six held-out model proposals abstain. No model has been
+promoted and no model-proposed action has been applied.
 
 ## Setup
 
@@ -100,6 +105,5 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 
 ## Immediate next gate
 
-Integrate uncertainty/OOD outcomes into sandbox proposal evaluation while
-keeping every held-out model proposal abstained and every live action rejected.
-No algorithmic result will be called a live-network result.
+Produce a hash-linked benchmark report with explicit go/no-go decisions for
+H1-H3. No algorithmic result will be called a live-network result.

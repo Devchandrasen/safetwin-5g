@@ -94,17 +94,16 @@ class SafetyPolicy:
             return SafetyEvaluation(Decision.REJECT, tuple(reasons), self.policy_version)
 
         if decision_source == "model":
-            if model_confidence is None or ood_score is None:
-                return self._result(
-                    Decision.ABSTAIN,
-                    "model confidence and OOD score are required for model decisions",
-                )
             uncertainty: list[str] = []
-            if model_confidence < self.min_confidence:
+            if model_confidence is None:
+                uncertainty.append("calibrated model confidence is unavailable")
+            elif model_confidence < self.min_confidence:
                 uncertainty.append(
                     f"model confidence {model_confidence:.3f} is below {self.min_confidence:.3f}"
                 )
-            if ood_score > self.max_ood:
+            if ood_score is None:
+                uncertainty.append("OOD score is unavailable")
+            elif ood_score > self.max_ood:
                 uncertainty.append(f"OOD score {ood_score:.3f} exceeds {self.max_ood:.3f}")
             if uncertainty:
                 return SafetyEvaluation(Decision.ABSTAIN, tuple(uncertainty), self.policy_version)

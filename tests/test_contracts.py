@@ -76,6 +76,14 @@ class ContractTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "must not claim"):
             InterventionRecord.from_dict(payload)
 
+    def test_model_record_can_represent_unavailable_uncertainty(self):
+        payload = valid_payload()
+        payload["model_confidence"] = None
+        payload["ood_score"] = None
+        record = InterventionRecord.from_dict(payload)
+        self.assertIsNone(record.model_confidence)
+        self.assertIsNone(record.ood_score)
+
 
 if __name__ == "__main__":
     unittest.main()

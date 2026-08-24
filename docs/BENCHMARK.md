@@ -68,3 +68,17 @@ rate is 0/6 and harm reduction cannot be tested. False-remediation rate is
 undefined because there are no no-fault scenarios; SLA duration and MTTR are
 undefined because the traces lack continuous and sustained-recovery windows.
 H2 remains `not-supported` and model promotion is a no-go.
+
+## Fail-closed safety integration v0
+
+Evidence: `evidence/benchmarks/20260824T054104Z-safety-integration-v0`
+
+The six held-out test/OOD assessments were converted to model-originated,
+sandbox-only proposals without inventing unavailable confidence values. All
+six proposals abstained because the 90% uncertainty interval is unbounded and
+the development-range OOD indicator is high. No proposal reached approval or
+execution, and six corresponding live-environment sentinels were rejected.
+
+This is a proposal-only policy integration result over sandbox-measured traces
+with simulated radio. It is not an applied model remediation, a live-network
+result, a hardware measurement, or an operator validation.

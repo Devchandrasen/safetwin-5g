@@ -144,10 +144,16 @@ class InterventionRecord:
         if decision_source not in DECISION_SOURCES:
             raise ValueError(f"decision_source must be one of {sorted(DECISION_SOURCES)}")
         if decision_source == "model":
-            model_confidence = _bounded_probability(
-                payload.get("model_confidence"), "model_confidence"
+            model_confidence = (
+                None
+                if payload.get("model_confidence") is None
+                else _bounded_probability(payload.get("model_confidence"), "model_confidence")
             )
-            ood_score = _bounded_probability(payload.get("ood_score"), "ood_score")
+            ood_score = (
+                None
+                if payload.get("ood_score") is None
+                else _bounded_probability(payload.get("ood_score"), "ood_score")
+            )
         else:
             if payload.get("model_confidence") is not None or payload.get("ood_score") is not None:
                 raise ValueError(

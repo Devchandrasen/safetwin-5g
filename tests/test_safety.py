@@ -69,6 +69,15 @@ class SafetyTests(unittest.TestCase):
         )
         self.assertEqual(result.decision, Decision.REQUIRE_APPROVAL)
 
+    def test_unavailable_confidence_and_high_ood_both_cause_abstention(self):
+        payload = valid_payload()
+        payload["model_confidence"] = None
+        payload["ood_score"] = 1.0
+        result = self.evaluate(payload)
+        self.assertEqual(result.decision, Decision.ABSTAIN)
+        self.assertIn("confidence is unavailable", result.reasons[0])
+        self.assertIn("OOD score 1.000", result.reasons[1])
+
 
 if __name__ == "__main__":
     unittest.main()

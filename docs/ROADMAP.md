@@ -70,5 +70,9 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
       (`evidence/benchmarks/20260824T053857Z-selective-evaluation-v0`; coverage
       0, abstention 1.0; selective harm, AURC, false-remediation, SLA duration,
       and MTTR correctly undefined).
-- [ ] Integrate the safety gate with sandbox proposals only.
+- [x] Integrate the safety gate with sandbox proposals only
+      (`evidence/benchmarks/20260824T054104Z-safety-integration-v0`; 6/6
+      uncertain proposals abstained, zero actions applied, and 6/6 live
+      sentinels rejected; 83 tests captured at
+      `evidence/verification/20260824T054303Z-safety-integration-v0`).
 - [ ] Produce a reproducible benchmark report and go/no-go decision for H1–H3.
