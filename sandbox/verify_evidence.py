@@ -26,6 +26,14 @@ def verify_bundle(bundle: Path) -> list[str]:
             errors.append(f"missing: {relative}")
         elif file_sha256(path) != expected:
             errors.append(f"hash mismatch: {relative}")
+    expected_files = set(manifest["captured_file_sha256"])
+    actual_files = {
+        str(path.relative_to(bundle)).replace("\\", "/")
+        for path in bundle.rglob("*")
+        if path.is_file() and path.name != "manifest.json"
+    }
+    for relative in sorted(actual_files - expected_files):
+        errors.append(f"unmanifested: {relative}")
     return errors
 
 

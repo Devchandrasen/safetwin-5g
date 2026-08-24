@@ -84,6 +84,19 @@ Run the independent captured-file check against a bundle:
   .\evidence\sandbox\<run-id>
 ```
 
+Audit the passing intervention's configuration hashes, commands, timestamps,
+telemetry-stage coverage, approval hash, and running image identities:
+
+```powershell
+.\.venv\Scripts\python.exe .\sandbox\audit_intervention.py `
+  .\evidence\sandbox\20260824T045620Z-intervention
+```
+
+The independent `20260824T045939Z-intervention-audit` passed 17/17 checks. It
+also records the Docker engine response, local image identities, official
+source commits, and upstream MongoDB/Prometheus digests. Its own files are
+covered by a second SHA-256 manifest.
+
 The initial Debian 12 attempt is intentionally retained as a negative
 compatibility result. Its NFs registered, then lost their heartbeats with
 libcurl error 16. The pinned Ubuntu 22.04 fallback resolved that measured

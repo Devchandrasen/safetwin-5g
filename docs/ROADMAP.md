@@ -22,7 +22,9 @@
 - [x] Inject one reversible fault and execute one approved rollback
       (`evidence/sandbox/20260824T045620Z-intervention`; `sandbox-measured`
       intervention, `simulated` radio).
-- [ ] Save configuration, commands, telemetry, timestamps, and hashes.
+- [x] Save and audit configuration, commands, telemetry, timestamps, versions,
+      and hashes (`evidence/audits/20260824T045939Z-intervention-audit`; 17/17
+      checks passed).
 
 **Exit criterion:** one replayable `sandbox-measured` intervention record with a
 verified rollback. Until then, all records remain `fixture` or `simulated`.

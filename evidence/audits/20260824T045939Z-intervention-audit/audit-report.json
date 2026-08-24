@@ -1,0 +1,67 @@
+{
+  "audit_id": "20260824T045939Z-intervention-audit",
+  "checks": {
+    "approval_hash_valid": true,
+    "approval_status_approved": true,
+    "claim_boundaries_explicit": true,
+    "command_timestamps_valid": true,
+    "configuration_hashes_match": true,
+    "execution_timestamps_valid": true,
+    "four_running_image_identities_captured": true,
+    "mongodb_and_prometheus_digests_match_lock": true,
+    "open5gs_source_commit_matches_lock": true,
+    "required_commands_recorded": true,
+    "source_bundle_hashes_complete": true,
+    "source_label_sandbox_measured": true,
+    "source_manifest_passed": true,
+    "telemetry_stage_job_matrix_complete": true,
+    "three_prometheus_targets_up_at_each_stage": true,
+    "ueransim_source_commit_matches_lock": true,
+    "version_lock_complete": true
+  },
+  "claim_boundary": "Audit of an isolated software-sandbox intervention; radio remains simulated, with no hardware measurement or operator validation.",
+  "completed_at": "2026-08-24T04:59:39.321377+00:00",
+  "component_versions": {
+    "mongodb": {
+      "digest": "sha256:021b2d5ae9d253f2cca17491cc8d03aed8df3c840f3252066aa62d3277fc406e",
+      "distribution": "docker-official-image",
+      "image": "docker.io/library/mongo:8.0.29-noble",
+      "source": "https://hub.docker.com/_/mongo",
+      "version": "8.0.29"
+    },
+    "open5gs": {
+      "commit": "318eeb49a7dcdff733dec60e02d9c60aefca2fb9",
+      "distribution": "source-build",
+      "source": "https://github.com/open5gs/open5gs",
+      "tag": "v2.7.7",
+      "version": "2.7.7"
+    },
+    "prometheus": {
+      "digest": "sha256:508729e0e2d18e11fd742a5a5ca70e557b940a93948c3c95fd0123a6fd538b69",
+      "distribution": "upstream-image-lts",
+      "image": "docker.io/prom/prometheus:v3.13.2",
+      "source": "https://prometheus.io/download/",
+      "version": "3.13.2"
+    },
+    "ueransim": {
+      "commit": "6bf5a1a96aaef6ae8778b9d8b477ac6e2bbf8156",
+      "distribution": "source-build",
+      "source": "https://github.com/aligungr/UERANSIM",
+      "tag": "v3.3.0",
+      "version": "3.3.0"
+    }
+  },
+  "evidence_label": "sandbox-measured",
+  "passed": true,
+  "schema_version": 1,
+  "source_bundle": "evidence/sandbox/20260824T045620Z-intervention",
+  "source_configuration_sha256": {
+    "PROJECT_LOCK.md": "c49c1cc87d09220c4aaa7fe075c88480539d76b9381abb0df72d184f0e5db55f",
+    "config/actions.json": "796c6cfbf9a18930f5c9841eb217d29e8962904c97c97d1a0c068b89206fae70",
+    "sandbox/compose.yaml": "050f8210177bb0651327ac29427a9f99da525ba5602ebc803d86c29f4f2e933e",
+    "sandbox/run_intervention.py": "04c4d974ae6b544e119a68f6b7f6915a7b50f18e7692267d175a16ab9162b8cd",
+    "sandbox/versions.lock.json": "0c4a20d5cf481d757231bd5c16744e4298d8cae8352abb652512467b8e67121d"
+  },
+  "source_manifest_sha256": "90e13570b42bc8e77793adaae30c5ddc36465214ad882f0582285883c9575ec6",
+  "started_at": "2026-08-24T04:59:39.118000+00:00"
+}

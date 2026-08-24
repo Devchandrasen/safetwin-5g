@@ -35,6 +35,15 @@ class EvidenceTests(unittest.TestCase):
             )
             self.assertEqual(verify_bundle(bundle), ["hash mismatch: output.txt"])
 
+    def test_unmanifested_file_fails(self):
+        with TemporaryDirectory() as directory:
+            bundle = Path(directory)
+            (bundle / "extra.txt").write_text("not declared", encoding="utf-8")
+            (bundle / "manifest.json").write_text(
+                json.dumps({"captured_file_sha256": {}}), encoding="utf-8"
+            )
+            self.assertEqual(verify_bundle(bundle), ["unmanifested: extra.txt"])
+
 
 if __name__ == "__main__":
     unittest.main()

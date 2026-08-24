@@ -92,6 +92,6 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 
 ## Immediate next gate
 
-Audit the intervention bundle's configuration, commands, telemetry, timestamps,
-and hashes, then freeze the first intervention-dataset schema. No algorithmic
-result will be called a live-network result.
+Implement telemetry adapters and the scenario runner, then freeze the first
+intervention-dataset schema. No algorithmic result will be called a live-network
+result.
