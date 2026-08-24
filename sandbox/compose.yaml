@@ -1,0 +1,136 @@
+name: safetwin5g-sandbox
+
+services:
+  mongodb:
+    image: docker.io/library/mongo:8.0.29-noble@sha256:021b2d5ae9d253f2cca17491cc8d03aed8df3c840f3252066aa62d3277fc406e
+    container_name: safetwin5g-mongodb
+    command: ["mongod", "--bind_ip_all", "--quiet"]
+    volumes:
+      - mongodb_data:/data/db
+      - ./config/mongodb/10-subscriber.js:/docker-entrypoint-initdb.d/10-subscriber.js:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --quiet --eval \"quit(db.adminCommand('ping').ok ? 0 : 2)\""]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+      start_period: 10s
+    networks:
+      core:
+        ipv4_address: 10.53.0.2
+    restart: "no"
+
+  open5gs:
+    image: safetwin5g/open5gs:2.7.7-318eeb49
+    build:
+      context: ./docker/open5gs
+      args:
+        OPEN5GS_TAG: v2.7.7
+        OPEN5GS_COMMIT: 318eeb49a7dcdff733dec60e02d9c60aefca2fb9
+    container_name: safetwin5g-open5gs
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    sysctls:
+      net.ipv4.ip_forward: "1"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail --silent http://10.53.0.3:9090/metrics >/dev/null && pgrep -x open5gs-amfd >/dev/null && pgrep -x open5gs-upfd >/dev/null"]
+      interval: 5s
+      timeout: 4s
+      retries: 36
+      start_period: 15s
+    networks:
+      core:
+        ipv4_address: 10.53.0.3
+    restart: "no"
+
+  ueransim-gnb:
+    image: safetwin5g/ueransim:3.3.0-6bf5a1a9
+    build:
+      context: ./docker/ueransim
+      args:
+        UERANSIM_TAG: v3.3.0
+        UERANSIM_COMMIT: 6bf5a1a96aaef6ae8778b9d8b477ac6e2bbf8156
+    container_name: safetwin5g-gnb
+    command: ["/opt/ueransim/bin/nr-gnb", "-c", "/etc/ueransim/gnb.yaml"]
+    volumes:
+      - ./config/ueransim/gnb.yaml:/etc/ueransim/gnb.yaml:ro
+    depends_on:
+      open5gs:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep -x nr-gnb >/dev/null"]
+      interval: 5s
+      timeout: 3s
+      retries: 24
+    networks:
+      core:
+        ipv4_address: 10.53.0.4
+    restart: "no"
+
+  ueransim-ue:
+    image: safetwin5g/ueransim:3.3.0-6bf5a1a9
+    container_name: safetwin5g-ue
+    command: ["/opt/ueransim/bin/nr-ue", "-c", "/etc/ueransim/ue.yaml"]
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - ./config/ueransim/ue.yaml:/etc/ueransim/ue.yaml:ro
+    depends_on:
+      ueransim-gnb:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "ip link show uesimtun0 >/dev/null 2>&1"]
+      interval: 5s
+      timeout: 3s
+      retries: 36
+      start_period: 10s
+    networks:
+      core:
+        ipv4_address: 10.53.0.5
+    restart: "no"
+
+  prometheus:
+    image: docker.io/prom/prometheus:v3.13.2@sha256:508729e0e2d18e11fd742a5a5ca70e557b940a93948c3c95fd0123a6fd538b69
+    container_name: safetwin5g-prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=7d
+      - --web.enable-lifecycle
+    volumes:
+      - ./config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    depends_on:
+      open5gs:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "/bin/promtool", "check", "healthy"]
+      interval: 5s
+      timeout: 3s
+      retries: 24
+    networks:
+      core:
+        ipv4_address: 10.53.0.6
+    restart: "no"
+
+networks:
+  core:
+    name: safetwin5g-isolated
+    internal: true
+    ipam:
+      config:
+        - subnet: 10.53.0.0/24
+
+volumes:
+  mongodb_data:
+    name: safetwin5g-mongodb-data
+  prometheus_data:
+    name: safetwin5g-prometheus-data

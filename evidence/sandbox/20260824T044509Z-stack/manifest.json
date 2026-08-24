@@ -1,0 +1,51 @@
+{
+  "captured_file_sha256": {
+    "commands.jsonl": "fc78b839633eac974a57a9a6848614bb0dea110cada2eb3d5c737ca8d3fb11f6",
+    "compose-ps.jsonl": "a9b1445406262173ac219d6909da8226d75a4537ce53435c25f2c2cf98b0263e",
+    "container-states.jsonl": "cc7a6109ec9d9666b746c311182d33283e85b5e9010abec55630bd2b08ea8e70",
+    "docker-version.json": "e7f7707999230603f92fde6c852b253ff295dc72b0d56837cd655599f108cb1a",
+    "git-head.txt": "ec15b2b9ddcdbc24335efde1617d53b075c6fd73ce84c8756015b8ddcd83da9a",
+    "git-status.txt": "ebef91636f4c5414bfbc1767fc459a2193ed012064ba9ff4305e34d758535b7a",
+    "image-identities.jsonl": "089ed33de68c368ac6b3947e1b21ad19c5cf35acf293d0fa92707a732b6ef70c",
+    "logs/gnb.log": "f0952b72e873e3f41be3aff2b7d7890ab7b0693b8f2b58c8fea1c0ce9e9435ca",
+    "logs/mongodb.log": "875ec897b7955cd3c78bd612c4e68d053592548338bc03c3dc1721b70439b860",
+    "logs/open5gs.log": "92c34d1b1c1a77fc6004f08c97364ffea927059772b9dae731f5fee69428373f",
+    "logs/prometheus.log": "bccbfe0854b0c345217ef8e917a5b8b419f854046f699bbbdf8d66666bbd67ef",
+    "logs/ue.log": "dca155ba9932a865fd8c310e235cb0ed19649b9b66f85cf0ab0c7624e1cb761f",
+    "prometheus-targets.json": "17a3cc6de93173de0e160fe36b0485e18095f80d59b8d6ec14ccbdea9e255795",
+    "subscriber-public.json": "bff69c5e168d1c802821aa142a7c01705bcd562ba81b0613b3ed3233e4bb8685",
+    "ue-interface.txt": "873e5de6cb6b312470d15e75acf1f70e55622d24b8b4d40d78f1b3d3c129f0af"
+  },
+  "checks": {
+    "all_containers_running": true,
+    "all_healthchecks_healthy": true,
+    "compose_lists_all_services": true,
+    "four_image_identities_recorded": true,
+    "open5gs_no_http2_framing_error": true,
+    "open5gs_no_lost_heartbeat": true,
+    "pdu_session_success": true,
+    "prometheus_three_targets_up": true,
+    "ue_registration_success": true,
+    "ue_tun_address_present": true
+  },
+  "claim_boundary": "Versioned UERANSIM radio plus measured software-sandbox runtime. Not sandbox-measured under PROJECT_LOCK.md until an approved fault/action/rollback record passes.",
+  "completed_at": "2026-08-24T04:45:12.329350+00:00",
+  "configuration_sha256": {
+    "sandbox/compose.yaml": "050f8210177bb0651327ac29427a9f99da525ba5602ebc803d86c29f4f2e933e",
+    "sandbox/config/mongodb/10-subscriber.js": "ca9d4e6f1d41e056930af40f9bc3531d16947e33588605201d839e365a6064ff",
+    "sandbox/config/prometheus/prometheus.yml": "4f7672ef958a6e8767aada9c4f41b0954060a349ac0fd1726efb43ece76878f4",
+    "sandbox/config/ueransim/gnb.yaml": "3ada7138e38f2df7ea8f4fe8d02fd9b620e51b61cfe46a7f13c0afd5b2215d91",
+    "sandbox/config/ueransim/ue.yaml": "e02e32b3b7f9da6a7afe8d5242126979d06cc5d292817a9eb0ec102b73b548ab",
+    "sandbox/docker/open5gs/Dockerfile": "1050fe198207d66c101eb7b502c5482a9f831a978849e89029ec4995b2f0fdeb",
+    "sandbox/docker/open5gs/configure.py": "9be90026257dc39f3d7b831631831fd0b6dfe6416d9559a9800416750bee796b",
+    "sandbox/docker/open5gs/entrypoint.sh": "d9f22d86e70f1f18c848807c6e458e8f59e4cf49446f4e903e6fc3be59ffb6c2",
+    "sandbox/docker/ueransim/Dockerfile": "7bb1e242bbfaacf2e8d4254602b852a25a791e2345a9e8354baa9814f6cdb279",
+    "sandbox/versions.lock.json": "0c4a20d5cf481d757231bd5c16744e4298d8cae8352abb652512467b8e67121d"
+  },
+  "evidence_label": "simulated",
+  "passed": true,
+  "run_id": "20260824T044509Z-stack",
+  "schema_version": 1,
+  "stage": "stack",
+  "started_at": "2026-08-24T04:45:09.193988+00:00"
+}

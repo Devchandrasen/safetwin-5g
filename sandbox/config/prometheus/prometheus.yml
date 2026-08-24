@@ -1,0 +1,14 @@
+global:
+  scrape_interval: 2s
+  evaluation_interval: 2s
+
+scrape_configs:
+  - job_name: open5gs-amf
+    static_configs:
+      - targets: ["10.53.0.3:9090"]
+  - job_name: open5gs-smf
+    static_configs:
+      - targets: ["10.53.0.3:9091"]
+  - job_name: open5gs-upf
+    static_configs:
+      - targets: ["10.53.0.3:9092"]

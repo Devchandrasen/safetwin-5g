@@ -10,7 +10,7 @@ in [PROJECT_LOCK.md](PROJECT_LOCK.md).
 
 ## Current status
 
-**Phase 0: intervention and safety foundation**
+**Phase 1: isolated software sandbox gate in progress**
 
 Implemented on day one:
 
@@ -22,10 +22,13 @@ Implemented on day one:
 - a CLI for environment checks, a safe-decision demo, and log validation;
 - unit tests for contracts, safety decisions, and dataset integrity.
 
-This repository does **not** yet contain evidence from a running Open5GS
-network. Docker was installed but stopped at project creation; it has now been
-started and verified. Fixture, simulation, sandbox, and live results must always
-be labelled separately.
+The official-tag Open5GS/UERANSIM source builds now run with MongoDB and
+Prometheus on an internal Compose network. A simulated UE registered and
+created PDU Session ID 1, and the first hash-manifested stack capture passed.
+This does **not** yet satisfy the project's `sandbox-measured` claim gate: the
+clean baseline and approved fault/action/rollback records are still separate
+pending roadmap items. Fixture, simulation, sandbox, hardware, and operator
+results remain strictly separated.
 
 ## Setup
 
@@ -42,6 +45,17 @@ Inspect the local environment:
 ```powershell
 .\run.ps1 doctor
 ```
+
+Build, start, and capture the isolated software stack:
+
+```powershell
+.\sandbox\run.ps1 build
+.\sandbox\run.ps1 up
+.\sandbox\run.ps1 capture-stack
+```
+
+See [docs/SANDBOX.md](docs/SANDBOX.md) for boundaries, exact checks, evidence
+verification, and the retained Debian 12 compatibility failure.
 
 Run the day-one safety demo:
 
@@ -66,6 +80,7 @@ Validate an intervention log:
 ```text
 config/                 Versioned action and safety policy
 docs/                   Research protocol and execution roadmap
+evidence/               Append-only measured logs and hash manifests
 examples/               Valid, synthetic contract examples
 sandbox/                Official component locks and isolated 5G SA stack
 src/safetwin5g/         Contracts, safety gate, store, and CLI
@@ -75,6 +90,6 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 
 ## Immediate next gate
 
-Bring up an isolated, version-pinned Open5GS + UERANSIM + Prometheus sandbox.
-No algorithmic result will be called a live-network result until controlled
-faults, actions, timestamps, and outcomes are captured from that sandbox.
+Capture the clean attach/session baseline, then run one explicitly approved,
+reversible sandbox fault/action/rollback experiment. No algorithmic result will
+be called a live-network result.

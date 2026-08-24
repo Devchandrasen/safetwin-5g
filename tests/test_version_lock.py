@@ -27,7 +27,12 @@ class VersionLockTests(unittest.TestCase):
             self.assertNotEqual(self.components[name]["tag"].lower(), "latest")
 
     def test_upstream_images_use_sha256_digests(self):
-        for name in ("mongodb", "prometheus", "debian_build_base"):
+        for name in (
+            "mongodb",
+            "prometheus",
+            "ubuntu_open5gs_base",
+            "debian_ueransim_base",
+        ):
             component = self.components[name]
             self.assertRegex(component["digest"], r"^sha256:[0-9a-f]{64}$")
             self.assertNotIn(":latest", component["image"])

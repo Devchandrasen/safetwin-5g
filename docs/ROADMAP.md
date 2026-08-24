@@ -15,7 +15,8 @@
 - [x] Pin official Open5GS, UERANSIM, MongoDB, and Prometheus versions
       (`docs/COMPONENT_PINS.md`; machine-readable digests in
       `sandbox/versions.lock.json`).
-- [ ] Bring up an isolated 5G Standalone software sandbox.
+- [x] Bring up an isolated 5G Standalone software sandbox
+      (`evidence/sandbox/20260824T044704Z-stack`; `simulated`, pre-intervention).
 - [ ] Capture a clean baseline attach/session trace.
 - [ ] Inject one reversible fault and execute one approved rollback.
 - [ ] Save configuration, commands, telemetry, timestamps, and hashes.
