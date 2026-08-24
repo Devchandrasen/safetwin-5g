@@ -1,0 +1,44 @@
+{
+  "alternative_action_ate": null,
+  "alternative_action_status": "not-identified",
+  "causal_graph_sha256": "6d2288fdf33a8d6094b2807f59d8ab2e37dd51126cf6a61d30c6fa404fbe66fd",
+  "claim_boundary": "Held-out prediction of a descriptive paired proxy only; no identified alternative-action causal effect, hardware result, or operator validation.",
+  "comparison_to_rule": "not superior; deterministic rule remains the baseline winner",
+  "completed_at": "2026-08-24T05:32:22.444612+00:00",
+  "dataset_manifest_sha256": "da3a4e2debe143d6b9e11733f4cbc79ae1401470471cadfbff5f739ea4899e59",
+  "estimand": "action-first paired rollback benefit proxy",
+  "estimand_status": "descriptive-only",
+  "estimator": "train-only family mean paired benefit",
+  "evidence_label": "sandbox-measured",
+  "family_means": {
+    "cpu_saturation": 1.0,
+    "network_function_interruption": 1.0,
+    "packet_impairment": 35.0
+  },
+  "fitted_scenario_ids": [
+    "cpu_saturation-workers-1-seed-101",
+    "network_function_interruption-hold_before_observation_ms-500-seed-101",
+    "packet_impairment-loss_pct-25-seed-101"
+  ],
+  "hypothesis_status": {
+    "H1": "not-supported",
+    "H2": "not-tested",
+    "H3": "not-tested"
+  },
+  "identification_error": "alternative-action effect is not identified; blockers: conditional_exchangeability, positivity, no_carryover",
+  "ood": {
+    "mae": 13.666666666666666,
+    "n": 3,
+    "rmse": 23.101226518664905
+  },
+  "passed": true,
+  "radio_evidence_label": "simulated",
+  "run_id": "20260824T053222Z-heldout-effects-v0",
+  "schema_version": 1,
+  "started_at": "2026-08-24T05:32:22.444612+00:00",
+  "test": {
+    "mae": 17.0,
+    "n": 3,
+    "rmse": 28.873286384938357
+  }
+}

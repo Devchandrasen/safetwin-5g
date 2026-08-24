@@ -19,3 +19,14 @@ The deterministic rule wins this feasibility benchmark. No learned model is
 promoted. Each split has only three scenarios, no harmful action was observed,
 alternative-action positivity is absent, and the action-first rollback proxy
 may contain order effects. These results do not establish H1, H2, or H3.
+
+## Held-out effect proxy v0
+
+Evidence: `evidence/benchmarks/20260824T053222Z-heldout-effects-v0`
+
+A family-mean paired-benefit estimator was fit only on the three training
+scenarios. It obtained test MAE 17.000 and OOD MAE 13.667, so it is not superior
+to the deterministic rule. The alternative-action ATE is null and marked
+`not-identified`; the report records exchangeability, positivity, and
+no-carry-over as blockers. H1 remains `not-supported` rather than failed or
+confirmed because dataset v0 cannot identify the target causal contrast.

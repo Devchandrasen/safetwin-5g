@@ -53,7 +53,9 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
 - [x] Define the causal graph and intervention assumptions
       (`config/causal_graph_v0.json`; alternative-action effect fails closed on
       exchangeability, positivity, and carry-over; 65 tests passed).
-- [ ] Estimate held-out action effects.
+- [x] Estimate held-out action effects under the identification gate
+      (`evidence/benchmarks/20260824T053222Z-heldout-effects-v0`; descriptive
+      proxy test MAE 17.000, OOD MAE 13.667; alternative-action ATE blocked).
 - [ ] Run leakage, calibration, and negative-control checks.
 
 ## Days 61–90 — Selective safety evaluation

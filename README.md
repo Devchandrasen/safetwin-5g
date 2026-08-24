@@ -100,6 +100,6 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 
 ## Immediate next gate
 
-Estimate held-out descriptive action effects under the causal identification
-gate; do not relabel them as identified alternative-action effects. No
-algorithmic result will be called a live-network result.
+Run leakage, calibration, and negative-control checks before any uncertainty or
+selective-safety evaluation. No algorithmic result will be called a live-network
+result.
