@@ -67,6 +67,7 @@ Validate an intervention log:
 config/                 Versioned action and safety policy
 docs/                   Research protocol and execution roadmap
 examples/               Valid, synthetic contract examples
+sandbox/                Official component locks and isolated 5G SA stack
 src/safetwin5g/         Contracts, safety gate, store, and CLI
 tests/                  Executable correctness checks
 PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
