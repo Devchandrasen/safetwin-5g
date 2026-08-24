@@ -47,6 +47,19 @@ class SafetyTests(unittest.TestCase):
         payload["action"]["kind"] = "delete_network"
         self.assertEqual(self.evaluate(payload).decision, Decision.REJECT)
 
+    def test_deterministic_runbook_still_requires_approval(self):
+        payload = valid_payload()
+        payload["decision_source"] = "deterministic-runbook"
+        payload["model_confidence"] = None
+        payload["ood_score"] = None
+        self.assertEqual(self.evaluate(payload).decision, Decision.REQUIRE_APPROVAL)
+
+    def test_sandbox_only_action_is_rejected_in_simulator(self):
+        payload = valid_payload()
+        payload["environment"] = "simulator"
+        payload["evidence_label"] = "simulated"
+        self.assertEqual(self.evaluate(payload).decision, Decision.REJECT)
+
 
 if __name__ == "__main__":
     unittest.main()

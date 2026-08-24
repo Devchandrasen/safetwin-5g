@@ -66,6 +66,20 @@ class SandboxConfigTests(unittest.TestCase):
         self.assertIn('"evidence_label": "simulated"', capture)
         self.assertIn("Not sandbox-measured under PROJECT_LOCK.md", capture)
 
+    def test_intervention_runner_is_sandbox_only_and_restores_clean_state(self):
+        runner = (ROOT / "sandbox" / "run_intervention.py").read_text(encoding="utf-8")
+        self.assertIn('UE = "safetwin5g-ue"', runner)
+        self.assertIn('"live_actuation_blocked": not policy.allow_live', runner)
+        self.assertIn('"rollback-reapply-fault"', runner)
+        self.assertIn('"final-cleanup"', runner)
+        self.assertIn('"evidence_label": "sandbox-measured"', runner)
+
+    def test_network_impairment_action_is_sandbox_only(self):
+        policy = json.loads((ROOT / "config" / "actions.json").read_text(encoding="utf-8"))
+        action = policy["actions"]["network_impairment_clear"]
+        self.assertTrue(action["sandbox_only"])
+        self.assertEqual(action["target_types"], ["ue_tunnel"])
+
     def test_baseline_capture_requires_registration_session_and_ping(self):
         capture = (ROOT / "sandbox" / "capture_evidence.py").read_text(
             encoding="utf-8"

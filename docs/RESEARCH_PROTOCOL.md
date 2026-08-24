@@ -15,7 +15,8 @@ One experimental unit is a versioned scenario containing:
 3. injected fault and injection timestamp;
 4. pre-action telemetry window;
 5. one candidate action and rollback plan;
-6. model confidence and distribution-shift score;
+6. decision source and, only for model decisions, confidence and
+   distribution-shift score;
 7. safety-gate decision;
 8. post-action telemetry window and observed outcome, if the action is applied.
 

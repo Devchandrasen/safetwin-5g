@@ -1,0 +1,117 @@
+{
+  "action": {
+    "estimated_risk": 0.05,
+    "kind": "network_impairment_clear",
+    "parameters": {
+      "qdisc": "fq_codel"
+    },
+    "reversible": true,
+    "rollback_plan": "docker exec safetwin5g-ue tc qdisc replace dev uesimtun0 root netem loss 100%",
+    "target": "safetwin5g-ue/uesimtun0",
+    "target_type": "ue_tunnel"
+  },
+  "approval": {
+    "approval_status": "approved",
+    "approval_type": "user-standing-sandbox-authorization",
+    "approved_by": "user",
+    "authorization_scope": {
+      "environment": "isolated-local-sandbox-only",
+      "fault": "100-percent packet loss on the simulated UE tunnel",
+      "final_cleanup": "restore fq_codel and verify user-plane recovery",
+      "remediation": "replace the fault qdisc with fq_codel",
+      "rollback": "reapply the exact netem loss qdisc and verify the fault"
+    },
+    "authorization_text": "Proceed through the entire SafeTwin-5G master backlog sequentially, one task at a time. Continue automatically through all locally executable Phase 1-5 work without waiting for routine confirmation, using safe reasonable defaults. Preserve the fail-closed safety policy: no unrestricted live actuation, mandatory approval and rollback for applied sandbox actions.",
+    "authorization_text_sha256": "97722807886a8ded311320da9454c2bb565ed3e044e6550bd3c75e4909fe205c",
+    "exclusions": [
+      "live actuation",
+      "private-5G hardware",
+      "operator systems",
+      "external systems"
+    ],
+    "recorded_at": "2026-08-24T04:56:20.049478+00:00",
+    "source_thread_id": "01a02a0d-ff7c-74e0-8a33-e92916f53731"
+  },
+  "claim_boundaries": {
+    "hardware": "not measured",
+    "intervention": "sandbox-measured",
+    "model_scores": "not applicable; deterministic runbook",
+    "operator_validation": "not performed",
+    "radio_access": "simulated"
+  },
+  "decision_source": "deterministic-runbook",
+  "environment": "sandbox",
+  "evidence_label": "sandbox-measured",
+  "execution": {
+    "approved_action": {
+      "metrics": {
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "rtt_avg_ms": 7.168,
+        "rtt_max_ms": 11.356,
+        "rtt_mdev_ms": 2.674,
+        "rtt_min_ms": 1.226
+      },
+      "started_at": "2026-08-24T04:56:26.746579+00:00"
+    },
+    "fault": {
+      "metrics": {
+        "packet_loss_pct": 100.0,
+        "packets_received": 0.0,
+        "packets_transmitted": 5.0
+      },
+      "started_at": "2026-08-24T04:56:23.612289+00:00"
+    },
+    "final_cleanup": {
+      "metrics": {
+        "packet_loss_pct": 0.0,
+        "packets_received": 10.0,
+        "packets_transmitted": 10.0,
+        "rtt_avg_ms": 6.765,
+        "rtt_max_ms": 15.68,
+        "rtt_mdev_ms": 3.413,
+        "rtt_min_ms": 2.923
+      },
+      "started_at": "2026-08-24T04:56:33.165740+00:00"
+    },
+    "rollback": {
+      "metrics": {
+        "packet_loss_pct": 100.0,
+        "packets_received": 0.0,
+        "packets_transmitted": 5.0
+      },
+      "started_at": "2026-08-24T04:56:29.953249+00:00"
+    }
+  },
+  "expected_effects": {
+    "packet_loss_pct_delta": -100.0
+  },
+  "fault_type": "ue_tunnel_packet_loss_100pct",
+  "model_confidence": null,
+  "observed_at": "2026-08-24T04:56:23.612289+00:00",
+  "ood_score": null,
+  "post_metrics": {
+    "packet_loss_pct": 0.0,
+    "packets_received": 10.0,
+    "packets_transmitted": 10.0,
+    "rtt_avg_ms": 7.168,
+    "rtt_max_ms": 11.356,
+    "rtt_mdev_ms": 2.674,
+    "rtt_min_ms": 1.226
+  },
+  "pre_metrics": {
+    "packet_loss_pct": 100.0,
+    "packets_received": 0.0,
+    "packets_transmitted": 5.0
+  },
+  "record_id": "20260824T045620Z-intervention",
+  "safety_evaluation": {
+    "decision": "require-human-approval",
+    "policy_version": "phase0-v1",
+    "reasons": [
+      "eligible non-live proposal; explicit human approval is still mandatory"
+    ]
+  },
+  "scenario_id": "packet-loss-ue-tunnel-100pct-seed-0001"
+}

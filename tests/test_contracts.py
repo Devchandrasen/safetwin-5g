@@ -21,6 +21,7 @@ def valid_payload():
             "rollback_plan": "Restore one replica.",
             "estimated_risk": 0.2,
         },
+        "decision_source": "model",
         "model_confidence": 0.9,
         "ood_score": 0.1,
         "expected_effects": {"latency_ms_delta": -30.0},
@@ -57,6 +58,22 @@ class ContractTests(unittest.TestCase):
         payload = valid_payload()
         payload["environment"] = "fixture"
         with self.assertRaisesRegex(ValueError, "incompatible"):
+            InterventionRecord.from_dict(payload)
+
+    def test_deterministic_runbook_does_not_claim_model_scores(self):
+        payload = valid_payload()
+        payload["decision_source"] = "deterministic-runbook"
+        payload["model_confidence"] = None
+        payload["ood_score"] = None
+        record = InterventionRecord.from_dict(payload)
+        self.assertIsNone(record.model_confidence)
+        self.assertIsNone(record.ood_score)
+
+    def test_non_model_source_rejects_fabricated_confidence(self):
+        payload = valid_payload()
+        payload["decision_source"] = "deterministic-runbook"
+        payload["ood_score"] = None
+        with self.assertRaisesRegex(ValueError, "must not claim"):
             InterventionRecord.from_dict(payload)
 
 

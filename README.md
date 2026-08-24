@@ -25,10 +25,11 @@ Implemented on day one:
 The official-tag Open5GS/UERANSIM source builds now run with MongoDB and
 Prometheus on an internal Compose network. A simulated UE registered and
 created PDU Session ID 1, and the first hash-manifested stack capture passed.
-The clean baseline also passed with 20/20 user-plane packets returned. This
-does **not** yet satisfy the project's `sandbox-measured` claim gate: the
-approved fault/action/rollback record is still pending. Fixture, simulation,
-sandbox, hardware, and operator results remain strictly separated.
+The clean baseline passed with 20/20 user-plane packets returned. A separately
+approved deterministic runbook then measured 0% baseline loss, 100% controlled
+loss, 0% after remediation, 100% after rollback, and 0% after final cleanup.
+That intervention record passes the `sandbox-measured` gate; its radio remains
+`simulated`, and it is neither hardware-measured nor operator-validated.
 
 ## Setup
 
@@ -52,6 +53,7 @@ Build, start, and capture the isolated software stack:
 .\sandbox\run.ps1 build
 .\sandbox\run.ps1 up
 .\sandbox\run.ps1 capture-stack
+.\sandbox\run.ps1 intervention
 ```
 
 See [docs/SANDBOX.md](docs/SANDBOX.md) for boundaries, exact checks, evidence
@@ -90,5 +92,6 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 
 ## Immediate next gate
 
-Run one explicitly approved, reversible sandbox fault/action/rollback
-experiment. No algorithmic result will be called a live-network result.
+Audit the intervention bundle's configuration, commands, telemetry, timestamps,
+and hashes, then freeze the first intervention-dataset schema. No algorithmic
+result will be called a live-network result.

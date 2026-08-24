@@ -6,7 +6,9 @@ This is an isolated software 5G Standalone experiment. UERANSIM emulates the
 radio interface; there is no RF transmission, private-5G hardware, operator
 network, or unrestricted live actuation. Before the approved fault/action/
 rollback gate passes, captures are labelled `simulated` even though container
-and telemetry observations come from the running local sandbox.
+and telemetry observations come from the running local sandbox. The passing
+intervention bundle labels only the measured intervention loop
+`sandbox-measured`; its UERANSIM radio remains `simulated`.
 
 ## Locked topology
 
@@ -41,6 +43,7 @@ state plus a 20-packet measurement:
 ```powershell
 .\sandbox\run.ps1 baseline
 .\sandbox\run.ps1 capture-baseline
+.\sandbox\run.ps1 intervention
 ```
 
 Stop the containers without deleting the named MongoDB and Prometheus volumes:
@@ -66,6 +69,14 @@ reported `RM-REGISTERED`, normal service, and an active PDU Session 1 at
 min/average/max/mdev of 1.004/6.107/10.475/2.425 ms. These values describe this
 single local software run and are not hardware or operator measurements.
 
+The `20260824T045620Z-intervention` bundle passed all ten intervention checks.
+On the simulated UE tunnel, the deterministic runbook measured 0% baseline
+packet loss, 100% loss after the controlled `netem` fault, 0% after the
+approved `fq_codel` remediation, 100% after rollback re-applied the fault, and
+0% after final cleanup. Prometheus' AMF, SMF, and UPF targets remained healthy
+at every stage. The record deliberately leaves model confidence and OOD score
+null because no learned model selected this action.
+
 Run the independent captured-file check against a bundle:
 
 ```powershell
@@ -82,7 +93,7 @@ failure. See `docs/COMPONENT_PINS.md` for the upstream issue link.
 
 - This result does not validate RF, hardware timing, operator procedures, or
   production security.
-- A successful attach/PDU session is not an action-effect experiment.
-- The official `sandbox-measured` project gate remains closed until a fault,
-  approved reversible action, observed outcome, and verified rollback are
-  captured in one intervention record.
+- This single deterministic intervention is not evidence for H1, H2, or H3 and
+  does not establish a causal-model advantage.
+- The measured loop does not validate RF, hardware timing, operator procedures,
+  or live-network actuation.

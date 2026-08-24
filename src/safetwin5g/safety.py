@@ -64,6 +64,8 @@ class SafetyPolicy:
 
         if record.environment == "live" and not self.allow_live:
             reasons.append("live actuation is blocked by the current project phase")
+        if action_policy.get("sandbox_only") and record.environment != "sandbox":
+            reasons.append(f"action {action.kind} is restricted to the sandbox")
         if not action.reversible:
             reasons.append("irreversible actions are blocked")
         if not action.rollback_plan:
@@ -75,15 +77,18 @@ class SafetyPolicy:
         if reasons:
             return SafetyEvaluation(Decision.REJECT, tuple(reasons), self.policy_version)
 
-        uncertainty: list[str] = []
-        if record.model_confidence < self.min_confidence:
-            uncertainty.append(
-                f"model confidence {record.model_confidence:.3f} is below {self.min_confidence:.3f}"
-            )
-        if record.ood_score > self.max_ood:
-            uncertainty.append(f"OOD score {record.ood_score:.3f} exceeds {self.max_ood:.3f}")
-        if uncertainty:
-            return SafetyEvaluation(Decision.ABSTAIN, tuple(uncertainty), self.policy_version)
+        if record.decision_source == "model":
+            assert record.model_confidence is not None
+            assert record.ood_score is not None
+            uncertainty: list[str] = []
+            if record.model_confidence < self.min_confidence:
+                uncertainty.append(
+                    f"model confidence {record.model_confidence:.3f} is below {self.min_confidence:.3f}"
+                )
+            if record.ood_score > self.max_ood:
+                uncertainty.append(f"OOD score {record.ood_score:.3f} exceeds {self.max_ood:.3f}")
+            if uncertainty:
+                return SafetyEvaluation(Decision.ABSTAIN, tuple(uncertainty), self.policy_version)
 
         return self._result(
             Decision.REQUIRE_APPROVAL,

@@ -16,6 +16,7 @@ EVIDENCE_LABELS = {
     "operator-validated",
 }
 ENVIRONMENTS = {"fixture", "simulator", "sandbox", "live"}
+DECISION_SOURCES = {"model", "deterministic-runbook", "human"}
 ENVIRONMENT_EVIDENCE = {
     "fixture": {"fixture"},
     "simulator": {"simulated"},
@@ -112,8 +113,9 @@ class InterventionRecord:
     fault_type: str
     pre_metrics: dict[str, float]
     action: ActionProposal
-    model_confidence: float
-    ood_score: float
+    decision_source: str
+    model_confidence: float | None
+    ood_score: float | None
     expected_effects: dict[str, float]
     post_metrics: dict[str, float] | None
     evidence_label: str
@@ -136,6 +138,23 @@ class InterventionRecord:
             )
         post_payload = payload.get("post_metrics")
         post_metrics = None if post_payload is None else _finite_metrics(post_payload, "post_metrics")
+        decision_source = _required_text(
+            payload.get("decision_source", "model"), "decision_source"
+        )
+        if decision_source not in DECISION_SOURCES:
+            raise ValueError(f"decision_source must be one of {sorted(DECISION_SOURCES)}")
+        if decision_source == "model":
+            model_confidence = _bounded_probability(
+                payload.get("model_confidence"), "model_confidence"
+            )
+            ood_score = _bounded_probability(payload.get("ood_score"), "ood_score")
+        else:
+            if payload.get("model_confidence") is not None or payload.get("ood_score") is not None:
+                raise ValueError(
+                    "non-model decisions must not claim model_confidence or ood_score"
+                )
+            model_confidence = None
+            ood_score = None
         return cls(
             record_id=_required_text(payload.get("record_id"), "record_id"),
             scenario_id=_required_text(payload.get("scenario_id"), "scenario_id"),
@@ -144,8 +163,9 @@ class InterventionRecord:
             fault_type=_required_text(payload.get("fault_type"), "fault_type"),
             pre_metrics=_finite_metrics(payload.get("pre_metrics"), "pre_metrics"),
             action=ActionProposal.from_dict(payload.get("action")),
-            model_confidence=_bounded_probability(payload.get("model_confidence"), "model_confidence"),
-            ood_score=_bounded_probability(payload.get("ood_score"), "ood_score"),
+            decision_source=decision_source,
+            model_confidence=model_confidence,
+            ood_score=ood_score,
             expected_effects=_finite_metrics(payload.get("expected_effects"), "expected_effects"),
             post_metrics=post_metrics,
             evidence_label=evidence_label,

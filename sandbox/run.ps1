@@ -1,6 +1,6 @@
 param(
     [Parameter(Position = 0)]
-    [ValidateSet("build", "up", "down", "status", "logs", "baseline", "capture-stack", "capture-baseline")]
+    [ValidateSet("build", "up", "down", "status", "logs", "baseline", "capture-stack", "capture-baseline", "intervention")]
     [string] $Command = "status"
 )
 
@@ -39,6 +39,10 @@ switch ($Command) {
     "capture-baseline" {
         & python (Join-Path $sandboxRoot "capture_evidence.py") --stage baseline
         if ($LASTEXITCODE -ne 0) { throw "baseline evidence capture failed" }
+    }
+    "intervention" {
+        & python (Join-Path $sandboxRoot "run_intervention.py")
+        if ($LASTEXITCODE -ne 0) { throw "sandbox intervention failed" }
     }
     "baseline" {
         & docker exec safetwin5g-ue ip -brief address show uesimtun0

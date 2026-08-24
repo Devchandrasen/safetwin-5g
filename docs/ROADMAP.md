@@ -19,7 +19,9 @@
       (`evidence/sandbox/20260824T044704Z-stack`; `simulated`, pre-intervention).
 - [x] Capture a clean baseline attach/session trace
       (`evidence/sandbox/20260824T045006Z-baseline`; `simulated`, 20/20 pings).
-- [ ] Inject one reversible fault and execute one approved rollback.
+- [x] Inject one reversible fault and execute one approved rollback
+      (`evidence/sandbox/20260824T045620Z-intervention`; `sandbox-measured`
+      intervention, `simulated` radio).
 - [ ] Save configuration, commands, telemetry, timestamps, and hashes.
 
 **Exit criterion:** one replayable `sandbox-measured` intervention record with a
