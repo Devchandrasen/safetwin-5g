@@ -16,6 +16,14 @@ decision source is
 `evidence/benchmarks/20260824T054718Z-benchmark-report-v0` in the repository
 root. The dashboard reports its radio evidence separately as `simulated`.
 
+Read-only machine endpoints:
+
+- `GET /api/status`
+- `GET /api/proposals`
+
+The evidence snapshot is generated under `app/data/status.json` by
+`../tools/export_product_snapshot.py`. No mutation or actuation route exists.
+
 Production verification:
 
 ```powershell

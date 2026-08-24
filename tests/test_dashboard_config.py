@@ -43,6 +43,29 @@ class DashboardConfigTests(unittest.TestCase):
         self.assertIsNone(hosting["d1"])
         self.assertIsNone(hosting["r2"])
 
+    def test_machine_snapshot_is_fail_closed_and_hash_linked(self):
+        snapshot = json.loads(
+            (DASHBOARD / "app" / "data" / "status.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(snapshot["overall_decision"]["model_promotion"], "no-go")
+        self.assertFalse(snapshot["safety_lock"]["allow_live_actuation"])
+        audit = snapshot["proposal_audit"]
+        self.assertEqual(audit["proposal_count"], 6)
+        self.assertEqual(audit["abstain_count"], 6)
+        self.assertEqual(audit["applied_action_count"], 0)
+        self.assertTrue(all(record["decision"] == "abstain" for record in audit["records"]))
+        self.assertTrue(all(record["execution_status"] == "not-applied" for record in audit["records"]))
+        self.assertTrue(all(len(value) == 64 for value in snapshot["source_sha256"].values()))
+
+    def test_api_routes_are_get_only(self):
+        for name in ("status", "proposals"):
+            route = (DASHBOARD / "app" / "api" / name / "route.ts").read_text(
+                encoding="utf-8"
+            )
+            self.assertIn("function GET", route)
+            for method in ("POST", "PUT", "PATCH", "DELETE"):
+                self.assertNotIn(f"function {method}", route)
+
 
 if __name__ == "__main__":
     unittest.main()

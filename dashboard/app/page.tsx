@@ -1,3 +1,5 @@
+import snapshot from './data/status.json';
+
 const hypotheses = [
   {
     id: 'H1', status: 'Not supported', endpoint: 'Effect estimation', result: 'Rule MAE 3.333',
@@ -83,6 +85,41 @@ export default function Home() {
                 <p className="mt-8 text-xs uppercase tracking-[0.15em] text-[#778da2]">{item.endpoint}</p>
                 <p className="mt-2 text-2xl font-semibold tracking-[-0.025em]">{item.result}</p>
                 <p className="mt-4 text-sm leading-6 text-[#91a5b7]">{item.detail}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="border-t border-white/10 py-10">
+          <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#5ce1e6]">Proposal audit</p>
+              <h2 className="mt-2 text-2xl font-semibold tracking-[-0.03em]">Every held-out proposal stopped safely.</h2>
+            </div>
+            <div className="flex gap-2 font-mono text-[10px]">
+              <a className="rounded-full border border-white/10 px-3 py-2 text-[#8da2b6] hover:border-[#5ce1e6]/40 hover:text-[#5ce1e6]" href="/api/status">GET /api/status</a>
+              <a className="rounded-full border border-white/10 px-3 py-2 text-[#8da2b6] hover:border-[#5ce1e6]/40 hover:text-[#5ce1e6]" href="/api/proposals">GET /api/proposals</a>
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-3xl border border-white/10">
+            <div className="hidden grid-cols-[0.7fr_1.2fr_1.1fr_0.7fr] gap-4 border-b border-white/10 bg-white/[0.04] px-5 py-3 font-mono text-[9px] uppercase tracking-[0.14em] text-[#60768a] md:grid">
+              <span>Split / fault</span><span>Candidate action</span><span>Gate reason</span><span>Outcome</span>
+            </div>
+            {snapshot.proposal_audit.records.map((record) => (
+              <article key={record.record_id} className="grid gap-3 border-b border-white/[0.07] px-5 py-4 last:border-b-0 md:grid-cols-[0.7fr_1.2fr_1.1fr_0.7fr] md:items-center md:gap-4">
+                <div>
+                  <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-[#5ce1e6]">{record.split}</p>
+                  <p className="mt-1 text-xs text-[#aab9c7]">{record.fault_type.replaceAll('_', ' ')}</p>
+                </div>
+                <div>
+                  <p className="font-mono text-xs text-[#edf5f5]">{record.action_kind}</p>
+                  <p className="mt-1 truncate font-mono text-[9px] text-[#60768a]" title={record.record_id}>{record.record_id}</p>
+                </div>
+                <p className="text-xs leading-5 text-[#8da2b6]">{record.reasons.join(' · ')}</p>
+                <div className="flex items-center justify-between gap-3 md:block">
+                  <span className="rounded-full border border-[#b8f34a]/25 bg-[#b8f34a]/[0.06] px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.12em] text-[#c9f879]">{record.decision}</span>
+                  <p className="mt-2 font-mono text-[9px] text-[#60768a]">{record.execution_status}</p>
+                </div>
               </article>
             ))}
           </div>

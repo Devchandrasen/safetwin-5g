@@ -87,8 +87,10 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
       (`evidence/verification/20260824T060413Z-local-dashboard-v0`; production
       build and lint passed, full dependency audit found zero vulnerabilities,
       and 92 repository tests passed).
-- [ ] Add a machine-readable status API and proposal audit view with no
-      actuation endpoint.
+- [x] Add a machine-readable status API and proposal audit view with no
+      actuation endpoint
+      (`evidence/verification/20260824T061147Z-product-status-api-v0`; snapshot
+      drift check, build, lint, zero-vulnerability audit, and 94 tests passed).
 - [ ] Run end-to-end local product QA and preserve the smoke-test evidence.
 
 ## External-authority gates

@@ -18,6 +18,8 @@ function Invoke-Checked {
     }
 }
 
+Invoke-Checked $python tools/export_product_snapshot.py --check
+
 Push-Location -LiteralPath $dashboard
 try {
     Invoke-Checked npm ci

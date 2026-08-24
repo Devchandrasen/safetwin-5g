@@ -1,0 +1,207 @@
+{
+  "api_version": "v1",
+  "claim_boundary": "Consolidated feasibility decision derived from versioned software-sandbox evidence. Radio remains simulated; no hardware measurement, operator validation, model promotion, or live-network conclusion is claimed.",
+  "diagnostic_gate": {
+    "calibration_status": "unbounded-insufficient-calibration",
+    "leakage_checks_passed": true,
+    "scientific_readiness_gate_passed": false
+  },
+  "evidence_label": "sandbox-measured",
+  "generated_from_completed_at": "2026-08-24T05:47:18.975882+00:00",
+  "hypotheses": {
+    "H1": {
+      "decision": "no-go-for-superiority-claim",
+      "observed": {
+        "alternative_action_ate": null,
+        "alternative_action_status": "not-identified",
+        "deterministic_rule_test_mae": 3.3333333333333335,
+        "heldout_proxy_test_mae": 17.0,
+        "tabular_ridge_test_mae": 17.875563186946433,
+        "temporal_persistence_test_mae": 29.333333333333332
+      },
+      "primary_endpoint": "action-effect prediction error",
+      "reasons": [
+        "The deterministic rule is the held-out MAE winner.",
+        "The held-out effect estimator is not superior to the rule.",
+        "Exchangeability, positivity, and no-carry-over are not established, so the alternative-action effect is not identified.",
+        "The exact small-sample permutation control does not support learned-model superiority."
+      ],
+      "status": "not-supported"
+    },
+    "H2": {
+      "decision": "no-go-for-harm-reduction-claim",
+      "observed": {
+        "abstention_rate": 1.0,
+        "always_act_harmful_rate": 0.0,
+        "coverage": 0.0,
+        "risk_coverage_auc": null,
+        "selective_harmful_rate": null
+      },
+      "primary_endpoint": "harmful remediation rate at declared coverage",
+      "reasons": [
+        "The 90% conformal interval is unbounded with three calibration scenarios.",
+        "Coverage is zero, so selective harmful-action risk and AURC are undefined.",
+        "No harmful action was observed, so harm reduction cannot be tested.",
+        "Both test and designated OOD rows are severity-shifted and are not distinguishable by the current design contract."
+      ],
+      "status": "not-supported"
+    },
+    "H3": {
+      "decision": "no-go-for-operational-value-claim",
+      "observed": {
+        "false_remediation_rate": null,
+        "mean_time_to_recovery_s": null,
+        "model_proposal_actions_applied": 0,
+        "sla_violation_duration_s": null
+      },
+      "primary_endpoint": "SLA duration, MTTR, rollback, and false-remediation rates",
+      "reasons": [
+        "Dataset v0 has no continuous SLA or sustained-recovery windows.",
+        "There are no no-fault scenarios for a false-remediation denominator.",
+        "The approved sandbox intervention used a deterministic runbook, not a twin-assisted comparative policy.",
+        "All held-out model proposals abstained and none was applied."
+      ],
+      "status": "not-tested"
+    }
+  },
+  "overall_decision": {
+    "H1_H2_H3_positive_claims": "no-go",
+    "autonomous_or_live_actuation": "no-go",
+    "local_sandbox_research": "go-with-constraints",
+    "model_promotion": "no-go"
+  },
+  "project": "SafeTwin-5G",
+  "proposal_audit": {
+    "abstain_count": 6,
+    "applied_action_count": 0,
+    "live_sentinel_reject_count": 6,
+    "proposal_count": 6,
+    "records": [
+      {
+        "action_kind": "cpu_stress_stop",
+        "decision": "abstain",
+        "evidence_label": "sandbox-measured",
+        "execution_status": "not-applied",
+        "fault_type": "cpu_saturation",
+        "human_approval_requested": false,
+        "live_sentinel_decision": "reject",
+        "model_confidence": null,
+        "ood_score": 1.0,
+        "reasons": [
+          "calibrated model confidence is unavailable",
+          "OOD score 1.000 exceeds 0.200"
+        ],
+        "record_id": "proposal-cpu_saturation-workers-2-seed-202",
+        "scenario_id": "cpu_saturation-workers-2-seed-202",
+        "split": "ood"
+      },
+      {
+        "action_kind": "nf_process_resume",
+        "decision": "abstain",
+        "evidence_label": "sandbox-measured",
+        "execution_status": "not-applied",
+        "fault_type": "network_function_interruption",
+        "human_approval_requested": false,
+        "live_sentinel_decision": "reject",
+        "model_confidence": null,
+        "ood_score": 1.0,
+        "reasons": [
+          "calibrated model confidence is unavailable",
+          "OOD score 1.000 exceeds 0.200"
+        ],
+        "record_id": "proposal-network_function_interruption-hold_before_observation_ms-1500-seed-202",
+        "scenario_id": "network_function_interruption-hold_before_observation_ms-1500-seed-202",
+        "split": "ood"
+      },
+      {
+        "action_kind": "network_impairment_clear",
+        "decision": "abstain",
+        "evidence_label": "sandbox-measured",
+        "execution_status": "not-applied",
+        "fault_type": "packet_impairment",
+        "human_approval_requested": false,
+        "live_sentinel_decision": "reject",
+        "model_confidence": null,
+        "ood_score": 1.0,
+        "reasons": [
+          "calibrated model confidence is unavailable",
+          "OOD score 1.000 exceeds 0.200"
+        ],
+        "record_id": "proposal-packet_impairment-loss_pct-75-seed-202",
+        "scenario_id": "packet_impairment-loss_pct-75-seed-202",
+        "split": "ood"
+      },
+      {
+        "action_kind": "cpu_stress_stop",
+        "decision": "abstain",
+        "evidence_label": "sandbox-measured",
+        "execution_status": "not-applied",
+        "fault_type": "cpu_saturation",
+        "human_approval_requested": false,
+        "live_sentinel_decision": "reject",
+        "model_confidence": null,
+        "ood_score": 1.0,
+        "reasons": [
+          "calibrated model confidence is unavailable",
+          "OOD score 1.000 exceeds 0.200"
+        ],
+        "record_id": "proposal-cpu_saturation-workers-2-seed-101",
+        "scenario_id": "cpu_saturation-workers-2-seed-101",
+        "split": "test"
+      },
+      {
+        "action_kind": "nf_process_resume",
+        "decision": "abstain",
+        "evidence_label": "sandbox-measured",
+        "execution_status": "not-applied",
+        "fault_type": "network_function_interruption",
+        "human_approval_requested": false,
+        "live_sentinel_decision": "reject",
+        "model_confidence": null,
+        "ood_score": 1.0,
+        "reasons": [
+          "calibrated model confidence is unavailable",
+          "OOD score 1.000 exceeds 0.200"
+        ],
+        "record_id": "proposal-network_function_interruption-hold_before_observation_ms-1500-seed-101",
+        "scenario_id": "network_function_interruption-hold_before_observation_ms-1500-seed-101",
+        "split": "test"
+      },
+      {
+        "action_kind": "network_impairment_clear",
+        "decision": "abstain",
+        "evidence_label": "sandbox-measured",
+        "execution_status": "not-applied",
+        "fault_type": "packet_impairment",
+        "human_approval_requested": false,
+        "live_sentinel_decision": "reject",
+        "model_confidence": null,
+        "ood_score": 1.0,
+        "reasons": [
+          "calibrated model confidence is unavailable",
+          "OOD score 1.000 exceeds 0.200"
+        ],
+        "record_id": "proposal-packet_impairment-loss_pct-75-seed-101",
+        "scenario_id": "packet_impairment-loss_pct-75-seed-101",
+        "split": "test"
+      }
+    ]
+  },
+  "radio_evidence_label": "simulated",
+  "research_identity": "Trustworthy Autonomous Networks",
+  "safety_lock": {
+    "allow_live_actuation": false,
+    "heldout_proposals_abstained": 6,
+    "heldout_proposals_applied": 0,
+    "require_human_approval": true
+  },
+  "schema_version": 1,
+  "source_run_id": "20260824T054718Z-benchmark-report-v0",
+  "source_sha256": {
+    "benchmark_manifest": "2e09dd8dff296cc8f17b1b431eee58599f8ff2dd3792426014e7f15a086f8059",
+    "benchmark_report": "9c7e8b8e0e95a9835c370ddcc159d89061f3e361beec244b597a254d9b6c7e50",
+    "dataset_manifest": "da3a4e2debe143d6b9e11733f4cbc79ae1401470471cadfbff5f739ea4899e59",
+    "safety_manifest": "6f6d0ffd8c766ea65a4072162d7d3b68d56b1fefc6dcb5004b87c75a05550149",
+    "safety_proposals": "139f5e831df0de14326e56d875c52a826b85520475a307696639203def2c6e88"
+  }
+}

@@ -26,3 +26,21 @@ wrapper encoding defect was fixed before the authoritative rerun.
 
 The next product item may expose machine-readable status and proposal audit
 data, but it must not add an actuation endpoint.
+
+## Status API and proposal audit v0
+
+The dashboard exports a deterministic snapshot from verified benchmark,
+safety-integration, and dataset manifests. Regenerate or check it with
+`tools/export_product_snapshot.py`; source hashes travel with the snapshot.
+
+Read-only routes:
+
+- `GET /api/status` returns hypothesis, safety-lock, diagnostic, and proposal
+  summary state without the per-proposal records;
+- `GET /api/proposals` returns all six held-out proposal audit records.
+
+Only `GET` handlers exist. The page renders the six records with split, fault,
+candidate action, gate reason, decision, and execution status. All six remain
+`abstain` and `not-applied`; approval was not requested and the live sentinel
+was rejected. Verification is captured at
+`evidence/verification/20260824T061147Z-product-status-api-v0`.
