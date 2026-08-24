@@ -71,6 +71,14 @@ Validate an intervention log:
 .\run.ps1 validate-log .\examples\interventions.example.jsonl
 ```
 
+Adapt a measured evidence bundle to lossless long-form telemetry:
+
+```powershell
+.\run.ps1 adapt-telemetry `
+  .\evidence\sandbox\20260824T045620Z-intervention `
+  .\artifacts\telemetry.jsonl
+```
+
 ## Research question
 
 > Can an intervention-trained network digital twin estimate the effects of
@@ -92,6 +100,5 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 
 ## Immediate next gate
 
-Implement telemetry adapters and the scenario runner, then freeze the first
-intervention-dataset schema. No algorithmic result will be called a live-network
-result.
+Define canonical KPI names and units before executing the multi-family scenario
+matrix. No algorithmic result will be called a live-network result.

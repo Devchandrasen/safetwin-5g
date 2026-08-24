@@ -31,7 +31,9 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
 
 ## Days 15–30 — Intervention dataset v0
 
-- [ ] Implement telemetry adapters and scenario runner.
+- [x] Implement telemetry adapters and scenario runner
+      (`evidence/verification/20260824T050325Z-telemetry-scenario-runner`; 43
+      tests passed, 377 measured-bundle rows replayed).
 - [ ] Define canonical KPIs and units.
 - [ ] Execute at least three fault families at multiple severities and seeds.
 - [ ] Freeze dataset manifest and data-quality report.

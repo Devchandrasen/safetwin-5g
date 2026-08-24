@@ -12,6 +12,7 @@ import sys
 from .contracts import InterventionRecord
 from .safety import SafetyPolicy
 from .store import InterventionStore
+from .telemetry import EvidenceTelemetryAdapter
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -80,6 +81,26 @@ def validate_log(path: Path) -> int:
     return 0
 
 
+def adapt_telemetry(bundle: Path, output: Path) -> int:
+    adapter = EvidenceTelemetryAdapter(bundle)
+    rows = adapter.rows()
+    adapter.write_jsonl(rows, output)
+    print(
+        json.dumps(
+            {
+                "bundle": str(bundle),
+                "output": str(output),
+                "rows": len(rows),
+                "stages": sorted({row.stage for row in rows}),
+                "sources": sorted({row.source for row in rows}),
+                "evidence_labels": sorted({row.evidence_label for row in rows}),
+            },
+            indent=2,
+        )
+    )
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="safetwin", description="SafeTwin-5G research CLI")
     commands = parser.add_subparsers(dest="command", required=True)
@@ -87,6 +108,11 @@ def build_parser() -> argparse.ArgumentParser:
     commands.add_parser("demo", help="evaluate the bundled safe-action example")
     validate = commands.add_parser("validate-log", help="validate a JSONL intervention log")
     validate.add_argument("path", type=Path)
+    adapt = commands.add_parser(
+        "adapt-telemetry", help="convert a measured evidence bundle to long-form JSONL"
+    )
+    adapt.add_argument("bundle", type=Path)
+    adapt.add_argument("output", type=Path)
     return parser
 
 
@@ -98,4 +124,6 @@ def main(argv: list[str] | None = None) -> int:
         return demo()
     if args.command == "validate-log":
         return validate_log(args.path)
+    if args.command == "adapt-telemetry":
+        return adapt_telemetry(args.bundle, args.output)
     raise AssertionError(f"unhandled command: {args.command}")
