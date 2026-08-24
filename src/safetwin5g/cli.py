@@ -49,7 +49,8 @@ def doctor() -> int:
         "docker_cli": docker_cli,
         "docker_engine_running": engine_ok,
         "docker_engine_detail": engine_detail,
-        "evidence_ceiling": "sandbox-measured" if engine_ok else "fixture",
+        "docker_prerequisite": "passed" if engine_ok else "blocked",
+        "current_evidence_label": "fixture",
         "next_gate": (
             "bring up pinned Open5GS/UERANSIM/Prometheus sandbox"
             if engine_ok
