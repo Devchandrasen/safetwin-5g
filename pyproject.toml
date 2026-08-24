@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "safetwin-5g"
+version = "0.1.0"
+description = "Causal and uncertainty-aware safety foundation for private-5G network digital twins"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Proprietary research prototype"}
+authors = [{name = "SafeTwin-5G Research Project"}]
+dependencies = []
+
+[project.scripts]
+safetwin = "safetwin5g.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

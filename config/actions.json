@@ -1,0 +1,31 @@
+{
+  "policy_version": "phase0-v1",
+  "phase": 0,
+  "allow_live_actuation": false,
+  "require_human_approval": true,
+  "min_model_confidence": 0.8,
+  "max_ood_score": 0.2,
+  "max_estimated_risk": 0.35,
+  "actions": {
+    "nf_restart": {
+      "target_types": ["amf", "smf", "upf", "pcf"],
+      "sandbox_only": true
+    },
+    "nf_scale": {
+      "target_types": ["amf", "smf", "upf"],
+      "sandbox_only": true
+    },
+    "upf_reroute": {
+      "target_types": ["upf"],
+      "sandbox_only": true
+    },
+    "qos_policy_adjustment": {
+      "target_types": ["pcf", "slice"],
+      "sandbox_only": true
+    },
+    "admission_throttle": {
+      "target_types": ["amf", "slice"],
+      "sandbox_only": true
+    }
+  }
+}
