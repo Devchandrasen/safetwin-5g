@@ -1,0 +1,739 @@
+{
+  "action_proposal": {
+    "estimated_risk": 0.25,
+    "kind": "network_impairment_apply",
+    "parameters": {
+      "loss_pct": 25.0
+    },
+    "reversible": true,
+    "rollback_plan": "Replace netem with fq_codel and verify zero configured loss.",
+    "target": "safetwin5g-ue/uesimtun0",
+    "target_type": "ue_tunnel"
+  },
+  "action_step_completed": true,
+  "approval_id": "e7fe84f14b49546a8ad784498d25313a5bee8eceb707a76d10b19b4e050262e5",
+  "checks": {
+    "approval_recorded": true,
+    "assigned_action_state_observed": true,
+    "baseline_clean": true,
+    "clean_reset_recorded": true,
+    "cleanup_completed": true,
+    "fault_state_observed": true,
+    "four_required_windows_present": true,
+    "recovery_clean": true,
+    "window_sample_counts_match": true
+  },
+  "claim_boundaries": {
+    "hardware": "not measured",
+    "intervention": "sandbox-measured",
+    "model_result": "not applicable during data collection",
+    "operator_validation": "not performed",
+    "radio_access": "simulated"
+  },
+  "clean_reset_completed": true,
+  "cleanup_completed": true,
+  "cleanup_verified": true,
+  "completed_at": "2026-08-24T08:21:50.859922+00:00",
+  "control_events": [
+    {
+      "duration_ms": 11.266,
+      "event": "seeded-pre-fault-jitter",
+      "seed": 303,
+      "started_at": "2026-08-24T08:21:18.509419+00:00"
+    }
+  ],
+  "errors": [],
+  "fault_injection_completed": true,
+  "passed": true,
+  "safety_evaluation": {
+    "decision": "require-human-approval",
+    "policy_version": "phase0-v1",
+    "reasons": [
+      "eligible non-live proposal; explicit human approval is still mandatory"
+    ]
+  },
+  "schema_version": 1,
+  "started_at": "2026-08-24T08:21:09.719808+00:00",
+  "unit": {
+    "action_arm": "negative_control",
+    "action_kind": "unrelated_packet_impairment",
+    "fault_family": "network_function_interruption",
+    "randomization_key": "a008b8f1f5ed4b85e4d5cbb270e779d351ff9d64f4265cb4aea4f39830989be1",
+    "seed": 303,
+    "severity_name": "hold_ms",
+    "severity_value": 1000,
+    "split": "calibration",
+    "unit_id": "safetwin5g-phase6-v1-calibration-network_function_interruption-1000-negative_control-303",
+    "workload": "steady"
+  },
+  "windows": {
+    "baseline": {
+      "samples": [
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "core_container_cpu_pct": 0.08,
+            "packet_loss_pct": 0.0,
+            "packets_received": 5.0,
+            "packets_transmitted": 5.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 5.402,
+            "rtt_max_ms": 7.843,
+            "rtt_mdev_ms": 1.276,
+            "rtt_min_ms": 4.385,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-24T08:21:10.767594+00:00",
+          "sample_index": 1
+        },
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "core_container_cpu_pct": 2.78,
+            "packet_loss_pct": 0.0,
+            "packets_received": 5.0,
+            "packets_transmitted": 5.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 4.777,
+            "rtt_max_ms": 5.309,
+            "rtt_mdev_ms": 0.44,
+            "rtt_min_ms": 4.209,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-24T08:21:13.366434+00:00",
+          "sample_index": 2
+        },
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "core_container_cpu_pct": 0.18,
+            "packet_loss_pct": 0.0,
+            "packets_received": 5.0,
+            "packets_transmitted": 5.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 4.952,
+            "rtt_max_ms": 8.132,
+            "rtt_mdev_ms": 2.848,
+            "rtt_min_ms": 1.284,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-24T08:21:15.916124+00:00",
+          "sample_index": 3
+        }
+      ],
+      "summary": {
+        "metrics": {
+          "configured_packet_loss_pct": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.0,
+            "p75": 0.0,
+            "standard_deviation": 0.0
+          },
+          "core_container_cpu_pct": {
+            "maximum": 2.78,
+            "mean": 1.0133333333333332,
+            "median": 0.18,
+            "minimum": 0.08,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.13,
+            "p75": 1.48,
+            "standard_deviation": 1.2498888839501783
+          },
+          "packet_loss_pct": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.0,
+            "p75": 0.0,
+            "standard_deviation": 0.0
+          },
+          "packets_received": {
+            "maximum": 5.0,
+            "mean": 5.0,
+            "median": 5.0,
+            "minimum": 5.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 5.0,
+            "p75": 5.0,
+            "standard_deviation": 0.0
+          },
+          "packets_transmitted": {
+            "maximum": 5.0,
+            "mean": 5.0,
+            "median": 5.0,
+            "minimum": 5.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 5.0,
+            "p75": 5.0,
+            "standard_deviation": 0.0
+          },
+          "prometheus_targets_up_count": {
+            "maximum": 3.0,
+            "mean": 3.0,
+            "median": 3.0,
+            "minimum": 3.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 3.0,
+            "p75": 3.0,
+            "standard_deviation": 0.0
+          },
+          "rtt_avg_ms": {
+            "maximum": 5.402,
+            "mean": 5.043666666666667,
+            "median": 4.952,
+            "minimum": 4.777,
+            "missing": 0,
+            "n": 3,
+            "p25": 4.8645,
+            "p75": 5.177,
+            "standard_deviation": 0.2632594833155219
+          },
+          "rtt_max_ms": {
+            "maximum": 8.132,
+            "mean": 7.094666666666666,
+            "median": 7.843,
+            "minimum": 5.309,
+            "missing": 0,
+            "n": 3,
+            "p25": 6.5760000000000005,
+            "p75": 7.9875,
+            "standard_deviation": 1.26815728081689
+          },
+          "rtt_mdev_ms": {
+            "maximum": 2.848,
+            "mean": 1.5213333333333334,
+            "median": 1.276,
+            "minimum": 0.44,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.858,
+            "p75": 2.062,
+            "standard_deviation": 0.998250914794917
+          },
+          "rtt_min_ms": {
+            "maximum": 4.385,
+            "mean": 3.292666666666667,
+            "median": 4.209,
+            "minimum": 1.284,
+            "missing": 0,
+            "n": 3,
+            "p25": 2.7464999999999997,
+            "p75": 4.297,
+            "standard_deviation": 1.4221580627889274
+          },
+          "stress_workers_count": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.0,
+            "p75": 0.0,
+            "standard_deviation": 0.0
+          },
+          "upf_process_running": {
+            "maximum": 1.0,
+            "mean": 1.0,
+            "median": 1.0,
+            "minimum": 1.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 1.0,
+            "p75": 1.0,
+            "standard_deviation": 0.0
+          }
+        },
+        "sample_count": 3
+      }
+    },
+    "fault": {
+      "samples": [
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "core_container_cpu_pct": 0.11,
+            "packet_loss_pct": 100.0,
+            "packets_received": 0.0,
+            "packets_transmitted": 5.0,
+            "prometheus_targets_up_count": 2.0,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 0.0
+          },
+          "observed_at": "2026-08-24T08:21:19.782069+00:00",
+          "sample_index": 1
+        },
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "core_container_cpu_pct": 0.08,
+            "packet_loss_pct": 100.0,
+            "packets_received": 0.0,
+            "packets_transmitted": 5.0,
+            "prometheus_targets_up_count": 2.0,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 0.0
+          },
+          "observed_at": "2026-08-24T08:21:23.386061+00:00",
+          "sample_index": 2
+        },
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "core_container_cpu_pct": 3.12,
+            "packet_loss_pct": 100.0,
+            "packets_received": 0.0,
+            "packets_transmitted": 5.0,
+            "prometheus_targets_up_count": 2.0,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 0.0
+          },
+          "observed_at": "2026-08-24T08:21:26.947035+00:00",
+          "sample_index": 3
+        }
+      ],
+      "summary": {
+        "metrics": {
+          "configured_packet_loss_pct": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.0,
+            "p75": 0.0,
+            "standard_deviation": 0.0
+          },
+          "core_container_cpu_pct": {
+            "maximum": 3.12,
+            "mean": 1.1033333333333333,
+            "median": 0.11,
+            "minimum": 0.08,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.095,
+            "p75": 1.615,
+            "standard_deviation": 1.4260512691422502
+          },
+          "packet_loss_pct": {
+            "maximum": 100.0,
+            "mean": 100.0,
+            "median": 100.0,
+            "minimum": 100.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 100.0,
+            "p75": 100.0,
+            "standard_deviation": 0.0
+          },
+          "packets_received": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.0,
+            "p75": 0.0,
+            "standard_deviation": 0.0
+          },
+          "packets_transmitted": {
+            "maximum": 5.0,
+            "mean": 5.0,
+            "median": 5.0,
+            "minimum": 5.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 5.0,
+            "p75": 5.0,
+            "standard_deviation": 0.0
+          },
+          "prometheus_targets_up_count": {
+            "maximum": 2.0,
+            "mean": 2.0,
+            "median": 2.0,
+            "minimum": 2.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 2.0,
+            "p75": 2.0,
+            "standard_deviation": 0.0
+          },
+          "stress_workers_count": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.0,
+            "p75": 0.0,
+            "standard_deviation": 0.0
+          },
+          "upf_process_running": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.0,
+            "p75": 0.0,
+            "standard_deviation": 0.0
+          }
+        },
+        "sample_count": 3
+      }
+    },
+    "post_action": {
+      "samples": [
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 25.0,
+            "core_container_cpu_pct": 0.14,
+            "packet_loss_pct": 100.0,
+            "packets_received": 0.0,
+            "packets_transmitted": 5.0,
+            "prometheus_targets_up_count": 2.0,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 0.0
+          },
+          "observed_at": "2026-08-24T08:21:31.187515+00:00",
+          "sample_index": 1
+        },
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 25.0,
+            "core_container_cpu_pct": 0.24,
+            "packet_loss_pct": 100.0,
+            "packets_received": 0.0,
+            "packets_transmitted": 5.0,
+            "prometheus_targets_up_count": 2.0,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 0.0
+          },
+          "observed_at": "2026-08-24T08:21:34.757741+00:00",
+          "sample_index": 2
+        },
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 25.0,
+            "core_container_cpu_pct": 0.29,
+            "packet_loss_pct": 100.0,
+            "packets_received": 0.0,
+            "packets_transmitted": 5.0,
+            "prometheus_targets_up_count": 2.0,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 0.0
+          },
+          "observed_at": "2026-08-24T08:21:38.312470+00:00",
+          "sample_index": 3
+        }
+      ],
+      "summary": {
+        "metrics": {
+          "configured_packet_loss_pct": {
+            "maximum": 25.0,
+            "mean": 25.0,
+            "median": 25.0,
+            "minimum": 25.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 25.0,
+            "p75": 25.0,
+            "standard_deviation": 0.0
+          },
+          "core_container_cpu_pct": {
+            "maximum": 0.29,
+            "mean": 0.2233333333333333,
+            "median": 0.24,
+            "minimum": 0.14,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.19,
+            "p75": 0.265,
+            "standard_deviation": 0.062360956446232345
+          },
+          "packet_loss_pct": {
+            "maximum": 100.0,
+            "mean": 100.0,
+            "median": 100.0,
+            "minimum": 100.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 100.0,
+            "p75": 100.0,
+            "standard_deviation": 0.0
+          },
+          "packets_received": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.0,
+            "p75": 0.0,
+            "standard_deviation": 0.0
+          },
+          "packets_transmitted": {
+            "maximum": 5.0,
+            "mean": 5.0,
+            "median": 5.0,
+            "minimum": 5.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 5.0,
+            "p75": 5.0,
+            "standard_deviation": 0.0
+          },
+          "prometheus_targets_up_count": {
+            "maximum": 2.0,
+            "mean": 2.0,
+            "median": 2.0,
+            "minimum": 2.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 2.0,
+            "p75": 2.0,
+            "standard_deviation": 0.0
+          },
+          "stress_workers_count": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.0,
+            "p75": 0.0,
+            "standard_deviation": 0.0
+          },
+          "upf_process_running": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.0,
+            "p75": 0.0,
+            "standard_deviation": 0.0
+          }
+        },
+        "sample_count": 3
+      }
+    },
+    "recovery": {
+      "samples": [
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "core_container_cpu_pct": 0.07,
+            "packet_loss_pct": 0.0,
+            "packets_received": 5.0,
+            "packets_transmitted": 5.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 3.522,
+            "rtt_max_ms": 5.419,
+            "rtt_mdev_ms": 1.773,
+            "rtt_min_ms": 0.873,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-24T08:21:43.005981+00:00",
+          "sample_index": 1
+        },
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "core_container_cpu_pct": 0.2,
+            "packet_loss_pct": 0.0,
+            "packets_received": 5.0,
+            "packets_transmitted": 5.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 5.921,
+            "rtt_max_ms": 7.701,
+            "rtt_mdev_ms": 1.537,
+            "rtt_min_ms": 3.822,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-24T08:21:45.630868+00:00",
+          "sample_index": 2
+        },
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "core_container_cpu_pct": 2.9,
+            "packet_loss_pct": 0.0,
+            "packets_received": 5.0,
+            "packets_transmitted": 5.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 5.407,
+            "rtt_max_ms": 6.596,
+            "rtt_mdev_ms": 0.896,
+            "rtt_min_ms": 4.398,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-24T08:21:48.266104+00:00",
+          "sample_index": 3
+        }
+      ],
+      "summary": {
+        "metrics": {
+          "configured_packet_loss_pct": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.0,
+            "p75": 0.0,
+            "standard_deviation": 0.0
+          },
+          "core_container_cpu_pct": {
+            "maximum": 2.9,
+            "mean": 1.0566666666666666,
+            "median": 0.2,
+            "minimum": 0.07,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.135,
+            "p75": 1.55,
+            "standard_deviation": 1.30451353214735
+          },
+          "packet_loss_pct": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.0,
+            "p75": 0.0,
+            "standard_deviation": 0.0
+          },
+          "packets_received": {
+            "maximum": 5.0,
+            "mean": 5.0,
+            "median": 5.0,
+            "minimum": 5.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 5.0,
+            "p75": 5.0,
+            "standard_deviation": 0.0
+          },
+          "packets_transmitted": {
+            "maximum": 5.0,
+            "mean": 5.0,
+            "median": 5.0,
+            "minimum": 5.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 5.0,
+            "p75": 5.0,
+            "standard_deviation": 0.0
+          },
+          "prometheus_targets_up_count": {
+            "maximum": 3.0,
+            "mean": 3.0,
+            "median": 3.0,
+            "minimum": 3.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 3.0,
+            "p75": 3.0,
+            "standard_deviation": 0.0
+          },
+          "rtt_avg_ms": {
+            "maximum": 5.921,
+            "mean": 4.95,
+            "median": 5.407,
+            "minimum": 3.522,
+            "missing": 0,
+            "n": 3,
+            "p25": 4.4645,
+            "p75": 5.664,
+            "standard_deviation": 1.0313218055809095
+          },
+          "rtt_max_ms": {
+            "maximum": 7.701,
+            "mean": 6.572,
+            "median": 6.596,
+            "minimum": 5.419,
+            "missing": 0,
+            "n": 3,
+            "p25": 6.0075,
+            "p75": 7.1485,
+            "standard_deviation": 0.931777155046563
+          },
+          "rtt_mdev_ms": {
+            "maximum": 1.773,
+            "mean": 1.402,
+            "median": 1.537,
+            "minimum": 0.896,
+            "missing": 0,
+            "n": 3,
+            "p25": 1.2165,
+            "p75": 1.6549999999999998,
+            "standard_deviation": 0.37054104585951964
+          },
+          "rtt_min_ms": {
+            "maximum": 4.398,
+            "mean": 3.031,
+            "median": 3.822,
+            "minimum": 0.873,
+            "missing": 0,
+            "n": 3,
+            "p25": 2.3475,
+            "p75": 4.109999999999999,
+            "standard_deviation": 1.5439488333490847
+          },
+          "stress_workers_count": {
+            "maximum": 0.0,
+            "mean": 0.0,
+            "median": 0.0,
+            "minimum": 0.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 0.0,
+            "p75": 0.0,
+            "standard_deviation": 0.0
+          },
+          "upf_process_running": {
+            "maximum": 1.0,
+            "mean": 1.0,
+            "median": 1.0,
+            "minimum": 1.0,
+            "missing": 0,
+            "n": 3,
+            "p25": 1.0,
+            "p75": 1.0,
+            "standard_deviation": 0.0
+          }
+        },
+        "sample_count": 3
+      }
+    }
+  }
+}

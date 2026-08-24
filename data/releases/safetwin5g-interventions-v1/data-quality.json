@@ -1,0 +1,65 @@
+{
+  "action_arm_counts": {
+    "effective": 44,
+    "negative_control": 44,
+    "no_action": 44
+  },
+  "assignment_block_count": 44,
+  "causal_identification_status": "identified for preregistered sandbox action-arm contrasts conditional on clean-reset consistency, no interference, and measured block exchangeability",
+  "checks": {
+    "action_arms_balanced": true,
+    "all_recovery_states_clean": true,
+    "approvals_and_action_decisions_recorded": true,
+    "calibration_minimum_met": true,
+    "claim_labels_separated": true,
+    "false_remediation_denominator_present": true,
+    "forty_four_complete_action_blocks": true,
+    "four_families_present": true,
+    "four_three_sample_windows_per_unit": true,
+    "harm_endpoint_has_events": true,
+    "mttr_not_censored": true,
+    "record_count_132": true,
+    "split_counts_match_preregistration": true,
+    "timestamps_monotonic": true,
+    "unit_ids_unique": true
+  },
+  "evidence_label": "sandbox-measured",
+  "false_remediation_count": 8,
+  "family_counts": {
+    "cpu_saturation": 36,
+    "network_function_interruption": 36,
+    "no_fault": 24,
+    "packet_impairment": 36
+  },
+  "generated_at": "2026-08-24T09:16:05.603446+00:00",
+  "hardware_evidence_label": null,
+  "harmful_action_count": 31,
+  "limitations": [
+    "All measurements come from one isolated software sandbox on one host and one campaign date.",
+    "UERANSIM supplies a simulated radio; there is no hardware-measured or operator-validated evidence.",
+    "SHA-256 ordering is deterministic and unblinded; complete within-block action coverage, not random sampling from an operator population, supports the contrasts.",
+    "Linux netem randomness is not explicitly seedable even though experiment timing jitter and split seeds are recorded.",
+    "Telemetry windows contain three repeated samples and are not a continuous packet trace; MTTR is resolved only to the first observed clean sample.",
+    "Mandatory experiment cleanup contributes to recovery time for no-action and negative-control arms.",
+    "CPU saturation is an injected fault-state condition but may not create a user-plane SLA violation on this host.",
+    "Multiple hypotheses and exploratory subgroup analyses require the preregistered Holm correction and cautious interpretation."
+  ],
+  "metric_cells": 19008,
+  "missing_metric_cells": 764,
+  "mttr_status_counts": {
+    "not-triggered": 42,
+    "observed": 90
+  },
+  "operator_validation": false,
+  "passed": true,
+  "radio_evidence_label": "simulated",
+  "record_count": 132,
+  "schema_version": 1,
+  "split_counts": {
+    "calibration": 21,
+    "ood": 48,
+    "test": 21,
+    "train": 42
+  },
+  "telemetry_sample_count": 1584
+}

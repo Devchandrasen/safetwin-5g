@@ -111,7 +111,13 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
       sandbox-measured pilot units cover effective, no-action, and negative
       control arms with clean recovery; 109 tests and the bundle audit passed at
       `evidence/verification/20260824T074234Z-phase6-runner-v1`).
-- [ ] Execute the preregistered campaign and freeze intervention dataset v1.
+- [x] Execute the preregistered campaign and freeze intervention dataset v1
+      (`evidence/scenarios/20260824T074320Z-phase6-campaign-v1`; 132/132 passed,
+      no cleanup abort, 1,584 telemetry samples; release
+      `data/releases/safetwin5g-interventions-v1` has 44 complete three-arm
+      blocks, 31 harmful-action events, 8 false-remediation events, and 764
+      explicit missing metric cells; bundle/data audit and 114 tests passed at
+      `evidence/verification/20260824T091705Z-dataset-v1`).
 - [ ] Re-run baselines, causal estimation, uncertainty/OOD/abstention, and
       H1-H3 gates on the locked v1 data.
 - [ ] Publish the evidence-linked Phase 6 decision and refresh the local

@@ -1,0 +1,44 @@
+{
+  "action_arms": [
+    "effective",
+    "no_action",
+    "negative_control"
+  ],
+  "assignment_unit": "fault family, severity, seed, workload, and one action arm",
+  "dataset_version": "safetwin5g-interventions-v1",
+  "harm_definition": "applied action with higher post-action user-plane burden than the no-action arm in the same complete assignment block",
+  "mttr_definition": "seconds from assigned-action timestamp to first observed clean sample; zero when no SLA violation is triggered",
+  "required_stages": [
+    "baseline",
+    "fault",
+    "post_action",
+    "recovery"
+  ],
+  "samples_per_stage": 3,
+  "schema_version": 1,
+  "split_rule": {
+    "calibration": "steady workload, seed 303",
+    "ood": "held-out severity, sustained workload, seeds 505/606/707/808",
+    "test": "steady workload, seed 404",
+    "train": "steady workload, seeds 101 and 202"
+  },
+  "target_definitions": {
+    "cpu_saturation": {
+      "direction": "lower-is-better",
+      "metric": "stress_workers_count"
+    },
+    "network_function_interruption": {
+      "direction": "higher-is-better",
+      "metric": "upf_process_running"
+    },
+    "no_fault": {
+      "direction": "lower-is-better",
+      "metric": "packet_loss_pct"
+    },
+    "packet_impairment": {
+      "direction": "lower-is-better",
+      "metric": "packet_loss_pct"
+    }
+  },
+  "unit_of_analysis": "one independently reset sandbox action assignment"
+}
