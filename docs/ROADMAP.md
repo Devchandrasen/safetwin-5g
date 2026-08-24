@@ -50,7 +50,9 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
 - [x] Run rule, tabular, and temporal baselines
       (`evidence/benchmarks/20260824T052852Z-baselines-v0`; deterministic rule
       wins test MAE 3.333 vs ridge 17.876 and persistence 29.333; no promotion).
-- [ ] Define the causal graph and intervention assumptions.
+- [x] Define the causal graph and intervention assumptions
+      (`config/causal_graph_v0.json`; alternative-action effect fails closed on
+      exchangeability, positivity, and carry-over; 65 tests passed).
 - [ ] Estimate held-out action effects.
 - [ ] Run leakage, calibration, and negative-control checks.
 

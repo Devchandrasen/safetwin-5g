@@ -100,6 +100,6 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 
 ## Immediate next gate
 
-Define the causal graph and intervention assumptions, with positivity and
-action-order limitations explicit. No algorithmic result will be called a
-live-network result.
+Estimate held-out descriptive action effects under the causal identification
+gate; do not relabel them as identified alternative-action effects. No
+algorithmic result will be called a live-network result.

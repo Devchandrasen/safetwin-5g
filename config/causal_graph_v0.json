@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "graph_id": "safetwin5g-causal-graph-v0",
+  "nodes": [
+    {"id": "fault_family", "observed": true, "role": "context"},
+    {"id": "fault_severity", "observed": true, "role": "treatment_context"},
+    {"id": "seeded_probe_timing", "observed": true, "role": "design"},
+    {"id": "host_load", "observed": false, "role": "confounder"},
+    {"id": "fault_state", "observed": true, "role": "pre_action_covariate"},
+    {"id": "action_kind", "observed": true, "role": "treatment"},
+    {"id": "action_applied", "observed": true, "role": "treatment"},
+    {"id": "time_order", "observed": true, "role": "design"},
+    {"id": "carryover", "observed": false, "role": "confounder"},
+    {"id": "post_action_outcome", "observed": true, "role": "outcome"},
+    {"id": "rollback_proxy_outcome", "observed": true, "role": "proxy_outcome"}
+  ],
+  "edges": [
+    ["fault_family", "fault_severity"],
+    ["fault_family", "action_kind"],
+    ["fault_family", "fault_state"],
+    ["fault_severity", "fault_state"],
+    ["seeded_probe_timing", "fault_state"],
+    ["host_load", "fault_state"],
+    ["host_load", "post_action_outcome"],
+    ["host_load", "rollback_proxy_outcome"],
+    ["fault_state", "post_action_outcome"],
+    ["fault_state", "rollback_proxy_outcome"],
+    ["action_kind", "action_applied"],
+    ["action_applied", "post_action_outcome"],
+    ["time_order", "post_action_outcome"],
+    ["time_order", "carryover"],
+    ["carryover", "rollback_proxy_outcome"]
+  ],
+  "estimands": [
+    {
+      "id": "paired_action_rollback_difference",
+      "definition": "post-action outcome minus later rollback-proxy outcome within a scenario",
+      "status": "descriptive-only",
+      "reason": "action-first ordering and carryover are not randomized"
+    },
+    {
+      "id": "alternative_action_ate",
+      "definition": "mean outcome difference between candidate remediations for a fault state",
+      "status": "not-identified",
+      "reason": "each fault family has only one observed action kind"
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "consistency",
+      "status": "provisional",
+      "evidence": "versioned commands define each sandbox action and rollback"
+    },
+    {
+      "id": "conditional_exchangeability",
+      "status": "not-met",
+      "evidence": "action is always observed before rollback and host load is incompletely measured"
+    },
+    {
+      "id": "positivity",
+      "status": "not-met",
+      "evidence": "one deterministic action is observed per fault family"
+    },
+    {
+      "id": "no_carryover",
+      "status": "not-met",
+      "evidence": "rollback follows the applied action in the same session"
+    },
+    {
+      "id": "temporal_order_recorded",
+      "status": "met",
+      "evidence": "all stage and command timestamps include UTC offsets"
+    },
+    {
+      "id": "no_interference",
+      "status": "provisional",
+      "evidence": "one UE is used, but all NFs share one core container"
+    }
+  ],
+  "claim_boundary": "The graph supports design review and falsification. It does not identify an alternative-action causal effect in dataset v0."
+}
