@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
+import re
 import subprocess
 import sys
 
@@ -205,6 +206,76 @@ def main() -> int:
             ],
             output_file="ue-interface.txt",
         )
+        baseline_measurements: dict[str, object] = {}
+        if args.stage == "baseline":
+            ue_status = run(
+                "ue-registration-status",
+                [
+                    "docker",
+                    "exec",
+                    CONTAINERS["ue"],
+                    "/opt/ueransim/bin/nr-cli",
+                    "imsi-999700000000001",
+                    "-e",
+                    "status",
+                ],
+                output_file="ue-registration-status.txt",
+            )
+            pdu_status = run(
+                "ue-pdu-session-status",
+                [
+                    "docker",
+                    "exec",
+                    CONTAINERS["ue"],
+                    "/opt/ueransim/bin/nr-cli",
+                    "imsi-999700000000001",
+                    "-e",
+                    "ps-list",
+                ],
+                output_file="ue-pdu-session-status.txt",
+            )
+            ping = run(
+                "pdu-user-plane-ping",
+                [
+                    "docker",
+                    "exec",
+                    CONTAINERS["ue"],
+                    "ping",
+                    "-I",
+                    "uesimtun0",
+                    "-c",
+                    "20",
+                    "-i",
+                    "0.2",
+                    "-W",
+                    "2",
+                    "10.45.0.1",
+                ],
+                output_file="pdu-user-plane-ping.txt",
+            )
+            packet_match = re.search(
+                r"(\d+) packets transmitted, (\d+) received, "
+                r"([\d.]+)% packet loss",
+                ping,
+            )
+            rtt_match = re.search(
+                r"rtt min/avg/max/mdev = "
+                r"([\d.]+)/([\d.]+)/([\d.]+)/([\d.]+) ms",
+                ping,
+            )
+            if not packet_match or not rtt_match:
+                raise RuntimeError("could not parse baseline ping statistics")
+            baseline_measurements = {
+                "ping_destination": "10.45.0.1",
+                "ping_source_interface": "uesimtun0",
+                "packets_transmitted": int(packet_match.group(1)),
+                "packets_received": int(packet_match.group(2)),
+                "packet_loss_pct": float(packet_match.group(3)),
+                "rtt_min_ms": float(rtt_match.group(1)),
+                "rtt_avg_ms": float(rtt_match.group(2)),
+                "rtt_max_ms": float(rtt_match.group(3)),
+                "rtt_mdev_ms": float(rtt_match.group(4)),
+            }
         run(
             "subscriber-public-fields",
             [
@@ -258,6 +329,26 @@ def main() -> int:
             )
             == 4,
         }
+        if args.stage == "baseline":
+            checks.update(
+                {
+                    "ue_cli_registered": "rm-state: RM-REGISTERED" in ue_status,
+                    "ue_cli_normal_service": (
+                        "mm-state: MM-REGISTERED/NORMAL-SERVICE" in ue_status
+                    ),
+                    "pdu_session_active": "state: PS-ACTIVE" in pdu_status,
+                    "pdu_session_address_matches_tun": (
+                        "address: 10.45.0.2" in pdu_status
+                    ),
+                    "twenty_ping_packets_received": (
+                        baseline_measurements["packets_transmitted"] == 20
+                        and baseline_measurements["packets_received"] == 20
+                    ),
+                    "zero_baseline_packet_loss": (
+                        baseline_measurements["packet_loss_pct"] == 0.0
+                    ),
+                }
+            )
         passed = all(checks.values())
 
         command_path = output_dir / "commands.jsonl"
@@ -284,6 +375,7 @@ def main() -> int:
             ),
             "passed": passed,
             "checks": checks,
+            "measurements": baseline_measurements,
             "configuration_sha256": {
                 relative: sha256(ROOT / relative) for relative in CONFIG_PATHS
             },

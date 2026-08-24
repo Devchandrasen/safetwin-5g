@@ -66,6 +66,18 @@ class SandboxConfigTests(unittest.TestCase):
         self.assertIn('"evidence_label": "simulated"', capture)
         self.assertIn("Not sandbox-measured under PROJECT_LOCK.md", capture)
 
+    def test_baseline_capture_requires_registration_session_and_ping(self):
+        capture = (ROOT / "sandbox" / "capture_evidence.py").read_text(
+            encoding="utf-8"
+        )
+        for required_check in (
+            '"ue_cli_registered"',
+            '"pdu_session_active"',
+            '"twenty_ping_packets_received"',
+            '"zero_baseline_packet_loss"',
+        ):
+            self.assertIn(required_check, capture)
+
 
 if __name__ == "__main__":
     unittest.main()

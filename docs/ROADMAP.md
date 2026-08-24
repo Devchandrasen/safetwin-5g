@@ -17,7 +17,8 @@
       `sandbox/versions.lock.json`).
 - [x] Bring up an isolated 5G Standalone software sandbox
       (`evidence/sandbox/20260824T044704Z-stack`; `simulated`, pre-intervention).
-- [ ] Capture a clean baseline attach/session trace.
+- [x] Capture a clean baseline attach/session trace
+      (`evidence/sandbox/20260824T045006Z-baseline`; `simulated`, 20/20 pings).
 - [ ] Inject one reversible fault and execute one approved rollback.
 - [ ] Save configuration, commands, telemetry, timestamps, and hashes.
 

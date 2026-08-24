@@ -35,8 +35,8 @@ Run from the repository root in PowerShell:
 ```
 
 The clean baseline command verifies the UE interface, five user-plane pings,
-and all Prometheus targets. Its roadmap item remains incomplete until its own
-evidence bundle passes:
+and all Prometheus targets. The evidence capture adds UE registration/PDU CLI
+state plus a 20-packet measurement:
 
 ```powershell
 .\sandbox\run.ps1 baseline
@@ -59,6 +59,12 @@ The 2026-08-24 stack capture records:
 - three healthy Prometheus targets (AMF, SMF, and UPF);
 - no lost NF heartbeat or HTTP/2 framing error in the passing core log;
 - Docker, image, package, configuration, command, and file hashes.
+
+The separate `20260824T045006Z-baseline` bundle passed all 16 checks. UERANSIM
+reported `RM-REGISTERED`, normal service, and an active PDU Session 1 at
+`10.45.0.2`. Its 20-packet UE-to-UPF test measured 0% loss and RTT
+min/average/max/mdev of 1.004/6.107/10.475/2.425 ms. These values describe this
+single local software run and are not hardware or operator measurements.
 
 Run the independent captured-file check against a bundle:
 

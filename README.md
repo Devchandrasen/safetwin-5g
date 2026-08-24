@@ -25,10 +25,10 @@ Implemented on day one:
 The official-tag Open5GS/UERANSIM source builds now run with MongoDB and
 Prometheus on an internal Compose network. A simulated UE registered and
 created PDU Session ID 1, and the first hash-manifested stack capture passed.
-This does **not** yet satisfy the project's `sandbox-measured` claim gate: the
-clean baseline and approved fault/action/rollback records are still separate
-pending roadmap items. Fixture, simulation, sandbox, hardware, and operator
-results remain strictly separated.
+The clean baseline also passed with 20/20 user-plane packets returned. This
+does **not** yet satisfy the project's `sandbox-measured` claim gate: the
+approved fault/action/rollback record is still pending. Fixture, simulation,
+sandbox, hardware, and operator results remain strictly separated.
 
 ## Setup
 
@@ -90,6 +90,5 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 
 ## Immediate next gate
 
-Capture the clean attach/session baseline, then run one explicitly approved,
-reversible sandbox fault/action/rollback experiment. No algorithmic result will
-be called a live-network result.
+Run one explicitly approved, reversible sandbox fault/action/rollback
+experiment. No algorithmic result will be called a live-network result.
