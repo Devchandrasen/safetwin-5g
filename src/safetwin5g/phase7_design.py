@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from math import ceil
 from pathlib import Path
 from typing import Any
 
@@ -210,6 +211,31 @@ def validate_phase7_design(design: dict[str, Any]) -> None:
             errors.append("at least 19 independent calibration blocks are required")
         if observed_blocks["test"] < 35:
             errors.append("at least 35 independent test blocks are required")
+        amendment = design.get("amendment")
+        if amendment is not None:
+            if amendment.get("amendment_id") != "phase7-precision-a1":
+                errors.append("unknown Phase 7 amendment identifier")
+            faulty_test_blocks = len(
+                {
+                    unit_row["assignment_block_id"]
+                    for unit_row in units
+                    if unit_row["split"] == "test"
+                    and unit_row["fault_family"] != "no_fault"
+                }
+            )
+            minimum_coverage = float(
+                analysis.get("minimum_faulty_block_mutation_coverage", 0.0)
+            )
+            minimum_certified = ceil(faulty_test_blocks * minimum_coverage)
+            declared_minimum = int(
+                analysis.get("minimum_certified_mutation_count", 0)
+            )
+            if declared_minimum < 29:
+                errors.append("amended design requires at least 29 certified mutations")
+            if minimum_certified < declared_minimum:
+                errors.append(
+                    "test blocks and coverage floor cannot reach the certified-mutation minimum"
+                )
 
     if errors:
         raise ValueError("; ".join(errors))

@@ -168,9 +168,14 @@ sandbox evidence.
       coverage floor give a one-sided 95% zero-violation upper bound of 0.181,
       so the fresh test design needs a pre-campaign precision amendment for an
       empirical 0.10 safety bound.
-- [ ] Amend and re-freeze the v2 test split to provide at least 29 certified
-      faulty-block decisions at the 50% coverage floor before executing a
-      pilot.
+- [x] Amend and re-freeze the v2 test split before any pilot to provide at
+      least 29 certified faulty-block decisions at the 50% coverage floor
+      (`docs/PHASE7_PROTOCOL_AMENDMENT_1.md`;
+      `config/experiments/phase7-brace-v2a.json`; 60 faulty and 10 no-fault
+      test blocks, 135 total blocks, 675 units, and exact one-sided 95%
+      zero-violation upper bound 0.095 at 30 certifications; 148 tests and the
+      design check passed at
+      `evidence/verification/20260825T044323Z-phase7-precision-amendment-a1`).
 - [ ] Execute the fresh v2 pilot and 500-unit named-action sandbox campaign;
       freeze and audit the complete-block dataset before opening test labels.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
