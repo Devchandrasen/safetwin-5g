@@ -188,6 +188,12 @@ sandbox evidence.
       pilot or incomplete input, authorization prose/identity is excluded, and
       160 tests plus 9 subtests passed at
       `evidence/verification/20260825T045956Z-dataset-v2a-builder`).
+- [x] Implement and hash-lock the block-independent analysis, required
+      comparators, BRACE calibration, paired inference, Holm correction,
+      ablations, OOD abstention, and honest no-go path before test-label opening
+      (`config/experiments/phase7-analysis-v2a-lock.json`; synthetic full-design
+      baseline-win/no-go check; 166 tests plus 9 subtests passed at
+      `evidence/verification/20260825T050824Z-phase7-analysis-freeze`).
 - [ ] Execute the fresh 675-unit named-action sandbox campaign; freeze and
       audit the 135 complete-block dataset before opening test labels. **In
       progress:** `evidence/scenarios/20260825T045337Z-phase7-campaign-v2a`;

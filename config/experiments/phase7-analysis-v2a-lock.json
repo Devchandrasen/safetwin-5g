@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "lock_id": "safetwin5g-phase7-analysis-v2a-20260825",
+  "experiment_id": "safetwin5g-phase7-brace-v2a",
+  "frozen_before_test_labels": true,
+  "test_labels_opened_at_freeze": false,
+  "model_selection": "train-block leave-one-block-out MAE only",
+  "calibration_use": "BRACE and comparator uncertainty calibration only",
+  "primary_test_blocks": 70,
+  "faulty_primary_test_blocks": 60,
+  "primary_gates": ["G1", "G2", "G3", "G4"],
+  "multiplicity": "Holm for G2 and G3",
+  "minimum_certified_mutation_count": 29,
+  "minimum_faulty_mutation_coverage": 0.5,
+  "minimum_benefit_margin_points": 5.0,
+  "files": [
+    {
+      "path": "src/safetwin5g/analysis_v2a.py",
+      "sha256": "065d33fa103e898ef745f6f245e33ab0652c6e3351639c43310bc59e4f53d58b"
+    },
+    {
+      "path": "src/safetwin5g/brace.py",
+      "sha256": "fcf0c00393b5ee4f5aca09091de62f16456c6ec5c423a8d308ef457dcf1e8948"
+    },
+    {
+      "path": "src/safetwin5g/dataset_v2a.py",
+      "sha256": "074cfe12e63e44b21320a9b36ce7824b177745223e8126778bd93fb643f74368"
+    },
+    {
+      "path": "tools/run_phase7_analysis.py",
+      "sha256": "e1275c27985a2c7d1417f0508dbe20aa0f8b8300ccd2627f13fe0713dcf212a7"
+    },
+    {
+      "path": "config/experiments/phase7-brace-v2a.json",
+      "sha256": "6f3729f10e24c50f0ba3901a6180ae75b58d22e9e5e19db34ccb0507d1505567"
+    },
+    {
+      "path": "docs/PHASE7_PROTOCOL.md",
+      "sha256": "088b6341c9d667dd02bef8b24808093b451e05002f987bd7a9df7e601b74784c"
+    },
+    {
+      "path": "docs/PHASE7_PROTOCOL_AMENDMENT_1.md",
+      "sha256": "dc993063614bc826f130e73839674ab9086003439550ac58c4e711a0babb8218"
+    },
+    {
+      "path": "docs/BRACE_METHOD.md",
+      "sha256": "5c28c5fc31fb2f4c34b3901d7ea38f04d4059c875e5a4edf2aa9e70ef6797cc3"
+    }
+  ],
+  "claim_boundaries": {
+    "test_evidence_after_execution": "sandbox-measured",
+    "radio_evidence": "simulated",
+    "hardware_evidence": null,
+    "operator_validation": false,
+    "live_actuation": false,
+    "submission_authorized": false
+  }
+}
