@@ -33,6 +33,8 @@ new general conformal theorem.
 | TNSM bar | [IEEE TNSM scope](https://www.comsoc.org/publications/journals/ieee-transactions-network-and-service-management) | TNSM asks for significant network-management contributions and performance/scalability or actual-system experiments. A local demo alone is insufficient. |
 | NDT architecture | [IRTF NMRG NDT architecture draft-13](https://datatracker.ietf.org/doc/draft-irtf-nmrg-network-digital-twin-arch/) and [ITU-T Y.3090](https://www.itu.int/rec/T-REC-Y.3090-202202-I) | Risk-free what-if testing, validation, and closed-loop use are already core NDT concepts. Those cannot be claimed as SafeTwin inventions. |
 | Zero-touch NDT | [ETSI GR ZSM 015 V1.1.1](https://www.etsi.org/deliver/etsi_gr/ZSM/001_099/015/01.01.01_60/gr_ZSM015v010101p.pdf) | NDT-assisted analytics, decision processes, and reconfiguration are already standardized research directions. |
+| Intent assurance | [IETF RFC 9315](https://datatracker.ietf.org/doc/html/rfc9315) | Intent fulfillment already includes course-of-action selection, while assurance measures action effectiveness and closes the feedback loop. Action proposal plus post-action validation is not novel. |
+| Service assurance | [IETF RFC 9417](https://datatracker.ietf.org/doc/html/rfc9417) | Structured assurance cases and the risk that faulty observations trigger unsafe reconfiguration are already recognized. Evidence capture alone is not a new assurance method. |
 | 5G NDT implementation | [Costa et al., 2025](https://arxiv.org/abs/2510.12458) | A real private-5G NDT and open implementation already exist. An Open5GS/UERANSIM stack is not implementation novelty. SafeTwin remains software-sandbox evidence, below their hardware fidelity evidence. |
 | Causal network reasoning | [NetCause, 2026](https://arxiv.org/abs/2606.13543) | Counterfactual network reasoning is already demonstrated at production scale for root-cause analysis. SafeTwin must focus on intervention choice and safety, not claim first causal networking. |
 | Conformal decisions | [Zhu et al., 2026](https://arxiv.org/abs/2606.05551) and [Ek et al., 2022](https://proceedings.mlr.press/v151/ek22a.html) | Action-conditional risk-averse decisions and confidence-aware multi-objective decisions already exist. Generic conformal action selection is rejected as the novelty claim. |
@@ -44,6 +46,18 @@ clean-reset blocks, simultaneous action-contrast calibration, evidence-tier
 gating, and replayable 5G-core remediation. Non-discovery is not proof of
 novelty. The claim remains provisional until a broader systematic review and
 external peer review.
+
+## Search boundary
+
+The 2026-08-25 audit searched primary standards/RFC repositories and primary
+paper records for combinations of network digital twin, intent/service
+assurance, autonomous remediation, counterfactual or causal action selection,
+conformal decision guarantees, rollback, and private 5G. Secondary surveys were
+used only to discover candidate primary sources and do not support a novelty
+claim. A source was treated as a collision whenever it already supplied a
+claimed mechanism, even outside telecom; the application domain was not used to
+rename a generic conformal or safety idea as novel. The literature cut-off,
+queries, URLs, and collision decisions must be reported in any manuscript.
 
 ## Fatal Phase 6 limitation corrected in Phase 7
 
