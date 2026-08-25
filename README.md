@@ -10,7 +10,7 @@ in [PROJECT_LOCK.md](PROJECT_LOCK.md).
 
 ## Current status
 
-**All locally executable Phase 1-5 roadmap work complete**
+**All locally executable Phase 1-6 roadmap work complete**
 
 Implemented on day one:
 
@@ -30,14 +30,18 @@ approved deterministic runbook then measured 0% baseline loss, 100% controlled
 loss, 0% after remediation, 100% after rollback, and 0% after final cleanup.
 That intervention record passes the `sandbox-measured` gate; its radio remains
 `simulated`, and it is neither hardware-measured nor operator-validated.
-The frozen 12-intervention dataset now supports reproducible baseline,
-diagnostic, uncertainty, and selective-safety runs. The deterministic rule
-still beats the learned baselines, alternative-action effects are not
-identified, and all six held-out model proposals abstain. No model has been
-promoted and no model-proposed action has been applied.
-The consolidated H1-H3 benchmark decision is therefore no-go for model
-promotion, positive hypothesis claims, and autonomous/live actuation. It is
-go-with-constraints only for continued local sandbox research.
+The expanded preregistered study froze 132 intervention units in 44 complete
+three-arm blocks with 1,584 telemetry samples. The locked test set retained the
+deterministic rule as the winner (MAE 3.889) over the action-conditional ridge
+model (5.261) and temporal persistence (17.460). The conformal radius is finite
+at calibration n=21, test coverage is 20/21, and the designated OOD split is
+detected 48/48.
+
+H1 and H2 are `not-supported` after the preregistered Holm correction
+(adjusted p=0.0625 for both); H2 coverage is 3/14, below its 50% gate. H3 is
+`gated-not-run` because H1 and H2 did not pass. The consolidated decision is
+therefore no-go for model promotion, positive H1-H3 claims, and autonomous/live
+actuation. Zero model-selected actions were executed.
 The local evidence product is read-only, loopback-only, and exposes GET status
 and proposal-audit APIs without an actuation route. Hardware, operator, and
 publication gates remain pending external authorization.
@@ -124,7 +128,7 @@ PROJECT_LOCK.md         Fixed scope, hypotheses, and change-control rule
 ## Remaining gates
 
 Hardware measurement, independent operator validation, and publication require
-new access or authorization and remain pending. The next local research cycle
-must expand calibration, action positivity, no-fault/harm scenarios, and
-continuous SLA/MTTR windows before revisiting H1-H3. No algorithmic result will
-be called a live-network result.
+new access or authorization and remain pending. Any new local research cycle
+must be separately preregistered; the completed negative Phase 6 decision will
+not be tuned into a positive result. No algorithmic result will be called a
+live-network result.
