@@ -1,0 +1,105 @@
+[
+  {
+    "name": "safetwin5g-mongodb",
+    "image": "docker.io/library/mongo:8.0.29-noble@sha256:021b2d5ae9d253f2cca17491cc8d03aed8df3c840f3252066aa62d3277fc406e",
+    "started_at": "2026-08-25T04:48:28.494381814Z",
+    "status": "running",
+    "networks": [
+      "safetwin5g-isolated"
+    ]
+  },
+  {
+    "name": "safetwin5g-open5gs",
+    "image": "safetwin5g/open5gs:2.7.7-318eeb49",
+    "started_at": "2026-08-25T04:48:34.835092913Z",
+    "status": "running",
+    "networks": [
+      "safetwin5g-isolated"
+    ]
+  },
+  {
+    "name": "safetwin5g-gnb",
+    "image": "safetwin5g/ueransim:3.3.0-6bf5a1a9",
+    "started_at": "2026-08-25T04:48:45.627781772Z",
+    "status": "running",
+    "networks": [
+      "safetwin5g-isolated"
+    ]
+  },
+  {
+    "name": "safetwin5g-ue",
+    "image": "safetwin5g/ueransim:3.3.0-6bf5a1a9",
+    "started_at": "2026-08-25T04:48:51.335339808Z",
+    "status": "running",
+    "networks": [
+      "safetwin5g-isolated"
+    ]
+  },
+  {
+    "name": "safetwin5g-prometheus",
+    "image": "docker.io/prom/prometheus:v3.13.2@sha256:508729e0e2d18e11fd742a5a5ca70e557b940a93948c3c95fd0123a6fd538b69",
+    "started_at": "2026-08-25T04:48:45.631510486Z",
+    "status": "running",
+    "networks": [
+      "safetwin5g-isolated"
+    ]
+  },
+  {
+    "name": "nvg-access",
+    "image": "netverify-emulator:0.1",
+    "started_at": "2026-08-25T05:24:01.861463937Z",
+    "status": "running",
+    "networks": [
+      "emulator_access"
+    ]
+  },
+  {
+    "name": "nvg-admin",
+    "image": "netverify-emulator:0.1",
+    "started_at": "2026-08-25T05:24:01.906363107Z",
+    "status": "running",
+    "networks": [
+      "emulator_admin"
+    ]
+  },
+  {
+    "name": "nvg-core",
+    "image": "netverify-emulator:0.1",
+    "started_at": "2026-08-25T05:24:01.910374048Z",
+    "status": "running",
+    "networks": [
+      "emulator_access",
+      "emulator_admin",
+      "emulator_dmz",
+      "emulator_partner",
+      "emulator_service"
+    ]
+  },
+  {
+    "name": "nvg-dmz",
+    "image": "netverify-emulator:0.1",
+    "started_at": "2026-08-25T05:24:01.893459838Z",
+    "status": "running",
+    "networks": [
+      "emulator_dmz"
+    ]
+  },
+  {
+    "name": "nvg-partner",
+    "image": "netverify-emulator:0.1",
+    "started_at": "2026-08-25T05:24:01.899254059Z",
+    "status": "running",
+    "networks": [
+      "emulator_partner"
+    ]
+  },
+  {
+    "name": "nvg-service",
+    "image": "netverify-emulator:0.1",
+    "started_at": "2026-08-25T05:24:01.867097974Z",
+    "status": "running",
+    "networks": [
+      "emulator_service"
+    ]
+  }
+]

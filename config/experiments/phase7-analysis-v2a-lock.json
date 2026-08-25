@@ -1,9 +1,12 @@
 {
   "schema_version": 1,
-  "lock_id": "safetwin5g-phase7-analysis-v2a-a1-20260825",
+  "lock_id": "safetwin5g-phase7-analysis-v2a-a1-d1-20260825",
   "experiment_id": "safetwin5g-phase7-brace-v2a",
   "frozen_before_test_labels": true,
   "test_labels_opened_at_freeze": false,
+  "procedural_outcome_seal": true,
+  "cryptographic_blinding": false,
+  "test_outcomes_used_for_post_freeze_changes": false,
   "model_selection": "train-block leave-one-block-out MAE only",
   "calibration_use": "BRACE and comparator uncertainty calibration only",
   "primary_test_blocks": 70,
@@ -14,6 +17,13 @@
     "reason": "include no-fault false remediation in the frozen G3 harm endpoint",
     "trigger": "source-code audit before any test unit or label",
     "document": "docs/PHASE7_ANALYSIS_AMENDMENT_1.md"
+  },
+  "environment_deviation": {
+    "deviation_id": "phase7-environment-d1",
+    "statistical_change": false,
+    "disclosure_added_during_train_split": true,
+    "test_outcomes_used": false,
+    "document": "docs/PHASE7_ENVIRONMENT_DEVIATION_1.md"
   },
   "primary_gates": ["G1", "G2", "G3", "G4"],
   "multiplicity": "Holm for G2 and G3",
@@ -31,7 +41,7 @@
     },
     {
       "path": "src/safetwin5g/dataset_v2a.py",
-      "sha256": "074cfe12e63e44b21320a9b36ce7824b177745223e8126778bd93fb643f74368"
+      "sha256": "13be2f154f70470982bcba9c3a927199122d7b6e210f3771119a83ee31682cab"
     },
     {
       "path": "tools/run_phase7_analysis.py",
@@ -56,6 +66,10 @@
     {
       "path": "docs/PHASE7_ANALYSIS_AMENDMENT_1.md",
       "sha256": "823737e78fb51d5f193cbfaec722a8f59d00d80bfac550f9f2ace4b91754d344"
+    },
+    {
+      "path": "docs/PHASE7_ENVIRONMENT_DEVIATION_1.md",
+      "sha256": "16fadd8ebf431f48df0c9f8ba72a792bc3ca2e490cb7f5272c370e48698dd63c"
     }
   ],
   "claim_boundaries": {

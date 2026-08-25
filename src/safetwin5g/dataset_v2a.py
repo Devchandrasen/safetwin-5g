@@ -403,6 +403,7 @@ def quality_report(
             "Linux netem packet randomness is not explicitly seedable.",
             "Three samples per stage limit temporal resolution and make MTTR interval-censored at sample times.",
             "The common service burden is max(packet loss, UPF-down percentage); CPU stress may not change it on this host.",
+            "Six unrelated co-resident containers started on separate Docker networks after the campaign began; a measured idle snapshot found no network overlap, but CPU, memory, kernel, Docker-engine, and scheduler isolation were not established, so CPU-saturation and timing outcomes may contain uncontrolled shared-host contention.",
             "Benefit contrasts depend on clean reset, consistency, and absence of cross-unit interference.",
             "Primary policy inference must use independent blocks, exact denominators, and the preregistered multiplicity correction.",
         ],

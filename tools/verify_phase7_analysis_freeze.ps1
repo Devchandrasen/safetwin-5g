@@ -33,7 +33,10 @@ try {
         passed = $true
         scope = "phase7-sealed-analysis-code-and-hashes"
         lock_sha256 = (Get-FileHash -LiteralPath $lockPath -Algorithm SHA256).Hash.ToLowerInvariant()
-        test_labels_opened = $false
+        test_outcomes_opened_for_analysis = $false
+        procedural_outcome_seal = $true
+        cryptographic_blinding = $false
+        operational_trace_metadata_read = $true
         model_selection = "train-block leave-one-block-out only"
         calibration_use = "uncertainty calibration only"
         required_test_blocks = 70
@@ -43,7 +46,7 @@ try {
         evidence_label = "fixture-and-synthetic-tests-only"
     }
     $report | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $output "verification.json") -Encoding utf8
-    Write-Output "PASS: Phase 7 analysis code and hashes frozen before test-label opening"
+    Write-Output "PASS: Phase 7 analysis code and hashes frozen before outcome analysis"
     Write-Output "EVIDENCE=$output"
 }
 finally {

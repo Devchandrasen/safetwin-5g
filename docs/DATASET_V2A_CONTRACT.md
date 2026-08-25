@@ -21,3 +21,10 @@ measurement and operator validation remain absent.
 Pilot bundles can exercise the parser and structural checks but cannot become
 a frozen release. Test labels must remain sealed until the Phase 7 analysis
 code and hashes are frozen.
+
+The host was not exclusive. Six unrelated containers started on distinct
+Docker networks after the campaign began. The recorded snapshot showed no
+network overlap and zero instantaneous CPU for those containers, but it cannot
+prove absence of shared CPU, memory, kernel, Docker-engine, or scheduler
+interference. Dataset quality therefore carries this limitation explicitly,
+especially for CPU-saturation and timing endpoints.

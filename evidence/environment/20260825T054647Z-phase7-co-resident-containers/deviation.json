@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "scope": "mid-campaign co-resident-container observation",
+  "mutation_performed": false,
+  "containers_stopped_or_changed": false,
+  "safetwin_network": "safetwin5g-isolated",
+  "network_overlap_observed": false,
+  "shared_host_resource_isolation": false,
+  "interpretation": "Network namespaces are distinct, but CPU, memory, kernel, Docker engine, and host scheduling remain shared. A single idle stats snapshot does not prove absence of interference.",
+  "required_limitation": "CPU-saturation and timing outcomes may be affected by uncontrolled shared-host contention from co-resident containers that appeared after campaign start.",
+  "evidence_label": "sandbox-measured",
+  "radio_evidence_label": "simulated",
+  "hardware_evidence_label": null,
+  "operator_validation": false
+}

@@ -54,6 +54,11 @@ class DatasetV2aTests(unittest.TestCase):
         self.assertTrue(all(row["reversible"] and row["rollback_plan_recorded"] for row in mutations))
         self.assertTrue(all(row["cleanup_verified"] for row in mutations))
 
+    def test_quality_report_discloses_mid_campaign_host_contention(self):
+        self.assertTrue(
+            any("co-resident" in limitation for limitation in self.report["limitations"])
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -190,22 +190,32 @@ sandbox evidence.
       `evidence/verification/20260825T045956Z-dataset-v2a-builder`).
 - [x] Implement and hash-lock the block-independent analysis, required
       comparators, BRACE calibration, paired inference, Holm correction,
-      ablations, OOD abstention, and honest no-go path before test-label opening
+      ablations, OOD abstention, and honest no-go path before outcome analysis
       (`config/experiments/phase7-analysis-v2a-lock.json`; Analysis Amendment A1
       corrected G3 to include no-fault false remediation across all 70 paired
-      test blocks while G2 remains on 60 faulty blocks; synthetic full-design
-      baseline-win/no-go check; 169 tests plus 9 subtests passed before the test
-      split at `evidence/verification/20260825T051716Z-phase7-analysis-freeze`).
+      test blocks while G2 remains on 60 faulty blocks; Environment Deviation
+      D1 adds only the co-resident-host limitation, with no statistical change;
+      the seal is procedural rather than cryptographic and operational monitors
+      read pass/cleanup metadata but no outcomes; synthetic full-design
+      baseline-win/no-go check; 172 tests plus 9 subtests passed at
+      `evidence/verification/20260825T081330Z-phase7-analysis-freeze`).
 - [x] Measure and audit BRACE certificate-computation scalability with bounded
       fixture claims (`evidence/benchmarks/20260825T051037Z-phase7-brace-scalability`;
       21 to 5,000 blocks, empirical log-log slope 0.976, 3.024 ms median at
       5,000 blocks, and 2.662 microseconds per proposal; no network, radio,
       hardware, or operator performance claim; verified at
       `evidence/verification/20260825T051111Z-phase7-scalability`).
+- [x] Implement and fixture-verify the independent cross-artifact provenance
+      auditor; it rejects broken campaign-to-dataset hashes and claim-tier
+      promotion, while the actual-chain audit remains gated on final artifacts
+      (`evidence/verification/20260825T054337Z-phase7-provenance-auditor`;
+      171 tests plus 9 subtests passed at that implementation checkpoint).
 - [ ] Execute the fresh 675-unit named-action sandbox campaign; freeze and
-      audit the 135 complete-block dataset before opening test labels. **In
+      audit the 135 complete-block dataset before outcome analysis. **In
       progress:** `evidence/scenarios/20260825T045337Z-phase7-campaign-v2a`;
-      test labels remain sealed and this item cannot pass from partial output.
+      outcome fields remain unanalysed and this item cannot pass from partial
+      output. D1 records unrelated containers on separate Docker networks and
+      the unresolved shared-host contention limitation.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
       ablations, OOD stress test, runtime/scalability evaluation, and
       independent artifact audit.
