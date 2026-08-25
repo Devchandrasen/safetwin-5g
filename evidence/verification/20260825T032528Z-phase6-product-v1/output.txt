@@ -1,0 +1,73 @@
+PASS: C:\Users\devel\Documents\Codex\2026-08-22\he\safetwin-5g\dashboard\app\data\status.json
+npm warn deprecated eslint@9.39.4: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 496 packages, and audited 497 packages in 26s
+
+165 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+> safetwin-5g-dashboard@0.1.0 build
+> vinext build
+
+
+  vinext build  (Vite 8.2.2)
+
+[1/5] analyze client references...
+transforming...
+✓ 241 modules transformed.
+rendering chunks...
+✓ built in 1.09s
+[2/5] analyze server references...
+transforming...
+✓ 85 modules transformed.
+rendering chunks...
+✓ built in 134ms
+[3/5] build rsc environment...
+transforming...
+✓ 233 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 444ms
+[4/5] build client environment...
+transforming...
+✓ 129 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 441ms
+[5/5] build ssr environment...
+transforming...
+✓ 91 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 348ms
+[0m
+  Route (app)
+  ┌ ? /             
+  ├ λ /api/proposals
+  └ λ /api/status   
+
+  λ API  ? Unknown
+
+  ? Some routes could not be classified. vinext currently uses static analysis
+    and cannot detect dynamic API usage (headers(), cookies(), etc.) at build time.
+    Automatic classification will be improved in a future release.
+
+  Build complete. Run `vinext start` to start the production server.
+
+
+> safetwin-5g-dashboard@0.1.0 lint
+> eslint . --ignore-pattern dist --ignore-pattern .next
+
+npm warn audit request to https://registry.npmjs.org/-/npm/v1/security/advisories/bulk failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+undefined
+npm error audit endpoint returned an error
+npm error A complete log of this run can be found in: C:\Users\devel\AppData\Local\npm-cache\_logs\2026-08-25T03_26_51_098Z-debug-0.log
+npm failed with exit code 1
+At C:\Users\devel\Documents\Codex\2026-08-22\he\safetwin-5g\tools\verify_dashboard.ps1:17 char:9
++         throw "$Program failed with exit code $LASTEXITCODE"
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (npm failed with exit code 1:String) [], RuntimeException
+    + FullyQualifiedErrorId : npm failed with exit code 1
+ 

@@ -78,23 +78,34 @@ def all_loopback(addresses: list[str]) -> bool:
 
 def evaluate_payloads(status: dict[str, Any], proposals: dict[str, Any]) -> list[str]:
     errors = []
+    if status["api_version"] != "v2":
+        errors.append("status API is not the Phase 6 v2 contract")
     if status["overall_decision"]["model_promotion"] != "no-go":
         errors.append("status API does not preserve model-promotion no-go")
     if status["safety_lock"]["allow_live_actuation"] is not False:
         errors.append("status API does not preserve the live-actuation lock")
     if "records" in status["proposal_audit"]:
         errors.append("status summary unexpectedly includes proposal records")
+    if status["dataset"]["record_count"] != 132:
+        errors.append("status API does not expose the 132-unit locked dataset")
+    if status["diagnostic_gate"]["finite_conformal_radius"] is not True:
+        errors.append("status API does not expose the finite conformal diagnostic")
     records = proposals["records"]
-    if proposals["proposal_count"] != 6 or len(records) != 6:
-        errors.append("proposal API does not contain exactly six records")
-    if proposals["abstain_count"] != 6:
-        errors.append("proposal API does not report six abstentions")
+    if proposals["proposal_count"] != 14 or len(records) != 14:
+        errors.append("proposal API does not contain exactly 14 locked-test candidates")
+    if proposals["eligible_count"] != 3:
+        errors.append("proposal API does not report three offline-eligible candidates")
+    if proposals["abstain_count"] != 11:
+        errors.append("proposal API does not report 11 abstentions")
     if proposals["applied_action_count"] != 0:
-        errors.append("proposal API reports an applied action")
-    if any(record["decision"] != "abstain" for record in records):
-        errors.append("a proposal decision is not abstain")
-    if any(record["execution_status"] != "not-applied" for record in records):
-        errors.append("a proposal execution status is not not-applied")
+        errors.append("proposal API reports a model-applied action")
+    if sum(record["decision"] == "abstain" for record in records) != 11:
+        errors.append("proposal records do not contain exactly 11 abstentions")
+    if any(
+        record["model_execution_status"] != "not-applied-offline-evaluation"
+        for record in records
+    ):
+        errors.append("a proposal was represented as a model execution")
     return errors
 
 
@@ -129,7 +140,7 @@ def write_bundle(output: Path, report: dict[str, Any], server_log: str) -> None:
 
 def main() -> int:
     started = datetime.now(timezone.utc)
-    run_id = started.strftime("%Y%m%dT%H%M%SZ-dashboard-smoke-v0")
+    run_id = started.strftime("%Y%m%dT%H%M%SZ-dashboard-smoke-v1")
     output = ROOT / "evidence" / "product" / run_id
     output.mkdir(parents=True, exist_ok=False)
     process = subprocess.Popen(
@@ -177,6 +188,7 @@ def main() -> int:
             "proposal_api_content_type": proposals_headers.get("content-type"),
             "proposal_api_nosniff": proposals_headers.get("x-content-type-options"),
             "proposal_count": proposal_payload["proposal_count"],
+            "eligible_count": proposal_payload["eligible_count"],
             "abstain_count": proposal_payload["abstain_count"],
             "applied_action_count": proposal_payload["applied_action_count"],
             "listening_addresses": addresses,

@@ -11,37 +11,57 @@ class DashboardSmokeTests(unittest.TestCase):
         self.assertFalse(all_loopback(["0.0.0.0"]))
         self.assertFalse(all_loopback(["127.0.0.1", "192.168.1.20"]))
 
-    def test_payload_gate_requires_six_unapplied_abstentions(self):
+    def test_payload_gate_requires_locked_v1_offline_decisions(self):
         status = {
+            "api_version": "v2",
             "overall_decision": {"model_promotion": "no-go"},
             "safety_lock": {"allow_live_actuation": False},
-            "proposal_audit": {"proposal_count": 6},
+            "dataset": {"record_count": 132},
+            "diagnostic_gate": {"finite_conformal_radius": True},
+            "proposal_audit": {"proposal_count": 14},
         }
         proposals = {
-            "proposal_count": 6,
-            "abstain_count": 6,
+            "proposal_count": 14,
+            "eligible_count": 3,
+            "abstain_count": 11,
             "applied_action_count": 0,
             "records": [
-                {"decision": "abstain", "execution_status": "not-applied"}
-                for _ in range(6)
+                {
+                    "decision": "abstain",
+                    "model_execution_status": "not-applied-offline-evaluation",
+                }
+                for _ in range(11)
+            ] + [
+                {
+                    "decision": "eligible-for-human-approval",
+                    "model_execution_status": "not-applied-offline-evaluation",
+                }
+                for _ in range(3)
             ],
         }
         self.assertEqual(evaluate_payloads(status, proposals), [])
 
     def test_payload_gate_rejects_an_applied_action(self):
         status = {
+            "api_version": "v2",
             "overall_decision": {"model_promotion": "no-go"},
             "safety_lock": {"allow_live_actuation": False},
-            "proposal_audit": {"proposal_count": 6},
+            "dataset": {"record_count": 132},
+            "diagnostic_gate": {"finite_conformal_radius": True},
+            "proposal_audit": {"proposal_count": 14},
         }
         proposals = {
-            "proposal_count": 6,
-            "abstain_count": 5,
+            "proposal_count": 14,
+            "eligible_count": 3,
+            "abstain_count": 11,
             "applied_action_count": 1,
             "records": [
-                {"decision": "abstain", "execution_status": "not-applied"}
-                for _ in range(5)
-            ] + [{"decision": "require-approval", "execution_status": "applied"}],
+                {
+                    "decision": "abstain",
+                    "model_execution_status": "not-applied-offline-evaluation",
+                }
+                for _ in range(13)
+            ] + [{"decision": "eligible-for-human-approval", "model_execution_status": "applied"}],
         }
         errors = evaluate_payloads(status, proposals)
         self.assertGreaterEqual(len(errors), 3)

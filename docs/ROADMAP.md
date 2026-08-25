@@ -127,12 +127,20 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
       adjustment at 0.0625, H2 coverage is 3/14, and H3 is `gated-not-run`;
       independent calculation/hash audit and 124 tests passed at
       `evidence/verification/20260825T030634Z-phase6-analysis-v1`).
-- [ ] Publish the evidence-linked Phase 6 decision and refresh the local
-      read-only dashboard.
+- [x] Publish the evidence-linked Phase 6 decision and refresh the local
+      read-only dashboard (`docs/PHASE6_DECISION.md`;
+      `evidence/product/20260825T032218Z-dashboard-smoke-v1`; loopback-only,
+      read routes 200, mutation methods 405, actuation routes 404, 14 locked
+      test candidates and zero model actions; production build, lint,
+      zero-vulnerability audit, and 124 tests passed at
+      `evidence/verification/20260825T032902Z-phase6-product-v1`). The initial
+      heading-contract smoke failure at `20260825T032117Z` and verification
+      failures caused by a running-server file lock at `20260825T032458Z` and
+      transient registry DNS at `20260825T032528Z` are retained.
 
-All locally executable Phase 1-5 roadmap items are complete. Phase 6 local
-work continues above. The external gates below require new authority and are
-not inferred from local software or sandbox evidence.
+All locally executable Phase 1-6 roadmap items are complete. The external
+gates below require new authority and are not inferred from local software or
+sandbox evidence.
 
 ## External-authority gates
 

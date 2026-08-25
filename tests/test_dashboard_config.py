@@ -28,7 +28,7 @@ class DashboardConfigTests(unittest.TestCase):
             "Live actuation locked",
             "NO-GO",
             "Not supported",
-            "Not tested",
+            "Gated—not run",
             "Simulated",
             "Sandbox-measured",
             "Hardware-measured",
@@ -50,11 +50,27 @@ class DashboardConfigTests(unittest.TestCase):
         self.assertEqual(snapshot["overall_decision"]["model_promotion"], "no-go")
         self.assertFalse(snapshot["safety_lock"]["allow_live_actuation"])
         audit = snapshot["proposal_audit"]
-        self.assertEqual(audit["proposal_count"], 6)
-        self.assertEqual(audit["abstain_count"], 6)
+        self.assertEqual(snapshot["schema_version"], 2)
+        self.assertEqual(snapshot["api_version"], "v2")
+        self.assertEqual(snapshot["dataset"]["record_count"], 132)
+        self.assertEqual(snapshot["dataset"]["assignment_block_count"], 44)
+        self.assertEqual(snapshot["dataset"]["telemetry_sample_count"], 1584)
+        self.assertEqual(snapshot["benchmark"]["test_winner"], "deterministic_rule")
+        self.assertTrue(snapshot["diagnostic_gate"]["finite_conformal_radius"])
+        self.assertFalse(snapshot["diagnostic_gate"]["scientific_promotion_ready"])
+        self.assertEqual(audit["proposal_count"], 14)
+        self.assertEqual(audit["eligible_count"], 3)
+        self.assertEqual(audit["abstain_count"], 11)
         self.assertEqual(audit["applied_action_count"], 0)
-        self.assertTrue(all(record["decision"] == "abstain" for record in audit["records"]))
-        self.assertTrue(all(record["execution_status"] == "not-applied" for record in audit["records"]))
+        self.assertEqual(
+            sum(record["decision"] == "abstain" for record in audit["records"]), 11
+        )
+        self.assertTrue(
+            all(
+                record["model_execution_status"] == "not-applied-offline-evaluation"
+                for record in audit["records"]
+            )
+        )
         self.assertTrue(all(len(value) == 64 for value in snapshot["source_sha256"].values()))
 
     def test_api_routes_are_get_only(self):
