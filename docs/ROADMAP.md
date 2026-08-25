@@ -183,8 +183,15 @@ sandbox evidence.
       actions, and clean recovery without abort; independent bundle/command/
       state audit plus 155 tests passed at
       `evidence/verification/20260825T045224Z-phase7-runner-v2a`).
+- [x] Freeze and verify the public-safe dataset v2a builder before opening any
+      confirmatory labels (`docs/DATASET_V2A_CONTRACT.md`; full releases reject
+      pilot or incomplete input, authorization prose/identity is excluded, and
+      160 tests plus 9 subtests passed at
+      `evidence/verification/20260825T045956Z-dataset-v2a-builder`).
 - [ ] Execute the fresh 675-unit named-action sandbox campaign; freeze and
-      audit the 135 complete-block dataset before opening test labels.
+      audit the 135 complete-block dataset before opening test labels. **In
+      progress:** `evidence/scenarios/20260825T045337Z-phase7-campaign-v2a`;
+      test labels remain sealed and this item cannot pass from partial output.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
       ablations, OOD stress test, runtime/scalability evaluation, and
       independent artifact audit.
