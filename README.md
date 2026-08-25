@@ -72,7 +72,9 @@ contrasts: median calibration time was 3.024 ms at 5,000 blocks and median
 proposal overhead was 2.662 microseconds. These are local-host computation
 measurements, not network, radio, hardware, or operator scalability evidence.
 See [docs/PHASE7_NOVELTY_AUDIT.md](docs/PHASE7_NOVELTY_AUDIT.md) and
-[docs/ROADMAP.md](docs/ROADMAP.md) for the frozen gates and current evidence.
+[docs/TNSM_CLAIM_MATRIX.md](docs/TNSM_CLAIM_MATRIX.md) for the allowed and
+forbidden paper claims; [docs/ROADMAP.md](docs/ROADMAP.md) tracks current
+evidence.
 
 ## Setup
 
