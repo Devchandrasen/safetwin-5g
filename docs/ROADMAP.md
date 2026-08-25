@@ -151,8 +151,12 @@ sandbox evidence.
       `config/experiments/phase7-brace-v2.json`; 100 complete blocks and 500
       sandbox units; 130 tests and design validation passed at
       `evidence/verification/20260825T043343Z-phase7-preregistration-v2`).
-- [ ] Implement and verify BRACE simultaneous block calibration, action
-      certificates, OOD abstention, and rollback/evidence preconditions.
+- [x] Implement and verify BRACE simultaneous block calibration, action
+      certificates, OOD abstention, and rollback/evidence preconditions
+      (`docs/BRACE_METHOD.md`; `src/safetwin5g/brace.py`; finite 90% block
+      radius at 21 calibration blocks, unbounded small-sample abstention, no
+      actuation authorization, and 137 tests passed at
+      `evidence/verification/20260825T043650Z-brace-v1`).
 - [ ] Run the locked v1 exploratory feasibility check without upgrading its
       negative Phase 6 decision or using it for confirmatory claims.
 - [ ] Execute the fresh v2 pilot and 500-unit named-action sandbox campaign;
