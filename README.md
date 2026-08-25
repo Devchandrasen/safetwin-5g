@@ -46,6 +46,34 @@ The local evidence product is read-only, loopback-only, and exposes GET status
 and proposal-audit APIs without an actuation route. Hardware, operator, and
 publication gates remain pending external authorization.
 
+### Phase 7 TNSM novelty falsification
+
+Phase 6 remains a locked negative result. Phase 7 tests a narrower candidate
+contribution, **BRACE** (Block-Randomized Action Certification with Evidence
+tiers): complete clean-reset named-action blocks, simultaneous conformal
+calibration of all action-versus-observe contrasts, and fail-closed OOD,
+evidence, approval, reversibility, and rollback preconditions. The construction
+uses established conformal ideas; the candidate contribution is the causal
+network-remediation specialization, safety contract, and replayable benchmark,
+not a claim of a new general conformal theorem.
+
+The precision-amended campaign contains 675 isolated sandbox units in 135
+complete five-action blocks. Its analysis is hash-locked before the 70 test
+blocks: model selection uses train-block leave-one-block-out only, uncertainty
+uses 21 calibration blocks, G2 uses 60 faulty test blocks, and G3 includes all
+70 paired test blocks so no-fault false remediation cannot be hidden. The fresh
+campaign is currently in progress; partial output is not a result and test
+labels remain sealed. A baseline win, insufficient certificate coverage,
+failed simultaneous coverage, or any dirty recovery produces an explicit
+no-go.
+
+The separate BRACE computation microbenchmark uses deterministic fixture
+contrasts: median calibration time was 3.024 ms at 5,000 blocks and median
+proposal overhead was 2.662 microseconds. These are local-host computation
+measurements, not network, radio, hardware, or operator scalability evidence.
+See [docs/PHASE7_NOVELTY_AUDIT.md](docs/PHASE7_NOVELTY_AUDIT.md) and
+[docs/ROADMAP.md](docs/ROADMAP.md) for the frozen gates and current evidence.
+
 ## Setup
 
 From this directory in PowerShell:
