@@ -142,6 +142,28 @@ All locally executable Phase 1-6 roadmap items are complete. The external
 gates below require new authority and are not inferred from local software or
 sandbox evidence.
 
+## Phase 7 — TNSM novelty falsification
+
+- [x] Audit the closest primary literature, reject generic conformal action
+      selection and Open5GS/UERANSIM integration as novelty, and preregister
+      the BRACE candidate plus a non-leaking named-action study
+      (`docs/PHASE7_NOVELTY_AUDIT.md`; `docs/PHASE7_PROTOCOL.md`;
+      `config/experiments/phase7-brace-v2.json`; 100 complete blocks and 500
+      sandbox units; 130 tests and design validation passed at
+      `evidence/verification/20260825T043343Z-phase7-preregistration-v2`).
+- [ ] Implement and verify BRACE simultaneous block calibration, action
+      certificates, OOD abstention, and rollback/evidence preconditions.
+- [ ] Run the locked v1 exploratory feasibility check without upgrading its
+      negative Phase 6 decision or using it for confirmatory claims.
+- [ ] Execute the fresh v2 pilot and 500-unit named-action sandbox campaign;
+      freeze and audit the complete-block dataset before opening test labels.
+- [ ] Run the preregistered BRACE comparisons, paired-block inference,
+      ablations, OOD stress test, runtime/scalability evaluation, and
+      independent artifact audit.
+- [ ] Draft a TNSM manuscript only if the novelty, utility, coverage, and
+      recovery gates pass; otherwise publish a no-go decision instead of a
+      positive claim.
+
 ## External-authority gates
 
 - [ ] Collect `hardware-measured` evidence on identified private-5G hardware

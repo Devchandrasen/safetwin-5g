@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "experiment_id": "safetwin5g-phase7-brace-v2",
+  "title": "Named-action block-randomized remediation certification",
+  "environment": "sandbox",
+  "claim_boundaries": {
+    "evidence_label_after_measurement": "sandbox-measured",
+    "radio_evidence_label": "simulated",
+    "hardware_evidence_label": null,
+    "operator_validation": false
+  },
+  "reference_action_id": "observe_only",
+  "action_portfolio": [
+    {
+      "action_id": "observe_only",
+      "action_kind": "observe_only",
+      "description": "Make no network mutation and retain the fault state for the measurement window.",
+      "mutates": false
+    },
+    {
+      "action_id": "clear_packet_impairment",
+      "action_kind": "network_impairment_clear",
+      "description": "Clear packet impairment on the isolated UE tunnel.",
+      "mutates": true
+    },
+    {
+      "action_id": "resume_upf",
+      "action_kind": "nf_process_resume",
+      "description": "Resume the suspended UPF process in the isolated core container.",
+      "mutates": true
+    },
+    {
+      "action_id": "stop_cpu_stress",
+      "action_kind": "cpu_stress_stop",
+      "description": "Stop the experiment-owned CPU stress processes in the isolated core container.",
+      "mutates": true
+    },
+    {
+      "action_id": "apply_packet_impairment_25",
+      "action_kind": "network_impairment_apply",
+      "description": "Apply 25 percent packet impairment to the isolated UE tunnel as a reversible distractor action.",
+      "parameters": {"loss_pct": 25},
+      "mutates": true
+    }
+  ],
+  "faults": [
+    {
+      "family": "packet_impairment",
+      "severity_name": "loss_pct",
+      "development_severities": [20, 50],
+      "ood_severity": 80
+    },
+    {
+      "family": "network_function_interruption",
+      "severity_name": "hold_ms",
+      "development_severities": [400, 1000],
+      "ood_severity": 1800
+    },
+    {
+      "family": "cpu_saturation",
+      "severity_name": "workers",
+      "development_severities": [1, 2],
+      "ood_severity": 3
+    },
+    {
+      "family": "no_fault",
+      "severity_name": "none",
+      "development_severities": [0],
+      "ood_severity": 0
+    }
+  ],
+  "splits": {
+    "train": {"seeds": [1101, 1102, 1103, 1104], "workload": "steady"},
+    "calibration": {"seeds": [1201, 1202, 1203], "workload": "steady"},
+    "test": {"seeds": [1301, 1302, 1303, 1304, 1305], "workload": "steady"},
+    "ood": {"seeds": [1401, 1402, 1403, 1404], "workload": "sustained"}
+  },
+  "workloads": {
+    "steady": {"ping_count_per_sample": 3, "ping_interval_seconds": 0.1},
+    "sustained": {"ping_count_per_sample": 8, "ping_interval_seconds": 0.1}
+  },
+  "unit": {
+    "clean_reset_before_each_unit": true,
+    "rollback_required": true,
+    "window_samples_per_stage": 3,
+    "window_sample_interval_seconds": 0.5,
+    "stages": ["baseline", "fault", "post_action", "recovery"]
+  },
+  "randomization": {
+    "algorithm": "sha256-sort-within-split",
+    "salt": "safetwin5g-phase7-brace-v2-frozen-20260825",
+    "assignment_hidden_until_execution": false
+  },
+  "safety": {
+    "allow_live_actuation": false,
+    "require_explicit_sandbox_approval": true,
+    "require_allowlisted_mutation": true,
+    "require_pre_action_rollback_plan": true,
+    "require_clean_final_state": true,
+    "abort_on_failed_cleanup": true,
+    "model_actions_are_proposals_only": true
+  },
+  "analysis": {
+    "method": "BRACE-v1",
+    "calibration_unit": "complete_assignment_block",
+    "simultaneous_conformal_coverage": 0.9,
+    "minimum_calibration_blocks": 19,
+    "minimum_test_blocks": 35,
+    "minimum_faulty_block_mutation_coverage": 0.5,
+    "minimum_benefit_margin_points": 5.0,
+    "confidence_level": 0.95,
+    "ood_policy": "always_abstain",
+    "model_selection": "train-block leave-one-block-out only",
+    "test_labels_sealed_until_code_and_hashes_freeze": true,
+    "required_comparators": [
+      "observe_only",
+      "deterministic_runbook",
+      "point_estimate_policy",
+      "scalar_split_conformal",
+      "action_conditional_conformal",
+      "BRACE-v1"
+    ],
+    "required_ablations": [
+      "BRACE-without-joint-block-score",
+      "BRACE-without-OOD-gate",
+      "BRACE-without-rollback-precondition"
+    ],
+    "primary_gates": {
+      "G1": "empirical simultaneous action-contrast coverage is at least 0.90 on the 35 independent test blocks",
+      "G2": "no certified mutation violates the preregistered 5-point benefit margin, with certified mutation coverage at least 0.50 on faulty test blocks",
+      "G3": "BRACE harmful-action incidence is below the point-estimate policy at matched mutation coverage under paired block inference",
+      "G4": "every applied experimental mutation has explicit approval and verified clean recovery"
+    },
+    "multiplicity_adjustment": "holm-for-G2-G3"
+  },
+  "expected_counts": {
+    "blocks": {"train": 28, "calibration": 21, "test": 35, "ood": 16},
+    "units": {"train": 140, "calibration": 105, "test": 175, "ood": 80},
+    "total_blocks": 100,
+    "total_units": 500
+  }
+}
