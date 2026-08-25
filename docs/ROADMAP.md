@@ -118,8 +118,15 @@ verified rollback. Until then, all records remain `fixture` or `simulated`.
       blocks, 31 harmful-action events, 8 false-remediation events, and 764
       explicit missing metric cells; bundle/data audit and 114 tests passed at
       `evidence/verification/20260824T091705Z-dataset-v1`).
-- [ ] Re-run baselines, causal estimation, uncertainty/OOD/abstention, and
-      H1-H3 gates on the locked v1 data.
+- [x] Re-run baselines, causal estimation, uncertainty/OOD/abstention, and
+      H1-H3 gates on the locked v1 data
+      (`evidence/benchmarks/20260825T030431Z-phase6-analysis-v1`; deterministic
+      rule wins test MAE 3.889 versus learned model 5.261 and temporal 17.460;
+      90% conformal radius is finite at calibration n=21; test OOD 0/21 and
+      designated OOD detected 48/48; H1 and H2 are `not-supported` after Holm
+      adjustment at 0.0625, H2 coverage is 3/14, and H3 is `gated-not-run`;
+      independent calculation/hash audit and 124 tests passed at
+      `evidence/verification/20260825T030634Z-phase6-analysis-v1`).
 - [ ] Publish the evidence-linked Phase 6 decision and refresh the local
       read-only dashboard.
 
