@@ -176,8 +176,15 @@ sandbox evidence.
       zero-violation upper bound 0.095 at 30 certifications; 148 tests and the
       design check passed at
       `evidence/verification/20260825T044323Z-phase7-precision-amendment-a1`).
-- [ ] Execute the fresh v2 pilot and 500-unit named-action sandbox campaign;
-      freeze and audit the complete-block dataset before opening test labels.
+- [x] Implement, dry-run, and audit the fail-closed v2a named-action runner and
+      one complete-block sandbox pilot
+      (`evidence/scenarios/20260825T044909Z-phase7-pilot-v2a`; 5/5 units,
+      four approved reversible mutations, all five named actions, zero model
+      actions, and clean recovery without abort; independent bundle/command/
+      state audit plus 155 tests passed at
+      `evidence/verification/20260825T045224Z-phase7-runner-v2a`).
+- [ ] Execute the fresh 675-unit named-action sandbox campaign; freeze and
+      audit the 135 complete-block dataset before opening test labels.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
       ablations, OOD stress test, runtime/scalability evaluation, and
       independent artifact audit.
