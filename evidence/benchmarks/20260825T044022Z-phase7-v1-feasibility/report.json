@@ -1,0 +1,367 @@
+{
+  "analysis_status": "exploratory-negative-design-result",
+  "completed_at": "2026-08-25T04:40:22.376816+00:00",
+  "confirmatory_claim_allowed": false,
+  "dataset_manifest_sha256": "3ee716cfa4a35d235176dce67c761a6893a0dc8e925663237ac0d3a15a42c185",
+  "decision": {
+    "fresh_v2_campaign": "required",
+    "legacy_v1_BRACE_promotion": "no-go",
+    "live_actuation": "no-go",
+    "manuscript_positive_claim": "no-go-pending-fresh-evidence"
+  },
+  "evidence_label": "sandbox-measured",
+  "execution_passed": true,
+  "hardware_evidence_label": null,
+  "legacy_block_calibration": {
+    "alpha": 0.09999999999999998,
+    "assumptions": [
+      "exchangeable complete blocks",
+      "training fixed before calibration",
+      "clean-reset consistency",
+      "no cross-unit interference",
+      "in-distribution support"
+    ],
+    "calibration_block_n": 7,
+    "calibration_unit": "complete-assignment-block",
+    "coverage": 0.9,
+    "exclusions": [
+      "conditional per-context coverage",
+      "detected OOD",
+      "incomplete blocks",
+      "hardware or operator guarantees",
+      "actuation authorization"
+    ],
+    "guarantee": "marginal-simultaneous-action-contrast-coverage",
+    "method": "BRACE-v1",
+    "post_selection_scope": "any action selected from the jointly covered vector",
+    "radius": null,
+    "rank": 8,
+    "score_distribution": {
+      "iqr": 9.410559870802611,
+      "maximum": 50.94397687031442,
+      "mean": 12.291296331807619,
+      "median": 8.997676867667474,
+      "minimum": 0.11928557947261709,
+      "n": 7,
+      "p25": 1.7892538158984017,
+      "p75": 11.199813686701013,
+      "p90": 27.376260906412185,
+      "standard_deviation": 17.70394827708047
+    },
+    "status": "unbounded"
+  },
+  "legacy_limitations": {
+    "action_labels_encode_outcome_role": true,
+    "legacy_mutating_action_ids": [
+      "effective",
+      "negative_control"
+    ],
+    "observed_v1_block_n": 44,
+    "strict_named_action_feasibility": "not-identified",
+    "strict_phase7_named_action_complete_blocks": 0
+  },
+  "legacy_ood": {
+    "abstained_or_rejected_block_n": 16,
+    "certified_block_n": 0,
+    "certified_coverage": 0.0,
+    "decisions": [
+      {
+        "assignment_block_id": "ood|cpu_saturation|3|505|sustained",
+        "decision": "abstain",
+        "reasons": [
+          "detected OOD always abstains"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "ood|cpu_saturation|3|606|sustained",
+        "decision": "abstain",
+        "reasons": [
+          "detected OOD always abstains"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "ood|cpu_saturation|3|707|sustained",
+        "decision": "abstain",
+        "reasons": [
+          "detected OOD always abstains"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "ood|cpu_saturation|3|808|sustained",
+        "decision": "abstain",
+        "reasons": [
+          "detected OOD always abstains"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "ood|network_function_interruption|1800|505|sustained",
+        "decision": "abstain",
+        "reasons": [
+          "detected OOD always abstains"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "ood|network_function_interruption|1800|606|sustained",
+        "decision": "abstain",
+        "reasons": [
+          "detected OOD always abstains"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "ood|network_function_interruption|1800|707|sustained",
+        "decision": "abstain",
+        "reasons": [
+          "detected OOD always abstains"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "ood|network_function_interruption|1800|808|sustained",
+        "decision": "abstain",
+        "reasons": [
+          "detected OOD always abstains"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "ood|no_fault|0|505|sustained",
+        "decision": "abstain",
+        "reasons": [
+          "detected OOD always abstains"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "ood|no_fault|0|606|sustained",
+        "decision": "abstain",
+        "reasons": [
+          "detected OOD always abstains"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "ood|no_fault|0|707|sustained",
+        "decision": "abstain",
+        "reasons": [
+          "detected OOD always abstains"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "ood|no_fault|0|808|sustained",
+        "decision": "abstain",
+        "reasons": [
+          "detected OOD always abstains"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "ood|packet_impairment|80|505|sustained",
+        "decision": "abstain",
+        "reasons": [
+          "detected OOD always abstains"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "ood|packet_impairment|80|606|sustained",
+        "decision": "abstain",
+        "reasons": [
+          "detected OOD always abstains"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "ood|packet_impairment|80|707|sustained",
+        "decision": "abstain",
+        "reasons": [
+          "detected OOD always abstains"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "ood|packet_impairment|80|808|sustained",
+        "decision": "abstain",
+        "reasons": [
+          "detected OOD always abstains"
+        ],
+        "selected_action_id": null
+      }
+    ],
+    "independent_block_n": 16
+  },
+  "legacy_test": {
+    "abstained_or_rejected_block_n": 7,
+    "certified_block_n": 0,
+    "certified_coverage": 0.0,
+    "decisions": [
+      {
+        "assignment_block_id": "test|cpu_saturation|1|404|steady",
+        "decision": "abstain",
+        "reasons": [
+          "simultaneous conformal radius is unbounded"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "test|cpu_saturation|2|404|steady",
+        "decision": "abstain",
+        "reasons": [
+          "simultaneous conformal radius is unbounded"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "test|network_function_interruption|1000|404|steady",
+        "decision": "abstain",
+        "reasons": [
+          "simultaneous conformal radius is unbounded"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "test|network_function_interruption|400|404|steady",
+        "decision": "abstain",
+        "reasons": [
+          "simultaneous conformal radius is unbounded"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "test|no_fault|0|404|steady",
+        "decision": "abstain",
+        "reasons": [
+          "simultaneous conformal radius is unbounded"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "test|packet_impairment|20|404|steady",
+        "decision": "abstain",
+        "reasons": [
+          "simultaneous conformal radius is unbounded"
+        ],
+        "selected_action_id": null
+      },
+      {
+        "assignment_block_id": "test|packet_impairment|50|404|steady",
+        "decision": "abstain",
+        "reasons": [
+          "simultaneous conformal radius is unbounded"
+        ],
+        "selected_action_id": null
+      }
+    ],
+    "independent_block_n": 7
+  },
+  "model": {
+    "fitted_unit_ids": [
+      "safetwin5g-phase6-v1-train-cpu_saturation-1-effective-101",
+      "safetwin5g-phase6-v1-train-cpu_saturation-1-effective-202",
+      "safetwin5g-phase6-v1-train-cpu_saturation-1-negative_control-101",
+      "safetwin5g-phase6-v1-train-cpu_saturation-1-negative_control-202",
+      "safetwin5g-phase6-v1-train-cpu_saturation-1-no_action-101",
+      "safetwin5g-phase6-v1-train-cpu_saturation-1-no_action-202",
+      "safetwin5g-phase6-v1-train-cpu_saturation-2-effective-101",
+      "safetwin5g-phase6-v1-train-cpu_saturation-2-effective-202",
+      "safetwin5g-phase6-v1-train-cpu_saturation-2-negative_control-101",
+      "safetwin5g-phase6-v1-train-cpu_saturation-2-negative_control-202",
+      "safetwin5g-phase6-v1-train-cpu_saturation-2-no_action-101",
+      "safetwin5g-phase6-v1-train-cpu_saturation-2-no_action-202",
+      "safetwin5g-phase6-v1-train-network_function_interruption-1000-effective-101",
+      "safetwin5g-phase6-v1-train-network_function_interruption-1000-effective-202",
+      "safetwin5g-phase6-v1-train-network_function_interruption-1000-negative_control-101",
+      "safetwin5g-phase6-v1-train-network_function_interruption-1000-negative_control-202",
+      "safetwin5g-phase6-v1-train-network_function_interruption-1000-no_action-101",
+      "safetwin5g-phase6-v1-train-network_function_interruption-1000-no_action-202",
+      "safetwin5g-phase6-v1-train-network_function_interruption-400-effective-101",
+      "safetwin5g-phase6-v1-train-network_function_interruption-400-effective-202",
+      "safetwin5g-phase6-v1-train-network_function_interruption-400-negative_control-101",
+      "safetwin5g-phase6-v1-train-network_function_interruption-400-negative_control-202",
+      "safetwin5g-phase6-v1-train-network_function_interruption-400-no_action-101",
+      "safetwin5g-phase6-v1-train-network_function_interruption-400-no_action-202",
+      "safetwin5g-phase6-v1-train-no_fault-0-effective-101",
+      "safetwin5g-phase6-v1-train-no_fault-0-effective-202",
+      "safetwin5g-phase6-v1-train-no_fault-0-negative_control-101",
+      "safetwin5g-phase6-v1-train-no_fault-0-negative_control-202",
+      "safetwin5g-phase6-v1-train-no_fault-0-no_action-101",
+      "safetwin5g-phase6-v1-train-no_fault-0-no_action-202",
+      "safetwin5g-phase6-v1-train-packet_impairment-20-effective-101",
+      "safetwin5g-phase6-v1-train-packet_impairment-20-effective-202",
+      "safetwin5g-phase6-v1-train-packet_impairment-20-negative_control-101",
+      "safetwin5g-phase6-v1-train-packet_impairment-20-negative_control-202",
+      "safetwin5g-phase6-v1-train-packet_impairment-20-no_action-101",
+      "safetwin5g-phase6-v1-train-packet_impairment-20-no_action-202",
+      "safetwin5g-phase6-v1-train-packet_impairment-50-effective-101",
+      "safetwin5g-phase6-v1-train-packet_impairment-50-effective-202",
+      "safetwin5g-phase6-v1-train-packet_impairment-50-negative_control-101",
+      "safetwin5g-phase6-v1-train-packet_impairment-50-negative_control-202",
+      "safetwin5g-phase6-v1-train-packet_impairment-50-no_action-101",
+      "safetwin5g-phase6-v1-train-packet_impairment-50-no_action-202"
+    ],
+    "selected_alpha": 0.01,
+    "selection": "leave-one-train-block-out only",
+    "trials": [
+      {
+        "alpha": 0.01,
+        "heldout_row_n": 42,
+        "independent_fold_n": 14,
+        "leave_one_block_out_mae": 5.214471664153571
+      },
+      {
+        "alpha": 0.1,
+        "heldout_row_n": 42,
+        "independent_fold_n": 14,
+        "leave_one_block_out_mae": 5.528494263186868
+      },
+      {
+        "alpha": 1.0,
+        "heldout_row_n": 42,
+        "independent_fold_n": 14,
+        "leave_one_block_out_mae": 6.998714044750505
+      },
+      {
+        "alpha": 10.0,
+        "heldout_row_n": 42,
+        "independent_fold_n": 14,
+        "leave_one_block_out_mae": 8.87559867771993
+      },
+      {
+        "alpha": 100.0,
+        "heldout_row_n": 42,
+        "independent_fold_n": 14,
+        "leave_one_block_out_mae": 18.335537955708837
+      },
+      {
+        "alpha": 1000.0,
+        "heldout_row_n": 42,
+        "independent_fold_n": 14,
+        "leave_one_block_out_mae": 30.49162859012129
+      }
+    ]
+  },
+  "operator_validation": false,
+  "phase6_decision_changed": false,
+  "prospective_v2_design_check": {
+    "calibration_blocks": 21,
+    "calibration_rank_at_90pct": 20,
+    "empirical_ten_percent_precision_at_minimum_coverage": "insufficient",
+    "faulty_test_blocks": 30,
+    "finite_radius_mathematically_possible": true,
+    "minimum_certified_mutations_at_frozen_coverage": 15,
+    "minimum_zero_violation_n_for_upper_below_0p10": 29,
+    "one_sided_95pct_zero_violation_upper_at_minimum_coverage": 0.18103627252208465,
+    "one_sided_95pct_zero_violation_upper_if_all_faulty_blocks_certified": 0.09503385285530419,
+    "recommended_amendment": "increase fresh test design to at least 60 faulty blocks if a one-sided 95% empirical upper bound below 0.10 at 50% coverage is required; otherwise keep the safety statement theorem-based",
+    "test_blocks": 35
+  },
+  "radio_evidence_label": "simulated",
+  "run_id": "20260825T044022Z-phase7-v1-feasibility",
+  "started_at": "2026-08-25T04:40:22.099710+00:00"
+}

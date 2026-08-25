@@ -157,8 +157,20 @@ sandbox evidence.
       radius at 21 calibration blocks, unbounded small-sample abstention, no
       actuation authorization, and 137 tests passed at
       `evidence/verification/20260825T043650Z-brace-v1`).
-- [ ] Run the locked v1 exploratory feasibility check without upgrading its
-      negative Phase 6 decision or using it for confirmatory claims.
+- [x] Run the locked v1 exploratory feasibility and prospective precision
+      checks without upgrading the negative Phase 6 decision
+      (`evidence/benchmarks/20260825T044022Z-phase7-v1-feasibility`; 0/44
+      strict five-action blocks, seven legacy calibration blocks give
+      unbounded 90% rank 8, and BRACE certifies 0/7 ID and 0/16 OOD blocks;
+      independent hash/arithmetic audit and 143 tests passed at
+      `evidence/verification/20260825T044039Z-phase7-v1-feasibility`). The
+      prospective check found that 15 certified mutations at the frozen 50%
+      coverage floor give a one-sided 95% zero-violation upper bound of 0.181,
+      so the fresh test design needs a pre-campaign precision amendment for an
+      empirical 0.10 safety bound.
+- [ ] Amend and re-freeze the v2 test split to provide at least 29 certified
+      faulty-block decisions at the 50% coverage floor before executing a
+      pilot.
 - [ ] Execute the fresh v2 pilot and 500-unit named-action sandbox campaign;
       freeze and audit the complete-block dataset before opening test labels.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
