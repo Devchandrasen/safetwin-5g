@@ -53,7 +53,7 @@ def render_markdown(report: dict) -> str:
         f"- G2: `{gates['G2']['certified_mutation_n']}/{gates['G2']['faulty_test_block_n']}` faulty blocks certified; "
         f"`{gates['G2']['margin_violation_n']}` margin violations.",
         f"- G3: BRACE `{gates['G3']['brace_harm_n']}` harms versus matched point policy "
-        f"`{gates['G3']['point_policy_harm_n']}` across `{gates['G3']['matched_faulty_block_n']}` paired faulty blocks.",
+        f"`{gates['G3']['point_policy_harm_n']}` across `{gates['G3']['matched_test_block_n']}` paired test blocks.",
         "",
         "## Claim boundary",
         "",

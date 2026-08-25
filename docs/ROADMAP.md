@@ -191,9 +191,11 @@ sandbox evidence.
 - [x] Implement and hash-lock the block-independent analysis, required
       comparators, BRACE calibration, paired inference, Holm correction,
       ablations, OOD abstention, and honest no-go path before test-label opening
-      (`config/experiments/phase7-analysis-v2a-lock.json`; synthetic full-design
-      baseline-win/no-go check; 166 tests plus 9 subtests passed at
-      `evidence/verification/20260825T050824Z-phase7-analysis-freeze`).
+      (`config/experiments/phase7-analysis-v2a-lock.json`; Analysis Amendment A1
+      corrected G3 to include no-fault false remediation across all 70 paired
+      test blocks while G2 remains on 60 faulty blocks; synthetic full-design
+      baseline-win/no-go check; 169 tests plus 9 subtests passed before the test
+      split at `evidence/verification/20260825T051716Z-phase7-analysis-freeze`).
 - [x] Measure and audit BRACE certificate-computation scalability with bounded
       fixture claims (`evidence/benchmarks/20260825T051037Z-phase7-brace-scalability`;
       21 to 5,000 blocks, empirical log-log slope 0.976, 3.024 ms median at

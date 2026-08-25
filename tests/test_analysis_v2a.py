@@ -9,6 +9,7 @@ from safetwin5g.analysis_v2a import (
     complete_blocks,
     fit_calibrations,
     holm_adjust,
+    matched_point_rows,
     paired_harm_pvalue,
     raw_benefit_features,
     select_alpha_lobo,
@@ -154,10 +155,45 @@ class AnalysisV2aTests(unittest.TestCase):
         self.assertEqual(paired["discordant_blocks"], 2)
         self.assertEqual(paired["exact_one_sided_pvalue"], 0.25)
 
+    def test_matched_point_policy_can_expose_no_fault_false_remediation(self):
+        brace = [
+            {
+                "assignment_block_id": "fault",
+                "fault_family": "packet_impairment",
+                "mutated": True,
+            },
+            {
+                "assignment_block_id": "clean",
+                "fault_family": "no_fault",
+                "mutated": False,
+            },
+        ]
+        point = [
+            {
+                "assignment_block_id": "fault",
+                "fault_family": "packet_impairment",
+                "predicted_benefit": 10.0,
+                "mutated": True,
+            },
+            {
+                "assignment_block_id": "clean",
+                "fault_family": "no_fault",
+                "predicted_benefit": 20.0,
+                "mutated": True,
+                "false_remediation": True,
+                "harmful_action": True,
+            },
+        ]
+        matched = matched_point_rows(brace, point)
+        selected = next(row for row in matched if row["mutated"])
+        self.assertEqual(selected["assignment_block_id"], "clean")
+        self.assertTrue(selected["false_remediation"])
+
     def test_full_frozen_analysis_keeps_a_baseline_win_as_no_go(self):
         report, rows = analyze(synthetic_phase7_records())
         self.assertEqual(report["split_block_counts"], {"train": 28, "calibration": 21, "test": 70, "ood": 16})
         self.assertEqual(report["gates"]["G2"]["faulty_test_block_n"], 60)
+        self.assertEqual(report["gates"]["G3"]["matched_test_block_n"], 70)
         self.assertFalse(report["gates"]["G3"]["passed"])
         self.assertEqual(report["decision"]["TNSM_claim_gate"], "no-go")
         self.assertEqual(report["decision"]["live_actuation"], "no-go")

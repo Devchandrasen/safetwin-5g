@@ -38,6 +38,7 @@ try {
         calibration_use = "uncertainty calibration only"
         required_test_blocks = 70
         required_faulty_test_blocks = 60
+        g3_paired_test_blocks = 70
         multiplicity = "Holm for G2 and G3"
         evidence_label = "fixture-and-synthetic-tests-only"
     }

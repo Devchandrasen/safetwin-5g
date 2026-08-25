@@ -37,7 +37,7 @@ def main() -> int:
     assert report["split_block_counts"] == {"train": 28, "calibration": 21, "test": 70, "ood": 16}
     assert report["gates"]["G1"]["block_n"] == 70
     assert report["gates"]["G2"]["faulty_test_block_n"] == 60
-    assert report["gates"]["G3"]["matched_faulty_block_n"] == 60
+    assert report["gates"]["G3"]["matched_test_block_n"] == 70
     assert report["model"]["calibration_used_for_model_selection"] is False
     assert report["model"]["test_or_ood_used_for_fit_or_selection"] is False
     assert set(report["model"]["fitted_block_ids"]) and len(report["model"]["fitted_block_ids"]) == 28

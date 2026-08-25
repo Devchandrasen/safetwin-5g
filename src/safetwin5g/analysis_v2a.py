@@ -581,20 +581,19 @@ def vector_coverage(
 def matched_point_rows(
     brace_rows: list[dict[str, Any]], point_rows: list[dict[str, Any]]
 ) -> list[dict[str, Any]]:
-    faulty_brace = [row for row in brace_rows if row["fault_family"] != "no_fault"]
-    target_n = sum(row["mutated"] for row in faulty_brace)
-    faulty_point = [row.copy() for row in point_rows if row["fault_family"] != "no_fault"]
+    target_n = sum(row["mutated"] for row in brace_rows)
+    point_candidates = [row.copy() for row in point_rows]
     selected_ids = {
         row["assignment_block_id"]
         for row in sorted(
-            faulty_point,
+            point_candidates,
             key=lambda row: (-float(row["predicted_benefit"]), row["assignment_block_id"]),
         )[:target_n]
     }
     matched = []
     for row in point_rows:
         item = row.copy()
-        if item["fault_family"] == "no_fault" or item["assignment_block_id"] not in selected_ids:
+        if item["assignment_block_id"] not in selected_ids:
             item.update(
                 selected_action_id=None,
                 mutated=False,
@@ -603,7 +602,7 @@ def matched_point_rows(
                 violates_benefit_margin=False,
                 harmful_action=False,
                 false_remediation=False,
-                reason="not selected at BRACE-matched faulty-block coverage",
+                reason="not selected at BRACE-matched all-test-block mutation coverage",
             )
         item["policy"] = "point_estimate_policy_matched_coverage"
         matched.append(item)
@@ -645,11 +644,7 @@ def analyze(records: list[dict[str, Any]]) -> tuple[dict[str, Any], list[dict[st
 
     brace_by_id = {row["assignment_block_id"]: row for row in brace_rows}
     point_by_id = {row["assignment_block_id"]: row for row in matched}
-    comparison_ids = sorted(
-        block_id
-        for block_id, row in brace_by_id.items()
-        if row["fault_family"] != "no_fault"
-    )
+    comparison_ids = sorted(brace_by_id)
     brace_harm = [int(brace_by_id[key]["harmful_action"]) for key in comparison_ids]
     point_harm = [int(point_by_id[key]["harmful_action"]) for key in comparison_ids]
     g3_exact = paired_harm_pvalue(brace_harm, point_harm)
@@ -740,7 +735,7 @@ def analyze(records: list[dict[str, Any]]) -> tuple[dict[str, Any], list[dict[st
                 "passed": g2_passed,
             },
             "G3": {
-                "matched_faulty_block_n": len(comparison_ids),
+                "matched_test_block_n": len(comparison_ids),
                 "matched_mutation_n_each_policy": len(certified),
                 "brace_harm_n": brace_harm_n,
                 "point_policy_harm_n": point_harm_n,

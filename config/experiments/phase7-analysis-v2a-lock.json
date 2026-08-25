@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "lock_id": "safetwin5g-phase7-analysis-v2a-20260825",
+  "lock_id": "safetwin5g-phase7-analysis-v2a-a1-20260825",
   "experiment_id": "safetwin5g-phase7-brace-v2a",
   "frozen_before_test_labels": true,
   "test_labels_opened_at_freeze": false,
@@ -8,6 +8,13 @@
   "calibration_use": "BRACE and comparator uncertainty calibration only",
   "primary_test_blocks": 70,
   "faulty_primary_test_blocks": 60,
+  "g3_paired_test_blocks": 70,
+  "amendment": {
+    "amendment_id": "phase7-analysis-a1",
+    "reason": "include no-fault false remediation in the frozen G3 harm endpoint",
+    "trigger": "source-code audit before any test unit or label",
+    "document": "docs/PHASE7_ANALYSIS_AMENDMENT_1.md"
+  },
   "primary_gates": ["G1", "G2", "G3", "G4"],
   "multiplicity": "Holm for G2 and G3",
   "minimum_certified_mutation_count": 29,
@@ -16,7 +23,7 @@
   "files": [
     {
       "path": "src/safetwin5g/analysis_v2a.py",
-      "sha256": "065d33fa103e898ef745f6f245e33ab0652c6e3351639c43310bc59e4f53d58b"
+      "sha256": "94a462b84721b444d017ca009ad4a160d3ecaf74498facd050dda340f83ee63b"
     },
     {
       "path": "src/safetwin5g/brace.py",
@@ -28,7 +35,7 @@
     },
     {
       "path": "tools/run_phase7_analysis.py",
-      "sha256": "e1275c27985a2c7d1417f0508dbe20aa0f8b8300ccd2627f13fe0713dcf212a7"
+      "sha256": "37d2ef9c5dc89de401b06b2ea65c5f38980d60efb038669896207465c8791fc9"
     },
     {
       "path": "config/experiments/phase7-brace-v2a.json",
@@ -45,6 +52,10 @@
     {
       "path": "docs/BRACE_METHOD.md",
       "sha256": "5c28c5fc31fb2f4c34b3901d7ea38f04d4059c875e5a4edf2aa9e70ef6797cc3"
+    },
+    {
+      "path": "docs/PHASE7_ANALYSIS_AMENDMENT_1.md",
+      "sha256": "823737e78fb51d5f193cbfaec722a8f59d00d80bfac550f9f2ace4b91754d344"
     }
   ],
   "claim_boundaries": {
