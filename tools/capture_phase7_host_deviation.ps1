@@ -23,11 +23,25 @@ $coResident = @(
     "nvg-service"
 )
 
+function Write-Utf8Lf {
+    param(
+        [Parameter(Mandatory = $true)][string]$Path,
+        [Parameter(Mandatory = $true)][string]$Content
+    )
+    $normalized = $Content.Replace("`r`n", "`n").Replace("`r", "`n")
+    if (-not $normalized.EndsWith("`n")) { $normalized += "`n" }
+    [System.IO.File]::WriteAllText(
+        $Path,
+        $normalized,
+        [System.Text.UTF8Encoding]::new($false)
+    )
+}
+
 Push-Location $root
 try {
-    docker stats --no-stream --format '{{json .}}' @coResident |
-        Set-Content -LiteralPath (Join-Path $output "co-resident-stats.jsonl") -Encoding utf8
+    $stats = @(docker stats --no-stream --format '{{json .}}' @coResident)
     if ($LASTEXITCODE -ne 0) { throw "co-resident docker stats failed" }
+    Write-Utf8Lf (Join-Path $output "co-resident-stats.jsonl") ($stats -join "`n")
 
     $containers = @()
     foreach ($name in ($safeTwin + $coResident)) {
@@ -43,7 +57,7 @@ try {
             networks = @($container.NetworkSettings.Networks.PSObject.Properties.Name | Sort-Object)
         }
     }
-    $inventory | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath (Join-Path $output "container-inventory.json") -Encoding utf8
+    Write-Utf8Lf (Join-Path $output "container-inventory.json") ($inventory | ConvertTo-Json -Depth 6)
 
     $processor = Get-CimInstance Win32_Processor | Select-Object Name, NumberOfCores, NumberOfLogicalProcessors, LoadPercentage
     $hostInfo = [ordered]@{
@@ -51,7 +65,7 @@ try {
         processor = @($processor)
         total_visible_memory_bytes = (Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory
     }
-    $hostInfo | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $output "host-snapshot.json") -Encoding utf8
+    Write-Utf8Lf (Join-Path $output "host-snapshot.json") ($hostInfo | ConvertTo-Json -Depth 5)
 
     $note = [ordered]@{
         schema_version = 1
@@ -69,7 +83,7 @@ try {
         hardware_evidence_label = $null
         operator_validation = $false
     }
-    $note | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $output "deviation.json") -Encoding utf8
+    Write-Utf8Lf (Join-Path $output "deviation.json") ($note | ConvertTo-Json -Depth 5)
 
     $captured = @{}
     Get-ChildItem -LiteralPath $output -File | ForEach-Object {
@@ -82,7 +96,7 @@ try {
         mutation_performed = $false
         captured_file_sha256 = $captured
     }
-    $manifest | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $output "manifest.json") -Encoding utf8
+    Write-Utf8Lf (Join-Path $output "manifest.json") ($manifest | ConvertTo-Json -Depth 5)
     Write-Output "PASS: read-only Phase 7 host-deviation snapshot captured"
     Write-Output "EVIDENCE=$output"
 }
