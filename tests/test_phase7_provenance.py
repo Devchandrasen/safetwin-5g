@@ -42,6 +42,15 @@ class Phase7ProvenanceTests(unittest.TestCase):
                 "radio_evidence_label": "simulated",
             },
         )
+        write_json(
+            dataset / "data-quality.json",
+            {
+                "release_eligible": True,
+                "limitations": [
+                    "Unrelated co-resident containers create an uncontrolled shared-host contention limitation."
+                ],
+            },
+        )
         dataset_hash = sha256(dataset / "manifest.json")
         write_json(
             analysis / "report.json",
@@ -88,6 +97,7 @@ class Phase7ProvenanceTests(unittest.TestCase):
             )
             self.assertTrue(result["passed"])
             self.assertEqual(result["TNSM_claim_gate"], "no-go")
+            self.assertTrue(result["environment_deviation_D1_disclosed"])
             self.assertEqual(result["claim_tiers"]["scalability_input"], "fixture")
 
     def test_hash_break_and_claim_tier_promotion_fail_closed(self):

@@ -45,6 +45,9 @@ try {
         radio_evidence_label = "simulated"
         hardware_evidence_label = $null
         operator_validation = $false
+        environment_deviation_D1_disclosed = $true
+        procedural_outcome_seal = $true
+        cryptographic_blinding = $false
     }
     $verification | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $output "verification.json") -Encoding utf8
     Write-Output "PASS: complete Phase 7 artifact chain independently verified"

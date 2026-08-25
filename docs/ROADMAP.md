@@ -207,9 +207,16 @@ sandbox evidence.
       `evidence/verification/20260825T051111Z-phase7-scalability`).
 - [x] Implement and fixture-verify the independent cross-artifact provenance
       auditor; it rejects broken campaign-to-dataset hashes and claim-tier
-      promotion, while the actual-chain audit remains gated on final artifacts
-      (`evidence/verification/20260825T054337Z-phase7-provenance-auditor`;
-      171 tests plus 9 subtests passed at that implementation checkpoint).
+      promotion, requires D1 in dataset quality, and keeps the actual-chain
+      audit gated on final artifacts
+      (`evidence/verification/20260825T081920Z-phase7-provenance-auditor`;
+      175 tests plus 9 subtests passed).
+- [x] Implement and fixture-verify the fail-closed local TNSM manuscript gate:
+      all G1-G4 and actual provenance must pass, while a baseline win, missing
+      D1 disclosure, claim promotion, live actuation, or submission authority
+      mismatch blocks a positive draft (`evidence/verification/
+      20260825T081907Z-tnsm-manuscript-gate`; 175 tests plus 9 subtests passed;
+      actual gate evaluation remains pending final artifacts).
 - [ ] Execute the fresh 675-unit named-action sandbox campaign; freeze and
       audit the 135 complete-block dataset before outcome analysis. **In
       progress:** `evidence/scenarios/20260825T045337Z-phase7-campaign-v2a`;

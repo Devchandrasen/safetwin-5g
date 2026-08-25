@@ -30,6 +30,7 @@ def audit_chain(
     campaign_summary = load(campaign / "summary.json")
     campaign_manifest = load(campaign / "manifest.json")
     dataset_manifest = load(dataset / "manifest.json")
+    dataset_quality = load(dataset / "data-quality.json")
     analysis_report = load(analysis / "report.json")
     analysis_sources = load(analysis / "source-evidence.json")
     analysis_manifest = load(analysis / "manifest.json")
@@ -47,6 +48,11 @@ def audit_chain(
     assert dataset_manifest["record_count"] == 675
     assert dataset_manifest["source_bundle"] == relative(campaign, project_root)
     assert dataset_manifest["source_manifest_sha256"] == sha256(campaign / "manifest.json")
+    assert dataset_quality["release_eligible"] is True
+    assert any(
+        "co-resident" in limitation and "shared-host" in limitation
+        for limitation in dataset_quality["limitations"]
+    )
 
     dataset_manifest_hash = sha256(dataset / "manifest.json")
     assert analysis_report["execution_passed"] is True
@@ -86,5 +92,6 @@ def audit_chain(
         "TNSM_claim_gate": analysis_report["decision"]["TNSM_claim_gate"],
         "live_actuation": "no-go",
         "submission_authorized": False,
+        "environment_deviation_D1_disclosed": True,
         "claim_tiers": tiers,
     }
