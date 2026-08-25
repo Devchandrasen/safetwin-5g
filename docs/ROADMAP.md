@@ -194,6 +194,12 @@ sandbox evidence.
       (`config/experiments/phase7-analysis-v2a-lock.json`; synthetic full-design
       baseline-win/no-go check; 166 tests plus 9 subtests passed at
       `evidence/verification/20260825T050824Z-phase7-analysis-freeze`).
+- [x] Measure and audit BRACE certificate-computation scalability with bounded
+      fixture claims (`evidence/benchmarks/20260825T051037Z-phase7-brace-scalability`;
+      21 to 5,000 blocks, empirical log-log slope 0.976, 3.024 ms median at
+      5,000 blocks, and 2.662 microseconds per proposal; no network, radio,
+      hardware, or operator performance claim; verified at
+      `evidence/verification/20260825T051111Z-phase7-scalability`).
 - [ ] Execute the fresh 675-unit named-action sandbox campaign; freeze and
       audit the 135 complete-block dataset before opening test labels. **In
       progress:** `evidence/scenarios/20260825T045337Z-phase7-campaign-v2a`;
