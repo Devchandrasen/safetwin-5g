@@ -99,8 +99,9 @@ The project may be described as a TNSM candidate only if all of the following
 are completed without changing the frozen test rules:
 
 - BRACE implementation and its fail-closed tests pass;
-- the fresh 500-unit named-action campaign completes with 100 clean blocks;
-- all 35 test-block labels remain sealed until code and hashes freeze;
+- the precision-amended fresh 675-unit named-action campaign completes with
+  135 clean blocks (`docs/PHASE7_PROTOCOL_AMENDMENT_1.md`);
+- all 70 test-block labels remain sealed until code and hashes freeze;
 - the 90% simultaneous coverage and non-trivial selective-utility gates pass;
 - comparisons include runbook, point, scalar conformal, and
   action-conditional conformal baselines plus ablations;
