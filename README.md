@@ -63,9 +63,15 @@ blocks: model selection uses train-block leave-one-block-out only, uncertainty
 uses 21 calibration blocks, G2 uses 60 faulty test blocks, and G3 includes all
 70 paired test blocks so no-fault false remediation cannot be hidden. The fresh
 campaign is currently in progress; partial output is not a result and test
-labels remain sealed. A baseline win, insufficient certificate coverage,
+outcomes remain unanalysed under a procedural, not cryptographic, seal. A
+baseline win, insufficient certificate coverage,
 failed simultaneous coverage, or any dirty recovery produces an explicit
 no-go.
+
+Environment Deviation D1 records six unrelated containers that appeared on
+separate Docker networks during the run. No network overlap was observed, but
+the host was not CPU/memory/scheduler exclusive; CPU-saturation and timing
+results therefore carry an explicit shared-host contention limitation.
 
 The separate BRACE computation microbenchmark uses deterministic fixture
 contrasts: median calibration time was 3.024 ms at 5,000 blocks and median

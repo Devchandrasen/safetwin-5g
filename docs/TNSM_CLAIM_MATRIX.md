@@ -19,7 +19,7 @@ primary-source collision audit in `docs/PHASE7_NOVELTY_AUDIT.md`.
 | Useful certified coverage | sealed confirmatory result pending | selective prediction and conformal decision work | report only if G2 has zero margin violations, at least 29 certifications, at least 50% faulty-block coverage, exact upper bound below 0.10, and adjusted significance | useful with zero/few certifications; use unadjusted row-level confidence |
 | Scalability | certificate computation measured on fixture inputs | SWARM large-datacenter evaluation | local Python certificate overhead over 21–5,000 blocks, with host and timing distribution | network-scale, radio-scale, Docker-scale, or operator-scale performance |
 | Operational safety | campaign recovery gate pending | change-management and rollback systems | all 540 planned sandbox mutations had explicit approval, commands, rollback plans, and verified cleanup, only if G4 passes | autonomous/live safety; infer recovery from a good outcome |
-| External validity | not established | real private-5G and production-network studies | single-host software-sandbox evidence with simulated radio | hardware-measured, multi-site, operator-validated, or live-network result |
+| External validity | not established; D1 records non-exclusive host | real private-5G and production-network studies | single-host software-sandbox evidence with simulated radio and disclosed co-resident-container limitation | exclusive-host, hardware-measured, multi-site, operator-validated, or live-network result |
 
 ## Paper contribution gate
 
