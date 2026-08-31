@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "event_id": "phase7-campaign-abort-1",
+  "captured_at": "2026-08-31T05:17:45.1103759Z",
+  "source_run": "20260825T045337Z-phase7-campaign-v2a",
+  "source_run_manifest_sha256": "ea66d6adcba3c8698235f96fb60d599d1082ed76f549d769059916156959464a",
+  "source_run_passed": false,
+  "planned_unit_count": 675,
+  "completed_unit_count": 419,
+  "passed_unit_count": 418,
+  "aborted_for_cleanup": true,
+  "failed_unit": {
+    "unit_id": "safetwin5g-phase7-brace-v2a-test-cpu_saturation-2-observe_only-1309",
+    "trace_sha256": "fbb2c24fc8eff0cd2e8d9def34b7cea26eeeff4e9cd4233ff36ab67b658b2995",
+    "cleanup_completed": true,
+    "cleanup_verified": false,
+    "errors": [
+      "recovery: RuntimeError: recovery-01-ping failed with exit code 128"
+    ],
+    "failed_checks": [
+      "all_windows_present",
+      "recovery_clean",
+      "recovery_sample_count"
+    ],
+    "recovery_sample_count": 1
+  },
+  "docker_desktop_event": {
+    "observed": true,
+    "endpoint": "POST /compose/bulk/:action",
+    "project_name": "safetwin5g-sandbox",
+    "event_started_at": "2026-08-25T09:26:39.148249600Z",
+    "interpretation": "Docker Desktop initiated a Compose-project stop while the campaign was running.",
+    "source_logs": [
+      {
+        "path": "C:\\Users\\devel\\AppData\\Local\\Docker\\log\\host\\com.docker.backend.exe.log.20260825-151750.738",
+        "sha256": "324b09981b7d043b7b6487feb0e78301adc55668195d5bfbadd5ef173a0930af"
+      }
+    ]
+  },
+  "container_exit_states": [
+    {
+      "name": "safetwin5g-open5gs",
+      "image": "safetwin5g/open5gs:2.7.7-318eeb49",
+      "state": "exited",
+      "exit_code": 137,
+      "oom_killed": false,
+      "started_at": "2026-08-25T04:48:34.835092913Z",
+      "finished_at": "2026-08-25T09:26:41.827657636Z",
+      "restart_count": 0
+    },
+    {
+      "name": "safetwin5g-gnb",
+      "image": "safetwin5g/ueransim:3.3.0-6bf5a1a9",
+      "state": "exited",
+      "exit_code": 0,
+      "oom_killed": false,
+      "started_at": "2026-08-25T04:48:45.627781772Z",
+      "finished_at": "2026-08-25T09:26:40.440342438Z",
+      "restart_count": 0
+    },
+    {
+      "name": "safetwin5g-ue",
+      "image": "safetwin5g/ueransim:3.3.0-6bf5a1a9",
+      "state": "exited",
+      "exit_code": 0,
+      "oom_killed": false,
+      "started_at": "2026-08-25T04:48:51.335339808Z",
+      "finished_at": "2026-08-25T09:26:39.943353626Z",
+      "restart_count": 0
+    },
+    {
+      "name": "safetwin5g-mongodb",
+      "image": "docker.io/library/mongo:8.0.29-noble@sha256:021b2d5ae9d253f2cca17491cc8d03aed8df3c840f3252066aa62d3277fc406e",
+      "state": "exited",
+      "exit_code": 0,
+      "oom_killed": false,
+      "started_at": "2026-08-25T04:48:28.494381814Z",
+      "finished_at": "2026-08-25T09:26:42.783796321Z",
+      "restart_count": 0
+    },
+    {
+      "name": "safetwin5g-prometheus",
+      "image": "docker.io/prom/prometheus:v3.13.2@sha256:508729e0e2d18e11fd742a5a5ca70e557b940a93948c3c95fd0123a6fd538b69",
+      "state": "exited",
+      "exit_code": 0,
+      "oom_killed": false,
+      "started_at": "2026-08-25T04:48:45.631510486Z",
+      "finished_at": "2026-08-25T09:26:40.036752657Z",
+      "restart_count": 0
+    }
+  ],
+  "admissibility": {
+    "campaign_complete": false,
+    "dataset_release_eligible": false,
+    "outcome_analysis_eligible": false,
+    "failed_trace_reusable": false,
+    "resume_permitted": false,
+    "required_recovery": "Preserve this failed run and execute a new full preregistered campaign from a clean stack."
+  },
+  "claim_boundaries": {
+    "evidence_type": "sandbox operational failure",
+    "radio_access": "simulated",
+    "hardware": "not measured",
+    "operator_validation": "not performed",
+    "publication_result": "not evaluated"
+  }
+}
