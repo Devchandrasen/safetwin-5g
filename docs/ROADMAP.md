@@ -218,11 +218,20 @@ sandbox evidence.
       20260825T081907Z-tnsm-manuscript-gate`; 175 tests plus 9 subtests passed;
       actual gate evaluation remains pending final artifacts).
 - [ ] Execute the fresh 675-unit named-action sandbox campaign; freeze and
-      audit the 135 complete-block dataset before outcome analysis. **In
-      progress:** `evidence/scenarios/20260825T045337Z-phase7-campaign-v2a`;
-      outcome fields remain unanalysed and this item cannot pass from partial
-      output. D1 records unrelated containers on separate Docker networks and
-      the unresolved shared-host contention limitation.
+      audit the 135 complete-block dataset before outcome analysis. **Pending
+      a clean full rerun:** the first attempt was rejected after an external
+      Docker Desktop Compose stop at 419/675; the second attempt reached a
+      435/675 stdout progress line but persisted only 434 traces before a
+      Windows Application-API sleep transition stopped the process. Both runs
+      remain unanalysed and inadmissible
+      (`docs/PHASE7_CAMPAIGN_ABORT_1.md`;
+      `docs/PHASE7_CAMPAIGN_ABORT_2.md`; host-sleep diagnosis, wrapper probe,
+      and 180-test regression verification passed at
+      `evidence/verification/20260901T025845Z-phase7-host-resilience`). The
+      next attempt must start at unit 1 under the verified host
+      sleep-inhibition wrapper. D1 records unrelated
+      containers on separate Docker networks and the unresolved shared-host
+      contention limitation.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
       ablations, OOD stress test, runtime/scalability evaluation, and
       independent artifact audit.

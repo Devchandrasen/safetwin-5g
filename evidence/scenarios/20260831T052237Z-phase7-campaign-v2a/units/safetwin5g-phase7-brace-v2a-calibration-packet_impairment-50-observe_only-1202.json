@@ -1,0 +1,307 @@
+{
+  "action_proposal": null,
+  "action_step_completed": true,
+  "approval_id": "4031d2215b006bc2ef47a8b2a8d460ea95e9a3de29e136fa391c9514366ff72d",
+  "checks": {
+    "action_step_completed": true,
+    "all_windows_present": true,
+    "assigned_fault_state_observed": true,
+    "baseline_clean": true,
+    "baseline_sample_count": true,
+    "clean_reset_completed": true,
+    "cleanup_completed": true,
+    "fault_injection_completed": true,
+    "fault_sample_count": true,
+    "named_action_state_observed": true,
+    "post_action_sample_count": true,
+    "recovery_clean": true,
+    "recovery_sample_count": true,
+    "timestamps_monotonic": true,
+    "timestamps_timezone_aware": true
+  },
+  "claim_boundaries": {
+    "hardware": "not measured",
+    "intervention": "sandbox-measured",
+    "model_result": "not applicable during randomized data collection",
+    "operator_validation": "not performed",
+    "radio_access": "simulated"
+  },
+  "clean_reset_completed": true,
+  "cleanup_completed": true,
+  "cleanup_verified": true,
+  "completed_at": "2026-08-31T07:08:31.548000+00:00",
+  "control_events": [
+    {
+      "duration_ms": 22.431,
+      "event": "seeded-pre-fault-jitter",
+      "seed": 1202,
+      "started_at": "2026-08-31T07:08:04.186289+00:00"
+    },
+    {
+      "at": "2026-08-31T07:08:12.119090+00:00",
+      "event": "observe_only",
+      "unit_id": "safetwin5g-phase7-brace-v2a-calibration-packet_impairment-50-observe_only-1202"
+    }
+  ],
+  "errors": [],
+  "fault_injection_completed": true,
+  "passed": true,
+  "safety_evaluation": {
+    "decision": "observe-only",
+    "policy_version": "phase0-v1",
+    "reasons": [
+      "assigned named action has no sandbox mutation"
+    ]
+  },
+  "schema_version": 1,
+  "started_at": "2026-08-31T07:07:55.646187+00:00",
+  "unit": {
+    "action_id": "observe_only",
+    "action_kind": "observe_only",
+    "action_parameters": {},
+    "assignment_block_id": "calibration|packet_impairment|50|1202|steady",
+    "fault_family": "packet_impairment",
+    "mutates": false,
+    "randomization_key": "5e49215d0d281f62998c87c6520ecaed070b7d98b35709adf5b0e4000c26ab31",
+    "seed": 1202,
+    "severity_name": "loss_pct",
+    "severity_value": 50,
+    "split": "calibration",
+    "unit_id": "safetwin5g-phase7-brace-v2a-calibration-packet_impairment-50-observe_only-1202",
+    "workload": "steady"
+  },
+  "windows": {
+    "baseline": {
+      "samples": [
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "core_container_cpu_pct": 2.15,
+            "packet_loss_pct": 0.0,
+            "packets_received": 3.0,
+            "packets_transmitted": 3.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 1.034,
+            "rtt_max_ms": 1.552,
+            "rtt_mdev_ms": 0.386,
+            "rtt_min_ms": 0.625,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-31T07:07:56.980909+00:00",
+          "sample_index": 1
+        },
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "core_container_cpu_pct": 0.36,
+            "packet_loss_pct": 0.0,
+            "packets_received": 3.0,
+            "packets_transmitted": 3.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 0.995,
+            "rtt_max_ms": 1.457,
+            "rtt_mdev_ms": 0.349,
+            "rtt_min_ms": 0.611,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-31T07:07:59.384849+00:00",
+          "sample_index": 2
+        },
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "core_container_cpu_pct": 1.98,
+            "packet_loss_pct": 0.0,
+            "packets_received": 3.0,
+            "packets_transmitted": 3.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 1.172,
+            "rtt_max_ms": 1.588,
+            "rtt_mdev_ms": 0.378,
+            "rtt_min_ms": 0.672,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-31T07:08:01.749216+00:00",
+          "sample_index": 3
+        }
+      ]
+    },
+    "fault": {
+      "samples": [
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 50.0,
+            "core_container_cpu_pct": 0.12,
+            "packet_loss_pct": 66.6667,
+            "packets_received": 1.0,
+            "packets_transmitted": 3.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 1.456,
+            "rtt_max_ms": 1.456,
+            "rtt_mdev_ms": 0.0,
+            "rtt_min_ms": 1.456,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-31T07:08:04.423657+00:00",
+          "sample_index": 1
+        },
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 50.0,
+            "core_container_cpu_pct": 2.18,
+            "packet_loss_pct": 0.0,
+            "packets_received": 3.0,
+            "packets_transmitted": 3.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 1.347,
+            "rtt_max_ms": 2.692,
+            "rtt_mdev_ms": 0.952,
+            "rtt_min_ms": 0.596,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-31T07:08:07.227975+00:00",
+          "sample_index": 2
+        },
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 50.0,
+            "core_container_cpu_pct": 0.4,
+            "packet_loss_pct": 66.6667,
+            "packets_received": 1.0,
+            "packets_transmitted": 3.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 2.474,
+            "rtt_max_ms": 2.474,
+            "rtt_mdev_ms": 0.0,
+            "rtt_min_ms": 2.474,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-31T07:08:09.641985+00:00",
+          "sample_index": 3
+        }
+      ]
+    },
+    "post_action": {
+      "samples": [
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 50.0,
+            "core_container_cpu_pct": 0.3,
+            "packet_loss_pct": 66.6667,
+            "packets_received": 1.0,
+            "packets_transmitted": 3.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 1.788,
+            "rtt_max_ms": 1.788,
+            "rtt_mdev_ms": 0.0,
+            "rtt_min_ms": 1.788,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-31T07:08:12.619474+00:00",
+          "sample_index": 1
+        },
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 50.0,
+            "core_container_cpu_pct": 0.1,
+            "packet_loss_pct": 66.6667,
+            "packets_received": 1.0,
+            "packets_transmitted": 3.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 0.845,
+            "rtt_max_ms": 0.845,
+            "rtt_mdev_ms": 0.0,
+            "rtt_min_ms": 0.845,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-31T07:08:15.990128+00:00",
+          "sample_index": 2
+        },
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 50.0,
+            "core_container_cpu_pct": 0.2,
+            "packet_loss_pct": 66.6667,
+            "packets_received": 1.0,
+            "packets_transmitted": 3.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 1.178,
+            "rtt_max_ms": 1.178,
+            "rtt_mdev_ms": 0.0,
+            "rtt_min_ms": 1.178,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-31T07:08:19.019654+00:00",
+          "sample_index": 3
+        }
+      ]
+    },
+    "recovery": {
+      "samples": [
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "core_container_cpu_pct": 0.25,
+            "packet_loss_pct": 0.0,
+            "packets_received": 3.0,
+            "packets_transmitted": 3.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 0.802,
+            "rtt_max_ms": 0.963,
+            "rtt_mdev_ms": 0.127,
+            "rtt_min_ms": 0.651,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-31T07:08:23.705651+00:00",
+          "sample_index": 1
+        },
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "core_container_cpu_pct": 0.12,
+            "packet_loss_pct": 0.0,
+            "packets_received": 3.0,
+            "packets_transmitted": 3.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 1.087,
+            "rtt_max_ms": 2.077,
+            "rtt_mdev_ms": 0.7,
+            "rtt_min_ms": 0.582,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-31T07:08:26.125921+00:00",
+          "sample_index": 2
+        },
+        {
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "core_container_cpu_pct": 0.41,
+            "packet_loss_pct": 0.0,
+            "packets_received": 3.0,
+            "packets_transmitted": 3.0,
+            "prometheus_targets_up_count": 3.0,
+            "rtt_avg_ms": 0.823,
+            "rtt_max_ms": 1.153,
+            "rtt_mdev_ms": 0.234,
+            "rtt_min_ms": 0.629,
+            "stress_workers_count": 0.0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-08-31T07:08:29.139857+00:00",
+          "sample_index": 3
+        }
+      ]
+    }
+  }
+}

@@ -61,9 +61,13 @@ The precision-amended campaign contains 675 isolated sandbox units in 135
 complete five-action blocks. Its analysis is hash-locked before the 70 test
 blocks: model selection uses train-block leave-one-block-out only, uncertainty
 uses 21 calibration blocks, G2 uses 60 faulty test blocks, and G3 includes all
-70 paired test blocks so no-fault false remediation cannot be hidden. The fresh
-campaign is currently in progress; partial output is not a result and test
-outcomes remain unanalysed under a procedural, not cryptographic, seal. A
+70 paired test blocks so no-fault false remediation cannot be hidden. Two full
+campaign attempts were externally interrupted and are preserved as
+inadmissible operational evidence: one by a Docker Desktop Compose stop and
+one by a Windows Application-API sleep transition. A fresh run from unit 1 is
+pending under a verified host sleep-inhibition wrapper; partial output is not
+a result and test outcomes remain unanalysed under a procedural, not
+cryptographic, seal. A
 baseline win, insufficient certificate coverage,
 failed simultaneous coverage, or any dirty recovery produces an explicit
 no-go.

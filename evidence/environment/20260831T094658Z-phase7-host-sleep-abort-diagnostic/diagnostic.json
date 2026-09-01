@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "event_id": "phase7-campaign-abort-2",
+  "captured_at": "2026-09-01T02:52:18.0493244Z",
+  "source_run": "20260831T052237Z-phase7-campaign-v2a",
+  "planned_unit_count": 675,
+  "design_unit_count": 675,
+  "completed_trace_count": 434,
+  "last_progress_line": "[435/675] safetwin5g-phase7-brace-v2a-test-network_function_interruption-400-stop_cpu_stress-1304",
+  "campaign_pid": 38664,
+  "campaign_process_present_at_capture": false,
+  "final_manifest_present": false,
+  "summary_present": false,
+  "stderr_bytes": 0,
+  "source_file_count": 438,
+  "source_index_sha256": "c5c298936fc58a3b6899d399388138b8d646c13c911bc4eab5ad094d644d6e82",
+  "host_event": {
+    "observed": true,
+    "sleep_event_utc": "2026-08-31T09:46:58.4325923Z",
+    "resume_event_utc": "2026-08-31T09:47:04.1450043Z",
+    "sleep_reason": "Application API",
+    "event_log": "System",
+    "evidence_file": "power-events.json",
+    "interpretation": "The host entered an Application-API sleep transition within seconds of the last campaign write; the campaign process and Docker engine were absent after the host later resumed."
+  },
+  "admissibility": {
+    "campaign_complete": false,
+    "dataset_release_eligible": false,
+    "outcome_analysis_eligible": false,
+    "partial_trace_reusable": false,
+    "resume_permitted": false,
+    "required_recovery": "Preserve this interrupted run and execute a new full preregistered campaign from unit 1 on a clean stack."
+  },
+  "claim_boundaries": {
+    "evidence_type": "sandbox operational interruption",
+    "radio_access": "simulated",
+    "hardware": "not measured",
+    "operator_validation": "not performed",
+    "publication_result": "not evaluated"
+  }
+}
