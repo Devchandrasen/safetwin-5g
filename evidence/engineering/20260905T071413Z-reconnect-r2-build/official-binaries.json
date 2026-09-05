@@ -1,0 +1,23 @@
+{
+  "name": "official-binaries",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network=none",
+    "--read-only",
+    "--cap-drop=ALL",
+    "--security-opt=no-new-privileges",
+    "--cpus=1",
+    "--memory=128m",
+    "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+    "sha256sum",
+    "/opt/ueransim/bin/nr-gnb",
+    "/opt/ueransim/bin/nr-ue"
+  ],
+  "started_at": "2026-09-05T07:16:00.683786+00:00",
+  "returncode": 0,
+  "stdout": "6ddb6eac40c016109fd79911285f089102a4a36a08fad01a63e706ac296497ff  /opt/ueransim/bin/nr-gnb\n022cf739e77ba005a07bd1f61f4ed0cb8a6cf20722767fdb52d4321f31b4abac  /opt/ueransim/bin/nr-ue\n",
+  "stderr": "",
+  "completed_at": "2026-09-05T07:16:01.066287+00:00"
+}

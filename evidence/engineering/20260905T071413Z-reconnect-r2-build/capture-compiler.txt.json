@@ -1,0 +1,22 @@
+{
+  "name": "capture-compiler.txt",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network=none",
+    "--read-only",
+    "--cap-drop=ALL",
+    "--security-opt=no-new-privileges",
+    "--cpus=1",
+    "--memory=128m",
+    "sha256:2a5c01c503927c44a6b45f8b074491ac64a42fc3a444ea2af0a8cbe5df8e537e",
+    "cat",
+    "/opt/safetwin-r2/compiler.txt"
+  ],
+  "started_at": "2026-09-05T07:16:00.037652+00:00",
+  "returncode": 0,
+  "stdout": "g++ (Debian 12.2.0-14+deb12u1) 12.2.0\nCopyright (C) 2022 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "stderr": "",
+  "completed_at": "2026-09-05T07:16:00.350118+00:00"
+}

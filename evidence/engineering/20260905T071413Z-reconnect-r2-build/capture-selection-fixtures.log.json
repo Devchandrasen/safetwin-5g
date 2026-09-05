@@ -1,0 +1,22 @@
+{
+  "name": "capture-selection-fixtures.log",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network=none",
+    "--read-only",
+    "--cap-drop=ALL",
+    "--security-opt=no-new-privileges",
+    "--cpus=1",
+    "--memory=128m",
+    "sha256:2a5c01c503927c44a6b45f8b074491ac64a42fc3a444ea2af0a8cbe5df8e537e",
+    "cat",
+    "/opt/safetwin-r2/selection-fixtures.log"
+  ],
+  "started_at": "2026-09-05T07:15:58.808196+00:00",
+  "returncode": 0,
+  "stdout": "PASS explicit-supported-sst\nPASS absent-sst-unique-compatible-default\nPASS explicit-mismatch-no-fallback\nPASS invalid-sst-range\nPASS duplicate-slice-is-one-amf\nPASS disconnected-or-unready-amf\nPASS disconnected-or-unready-amf\nPASS wrong-plmn\nPASS mnc-length-mismatch\nPASS default-sd-mismatch\nPASS no-configured-default\nPASS ambiguous-two-compatible-amfs\nPASS one-connected-candidate\nPASS no-amf\nPASS null-amf\nPASS null-plmn-support\nFIXTURE_CASES=16 FAILURES=0\n",
+  "stderr": "",
+  "completed_at": "2026-09-05T07:15:59.101869+00:00"
+}

@@ -1,0 +1,44 @@
+{
+  "software_verification_passed": true,
+  "build_audit_passed": true,
+  "measured_network_audit_passed": null,
+  "checks": {
+    "full-tests": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0
+    },
+    "statistical-lock": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-c",
+        "from tools.run_phase7_analysis import verify_analysis_lock; print(verify_analysis_lock()['lock_id'])"
+      ],
+      "exit_code": 0
+    },
+    "independent-build-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r2_build.py",
+        "--run",
+        "evidence/engineering/20260905T071413Z-reconnect-r2-build"
+      ],
+      "exit_code": 0
+    }
+  },
+  "source_sha256": {
+    "tools/audit_reconnect_r2_build.py": "2b9646e9681919c3cb3b64c05635a7a340ce8a2901b4893b20b8ed0c343941db",
+    "tools/build_reconnect_r2.py": "d66e6b259770246ffda218edadd1dcb788cb15d05a6871982fbcc56f3f6de0c3",
+    "tools/verify_reconnect_r2.py": "def284a13e02ef421b2c67714667ed7270fe2d8521e6bfe4d2be7ef99be977a0",
+    "tests/test_reconnect_r2_build.py": "bee3f59da729bdb2d041c44c1c9323633fd12b4b3c2cf71761e59ec21a07dd1a",
+    "config/experiments/reconnect-r2-images.json": "943e6a28ab93036fe9e43057d01da2859792de38de30daac5500c935fa03e78a"
+  },
+  "source_hash_mode": "utf8-lf-normalized",
+  "build_evidence_label": "fixture",
+  "long_campaign_ready": false,
+  "TNSM_ready": false
+}

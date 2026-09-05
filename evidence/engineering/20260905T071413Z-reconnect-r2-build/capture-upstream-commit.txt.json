@@ -1,0 +1,22 @@
+{
+  "name": "capture-upstream-commit.txt",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network=none",
+    "--read-only",
+    "--cap-drop=ALL",
+    "--security-opt=no-new-privileges",
+    "--cpus=1",
+    "--memory=128m",
+    "sha256:2a5c01c503927c44a6b45f8b074491ac64a42fc3a444ea2af0a8cbe5df8e537e",
+    "cat",
+    "/opt/safetwin-r2/upstream-commit.txt"
+  ],
+  "started_at": "2026-09-05T07:15:59.738319+00:00",
+  "returncode": 0,
+  "stdout": "6bf5a1a96aaef6ae8778b9d8b477ac6e2bbf8156\n",
+  "stderr": "",
+  "completed_at": "2026-09-05T07:16:00.036644+00:00"
+}

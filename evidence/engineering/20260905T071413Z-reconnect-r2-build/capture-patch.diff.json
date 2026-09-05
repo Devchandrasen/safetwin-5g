@@ -1,0 +1,22 @@
+{
+  "name": "capture-patch.diff",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network=none",
+    "--read-only",
+    "--cap-drop=ALL",
+    "--security-opt=no-new-privileges",
+    "--cpus=1",
+    "--memory=128m",
+    "sha256:2a5c01c503927c44a6b45f8b074491ac64a42fc3a444ea2af0a8cbe5df8e537e",
+    "cat",
+    "/opt/safetwin-r2/patch.diff"
+  ],
+  "started_at": "2026-09-05T07:15:59.103246+00:00",
+  "returncode": 0,
+  "stdout": "diff --git a/src/gnb/ngap/nnsf.cpp b/src/gnb/ngap/nnsf.cpp\nindex 84ae615..f7ef668 100644\n--- a/src/gnb/ngap/nnsf.cpp\n+++ b/src/gnb/ngap/nnsf.cpp\n@@ -5,6 +5,8 @@\n // https://github.com/aligungr/UERANSIM/\n // See README, LICENSE, and CONTRIBUTING files for licensing details.\n //\n+// SafeTwin engineering candidate R2, 2026-09-05. Not an official release.\n+// Only absent-slice, unambiguous, PLMN/slice-compatible fallback is added.\n \n #include \"task.hpp\"\n \n@@ -13,17 +15,44 @@ namespace nr::gnb\n \n NgapAmfContext *NgapTask::selectAmf(int ueId, int32_t &requestedSliceType)\n {\n-    for (auto &amf : m_amfCtx) {\n-        for (const auto &plmnSupport : amf.second->plmnSupportList) {\n-            for (const auto &singleSlice : plmnSupport->sliceSupportList.slices) {\n-                int32_t supportedSliceType = static_cast<int32_t>(singleSlice.sst);\n-                if (supportedSliceType == requestedSliceType) {\n-                    return amf.second;\n+    if (requestedSliceType < -1 || requestedSliceType > 255)\n+        return nullptr;\n+\n+    NgapAmfContext *selected = nullptr;\n+    for (auto &amf : m_amfCtx)\n+    {\n+        if (amf.second == nullptr || amf.second->state != EAmfState::CONNECTED)\n+            continue;\n+        bool eligible = false;\n+        for (const auto &plmnSupport : amf.second->plmnSupportList)\n+        {\n+            if (plmnSupport == nullptr || plmnSupport->plmn != m_base->config->plmn)\n+                continue;\n+            for (const auto &singleSlice : plmnSupport->sliceSupportList.slices)\n+            {\n+                if (requestedSliceType >= 0)\n+                {\n+                    // Preserve explicit SST matching; never fall back on a mismatch.\n+                    eligible = eligible || static_cast<int32_t>(singleSlice.sst) == requestedSliceType;\n+                }\n+                else\n+                {\n+                    // A Service Request need not carry an initial requested SST.\n+                    // The default candidate must overlap the configured gNB NSSAI.\n+                    for (const auto &configured : m_base->config->nssai.slices)\n+                        eligible = eligible || singleSlice == configured;\n                 }\n             }\n         }\n+        if (eligible)\n+        {\n+            // Never choose an arbitrary AMF from unordered-map iteration order.\n+            if (selected != nullptr && selected != amf.second)\n+                return nullptr;\n+            selected = amf.second;\n+        }\n     }\n-    return nullptr;\n+    return selected;\n }\n \n NgapAmfContext *NgapTask::selectNewAmfForReAllocation(int ueId, int initiatedAmfId, int amfSetId)\n",
+  "stderr": "",
+  "completed_at": "2026-09-05T07:15:59.430217+00:00"
+}
