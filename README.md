@@ -162,7 +162,13 @@ The [R5 owned-client capture component](docs/RECONNECT_R5_PROCESS_DECISION.md)
 now passes 596 tests, 200 subtests and 30 checks. Its 21 retained local-process
 cases include clock failure, bounded cleanup, byte saturation and independent
 shared-envelope replay. This is fixture evidence, not a network trial; the
-host/collection/runner and whole-protocol rollback gate remain pending.
+host/collection/runner and whole-protocol rollback gate remained pending at
+that checkpoint. The separate [R5 host component](docs/RECONNECT_R5_HOST_DECISION.md)
+now passes 649 tests, 200 subtests and 36 checks, with 27 retained synthetic
+host/power cases. Its persistent attempt receipt, same-domain admission and
+independent owned-handle cleanup remain fixture evidence, not measured sleep
+inhibition or service recovery. Collector/runner integration, complete point
+inventory and independent whole-protocol rollback validation remain pending.
 No new long campaign or TNSM-readiness claim is enabled.
 
 Environment Deviation D1 records six unrelated containers that appeared on

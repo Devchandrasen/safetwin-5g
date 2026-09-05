@@ -1,0 +1,833 @@
+{
+  "verification_passed": true,
+  "development_only": true,
+  "checks": {
+    "tests": {
+      "passed": true,
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_reconnect_r5_host.py"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-09-05T21:14:16.498297+00:00",
+      "completed_at": "2026-09-05T21:14:29.301894+00:00"
+    },
+    "fixture-complete": {
+      "passed": true
+    },
+    "fixture-busy": {
+      "passed": true
+    },
+    "fixture-empty-query": {
+      "passed": true
+    },
+    "fixture-stderr": {
+      "passed": true
+    },
+    "fixture-nonzero": {
+      "passed": true
+    },
+    "fixture-idle-timeout": {
+      "passed": true
+    },
+    "fixture-idle-throw": {
+      "passed": true
+    },
+    "fixture-lease-exists": {
+      "passed": true
+    },
+    "fixture-power-create-fail": {
+      "passed": true
+    },
+    "fixture-power-set-fail": {
+      "passed": true
+    },
+    "fixture-power-set-throw": {
+      "passed": true
+    },
+    "fixture-power-clear-fail": {
+      "passed": true
+    },
+    "fixture-power-close-fail": {
+      "passed": true
+    },
+    "fixture-power-clear-interrupt": {
+      "passed": true
+    },
+    "fixture-QPC-before": {
+      "passed": true
+    },
+    "fixture-QPC-after-enable": {
+      "passed": true
+    },
+    "fixture-clock-step-after-enable": {
+      "passed": true
+    },
+    "fixture-wide-after-enable": {
+      "passed": true
+    },
+    "fixture-domain-after-enable": {
+      "passed": true
+    },
+    "fixture-admission-expired": {
+      "passed": true
+    },
+    "fixture-power-return-late": {
+      "passed": true
+    },
+    "fixture-reserve-before": {
+      "passed": true
+    },
+    "fixture-capacity-before-close": {
+      "passed": true
+    },
+    "fixture-journal-failed-after-enable": {
+      "passed": true
+    },
+    "fixture-lease-header-failed": {
+      "passed": true
+    },
+    "fixture-lease-footer-failed": {
+      "passed": true
+    },
+    "source-bytes-unchanged": {
+      "passed": true
+    }
+  },
+  "cases": {
+    "complete": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "ff0361e398aa0f6c0c725f641d62b7b87fcb29f918e9da2aec377b10a1b15d31",
+        "capture.json": "8ba37fc57f7e6dd497d6b0b0a63e9a7f65fa41c3bb151dc02b462afb0e88a65b",
+        "clock.jsonl": "305ded3eaa9bf72d670bacd7894484910b705767883766657c945258091dbcfc"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": true,
+        "admitted": true,
+        "operations_replayed": 4,
+        "idle_commands_replayed": 1,
+        "clock_points": 7,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 7,
+          "comparisons": 21,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "busy": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "b7e5e22f3341d61798f748d161d07b6f405babeaffa371098108afba432fd771",
+        "capture.json": "0389a4b61c5649cc5304b681a52e33e3bf3adf3298f1f384e36978c1e0bed49a",
+        "clock.jsonl": "57400587ab0a31be77b102e7ab14258d7be1e6f9d4a2f2b6211ed714e8d29ae6"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 3,
+        "idle_commands_replayed": 1,
+        "clock_points": 6,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 6,
+          "comparisons": 15,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "empty-query": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "bca877f7b9b4919e672070cae94aa34deed537409f9572e52e0fd43753a7be2e",
+        "capture.json": "6d717b04d3336906094498eb52e7843350cf37aba976adfa27026e4dc6d6e413",
+        "clock.jsonl": "57400587ab0a31be77b102e7ab14258d7be1e6f9d4a2f2b6211ed714e8d29ae6"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 3,
+        "idle_commands_replayed": 1,
+        "clock_points": 6,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 6,
+          "comparisons": 15,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "stderr": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "a2a11113899ac32376abb5efa26e4698af19429e74ae2c7e2c8b71f021d2767e",
+        "capture.json": "0e649609fc61c00ebf78cf1e6e4d052f16e2cdfd13d102b5f90148603778e539",
+        "clock.jsonl": "57400587ab0a31be77b102e7ab14258d7be1e6f9d4a2f2b6211ed714e8d29ae6"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 3,
+        "idle_commands_replayed": 1,
+        "clock_points": 6,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 6,
+          "comparisons": 15,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "nonzero": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "14070850ecb5046c278aa94387ceae531fec5599171bb1896ce180dcfb17e23c",
+        "capture.json": "ba9c6baba891f4e16a7dd84b097942558ee3b8faf34b3dc7c828afacde0955f9",
+        "clock.jsonl": "57400587ab0a31be77b102e7ab14258d7be1e6f9d4a2f2b6211ed714e8d29ae6"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 3,
+        "idle_commands_replayed": 1,
+        "clock_points": 6,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 6,
+          "comparisons": 15,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "idle-timeout": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "51bf7fee4541b61ee5fbbf8205996f5929bcbedf1626f0aae59e49daede8301b",
+        "capture.json": "c7d638ed5c20f6339c5a4ef4c89b327ca31cf4ede9eaf9f665b2fb4c83f456a1",
+        "clock.jsonl": "57400587ab0a31be77b102e7ab14258d7be1e6f9d4a2f2b6211ed714e8d29ae6"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 3,
+        "idle_commands_replayed": 1,
+        "clock_points": 6,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 6,
+          "comparisons": 15,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "idle-throw": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "aaa875ed9cc76626a30ca3fcb7dae290e9df4abe481581bff85b51c75033005b",
+        "capture.json": "31c87b53d37f6c161324697a81d400ae477ed99ed3b116cb5e064d04cc25de19",
+        "clock.jsonl": "704cfd929759cb70474a0db8819540a60c680c047d8ded746c7ef5a0baaedea5"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 3,
+        "idle_commands_replayed": 0,
+        "clock_points": 5,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 5,
+          "comparisons": 10,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "lease-exists": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "056c4c3dc36157317ebc52834b35304ae792b7aaca770b1976df86d5daabd416",
+        "capture.json": "5fa8d46f17e5dfc3ed3e57903af8327716ca902c8d138514066717861b02307f",
+        "clock.jsonl": "704cfd929759cb70474a0db8819540a60c680c047d8ded746c7ef5a0baaedea5"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 3,
+        "idle_commands_replayed": 0,
+        "clock_points": 5,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 5,
+          "comparisons": 10,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "power-create-fail": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "f2c4ef565c1ad1ab12d013fb5cff86224f7b20838bb171602163d87d947372df",
+        "capture.json": "bcec7047573891056b58d9de43d6bf10b9be56e77e07b7140921af51a59b4ee1",
+        "clock.jsonl": "305ded3eaa9bf72d670bacd7894484910b705767883766657c945258091dbcfc"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 4,
+        "idle_commands_replayed": 1,
+        "clock_points": 7,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 7,
+          "comparisons": 21,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "power-set-fail": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "dee49447151053ce545481cfa1cf7c6c3705e42300aaf5d135e95c37132ce1a4",
+        "capture.json": "150807d749061a9bab8d18094d5b80f63e4b32a3c6a6c26418e8567dc3207bed",
+        "clock.jsonl": "305ded3eaa9bf72d670bacd7894484910b705767883766657c945258091dbcfc"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 4,
+        "idle_commands_replayed": 1,
+        "clock_points": 7,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 7,
+          "comparisons": 21,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "power-set-throw": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "d849775283af1d87060457e2eb199008b5932cc44c5571b9e8a3d5da4f753ffa",
+        "capture.json": "eca089653f92f0073033e8ca5fbf30bcd3f977345a4c8a3478203e07171b77bd",
+        "clock.jsonl": "305ded3eaa9bf72d670bacd7894484910b705767883766657c945258091dbcfc"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 4,
+        "idle_commands_replayed": 1,
+        "clock_points": 7,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 7,
+          "comparisons": 21,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "power-clear-fail": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "6b6ca201aa3418db30715ffc66c25edbbaf9acd2bae84d4312254bb8d8cb2248",
+        "capture.json": "8dfa4e904b9c5feb91393892c001f37d7f35b9936ff168c052227e6a7a7e179c",
+        "clock.jsonl": "305ded3eaa9bf72d670bacd7894484910b705767883766657c945258091dbcfc"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": true,
+        "operations_replayed": 4,
+        "idle_commands_replayed": 1,
+        "clock_points": 7,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 7,
+          "comparisons": 21,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "power-close-fail": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "8766c6bbee649dc183e3f6c876417071ecdf29874cdf959637953daf09a60ae3",
+        "capture.json": "117fbb4f9e1106c42ff642459e2ac8d766b72dc91b74335fa6fc24dbd1579b7b",
+        "clock.jsonl": "305ded3eaa9bf72d670bacd7894484910b705767883766657c945258091dbcfc"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": true,
+        "operations_replayed": 4,
+        "idle_commands_replayed": 1,
+        "clock_points": 7,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 7,
+          "comparisons": 21,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "power-clear-interrupt": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "5824a35ceb64d830581c8304cea9a9ff557bdf0c8230ae1b0789e7eeb69d275d",
+        "capture.json": "2390073f0f03de13f3a62a7521b028221718bde328d9454d1ce109011512cf96",
+        "clock.jsonl": "305ded3eaa9bf72d670bacd7894484910b705767883766657c945258091dbcfc"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": true,
+        "operations_replayed": 4,
+        "idle_commands_replayed": 1,
+        "clock_points": 7,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 7,
+          "comparisons": 21,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "QPC-before": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "a330bf872027f41109b4d0ecfc0c1998a976456c80f056482df084ad5f014a79",
+        "clock.jsonl": "898ed24642c8732535dbf25bef50173247fccde66de5ff904529e07c1a1a679f"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 3,
+        "idle_commands_replayed": 0,
+        "clock_points": 5,
+        "clock": {
+          "clock_capture_valid": false,
+          "accepted_points": 2,
+          "comparisons": 1,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": {
+            "code": "capture-error",
+            "sequence": 3,
+            "against_sequence": null
+          }
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "QPC-after-enable": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "a4d7e125511e120d0369c51547c43f30cea1a7174a9c350f86d83c3929576ed3",
+        "capture.json": "022aff05e358892e690d31ea8d894e9bec568684667ab94f64a46ee59aa4c195",
+        "clock.jsonl": "8e8045d8e92faa2e2d14fc1df922ba7a6761d7c663bbdb2ac7d64aa0223f4fb1"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 4,
+        "idle_commands_replayed": 1,
+        "clock_points": 7,
+        "clock": {
+          "clock_capture_valid": false,
+          "accepted_points": 4,
+          "comparisons": 6,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": {
+            "code": "capture-error",
+            "sequence": 5,
+            "against_sequence": null
+          }
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "clock-step-after-enable": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "9b4f1ef88755e5aaa259661be58aa8b47975647faa63fde901147de4bc91b8be",
+        "capture.json": "4e0ae6aa6baf5286dee990d688303739697847f92a7ba3c5afe509ffdfb82f01",
+        "clock.jsonl": "0d9678fbcd016236662e6e662a7823a038540d6c64f8a3d8abb5ca21b30a1bf6"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 4,
+        "idle_commands_replayed": 1,
+        "clock_points": 7,
+        "clock": {
+          "clock_capture_valid": false,
+          "accepted_points": 4,
+          "comparisons": 7,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 2003200,
+          "rejection": {
+            "code": "clock-discontinuity-observed",
+            "sequence": 5,
+            "against_sequence": 1
+          }
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "wide-after-enable": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "6467e4c0bd99357224977aad6a19974b1e3d3034f65d45d6a490c644711d9e04",
+        "capture.json": "e735f90cb16af7341e144b24c7f34eb04517d5692a0e9398787ab7d22818bdf4",
+        "clock.jsonl": "5b619546e133d08198e66ba5e600cf4baf02e98bcab8b4721f41bbc03c05d68e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 4,
+        "idle_commands_replayed": 1,
+        "clock_points": 7,
+        "clock": {
+          "clock_capture_valid": false,
+          "accepted_points": 4,
+          "comparisons": 6,
+          "max_bracket_ns_ceil": 201200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": {
+            "code": "bracket-too-wide",
+            "sequence": 5,
+            "against_sequence": null
+          }
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "domain-after-enable": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "8f90ff12aee7fdafe6f24839280006b0b7eaf63d6f2d494b6790df874bab0bc1",
+        "capture.json": "9c47657b9c82ae509191cf632201affacf79eb6d04773531afc0ece217d4e63d",
+        "clock.jsonl": "9bc672b948a752be3b2735614fbf89bbc7cba741bfb5c0616fbfb24cea491d59"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 4,
+        "idle_commands_replayed": 1,
+        "clock_points": 7,
+        "clock": {
+          "clock_capture_valid": false,
+          "accepted_points": 4,
+          "comparisons": 6,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": {
+            "code": "point-order-or-domain",
+            "sequence": 5,
+            "against_sequence": null
+          }
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "admission-expired": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "4b9d624bbff7d16a6939f3ed6bb298f659d1d7fcf086cf66d5594bbfcb236657",
+        "clock.jsonl": "8bff38012a70cdd69fe37470ef3dc6f7c034f98bf7ff63b9f951e5643d650a0e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 3,
+        "idle_commands_replayed": 0,
+        "clock_points": 5,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 5,
+          "comparisons": 10,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "power-return-late": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "0cfa247818eafc7bfdf76a9b164486585d23363ed92c8682b51b57d26f5dd8fb",
+        "capture.json": "7b4414650382e532ded4da48724b3a6540909d2ed2e279c2408863ad30e91103",
+        "clock.jsonl": "c2d6db61d698ceebf5106a7e30783a0d63a74e6de9e13bcafeadba4b44ebb26c"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 4,
+        "idle_commands_replayed": 1,
+        "clock_points": 7,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 7,
+          "comparisons": 21,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "reserve-before": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "c5b1b6bf9678a37a3445c0f84b2bea5708bbdfad404a0a9c4dc43a6320fc3b1b",
+        "clock.jsonl": "f4ed93c66de910e5c7e1ba4d5fb52f66600d0f4e18a2aa92223a4fdc502b55da"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": false,
+        "operations_replayed": 2,
+        "idle_commands_replayed": 0,
+        "clock_points": 768,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 768,
+          "comparisons": 294528,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "capacity-before-close": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "08e27171637bf1aaec152b99695d5fc0beff81e66e73f017f49337a88625e890",
+        "capture.json": "5a675f22b70b557af5641d5d4d4232d54c3befaf13f530d371585d9af123536f",
+        "clock.jsonl": "8f184362ed049686227040ce31ede248b2db55d7a913efce7cf13b955e3f331d"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "host_component_complete": false,
+        "admitted": true,
+        "operations_replayed": 4,
+        "idle_commands_replayed": 1,
+        "clock_points": 1024,
+        "clock": {
+          "clock_capture_valid": true,
+          "accepted_points": 1024,
+          "comparisons": 523776,
+          "max_bracket_ns_ceil": 1200,
+          "max_abs_residual_ns_ceil": 3200,
+          "rejection": null
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "service_restored": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "journal-failed-after-enable": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "dff3a6371f3cd91d72d590f8cc7de2df27029829b12117d00e8cf6b98ea7adf4",
+        "capture.json": "6d0ac284e4590d0159962f24e9437314dbb1916fe4a8947d9bbfabf3a76e0174",
+        "clock.jsonl": "9b7f03024305b31a783e5d5cd844c1f6ca56d209c16ef2e6ebf82dd9bff2bda1"
+      },
+      "independent": null,
+      "expected_audit_error": "journal storage failed; no durability claim"
+    },
+    "lease-header-failed": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "capture.json": "791fad3ec56243087849ff1d8da6ab6235957e7cbeabfc50dbea39140089c49b",
+        "clock.jsonl": "704cfd929759cb70474a0db8819540a60c680c047d8ded746c7ef5a0baaedea5"
+      },
+      "independent": null,
+      "expected_audit_error": "receipt storage/ownership failed; no durability claim"
+    },
+    "lease-footer-failed": {
+      "passed": true,
+      "member_sha256": {
+        "attempt.receipt.jsonl": "b3c21766808a76a0bbce19188023ce98390639ac88247aad2deed2c371ca3969",
+        "capture.json": "d9771cfae3805369344fdd5866bbc2f89e6590e615d2b6fd24f7f402daebfb5f",
+        "clock.jsonl": "305ded3eaa9bf72d670bacd7894484910b705767883766657c945258091dbcfc"
+      },
+      "independent": null,
+      "expected_audit_error": "receipt storage/ownership failed; no durability claim"
+    }
+  },
+  "source_sha256": {
+    "sandbox/reconnect_r5_host.py": "ec61ad8f837b07fbf7bdfc3282364be3bf7013d6fca0c2670f615a7a8c0b09b3",
+    "tools/audit_reconnect_r5_host.py": "fa677486dd8997f473936a5a2d3e8c786b6da7ef2bad730b4449791408dad963",
+    "tests/test_reconnect_r5_host.py": "905cdd09aa452d21c6fa6c6dddf99d3fa0b7b46c348f3666b88b26be745dfd34",
+    "tools/verify_reconnect_r5_host.py": "4cd76fa563138b00d1fa95246aabe3d4a74b6a7f14e9fd81b28d93e82646c171",
+    "docs/RECONNECT_R5_HOST.md": "3317cfcb4239e311b58178b6b011784c6441f019f54ff80385a4a4e22beba378"
+  },
+  "evidence_label": "fixture",
+  "measurement_scope": "synthetic-host-component-only",
+  "network_trials_executed": 0,
+  "actual_sleep_inhibition_requested": false,
+  "new_native_clock_observation": false,
+  "network_execution_authorized": false,
+  "whole_protocol_verified": false,
+  "official_rollback_verified": false,
+  "network_fix_validated": false,
+  "TNSM_ready": false
+}

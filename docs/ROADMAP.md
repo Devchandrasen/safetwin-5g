@@ -373,6 +373,17 @@ sandbox evidence.
       recovery measurement. Host/collection/runner integration, full point
       inventory and independent whole-protocol/official rollback replay remain
       pending. No new network diagnostic was executed.
+      The separate R5 host component now passes its software-only gate
+      (`docs/RECONNECT_R5_HOST_DECISION.md`; 649 tests, 200 subtests, 36 checks
+      and 27 synthetic cases at
+      `evidence/verification/20260905T211731Z-reconnect-r5-host`). It uses a
+      persistent exclusive attempt receipt, an expanded idle query and owned
+      power-request cleanup, with seven points in the complete host fixture.
+      Failed clock/power/receipt paths remain negative; three storage cases
+      deliberately reject integrity. No actual power request or native clock
+      recapture ran. Collector/runner integration, full worst-case point
+      inventory and independent whole-protocol/official rollback gate remain
+      pending; this component is not measured service recovery.
       This parent recovery item remains open.
       No R3/R4 rerun, endpoint relaxation, model promotion or new 675-unit
       campaign follows from observation integrity or later service recovery.
