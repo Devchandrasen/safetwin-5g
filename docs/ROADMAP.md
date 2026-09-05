@@ -250,6 +250,12 @@ sandbox evidence.
       `evidence/verification/20260905T040812Z-phase7-recovery-guard`.
 - [ ] Validate a bounded repeated-interruption engineering pilot and an
       explicit PDU reset/rollback protocol before another confirmatory run.
+      **In progress, not accepted:** R1 stopped at its first no-fault baseline
+      (0/15 packets), injected no fault, and restored 15/15 packets only after
+      an approved UE restart. Independent raw-sample/hash diagnosis preserves
+      the failure and a source-supported Service Request/AMF-selection
+      candidate (`docs/RECOVERY_PILOT_R1_DECISION.md`). A bounded reconnect
+      reproduction is next; no new 675-unit campaign is running.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
       ablations, OOD stress test, runtime/scalability evaluation, and
       independent artifact audit.

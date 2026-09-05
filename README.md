@@ -78,6 +78,11 @@ produced; the current TNSM disposition is **no-go-data-quality**.
 [Pause/resume P1](docs/PHASE7_PAUSE_RESUME_1.md) preserves the original
 environment and command prefix and discloses the collection gap. A bounded
 recovery engineering pilot is required before another confirmatory campaign.
+The first [recovery pilot R1](docs/RECOVERY_PILOT_R1_DECISION.md) was rejected
+at its no-fault baseline: 0/15 packets despite healthy processes and targets.
+No interruption was injected. An approved UE restart restored 15/15 packets;
+that restoration does not make the six-trial pilot complete. A bounded
+reconnect-path investigation is the current engineering gate.
 
 Environment Deviation D1 records six unrelated containers that appeared on
 separate Docker networks during the run. No network overlap was observed, but

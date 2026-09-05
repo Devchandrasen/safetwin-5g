@@ -1,0 +1,45 @@
+{
+  "approval_id": "40923cf6509ca1aeb944128b03e64b431eef17d55a3c090ab8ec781660eb9c3f",
+  "approved_by": "user",
+  "authorization_basis": "User authorized all local SafeTwin implementation and reversible sandbox work, then requested SafeTwin continue karo on 2026-09-05.",
+  "containers": [
+    "safetwin5g-open5gs",
+    "safetwin5g-gnb",
+    "safetwin5g-ue"
+  ],
+  "environment": "sandbox",
+  "excluded": [
+    "live actuation",
+    "hardware",
+    "operator systems",
+    "unrelated containers",
+    "publication"
+  ],
+  "operations": [
+    "UPF STOP/CONT",
+    "bounded CONT watchdog",
+    "neutralize qdisc",
+    "UE restart",
+    "Open5GS/gNB/UE dependency-order restart"
+  ],
+  "recorded_at": "2026-09-05T05:17:50.403690+00:00",
+  "rollback_plan": "Always CONT and neutralize qdisc; settle watchdog; verify three service samples; escalate UE then full dependency-order restart; abort if clean service is not restored.",
+  "status": "approved",
+  "trial_holds": {
+    "safetwin5g-recovery-engineering-r1-01": 0,
+    "safetwin5g-recovery-engineering-r1-02": 1,
+    "safetwin5g-recovery-engineering-r1-03": 30,
+    "safetwin5g-recovery-engineering-r1-04": 30,
+    "safetwin5g-recovery-engineering-r1-05": 45,
+    "safetwin5g-recovery-engineering-r1-06": 0
+  },
+  "trial_ids": [
+    "safetwin5g-recovery-engineering-r1-01",
+    "safetwin5g-recovery-engineering-r1-02",
+    "safetwin5g-recovery-engineering-r1-03",
+    "safetwin5g-recovery-engineering-r1-04",
+    "safetwin5g-recovery-engineering-r1-05",
+    "safetwin5g-recovery-engineering-r1-06"
+  ],
+  "type": "standing-project-authorization"
+}

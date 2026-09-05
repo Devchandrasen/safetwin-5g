@@ -1,0 +1,68 @@
+{
+  "config": {
+    "acceptance": "Every baseline and final recovery has three clean service samples; fault state is verified; no-fault controls recover with primitive cleanup alone; stop after any failed trial",
+    "claim_limit": "Six engineering trials cannot establish long-campaign reliability, comparative method performance, or TNSM readiness",
+    "confirmatory_data_reuse": false,
+    "environment": "sandbox",
+    "experiment_id": "safetwin5g-recovery-engineering-r1",
+    "fault_watchdog_seconds": 65,
+    "maximum_command_seconds": 35,
+    "maximum_container_health_seconds": 50,
+    "maximum_packet_loss_percent": 1.0,
+    "maximum_total_seconds": 900,
+    "packets_per_sample": 5,
+    "purpose": "Bounded PDU recovery engineering after the rejected Phase 7 campaign",
+    "recovery_order": [
+      "primitive_cleanup",
+      "ue_restart",
+      "core_gnb_ue_restart"
+    ],
+    "samples_per_window": 3,
+    "schema_version": 1,
+    "trial_hold_seconds": [
+      0,
+      1,
+      30,
+      30,
+      45,
+      0
+    ]
+  },
+  "source_hash_mode": "utf8-lf-normalized",
+  "source_sha256": {
+    "config/actions.json": "e8d773dfcfb30ea6b984f312f85f76c7c94b4af4db35bba3e05a1031d2c0de77",
+    "config/experiments/recovery-pilot-r1.json": "0aa431d590b2947fc2b32d1771085021d52cdf4443d38cdae546b67f140b0a55",
+    "docs/RECOVERY_PILOT_R1_PROTOCOL.md": "8b69ebc41aaa3a9364b121f5c2d82defe7356da66b732ce2d4ca6fe346f6cc45",
+    "sandbox/compose.yaml": "050f8210177bb0651327ac29427a9f99da525ba5602ebc803d86c29f4f2e933e",
+    "sandbox/run_recovery_pilot.py": "81f30e2bd94df0798471f458d39ad8a05966e1cef00e7fa080625ca4201b1bcb",
+    "sandbox/versions.lock.json": "0c4a20d5cf481d757231bd5c16744e4298d8cae8352abb652512467b8e67121d",
+    "src/safetwin5g/phase7_runner.py": "c0ad6023d34e542be16bfc1b99ab7b71a41781d417ce5acd5eb309c809732bb4",
+    "tools/audit_recovery_pilot.py": "27386449b75b059a977656e6084c8ad17d540391346f1298f14b52530d5fbbd3"
+  },
+  "trials": [
+    {
+      "hold_seconds": 0,
+      "trial_id": "safetwin5g-recovery-engineering-r1-01"
+    },
+    {
+      "hold_seconds": 1,
+      "trial_id": "safetwin5g-recovery-engineering-r1-02"
+    },
+    {
+      "hold_seconds": 30,
+      "trial_id": "safetwin5g-recovery-engineering-r1-03"
+    },
+    {
+      "hold_seconds": 30,
+      "trial_id": "safetwin5g-recovery-engineering-r1-04"
+    },
+    {
+      "hold_seconds": 45,
+      "trial_id": "safetwin5g-recovery-engineering-r1-05"
+    },
+    {
+      "hold_seconds": 0,
+      "trial_id": "safetwin5g-recovery-engineering-r1-06"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "diagnostic_integrity_passed": true,
+  "pilot_accepted": false,
+  "pilot_manifest_sha256": "8ace94dc7ca9b570c59051a9c8e8aa66663d7c9e40104c50338e8d8e4c4ff082",
+  "raw_command_hashes_verified": true,
+  "raw_samples_replayed": [
+    {
+      "trial_id": "safetwin5g-recovery-engineering-r1-01",
+      "window": "baseline",
+      "index": 0,
+      "clean": false,
+      "observed_at": "2026-09-05T05:17:51.295313+00:00"
+    },
+    {
+      "trial_id": "safetwin5g-recovery-engineering-r1-01",
+      "window": "baseline",
+      "index": 1,
+      "clean": false,
+      "observed_at": "2026-09-05T05:17:54.635174+00:00"
+    },
+    {
+      "trial_id": "safetwin5g-recovery-engineering-r1-01",
+      "window": "baseline",
+      "index": 2,
+      "clean": false,
+      "observed_at": "2026-09-05T05:17:57.932750+00:00"
+    },
+    {
+      "trial_id": "safetwin5g-recovery-engineering-r1-01",
+      "window": "primitive_cleanup",
+      "index": 0,
+      "clean": false,
+      "observed_at": "2026-09-05T05:18:02.058640+00:00"
+    },
+    {
+      "trial_id": "safetwin5g-recovery-engineering-r1-01",
+      "window": "primitive_cleanup",
+      "index": 1,
+      "clean": false,
+      "observed_at": "2026-09-05T05:18:05.346653+00:00"
+    },
+    {
+      "trial_id": "safetwin5g-recovery-engineering-r1-01",
+      "window": "primitive_cleanup",
+      "index": 2,
+      "clean": false,
+      "observed_at": "2026-09-05T05:18:08.594510+00:00"
+    },
+    {
+      "trial_id": "safetwin5g-recovery-engineering-r1-01",
+      "window": "ue_restart",
+      "index": 0,
+      "clean": true,
+      "observed_at": "2026-09-05T05:18:19.051959+00:00"
+    },
+    {
+      "trial_id": "safetwin5g-recovery-engineering-r1-01",
+      "window": "ue_restart",
+      "index": 1,
+      "clean": true,
+      "observed_at": "2026-09-05T05:18:21.345170+00:00"
+    },
+    {
+      "trial_id": "safetwin5g-recovery-engineering-r1-01",
+      "window": "ue_restart",
+      "index": 2,
+      "clean": true,
+      "observed_at": "2026-09-05T05:18:23.630198+00:00"
+    }
+  ],
+  "baseline_packets_received": 0,
+  "baseline_packets_transmitted": 15,
+  "primitive_packets_received": 0,
+  "primitive_packets_transmitted": 15,
+  "ue_restart_packets_received": 15,
+  "ue_restart_packets_transmitted": 15,
+  "faults_injected": 0,
+  "approved_ue_restarts": 1,
+  "ue_restart_step_seconds": 14.014999999897555,
+  "upstream_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/aligungr/UERANSIM/6bf5a1a96aaef6ae8778b9d8b477ac6e2bbf8156/src/gnb/ngap/nas.cpp",
+      "file": "upstream-src-gnb-ngap-nas.cpp",
+      "sha256": "429d73e8c8bab422b4bf4742fde1b82cc69d1abb69bae837288bf384dda1b71a",
+      "retrieved_at": "2026-09-05T05:23:54.380587+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aligungr/UERANSIM/6bf5a1a96aaef6ae8778b9d8b477ac6e2bbf8156/src/gnb/ngap/nnsf.cpp",
+      "file": "upstream-src-gnb-ngap-nnsf.cpp",
+      "sha256": "5ff7794f684aa4f8a77effd5c41cdfad6b27b62b5061d5aa24005ee487797c7b",
+      "retrieved_at": "2026-09-05T05:23:55.352088+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aligungr/UERANSIM/6bf5a1a96aaef6ae8778b9d8b477ac6e2bbf8156/src/gnb/gtp/task.cpp",
+      "file": "upstream-src-gnb-gtp-task.cpp",
+      "sha256": "d45a1ef9dd1d03bb1281bd684aaa4b338736c5d4747707e814ae84d937856f1a",
+      "retrieved_at": "2026-09-05T05:23:56.173725+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aligungr/UERANSIM/6bf5a1a96aaef6ae8778b9d8b477ac6e2bbf8156/LICENSE",
+      "file": "upstream-LICENSE",
+      "sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
+      "retrieved_at": "2026-09-05T05:23:57.119677+00:00"
+    }
+  ],
+  "source_inspection_inference": "Non-RegistrationRequest Initial NAS retains requestedSliceType=-1; exact SST matching cannot select an AMF advertising SST 1. This is consistent with the recorded post-radio-link-failure Service Request and AMF-selection errors, not a unique causal proof of the initial radio loss.",
+  "initial_radio_loss_cause": "unresolved",
+  "network_fix_applied": false,
+  "retry_run": false,
+  "evidence_label": "sandbox-measured",
+  "radio_evidence_label": "simulated",
+  "source_counterexample_label": "fixture",
+  "TNSM_ready": false,
+  "long_campaign_ready": false,
+  "live_actuation": false
+}
