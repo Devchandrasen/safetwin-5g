@@ -1,0 +1,174 @@
+diff --git a/src/gnb/gtp/task.cpp b/src/gnb/gtp/task.cpp
+index 0475dcb..df65b53 100644
+--- a/src/gnb/gtp/task.cpp
++++ b/src/gnb/gtp/task.cpp
+@@ -7,6 +7,9 @@
+ //
+ 
+ #include "task.hpp"
++// SAFETWIN_R3_BEGIN include
++#include <utils/safetwin_trace_r3.hpp>
++// SAFETWIN_R3_END include
+ 
+ #include <gnb/gtp/proto.hpp>
+ #include <gnb/rls/task.hpp>
+@@ -180,6 +183,9 @@ void GtpTask::handleUeContextDelete(int ueId)
+ 
+ void GtpTask::handleUplinkData(int ueId, int psi, OctetString &&pdu)
+ {
++// SAFETWIN_R3_BEGIN gnb-in
++    safetwin_r3::emit(m_logger.get(), pdu, "gnb_in", psi, ueId, -1, -1, -1, -1);
++// SAFETWIN_R3_END gnb-in
+     const uint8_t *data = pdu.data();
+ 
+     // ignore non IPv4 packets
+@@ -191,10 +197,16 @@ void GtpTask::handleUplinkData(int ueId, int psi, OctetString &&pdu)
+     if (!m_pduSessions.count(sessionInd))
+     {
+         m_logger->err("Uplink data failure, PDU session not found. UE[%d] PSI[%d]", ueId, psi);
++// SAFETWIN_R3_BEGIN gnb-missing
++    safetwin_r3::emit(m_logger.get(), pdu, "gnb_missing", psi, ueId, -1, -1, -1, -1);
++// SAFETWIN_R3_END gnb-missing
+         return;
+     }
+ 
+     auto &pduSession = m_pduSessions[sessionInd];
++// SAFETWIN_R3_BEGIN gnb-resource
++    safetwin_r3::emit(m_logger.get(), pdu, "gnb_resource", psi, ueId, -1, -1, -1, -1);
++// SAFETWIN_R3_END gnb-resource
+ 
+     if (m_rateLimiter->allowUplinkPacket(sessionInd, static_cast<int64_t>(pdu.length())))
+     {
+diff --git a/src/gnb/ngap/nnsf.cpp b/src/gnb/ngap/nnsf.cpp
+index 84ae615..f7ef668 100644
+--- a/src/gnb/ngap/nnsf.cpp
++++ b/src/gnb/ngap/nnsf.cpp
+@@ -5,6 +5,8 @@
+ // https://github.com/aligungr/UERANSIM/
+ // See README, LICENSE, and CONTRIBUTING files for licensing details.
+ //
++// SafeTwin engineering candidate R2, 2026-09-05. Not an official release.
++// Only absent-slice, unambiguous, PLMN/slice-compatible fallback is added.
+ 
+ #include "task.hpp"
+ 
+@@ -13,17 +15,44 @@ namespace nr::gnb
+ 
+ NgapAmfContext *NgapTask::selectAmf(int ueId, int32_t &requestedSliceType)
+ {
+-    for (auto &amf : m_amfCtx) {
+-        for (const auto &plmnSupport : amf.second->plmnSupportList) {
+-            for (const auto &singleSlice : plmnSupport->sliceSupportList.slices) {
+-                int32_t supportedSliceType = static_cast<int32_t>(singleSlice.sst);
+-                if (supportedSliceType == requestedSliceType) {
+-                    return amf.second;
++    if (requestedSliceType < -1 || requestedSliceType > 255)
++        return nullptr;
++
++    NgapAmfContext *selected = nullptr;
++    for (auto &amf : m_amfCtx)
++    {
++        if (amf.second == nullptr || amf.second->state != EAmfState::CONNECTED)
++            continue;
++        bool eligible = false;
++        for (const auto &plmnSupport : amf.second->plmnSupportList)
++        {
++            if (plmnSupport == nullptr || plmnSupport->plmn != m_base->config->plmn)
++                continue;
++            for (const auto &singleSlice : plmnSupport->sliceSupportList.slices)
++            {
++                if (requestedSliceType >= 0)
++                {
++                    // Preserve explicit SST matching; never fall back on a mismatch.
++                    eligible = eligible || static_cast<int32_t>(singleSlice.sst) == requestedSliceType;
++                }
++                else
++                {
++                    // A Service Request need not carry an initial requested SST.
++                    // The default candidate must overlap the configured gNB NSSAI.
++                    for (const auto &configured : m_base->config->nssai.slices)
++                        eligible = eligible || singleSlice == configured;
+                 }
+             }
+         }
++        if (eligible)
++        {
++            // Never choose an arbitrary AMF from unordered-map iteration order.
++            if (selected != nullptr && selected != amf.second)
++                return nullptr;
++            selected = amf.second;
++        }
+     }
+-    return nullptr;
++    return selected;
+ }
+ 
+ NgapAmfContext *NgapTask::selectNewAmfForReAllocation(int ueId, int initiatedAmfId, int amfSetId)
+diff --git a/src/ue/nas/sm/sap.cpp b/src/ue/nas/sm/sap.cpp
+index e2ed5a9..9150a1f 100644
+--- a/src/ue/nas/sm/sap.cpp
++++ b/src/ue/nas/sm/sap.cpp
+@@ -7,6 +7,9 @@
+ //
+ 
+ #include "sm.hpp"
++// SAFETWIN_R3_BEGIN include
++#include <utils/safetwin_trace_r3.hpp>
++// SAFETWIN_R3_END include
+ 
+ #include <algorithm>
+ 
+@@ -50,6 +53,9 @@ void NasSm::onTimerTick()
+ void NasSm::handleUplinkDataRequest(int psi, OctetString &&data)
+ {
+     auto state = m_mm->m_mmSubState;
++// SAFETWIN_R3_BEGIN nas-in
++    safetwin_r3::emit(m_logger.get(), data, "nas_in", psi, 0, static_cast<int>(m_mm->m_cmState == ECmState::CM_CONNECTED), static_cast<int>(state), -1, -1);
++// SAFETWIN_R3_END nas-in
+     if (state != EMmSubState::MM_REGISTERED_INITIATED_PS && state != EMmSubState::MM_REGISTERED_NORMAL_SERVICE &&
+         state != EMmSubState::MM_REGISTERED_NON_ALLOWED_SERVICE &&
+         state != EMmSubState::MM_REGISTERED_LIMITED_SERVICE && state != EMmSubState::MM_DEREGISTERED_INITIATED_PS &&
+@@ -61,6 +67,9 @@ void NasSm::handleUplinkDataRequest(int psi, OctetString &&data)
+ 
+     if (m_mm->m_cmState == ECmState::CM_CONNECTED)
+     {
++// SAFETWIN_R3_BEGIN nas-forward
++    safetwin_r3::emit(m_logger.get(), data, "nas_forward", psi, 0, static_cast<int>(m_mm->m_cmState == ECmState::CM_CONNECTED), static_cast<int>(state), static_cast<int>(m_pduSessions[psi]->psState == EPsState::ACTIVE), static_cast<int>(m_pduSessions[psi]->uplinkPending));
++// SAFETWIN_R3_END nas-forward
+         // TODO: We should also check if radio resources are established by RRC.
+         //  Checking CM state is not sufficient
+ 
+@@ -77,6 +86,9 @@ void NasSm::handleUplinkDataRequest(int psi, OctetString &&data)
+     }
+     else
+     {
++// SAFETWIN_R3_BEGIN nas-idle
++    safetwin_r3::emit(m_logger.get(), data, "nas_idle", psi, 0, static_cast<int>(m_mm->m_cmState == ECmState::CM_CONNECTED), static_cast<int>(state), static_cast<int>(m_pduSessions[psi]->psState == EPsState::ACTIVE), static_cast<int>(m_pduSessions[psi]->uplinkPending));
++// SAFETWIN_R3_END nas-idle
+         if (!m_pduSessions[psi]->uplinkPending)
+         {
+             m_pduSessions[psi]->uplinkPending = true;
+diff --git a/src/ue/rls/ctl_task.cpp b/src/ue/rls/ctl_task.cpp
+index f170239..ecfee20 100644
+--- a/src/ue/rls/ctl_task.cpp
++++ b/src/ue/rls/ctl_task.cpp
+@@ -7,6 +7,9 @@
+ //
+ 
+ #include "ctl_task.hpp"
++// SAFETWIN_R3_BEGIN include
++#include <utils/safetwin_trace_r3.hpp>
++// SAFETWIN_R3_END include
+ 
+ #include <utils/common.hpp>
+ 
+@@ -200,6 +203,9 @@ void RlsControlTask::handleUplinkRrcDelivery(int cellId, uint32_t pduId, rrc::Rr
+ 
+ void RlsControlTask::handleUplinkDataDelivery(int psi, OctetString &&data)
+ {
++// SAFETWIN_R3_BEGIN ue-rls
++    safetwin_r3::emit(m_logger.get(), data, "ue_rls", psi, m_servingCell, -1, -1, -1, -1);
++// SAFETWIN_R3_END ue-rls
+     rls::RlsPduTransmission msg{m_shCtx->sti};
+     msg.pduType = rls::EPduType::DATA;
+     msg.pdu = std::move(data);

@@ -1,0 +1,135 @@
+{
+  "verification_passed": true,
+  "checks": {
+    "original-audit-rejection": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r3_build.py",
+        "--run",
+        "evidence/engineering/20260905T111542Z-reconnect-r3-build"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "check_passed": true,
+      "started_at": "2026-09-05T11:24:34.555408+00:00",
+      "completed_at": "2026-09-05T11:24:34.688572+00:00"
+    },
+    "private-v2-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r3_build_v2.py",
+        "--run",
+        "evidence/engineering/20260905T111542Z-reconnect-r3-build"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T11:24:34.688572+00:00",
+      "completed_at": "2026-09-05T11:24:34.838534+00:00"
+    },
+    "release-v2-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r3_build_v2.py",
+        "--run",
+        "evidence/engineering/20260905T111542Z-reconnect-r3-build-release"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T11:24:34.838534+00:00",
+      "completed_at": "2026-09-05T11:24:34.990261+00:00"
+    },
+    "private-redaction-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "tools.audit_reconnect_r3_release",
+        "--private"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T11:24:34.990261+00:00",
+      "completed_at": "2026-09-05T11:24:35.202833+00:00"
+    },
+    "full-tests": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T11:24:35.202833+00:00",
+      "completed_at": "2026-09-05T11:24:43.994385+00:00"
+    },
+    "r3-source-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r3_source.py",
+        "--run",
+        "evidence/engineering/20260905T102301Z-reconnect-r3-freeze"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T11:24:43.994385+00:00",
+      "completed_at": "2026-09-05T11:24:44.167405+00:00"
+    },
+    "r2-negative-network-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r2.py",
+        "--run",
+        "evidence/engineering/20260905T082014Z-reconnect-r2"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T11:24:44.167405+00:00",
+      "completed_at": "2026-09-05T11:24:44.356043+00:00"
+    },
+    "statistical-lock": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-c",
+        "from tools.run_phase7_analysis import verify_analysis_lock; print(verify_analysis_lock()['lock_id'])"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T11:24:44.356043+00:00",
+      "completed_at": "2026-09-05T11:24:44.501582+00:00"
+    }
+  },
+  "source_sha256": {
+    "tools/audit_reconnect_r3_build.py": "5c7636cdbd45ef62650785dba2b281647486b7739026ab76f5db28476cba63af",
+    "tools/audit_reconnect_r3_build_v2.py": "1c4415981b38f8551853f66f1e0377bb73988a289591af3dabf10b485d9ee49e",
+    "tools/audit_reconnect_r3_release.py": "268be8db4425389ef27a483313ef8e8aa377a3f47e7b151d088c7acd641740dc",
+    "tools/audit_reconnect_r3_source.py": "bc8b674332ddc66478a87bb102f9404e5c8fdda6895accdf26ffae59d9a6636d",
+    "tools/build_reconnect_r3.py": "f61cc4863d8b59e08857f0b687e3740e9ad040e233691c841fd8b647ce06a3a6",
+    "tools/publish_reconnect_r3_build.py": "316502ea04d833f7f051ecd90c9119fe81b3b7cf3a415ababbb1db5fcef95565",
+    "tools/reconnect_r3_source.py": "689a688a75019f29a56ef5fd2483d3b419649ef51c9bfaf762fb7f45766b726e",
+    "tools/reconnect_r3_trace.py": "22c73376d2d5098900e1bcaab0a722fd82022fe7e9c2cd52d9672ea9f3b2d491",
+    "tools/verify_reconnect_r3.py": "8c053cdc8f0a452a6e302d6774dcc98167cb9e6ccb38fc7c23d4f6b987b6d090",
+    "tools/verify_reconnect_r3_build_gate.py": "f081931f09a9b10b843646570d38517d2e1e4b71b7449412aec861c994032827",
+    "tools/verify_reconnect_r3_gate.py": "8165a80a0eb4d675f6c863064a2a3cb2a0665131b303c22a0073a4fdb5278094",
+    "tests/test_reconnect_r3.py": "2642c7275a95519acc6965fc28bacb4d40460a7d1e69110143599f0408d12a85",
+    "tests/test_reconnect_r3_build.py": "991e661f6476556b9e9dd92868d923ba940437f2f907012412fb1d9225dd4e73",
+    "tests/test_reconnect_r3_build_release.py": "0957c1a3ddea63aeaa5717af87ac67b7b28799652572ac7c63ee05899b4998a6",
+    "tests/test_reconnect_r3_build_v2.py": "ea6cf70a7e2ea0aa0cfa8bbf86b147a85c76e0e3505dcb5eeab4db0b6d19fd78",
+    "tests/test_reconnect_r3_evidence.py": "a8b3cc08671290c4217472a2dc982f6daebee861d65be89e64417f1c188ffbfb",
+    "sandbox/build/reconnect-r3/build.sh": "8801538008eefcef5ca89971f32e5b0b5c0f532e33b408bc21b4b689ad844d6f",
+    "sandbox/build/reconnect-r3/Dockerfile": "59f15c5e703873441801dd5d33c930d0c07b2009af21c464bd4a1f4bb4b84b7b",
+    "config/experiments/reconnect-r3-trace.json": "02ebfc846d6e98a7c358f2aa1554e5a2b865193f7c854e078db0939d256c1d3d",
+    "docs/RECONNECT_R3_SOURCE_FREEZE.md": "59613c954cc8ae745ecd1ddc81763757f5c0dc3445571998b4e3b236956d3a75",
+    "docs/RECONNECT_R3_TRACE_PROTOCOL.md": "114fd0f7d931fc8658c767d214b92c5f1f420f3c8950b18a8042eaffdd2f6af3"
+  },
+  "evidence_label": "fixture",
+  "network_trials": 0,
+  "network_fix_validated": false,
+  "TNSM_ready": false
+}

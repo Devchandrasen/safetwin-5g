@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\Users\devel\Documents\Codex\2026-08-22\he\safetwin-5g\tools\audit_reconnect_r3_build.py", line 178, in <module>
+    print(json.dumps(audit(parser.parse_args().run), indent=2))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\devel\Documents\Codex\2026-08-22\he\safetwin-5g\tools\audit_reconnect_r3_build.py", line 132, in audit
+    preserve_services(json.loads(stdout("services-before")), json.loads(stdout("services-after")))
+  File "C:\Users\devel\Documents\Codex\2026-08-22\he\safetwin-5g\tools\audit_reconnect_r3_build.py", line 52, in preserve_services
+    require(first[key] == last[key], "container changed: " + name + ":" + key)
+  File "C:\Users\devel\Documents\Codex\2026-08-22\he\safetwin-5g\tools\audit_reconnect_r3_build.py", line 24, in require
+    if not condition: raise ValueError(message)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: container changed: /safetwin5g-mongodb:Mounts

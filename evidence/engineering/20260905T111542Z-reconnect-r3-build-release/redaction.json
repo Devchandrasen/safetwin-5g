@@ -1,0 +1,25 @@
+{
+  "raw_evidence_kept_local": true,
+  "private_manifest_sha256": "584d455bd2c8ccf48d7f4cf9b1fad2db28a250d357f1f604f28300181f16377e",
+  "method": "keyed HMAC-SHA256 equality commitments; private key not exported",
+  "redacted": [
+    "all service Config and HostConfig values",
+    "mount fields except Destination",
+    "unneeded inspect fields and health logs"
+  ],
+  "modified_captured_files": {
+    "services-after.stdout": {
+      "original_sha256": "762ab5fa587408cbdbb261c4b14c80d99cbc4f28b93b2afe462a224495750b53",
+      "release_sha256": "5dbb86b0219f88b9120fe9ea63ad8032e2e9852aa39d9cde2c03928a0a3e24a4"
+    },
+    "services-before.stdout": {
+      "original_sha256": "619bf8afa52f6e212c53152135fb9a521a092e97bd94d89bc79027eeb0aace1e",
+      "release_sha256": "f1aa106237c5241b61b8c9fc0e972ff7126881194c25d645ff2a73277d65020f"
+    },
+    "commands.json": {
+      "original_sha256": "0762c178f6f0b15df1c21ef7f16b08db95a94ba430e16b3b4b263fa7baa0655d",
+      "release_sha256": "f25af77ffbd64b8d1c8466c3a7cef9f675479c0deafe8bcdbfe7a4cb73a60797"
+    }
+  },
+  "public_limitation": "Configuration equality commitments can be compared but secret values cannot be reconstructed or independently inspected without private raw evidence/key."
+}

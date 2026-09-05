@@ -103,8 +103,10 @@ verified idle-payload non-retention in 60 exact-method fixture cases, with
 loss, not direct packet localization or a network fix. A separately frozen
 instrumented diagnostic now has a [verified prebuild source freeze](docs/RECONNECT_R3_SOURCE_FREEZE.md):
 65 parser cases, 61 NAS cases per mode and 272 tests plus 32 subtests pass.
-The R3 image and measured trace gate are still pending; no new long campaign
-is running.
+The [R3 image build](docs/RECONNECT_R3_BUILD_DECISION.md) now passes real-header
+compilation and a versioned independent audit (306 tests plus 32 subtests).
+It has not been applied to a running service. The measured trace gate is still
+pending; no new long campaign is running.
 
 Environment Deviation D1 records six unrelated containers that appeared on
 separate Docker networks during the run. No network overlap was observed, but

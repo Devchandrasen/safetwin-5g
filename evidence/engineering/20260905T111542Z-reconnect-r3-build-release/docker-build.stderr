@@ -1,0 +1,71 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load remote build context
+#1 DONE 0.0s
+
+#2 copy /context /
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/safetwin5g/ueransim:3.3.0-reconnect-r2
+#3 DONE 0.1s
+
+#4 [1/5] FROM docker.io/safetwin5g/ueransim:3.3.0-reconnect-r2@sha256:2a5c01c503927c44a6b45f8b074491ac64a42fc3a444ea2af0a8cbe5df8e537e
+#4 resolve docker.io/safetwin5g/ueransim:3.3.0-reconnect-r2@sha256:2a5c01c503927c44a6b45f8b074491ac64a42fc3a444ea2af0a8cbe5df8e537e 0.0s done
+#4 DONE 0.0s
+
+#5 [2/5] COPY build.sh instrumentation.diff expected-source.sha256 base-source.sha256 /opt/safetwin-r3-input/
+#5 DONE 0.0s
+
+#6 [3/5] WORKDIR /usr/src/UERANSIM
+#6 DONE 0.0s
+
+#7 [4/5] RUN timeout -k 10 660 sh /opt/safetwin-r3-input/build.sh
+#7 0.375 src/ue/nas/sm/sap.cpp: OK
+#7 0.375 src/ue/rls/ctl_task.cpp: OK
+#7 0.375 src/gnb/gtp/task.cpp: OK
+#7 0.375 src/gnb/ngap/nnsf.cpp: OK
+#7 0.378 LICENSE: OK
+#7 0.871 src/ue/nas/sm/sap.cpp: OK
+#7 0.871 src/ue/rls/ctl_task.cpp: OK
+#7 0.871 src/gnb/gtp/task.cpp: OK
+#7 0.871 src/utils/safetwin_trace_r3.hpp: OK
+#7 4.278 [  1%] Built target asn-asn1c
+#7 4.278 [  1%] Built target devbnd
+#7 4.278 [  4%] Built target ext
+#7 4.278 [ 40%] Built target asn-rrc
+#7 4.278 [ 42%] Built target utils
+#7 4.278 [ 94%] Built target asn-ngap
+#7 4.278 [ 96%] Built target common-lib
+#7 4.278 [ 96%] Building CXX object src/gnb/CMakeFiles/gnb.dir/gtp/task.cpp.o
+#7 4.278 [ 96%] Building CXX object src/ue/CMakeFiles/ue.dir/nas/sm/sap.cpp.o
+#7 4.278 [ 96%] Building CXX object src/ue/CMakeFiles/ue.dir/rls/ctl_task.cpp.o
+#7 4.278 [ 96%] Linking CXX static library libgnb.a
+#7 4.278 [ 97%] Built target gnb
+#7 4.278 [ 97%] Built target nr-cli
+#7 4.278 [ 97%] Linking CXX executable nr-gnb
+#7 4.278 [ 97%] Built target nr-gnb
+#7 4.278 [ 97%] Linking CXX static library libue.a
+#7 4.278 [100%] Built target ue
+#7 4.278 [100%] Linking CXX executable nr-ue
+#7 4.278 [100%] Built target nr-ue
+#7 4.416 src/ue/nas/sm/sap.cpp: OK
+#7 4.416 src/ue/rls/ctl_task.cpp: OK
+#7 4.416 src/gnb/gtp/task.cpp: OK
+#7 4.416 src/utils/safetwin_trace_r3.hpp: OK
+#7 4.417 REAL_HEADER_BUILD_COMPLETED
+#7 DONE 4.5s
+
+#8 [5/5] WORKDIR /opt/ueransim
+#8 DONE 0.0s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 0.8s done
+#9 exporting manifest sha256:d63fa78dd376558ca532c3dfd30c40e6119be672b4b81c75d97c4e8d0e12546a done
+#9 exporting config sha256:c84edbc311184d5a3df72b9f5215622384a95e31933602936f1e6cbbc9c40411 0.0s done
+#9 exporting attestation manifest sha256:fbf6564792c2e4b092e9319c9fec6f7f32317e5bc915627dbac9ccaf6cd5f1ca 0.0s done
+#9 exporting manifest list sha256:0c9773889f62ee848144b359349014ea8200c5edab995c303a3d38a75cc70c32 done
+#9 naming to docker.io/safetwin5g/ueransim:3.3.0-reconnect-r3-trace done
+#9 unpacking to docker.io/safetwin5g/ueransim:3.3.0-reconnect-r3-trace
+#9 unpacking to docker.io/safetwin5g/ueransim:3.3.0-reconnect-r3-trace 0.2s done
+#9 DONE 1.0s
