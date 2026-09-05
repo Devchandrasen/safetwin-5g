@@ -303,11 +303,23 @@ sandbox evidence.
       the complete fixture replays 354 synthetic commands, 33 samples and
       eight scope snapshots, explicitly not network evidence. Two failed
       read-only preflights are retained with their exact source versions; the
-      corrected scope preflight passes with mutations disabled. Both running
-      UERANSIM services remain on the official image. The bounded measured R3
-      trace diagnostic is next, only after the execution gate is committed.
-      This parent recovery item remains open. No endpoint relaxation or new
-      675-unit campaign is enabled by these software checks.
+      corrected scope preflight passed with mutations disabled. The subsequent
+      R3 attempt was rejected during its first baseline window despite 5/5
+      returned packets, because required early traces were missing. Zero
+      exposures ran. Both official images and final 15/15 service were restored
+      (`docs/RECONNECT_R3_DECISION.md`; run
+      `evidence/engineering/20260905T131024Z-reconnect-r3-network`). A separate
+      observation audit verifies the rejected prefix: 131 commands, six samples
+      and five scopes, with the original complete-protocol rejection preserved.
+      UE-only reset changed the source address outside the trace filter; later
+      read-only clock probes independently verify host/container skew, supporting
+      but not uniquely proving historical log-prefix clipping. Seven verification
+      checks, 355 tests and 132 subtests pass at
+      `evidence/verification/20260905T133535Z-reconnect-r3-observation`.
+      Next freeze a separate clock-safe, source-aware collection contract before
+      any further diagnostic. This parent recovery item remains open. No R3
+      rerun, endpoint relaxation or new 675-unit campaign follows from this
+      rejected attempt.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
       ablations, OOD stress test, runtime/scalability evaluation, and
       independent artifact audit.

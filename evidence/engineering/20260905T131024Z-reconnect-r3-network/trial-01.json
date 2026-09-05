@@ -1,0 +1,35 @@
+{
+  "trial": {
+    "trial_id": "trace:control-before",
+    "drop_ue_egress": false
+  },
+  "started_at": "2026-09-05T13:10:40.701071+00:00",
+  "errors": [
+    "ValueError: missing packet or fingerprint mismatch"
+  ],
+  "restoration_attempts": [
+    {
+      "step": "restore-ue",
+      "started_at": "2026-09-05T13:11:05.474239+00:00",
+      "errors": [
+        "missing packet or fingerprint mismatch"
+      ],
+      "clean": false,
+      "completed_at": "2026-09-05T13:11:14.792321+00:00"
+    },
+    {
+      "step": "restore-full",
+      "started_at": "2026-09-05T13:11:14.792321+00:00",
+      "errors": [
+        "missing packet or fingerprint mismatch"
+      ],
+      "clean": false,
+      "completed_at": "2026-09-05T13:11:39.207526+00:00"
+    }
+  ],
+  "preparation_started": true,
+  "final_service_restored": false,
+  "protocol_execution_valid": false,
+  "network_fix_validated": false,
+  "completed_at": "2026-09-05T13:11:39.207526+00:00"
+}

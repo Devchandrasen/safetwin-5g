@@ -1,0 +1,49 @@
+{
+  "approval_id": "reconnect-r3-3ad30bd0f0a3f65c36686a224acb7f6a4d70a26cc6d982493906c845990c568e",
+  "recorded_at": "2026-09-05T13:10:24.589844+00:00",
+  "status": "approved",
+  "environment": "sandbox",
+  "approved_by": "user",
+  "type": "standing-project-authorization",
+  "authorization_basis": "User authorized exact scoped reversible local SafeTwin work and automatic sequential continuation.",
+  "trials": [
+    {
+      "trial_id": "trace:control-before",
+      "drop_ue_egress": false
+    },
+    {
+      "trial_id": "trace:drop-a",
+      "drop_ue_egress": true
+    },
+    {
+      "trial_id": "trace:drop-b",
+      "drop_ue_egress": true
+    },
+    {
+      "trial_id": "trace:control-after",
+      "drop_ue_egress": false
+    }
+  ],
+  "containers": [
+    "safetwin5g-open5gs",
+    "safetwin5g-gnb",
+    "safetwin5g-ue"
+  ],
+  "image_containers": [
+    "safetwin5g-gnb",
+    "safetwin5g-ue"
+  ],
+  "image_ids": [
+    "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+    "sha256:0c9773889f62ee848144b359349014ea8200c5edab995c303a3d38a75cc70c32"
+  ],
+  "operations": [
+    "fixed preparation core/gNB/UE resets",
+    "two eight-second UE eth0 loss trials, owned 7157 handle, 15-second timeout/EXIT cleanup",
+    "UE restart then full reset restoration",
+    "exact two-service derived/official image replacement"
+  ],
+  "rollback_plan": "Remove only owned qdisc; attempt official image restoration for both UE and gNB after any switch attempt; reset core/gNB/UE and verify fresh registration/PDU plus 15/15.",
+  "operator_validation": false,
+  "live_actuation": false
+}

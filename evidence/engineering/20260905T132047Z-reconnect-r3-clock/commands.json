@@ -1,0 +1,323 @@
+[
+  {
+    "sequence": 1,
+    "name": "before-network",
+    "argv": [
+      "docker",
+      "network",
+      "inspect",
+      "safetwin5g-isolated"
+    ],
+    "started_at": "2026-09-05T13:20:47.526976+00:00",
+    "timeout_seconds": 10,
+    "completed_at": "2026-09-05T13:20:47.674446+00:00",
+    "monotonic_elapsed_seconds": 0.15600000019185245,
+    "returncode": 0,
+    "stdout": "[\n    {\n        \"Name\": \"safetwin5g-isolated\",\n        \"Id\": \"9bac7f8dd7d38c788cc2fbaffd0643b958b647683419f450755f0ddfc16fe9aa\",\n        \"Created\": \"2026-08-24T04:40:14.171653168Z\",\n        \"Scope\": \"local\",\n        \"Driver\": \"bridge\",\n        \"EnableIPv4\": true,\n        \"EnableIPv6\": false,\n        \"IPAM\": {\n            \"Driver\": \"default\",\n            \"Options\": null,\n            \"Config\": [\n                {\n                    \"Subnet\": \"10.53.0.0/24\",\n                    \"Gateway\": \"10.53.0.1\"\n                }\n            ]\n        },\n        \"Internal\": true,\n        \"Attachable\": false,\n        \"Ingress\": false,\n        \"ConfigFrom\": {\n            \"Network\": \"\"\n        },\n        \"ConfigOnly\": false,\n        \"Options\": {\n            \"com.docker.network.enable_ipv4\": \"true\",\n            \"com.docker.network.enable_ipv6\": \"false\"\n        },\n        \"Labels\": {\n            \"com.docker.compose.config-hash\": \"1d368b17fc6ae77c8bce1507bd0564fbf47244ccc8cd0de51445aea9c34c1b6a\",\n            \"com.docker.compose.network\": \"core\",\n            \"com.docker.compose.project\": \"safetwin5g-sandbox\",\n            \"com.docker.compose.version\": \"5.1.3\"\n        },\n        \"Containers\": {\n            \"1d460cf00e44ca49d645c911d25db31e7b753d4b1b8b048a00d38726e57220ab\": {\n                \"Name\": \"safetwin5g-ue\",\n                \"EndpointID\": \"a9dd66bd5cb56780d20d3b1bfbc45f3c871ef67678a3842cac2a456f0fdcf4bc\",\n                \"MacAddress\": \"f2:51:1f:ef:0b:49\",\n                \"IPv4Address\": \"10.53.0.5/24\",\n                \"IPv6Address\": \"\"\n            },\n            \"5514b44b708bb5cbde9b911a4698ece3abf219a01767beff06f060078326c1a9\": {\n                \"Name\": \"safetwin5g-mongodb\",\n                \"EndpointID\": \"c40c97640df0771ea211572289ead262d2507b1aa1ac1b11b803d57db8c082f1\",\n                \"MacAddress\": \"ce:33:3f:d3:3f:a2\",\n                \"IPv4Address\": \"10.53.0.2/24\",\n                \"IPv6Address\": \"\"\n            },\n            \"616bc5ff04a5fb1c937c595bbd3bf5d95c66067884db2e7dd998bd46dd5ac6ad\": {\n                \"Name\": \"safetwin5g-gnb\",\n                \"EndpointID\": \"794a0f3a96fd6eabd7a79cc78dc3529287259f65653149084bb26fe68a82e52a\",\n                \"MacAddress\": \"3a:fc:a7:b4:7d:e7\",\n                \"IPv4Address\": \"10.53.0.4/24\",\n                \"IPv6Address\": \"\"\n            },\n            \"6e6b340a37e6de6426cd2829f5eabe8fd63f323619cc093a3557fc5a16ac9256\": {\n                \"Name\": \"safetwin5g-open5gs\",\n                \"EndpointID\": \"22911c2d31e03a102cb23d6417825edc85d27890714ff9a7003aed36b7df2e5f\",\n                \"MacAddress\": \"52:c5:08:f9:f5:84\",\n                \"IPv4Address\": \"10.53.0.3/24\",\n                \"IPv6Address\": \"\"\n            },\n            \"d6958d142a6d2f1f258c5bd6c634817ef9e10b9b39fd24d78b13daab39c13085\": {\n                \"Name\": \"safetwin5g-prometheus\",\n                \"EndpointID\": \"3f56e8da8ccf00216619777dc7d87fa72a46e8be027b853d16bb0a5224d22104\",\n                \"MacAddress\": \"8e:44:25:22:eb:ed\",\n                \"IPv4Address\": \"10.53.0.6/24\",\n                \"IPv6Address\": \"\"\n            }\n        },\n        \"Status\": {\n            \"IPAM\": {\n                \"Subnets\": {\n                    \"10.53.0.0/24\": {\n                        \"IPsInUse\": 8,\n                        \"DynamicIPsAvailable\": 248\n                    }\n                }\n            }\n        }\n    }\n]\n",
+    "stderr": "",
+    "stdout_sha256": "01a5cb13c2851e71195c25839d28ef19c719b4a48713bc5d5b78c34b291a5cf8",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "sequence": 2,
+    "name": "before-containers",
+    "argv": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"Image\":{{json .Image}},\"RestartCount\":{{json .RestartCount}},\"Mounts\":{{json .Mounts}},\"Config\":{\"Image\":{{json .Config.Image}},\"Cmd\":{{json .Config.Cmd}},\"Entrypoint\":{{json .Config.Entrypoint}},\"User\":{{json .Config.User}},\"WorkingDir\":{{json .Config.WorkingDir}},\"Labels\":{\"com.docker.compose.project\":{{json (index .Config.Labels \"com.docker.compose.project\")}},\"safetwin5g.upstream.commit\":{{json (index .Config.Labels \"safetwin5g.upstream.commit\")}},\"safetwin5g.derived.revision\":{{json (index .Config.Labels \"safetwin5g.derived.revision\")}}}},\"HostConfig\":{\"CapAdd\":{{json (index .HostConfig \"CapAdd\")}},\"CapDrop\":{{json (index .HostConfig \"CapDrop\")}},\"Devices\":{{json (index .HostConfig \"Devices\")}},\"Sysctls\":{{json (index .HostConfig \"Sysctls\")}},\"Binds\":{{json (index .HostConfig \"Binds\")}},\"SecurityOpt\":{{json (index .HostConfig \"SecurityOpt\")}},\"Privileged\":{{json (index .HostConfig \"Privileged\")}},\"PortBindings\":{{json (index .HostConfig \"PortBindings\")}},\"NetworkMode\":{{json (index .HostConfig \"NetworkMode\")}},\"PidMode\":{{json (index .HostConfig \"PidMode\")}},\"IpcMode\":{{json (index .HostConfig \"IpcMode\")}},\"ReadonlyRootfs\":{{json (index .HostConfig \"ReadonlyRootfs\")}},\"RestartPolicy\":{{json (index .HostConfig \"RestartPolicy\")}}},\"NetworkSettings\":{\"Networks\":{{json .NetworkSettings.Networks}}},\"State\":{\"StartedAt\":{{json .State.StartedAt}},\"Running\":{{json .State.Running}},\"Health\":{\"Status\":{{json .State.Health.Status}}}}}",
+      "safetwin5g-open5gs",
+      "safetwin5g-gnb",
+      "safetwin5g-ue",
+      "safetwin5g-mongodb",
+      "safetwin5g-prometheus"
+    ],
+    "started_at": "2026-09-05T13:20:47.675055+00:00",
+    "timeout_seconds": 10,
+    "completed_at": "2026-09-05T13:20:47.833034+00:00",
+    "monotonic_elapsed_seconds": 0.15699999989010394,
+    "returncode": 0,
+    "stdout": "{\"Id\":\"6e6b340a37e6de6426cd2829f5eabe8fd63f323619cc093a3557fc5a16ac9256\",\"Name\":\"/safetwin5g-open5gs\",\"Image\":\"sha256:ee78a5756bc0592772d814fbb5746ef4d97b2cf0003416c78d32d7f59a616e9a\",\"RestartCount\":0,\"Mounts\":[],\"Config\":{\"Image\":\"safetwin5g/open5gs:2.7.7-318eeb49\",\"Cmd\":null,\"Entrypoint\":[\"/usr/local/bin/safetwin5g-open5gs-entrypoint\"],\"User\":\"\",\"WorkingDir\":\"/usr/src\",\"Labels\":{\"com.docker.compose.project\":\"safetwin5g-sandbox\",\"safetwin5g.upstream.commit\":\"318eeb49a7dcdff733dec60e02d9c60aefca2fb9\",\"safetwin5g.derived.revision\":null}},\"HostConfig\":{\"CapAdd\":[\"CAP_NET_ADMIN\",\"CAP_NET_RAW\"],\"CapDrop\":null,\"Devices\":[{\"CgroupPermissions\":\"rwm\",\"PathInContainer\":\"/dev/net/tun\",\"PathOnHost\":\"/dev/net/tun\"}],\"Sysctls\":{\"net.ipv4.ip_forward\":\"1\"},\"Binds\":null,\"SecurityOpt\":null,\"Privileged\":false,\"PortBindings\":{},\"NetworkMode\":\"safetwin5g-isolated\",\"PidMode\":\"\",\"IpcMode\":\"private\",\"ReadonlyRootfs\":false,\"RestartPolicy\":{\"MaximumRetryCount\":0,\"Name\":\"no\"}},\"NetworkSettings\":{\"Networks\":{\"safetwin5g-isolated\":{\"Aliases\":[\"safetwin5g-open5gs\",\"open5gs\"],\"DNSNames\":[\"safetwin5g-open5gs\",\"open5gs\",\"6e6b340a37e6\"],\"DriverOpts\":null,\"EndpointID\":\"22911c2d31e03a102cb23d6417825edc85d27890714ff9a7003aed36b7df2e5f\",\"Gateway\":\"\",\"GlobalIPv6Address\":\"\",\"GlobalIPv6PrefixLen\":0,\"GwPriority\":0,\"IPAMConfig\":{\"IPv4Address\":\"10.53.0.3\"},\"IPAddress\":\"10.53.0.3\",\"IPPrefixLen\":24,\"IPv6Gateway\":\"\",\"Links\":null,\"MacAddress\":\"52:c5:08:f9:f5:84\",\"NetworkID\":\"9bac7f8dd7d38c788cc2fbaffd0643b958b647683419f450755f0ddfc16fe9aa\"}}},\"State\":{\"StartedAt\":\"2026-09-05T13:11:54.735058739Z\",\"Running\":true,\"Health\":{\"Status\":\"healthy\"}}}\n{\"Id\":\"616bc5ff04a5fb1c937c595bbd3bf5d95c66067884db2e7dd998bd46dd5ac6ad\",\"Name\":\"/safetwin5g-gnb\",\"Image\":\"sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725\",\"RestartCount\":0,\"Mounts\":[{\"Destination\":\"/etc/ueransim/gnb.yaml\",\"Mode\":\"ro\",\"Propagation\":\"rprivate\",\"RW\":false,\"Source\":\"C:\\\\Users\\\\devel\\\\Documents\\\\Codex\\\\2026-08-22\\\\he\\\\safetwin-5g\\\\sandbox\\\\config\\\\ueransim\\\\gnb.yaml\",\"Type\":\"bind\"}],\"Config\":{\"Image\":\"safetwin5g/ueransim:3.3.0-6bf5a1a9\",\"Cmd\":[\"/opt/ueransim/bin/nr-gnb\",\"-c\",\"/etc/ueransim/gnb.yaml\"],\"Entrypoint\":null,\"User\":\"\",\"WorkingDir\":\"/opt/ueransim\",\"Labels\":{\"com.docker.compose.project\":\"safetwin5g-sandbox\",\"safetwin5g.upstream.commit\":\"6bf5a1a96aaef6ae8778b9d8b477ac6e2bbf8156\",\"safetwin5g.derived.revision\":null}},\"HostConfig\":{\"CapAdd\":null,\"CapDrop\":null,\"Devices\":null,\"Sysctls\":null,\"Binds\":[\"C:\\\\Users\\\\devel\\\\Documents\\\\Codex\\\\2026-08-22\\\\he\\\\safetwin-5g\\\\sandbox\\\\config\\\\ueransim\\\\gnb.yaml:/etc/ueransim/gnb.yaml:ro\"],\"SecurityOpt\":null,\"Privileged\":false,\"PortBindings\":{},\"NetworkMode\":\"safetwin5g-isolated\",\"PidMode\":\"\",\"IpcMode\":\"private\",\"ReadonlyRootfs\":false,\"RestartPolicy\":{\"MaximumRetryCount\":0,\"Name\":\"no\"}},\"NetworkSettings\":{\"Networks\":{\"safetwin5g-isolated\":{\"Aliases\":[\"safetwin5g-gnb\",\"ueransim-gnb\"],\"DNSNames\":[\"safetwin5g-gnb\",\"ueransim-gnb\",\"616bc5ff04a5\"],\"DriverOpts\":null,\"EndpointID\":\"794a0f3a96fd6eabd7a79cc78dc3529287259f65653149084bb26fe68a82e52a\",\"Gateway\":\"\",\"GlobalIPv6Address\":\"\",\"GlobalIPv6PrefixLen\":0,\"GwPriority\":0,\"IPAMConfig\":{\"IPv4Address\":\"10.53.0.4\"},\"IPAddress\":\"10.53.0.4\",\"IPPrefixLen\":24,\"IPv6Gateway\":\"\",\"Links\":null,\"MacAddress\":\"3a:fc:a7:b4:7d:e7\",\"NetworkID\":\"9bac7f8dd7d38c788cc2fbaffd0643b958b647683419f450755f0ddfc16fe9aa\"}}},\"State\":{\"StartedAt\":\"2026-09-05T13:12:01.529782732Z\",\"Running\":true,\"Health\":{\"Status\":\"healthy\"}}}\n{\"Id\":\"1d460cf00e44ca49d645c911d25db31e7b753d4b1b8b048a00d38726e57220ab\",\"Name\":\"/safetwin5g-ue\",\"Image\":\"sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725\",\"RestartCount\":0,\"Mounts\":[{\"Destination\":\"/etc/ueransim/ue.yaml\",\"Mode\":\"ro\",\"Propagation\":\"rprivate\",\"RW\":false,\"Source\":\"C:\\\\Users\\\\devel\\\\Documents\\\\Codex\\\\2026-08-22\\\\he\\\\safetwin-5g\\\\sandbox\\\\config\\\\ueransim\\\\ue.yaml\",\"Type\":\"bind\"}],\"Config\":{\"Image\":\"safetwin5g/ueransim:3.3.0-6bf5a1a9\",\"Cmd\":[\"/opt/ueransim/bin/nr-ue\",\"-c\",\"/etc/ueransim/ue.yaml\"],\"Entrypoint\":null,\"User\":\"\",\"WorkingDir\":\"/opt/ueransim\",\"Labels\":{\"com.docker.compose.project\":\"safetwin5g-sandbox\",\"safetwin5g.upstream.commit\":\"6bf5a1a96aaef6ae8778b9d8b477ac6e2bbf8156\",\"safetwin5g.derived.revision\":null}},\"HostConfig\":{\"CapAdd\":[\"CAP_NET_ADMIN\",\"CAP_NET_RAW\"],\"CapDrop\":null,\"Devices\":[{\"CgroupPermissions\":\"rwm\",\"PathInContainer\":\"/dev/net/tun\",\"PathOnHost\":\"/dev/net/tun\"}],\"Sysctls\":null,\"Binds\":[\"C:\\\\Users\\\\devel\\\\Documents\\\\Codex\\\\2026-08-22\\\\he\\\\safetwin-5g\\\\sandbox\\\\config\\\\ueransim\\\\ue.yaml:/etc/ueransim/ue.yaml:ro\"],\"SecurityOpt\":null,\"Privileged\":false,\"PortBindings\":{},\"NetworkMode\":\"safetwin5g-isolated\",\"PidMode\":\"\",\"IpcMode\":\"private\",\"ReadonlyRootfs\":false,\"RestartPolicy\":{\"MaximumRetryCount\":0,\"Name\":\"no\"}},\"NetworkSettings\":{\"Networks\":{\"safetwin5g-isolated\":{\"Aliases\":[\"safetwin5g-ue\",\"ueransim-ue\"],\"DNSNames\":[\"safetwin5g-ue\",\"ueransim-ue\",\"1d460cf00e44\"],\"DriverOpts\":null,\"EndpointID\":\"a9dd66bd5cb56780d20d3b1bfbc45f3c871ef67678a3842cac2a456f0fdcf4bc\",\"Gateway\":\"\",\"GlobalIPv6Address\":\"\",\"GlobalIPv6PrefixLen\":0,\"GwPriority\":0,\"IPAMConfig\":{\"IPv4Address\":\"10.53.0.5\"},\"IPAddress\":\"10.53.0.5\",\"IPPrefixLen\":24,\"IPv6Gateway\":\"\",\"Links\":null,\"MacAddress\":\"f2:51:1f:ef:0b:49\",\"NetworkID\":\"9bac7f8dd7d38c788cc2fbaffd0643b958b647683419f450755f0ddfc16fe9aa\"}}},\"State\":{\"StartedAt\":\"2026-09-05T13:12:08.42060317Z\",\"Running\":true,\"Health\":{\"Status\":\"healthy\"}}}\n{\"Id\":\"5514b44b708bb5cbde9b911a4698ece3abf219a01767beff06f060078326c1a9\",\"Name\":\"/safetwin5g-mongodb\",\"Image\":\"sha256:021b2d5ae9d253f2cca17491cc8d03aed8df3c840f3252066aa62d3277fc406e\",\"RestartCount\":0,\"Mounts\":[{\"Destination\":\"/docker-entrypoint-initdb.d/10-subscriber.js\",\"Mode\":\"ro\",\"Propagation\":\"rprivate\",\"RW\":false,\"Source\":\"/run/desktop/mnt/host/c/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/sandbox/config/mongodb/10-subscriber.js\",\"Type\":\"bind\"},{\"Destination\":\"/data/configdb\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"6369e6d93bbba15f3fa034ca13f1647d296ef8a3243a0cc73186231f1e6eb8fd\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/6369e6d93bbba15f3fa034ca13f1647d296ef8a3243a0cc73186231f1e6eb8fd/_data\",\"Type\":\"volume\"},{\"Destination\":\"/data/db\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"safetwin5g-mongodb-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/safetwin5g-mongodb-data/_data\",\"Type\":\"volume\"}],\"Config\":{\"Image\":\"docker.io/library/mongo:8.0.29-noble@sha256:021b2d5ae9d253f2cca17491cc8d03aed8df3c840f3252066aa62d3277fc406e\",\"Cmd\":[\"mongod\",\"--bind_ip_all\",\"--quiet\"],\"Entrypoint\":[\"docker-entrypoint.sh\"],\"User\":\"\",\"WorkingDir\":\"\",\"Labels\":{\"com.docker.compose.project\":\"safetwin5g-sandbox\",\"safetwin5g.upstream.commit\":null,\"safetwin5g.derived.revision\":null}},\"HostConfig\":{\"CapAdd\":null,\"CapDrop\":null,\"Devices\":null,\"Sysctls\":null,\"Binds\":[\"safetwin5g-mongodb-data:/data/db:rw\",\"/run/desktop/mnt/host/c/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/sandbox/config/mongodb/10-subscriber.js:/docker-entrypoint-initdb.d/10-subscriber.js:ro\"],\"SecurityOpt\":null,\"Privileged\":false,\"PortBindings\":{},\"NetworkMode\":\"safetwin5g-isolated\",\"PidMode\":\"\",\"IpcMode\":\"private\",\"ReadonlyRootfs\":false,\"RestartPolicy\":{\"MaximumRetryCount\":0,\"Name\":\"no\"}},\"NetworkSettings\":{\"Networks\":{\"safetwin5g-isolated\":{\"Aliases\":[\"safetwin5g-mongodb\",\"mongodb\"],\"DNSNames\":[\"safetwin5g-mongodb\",\"mongodb\",\"5514b44b708b\"],\"DriverOpts\":null,\"EndpointID\":\"c40c97640df0771ea211572289ead262d2507b1aa1ac1b11b803d57db8c082f1\",\"Gateway\":\"\",\"GlobalIPv6Address\":\"\",\"GlobalIPv6PrefixLen\":0,\"GwPriority\":0,\"IPAMConfig\":{\"IPv4Address\":\"10.53.0.2\"},\"IPAddress\":\"10.53.0.2\",\"IPPrefixLen\":24,\"IPv6Gateway\":\"\",\"Links\":null,\"MacAddress\":\"ce:33:3f:d3:3f:a2\",\"NetworkID\":\"9bac7f8dd7d38c788cc2fbaffd0643b958b647683419f450755f0ddfc16fe9aa\"}}},\"State\":{\"StartedAt\":\"2026-09-05T01:52:34.105334659Z\",\"Running\":true,\"Health\":{\"Status\":\"healthy\"}}}\n{\"Id\":\"d6958d142a6d2f1f258c5bd6c634817ef9e10b9b39fd24d78b13daab39c13085\",\"Name\":\"/safetwin5g-prometheus\",\"Image\":\"sha256:508729e0e2d18e11fd742a5a5ca70e557b940a93948c3c95fd0123a6fd538b69\",\"RestartCount\":0,\"Mounts\":[{\"Destination\":\"/etc/prometheus/prometheus.yml\",\"Mode\":\"ro\",\"Propagation\":\"rprivate\",\"RW\":false,\"Source\":\"/run/desktop/mnt/host/c/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/sandbox/config/prometheus/prometheus.yml\",\"Type\":\"bind\"},{\"Destination\":\"/prometheus\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"safetwin5g-prometheus-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/safetwin5g-prometheus-data/_data\",\"Type\":\"volume\"}],\"Config\":{\"Image\":\"docker.io/prom/prometheus:v3.13.2@sha256:508729e0e2d18e11fd742a5a5ca70e557b940a93948c3c95fd0123a6fd538b69\",\"Cmd\":[\"--config.file=/etc/prometheus/prometheus.yml\",\"--storage.tsdb.path=/prometheus\",\"--storage.tsdb.retention.time=7d\",\"--web.enable-lifecycle\"],\"Entrypoint\":[\"/bin/prometheus\"],\"User\":\"nobody\",\"WorkingDir\":\"/prometheus\",\"Labels\":{\"com.docker.compose.project\":\"safetwin5g-sandbox\",\"safetwin5g.upstream.commit\":null,\"safetwin5g.derived.revision\":null}},\"HostConfig\":{\"CapAdd\":null,\"CapDrop\":null,\"Devices\":null,\"Sysctls\":null,\"Binds\":[\"safetwin5g-prometheus-data:/prometheus:rw\",\"/run/desktop/mnt/host/c/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/sandbox/config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro\"],\"SecurityOpt\":null,\"Privileged\":false,\"PortBindings\":{},\"NetworkMode\":\"safetwin5g-isolated\",\"PidMode\":\"\",\"IpcMode\":\"private\",\"ReadonlyRootfs\":false,\"RestartPolicy\":{\"MaximumRetryCount\":0,\"Name\":\"no\"}},\"NetworkSettings\":{\"Networks\":{\"safetwin5g-isolated\":{\"Aliases\":[\"safetwin5g-prometheus\",\"prometheus\"],\"DNSNames\":[\"safetwin5g-prometheus\",\"prometheus\",\"d6958d142a6d\"],\"DriverOpts\":null,\"EndpointID\":\"3f56e8da8ccf00216619777dc7d87fa72a46e8be027b853d16bb0a5224d22104\",\"Gateway\":\"\",\"GlobalIPv6Address\":\"\",\"GlobalIPv6PrefixLen\":0,\"GwPriority\":0,\"IPAMConfig\":{\"IPv4Address\":\"10.53.0.6\"},\"IPAddress\":\"10.53.0.6\",\"IPPrefixLen\":24,\"IPv6Gateway\":\"\",\"Links\":null,\"MacAddress\":\"8e:44:25:22:eb:ed\",\"NetworkID\":\"9bac7f8dd7d38c788cc2fbaffd0643b958b647683419f450755f0ddfc16fe9aa\"}}},\"State\":{\"StartedAt\":\"2026-09-05T01:52:50.469333517Z\",\"Running\":true,\"Health\":{\"Status\":\"healthy\"}}}\n",
+    "stderr": "",
+    "stdout_sha256": "6640e4f95ed1aec9764ceeb06ed5f4beeb89f6dea2e6031811980aa2ad672bdb",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "sequence": 3,
+    "name": "clock-safetwin5g-ue-1",
+    "argv": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "date",
+      "-u",
+      "+%Y-%m-%dT%H:%M:%S.%NZ"
+    ],
+    "started_at": "2026-09-05T13:20:47.833666+00:00",
+    "timeout_seconds": 10,
+    "completed_at": "2026-09-05T13:20:48.031970+00:00",
+    "monotonic_elapsed_seconds": 0.1869999999180436,
+    "returncode": 0,
+    "stdout": "2026-09-05T13:20:47.758122112Z\n",
+    "stderr": "",
+    "stdout_sha256": "90ae5a0255624c45362ea03d472bac6766628f63ea97f28bd43582fde693a917",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "sequence": 4,
+    "name": "clock-safetwin5g-ue-2",
+    "argv": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "date",
+      "-u",
+      "+%Y-%m-%dT%H:%M:%S.%NZ"
+    ],
+    "started_at": "2026-09-05T13:20:48.032657+00:00",
+    "timeout_seconds": 10,
+    "completed_at": "2026-09-05T13:20:48.238170+00:00",
+    "monotonic_elapsed_seconds": 0.2029999999795109,
+    "returncode": 0,
+    "stdout": "2026-09-05T13:20:47.961195345Z\n",
+    "stderr": "",
+    "stdout_sha256": "d3f3afa1cb97a666da0bbe56d35c74940bd4a8312969eaeeb2d77f6f5360c6bf",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "sequence": 5,
+    "name": "clock-safetwin5g-ue-3",
+    "argv": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "date",
+      "-u",
+      "+%Y-%m-%dT%H:%M:%S.%NZ"
+    ],
+    "started_at": "2026-09-05T13:20:48.239190+00:00",
+    "timeout_seconds": 10,
+    "completed_at": "2026-09-05T13:20:48.446048+00:00",
+    "monotonic_elapsed_seconds": 0.2029999999795109,
+    "returncode": 0,
+    "stdout": "2026-09-05T13:20:48.161017032Z\n",
+    "stderr": "",
+    "stdout_sha256": "47ffdf210dda74f55f6c692b5fb207f3c7928bef7603c28e28257bfe0a4470dd",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "sequence": 6,
+    "name": "clock-safetwin5g-ue-4",
+    "argv": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "date",
+      "-u",
+      "+%Y-%m-%dT%H:%M:%S.%NZ"
+    ],
+    "started_at": "2026-09-05T13:20:48.446718+00:00",
+    "timeout_seconds": 10,
+    "completed_at": "2026-09-05T13:20:48.639910+00:00",
+    "monotonic_elapsed_seconds": 0.18700000015087426,
+    "returncode": 0,
+    "stdout": "2026-09-05T13:20:48.348835449Z\n",
+    "stderr": "",
+    "stdout_sha256": "25413d4a19c1b0326571d3690d2817ee99ba8751a74f5eb5ad0c33971e8dfc2f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "sequence": 7,
+    "name": "clock-safetwin5g-ue-5",
+    "argv": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "date",
+      "-u",
+      "+%Y-%m-%dT%H:%M:%S.%NZ"
+    ],
+    "started_at": "2026-09-05T13:20:48.640424+00:00",
+    "timeout_seconds": 10,
+    "completed_at": "2026-09-05T13:20:48.809075+00:00",
+    "monotonic_elapsed_seconds": 0.1720000000204891,
+    "returncode": 0,
+    "stdout": "2026-09-05T13:20:48.512721033Z\n",
+    "stderr": "",
+    "stdout_sha256": "87f7e83dba7a3851c31513521b491236fcfeea9896b63f55f6743a901a873f1e",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "sequence": 8,
+    "name": "clock-safetwin5g-gnb-1",
+    "argv": [
+      "docker",
+      "exec",
+      "safetwin5g-gnb",
+      "date",
+      "-u",
+      "+%Y-%m-%dT%H:%M:%S.%NZ"
+    ],
+    "started_at": "2026-09-05T13:20:48.810076+00:00",
+    "timeout_seconds": 10,
+    "completed_at": "2026-09-05T13:20:49.007719+00:00",
+    "monotonic_elapsed_seconds": 0.2029999999795109,
+    "returncode": 0,
+    "stdout": "2026-09-05T13:20:48.704924895Z\n",
+    "stderr": "",
+    "stdout_sha256": "d93f45ea5f9a6fb59c71275b6e9afa7a73a9bc5128477b4d51e71462fc803fa5",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "sequence": 9,
+    "name": "clock-safetwin5g-gnb-2",
+    "argv": [
+      "docker",
+      "exec",
+      "safetwin5g-gnb",
+      "date",
+      "-u",
+      "+%Y-%m-%dT%H:%M:%S.%NZ"
+    ],
+    "started_at": "2026-09-05T13:20:49.008410+00:00",
+    "timeout_seconds": 10,
+    "completed_at": "2026-09-05T13:20:49.190221+00:00",
+    "monotonic_elapsed_seconds": 0.18799999984912574,
+    "returncode": 0,
+    "stdout": "2026-09-05T13:20:48.881302620Z\n",
+    "stderr": "",
+    "stdout_sha256": "25f9d0d27d2665de67dbac77e015555dcf2ac1162efa2f86025e2f81bd4d8162",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "sequence": 10,
+    "name": "clock-safetwin5g-gnb-3",
+    "argv": [
+      "docker",
+      "exec",
+      "safetwin5g-gnb",
+      "date",
+      "-u",
+      "+%Y-%m-%dT%H:%M:%S.%NZ"
+    ],
+    "started_at": "2026-09-05T13:20:49.191222+00:00",
+    "timeout_seconds": 10,
+    "completed_at": "2026-09-05T13:20:49.404714+00:00",
+    "monotonic_elapsed_seconds": 0.2029999999795109,
+    "returncode": 0,
+    "stdout": "2026-09-05T13:20:49.089547691Z\n",
+    "stderr": "",
+    "stdout_sha256": "0987765cd498ebd14d7a223b916fe03f3ad033209daca44a2d87089d5dbbd997",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "sequence": 11,
+    "name": "clock-safetwin5g-gnb-4",
+    "argv": [
+      "docker",
+      "exec",
+      "safetwin5g-gnb",
+      "date",
+      "-u",
+      "+%Y-%m-%dT%H:%M:%S.%NZ"
+    ],
+    "started_at": "2026-09-05T13:20:49.405714+00:00",
+    "timeout_seconds": 10,
+    "completed_at": "2026-09-05T13:20:49.590250+00:00",
+    "monotonic_elapsed_seconds": 0.1880000000819564,
+    "returncode": 0,
+    "stdout": "2026-09-05T13:20:49.269871064Z\n",
+    "stderr": "",
+    "stdout_sha256": "a2aa538f0c56c611b2b3db9837b764f7aebd5a8d071d74930acec59222727c93",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "sequence": 12,
+    "name": "clock-safetwin5g-gnb-5",
+    "argv": [
+      "docker",
+      "exec",
+      "safetwin5g-gnb",
+      "date",
+      "-u",
+      "+%Y-%m-%dT%H:%M:%S.%NZ"
+    ],
+    "started_at": "2026-09-05T13:20:49.591311+00:00",
+    "timeout_seconds": 10,
+    "completed_at": "2026-09-05T13:20:49.777398+00:00",
+    "monotonic_elapsed_seconds": 0.1869999999180436,
+    "returncode": 0,
+    "stdout": "2026-09-05T13:20:49.449749292Z\n",
+    "stderr": "",
+    "stdout_sha256": "c79cb9e287fab8a47651a142abddfc09f3cde0f0da164f430d2bfc1da93ab740",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "sequence": 13,
+    "name": "ue-address",
+    "argv": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "ip",
+      "-j",
+      "-4",
+      "address",
+      "show",
+      "dev",
+      "uesimtun0"
+    ],
+    "started_at": "2026-09-05T13:20:49.778391+00:00",
+    "timeout_seconds": 10,
+    "completed_at": "2026-09-05T13:20:49.982766+00:00",
+    "monotonic_elapsed_seconds": 0.2029999999795109,
+    "returncode": 0,
+    "stdout": "[{\"ifindex\":3,\"ifname\":\"uesimtun0\",\"flags\":[\"POINTOPOINT\",\"PROMISC\",\"NOTRAILERS\",\"UP\",\"LOWER_UP\"],\"mtu\":1400,\"qdisc\":\"fq_codel\",\"operstate\":\"UNKNOWN\",\"group\":\"default\",\"txqlen\":500,\"addr_info\":[{\"family\":\"inet\",\"local\":\"10.45.0.2\",\"prefixlen\":24,\"scope\":\"global\",\"label\":\"uesimtun0\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]}]\n",
+    "stderr": "",
+    "stdout_sha256": "eda83cd8d940708cb892522811be07d5d95beb83d75c78f82fc26a45198045ef",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "sequence": 14,
+    "name": "after-network",
+    "argv": [
+      "docker",
+      "network",
+      "inspect",
+      "safetwin5g-isolated"
+    ],
+    "started_at": "2026-09-05T13:20:49.983772+00:00",
+    "timeout_seconds": 10,
+    "completed_at": "2026-09-05T13:20:50.126060+00:00",
+    "monotonic_elapsed_seconds": 0.1410000000614673,
+    "returncode": 0,
+    "stdout": "[\n    {\n        \"Name\": \"safetwin5g-isolated\",\n        \"Id\": \"9bac7f8dd7d38c788cc2fbaffd0643b958b647683419f450755f0ddfc16fe9aa\",\n        \"Created\": \"2026-08-24T04:40:14.171653168Z\",\n        \"Scope\": \"local\",\n        \"Driver\": \"bridge\",\n        \"EnableIPv4\": true,\n        \"EnableIPv6\": false,\n        \"IPAM\": {\n            \"Driver\": \"default\",\n            \"Options\": null,\n            \"Config\": [\n                {\n                    \"Subnet\": \"10.53.0.0/24\",\n                    \"Gateway\": \"10.53.0.1\"\n                }\n            ]\n        },\n        \"Internal\": true,\n        \"Attachable\": false,\n        \"Ingress\": false,\n        \"ConfigFrom\": {\n            \"Network\": \"\"\n        },\n        \"ConfigOnly\": false,\n        \"Options\": {\n            \"com.docker.network.enable_ipv4\": \"true\",\n            \"com.docker.network.enable_ipv6\": \"false\"\n        },\n        \"Labels\": {\n            \"com.docker.compose.config-hash\": \"1d368b17fc6ae77c8bce1507bd0564fbf47244ccc8cd0de51445aea9c34c1b6a\",\n            \"com.docker.compose.network\": \"core\",\n            \"com.docker.compose.project\": \"safetwin5g-sandbox\",\n            \"com.docker.compose.version\": \"5.1.3\"\n        },\n        \"Containers\": {\n            \"1d460cf00e44ca49d645c911d25db31e7b753d4b1b8b048a00d38726e57220ab\": {\n                \"Name\": \"safetwin5g-ue\",\n                \"EndpointID\": \"a9dd66bd5cb56780d20d3b1bfbc45f3c871ef67678a3842cac2a456f0fdcf4bc\",\n                \"MacAddress\": \"f2:51:1f:ef:0b:49\",\n                \"IPv4Address\": \"10.53.0.5/24\",\n                \"IPv6Address\": \"\"\n            },\n            \"5514b44b708bb5cbde9b911a4698ece3abf219a01767beff06f060078326c1a9\": {\n                \"Name\": \"safetwin5g-mongodb\",\n                \"EndpointID\": \"c40c97640df0771ea211572289ead262d2507b1aa1ac1b11b803d57db8c082f1\",\n                \"MacAddress\": \"ce:33:3f:d3:3f:a2\",\n                \"IPv4Address\": \"10.53.0.2/24\",\n                \"IPv6Address\": \"\"\n            },\n            \"616bc5ff04a5fb1c937c595bbd3bf5d95c66067884db2e7dd998bd46dd5ac6ad\": {\n                \"Name\": \"safetwin5g-gnb\",\n                \"EndpointID\": \"794a0f3a96fd6eabd7a79cc78dc3529287259f65653149084bb26fe68a82e52a\",\n                \"MacAddress\": \"3a:fc:a7:b4:7d:e7\",\n                \"IPv4Address\": \"10.53.0.4/24\",\n                \"IPv6Address\": \"\"\n            },\n            \"6e6b340a37e6de6426cd2829f5eabe8fd63f323619cc093a3557fc5a16ac9256\": {\n                \"Name\": \"safetwin5g-open5gs\",\n                \"EndpointID\": \"22911c2d31e03a102cb23d6417825edc85d27890714ff9a7003aed36b7df2e5f\",\n                \"MacAddress\": \"52:c5:08:f9:f5:84\",\n                \"IPv4Address\": \"10.53.0.3/24\",\n                \"IPv6Address\": \"\"\n            },\n            \"d6958d142a6d2f1f258c5bd6c634817ef9e10b9b39fd24d78b13daab39c13085\": {\n                \"Name\": \"safetwin5g-prometheus\",\n                \"EndpointID\": \"3f56e8da8ccf00216619777dc7d87fa72a46e8be027b853d16bb0a5224d22104\",\n                \"MacAddress\": \"8e:44:25:22:eb:ed\",\n                \"IPv4Address\": \"10.53.0.6/24\",\n                \"IPv6Address\": \"\"\n            }\n        },\n        \"Status\": {\n            \"IPAM\": {\n                \"Subnets\": {\n                    \"10.53.0.0/24\": {\n                        \"IPsInUse\": 8,\n                        \"DynamicIPsAvailable\": 248\n                    }\n                }\n            }\n        }\n    }\n]\n",
+    "stderr": "",
+    "stdout_sha256": "01a5cb13c2851e71195c25839d28ef19c719b4a48713bc5d5b78c34b291a5cf8",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "sequence": 15,
+    "name": "after-containers",
+    "argv": [
+      "docker",
+      "inspect",
+      "--format",
+      "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"Image\":{{json .Image}},\"RestartCount\":{{json .RestartCount}},\"Mounts\":{{json .Mounts}},\"Config\":{\"Image\":{{json .Config.Image}},\"Cmd\":{{json .Config.Cmd}},\"Entrypoint\":{{json .Config.Entrypoint}},\"User\":{{json .Config.User}},\"WorkingDir\":{{json .Config.WorkingDir}},\"Labels\":{\"com.docker.compose.project\":{{json (index .Config.Labels \"com.docker.compose.project\")}},\"safetwin5g.upstream.commit\":{{json (index .Config.Labels \"safetwin5g.upstream.commit\")}},\"safetwin5g.derived.revision\":{{json (index .Config.Labels \"safetwin5g.derived.revision\")}}}},\"HostConfig\":{\"CapAdd\":{{json (index .HostConfig \"CapAdd\")}},\"CapDrop\":{{json (index .HostConfig \"CapDrop\")}},\"Devices\":{{json (index .HostConfig \"Devices\")}},\"Sysctls\":{{json (index .HostConfig \"Sysctls\")}},\"Binds\":{{json (index .HostConfig \"Binds\")}},\"SecurityOpt\":{{json (index .HostConfig \"SecurityOpt\")}},\"Privileged\":{{json (index .HostConfig \"Privileged\")}},\"PortBindings\":{{json (index .HostConfig \"PortBindings\")}},\"NetworkMode\":{{json (index .HostConfig \"NetworkMode\")}},\"PidMode\":{{json (index .HostConfig \"PidMode\")}},\"IpcMode\":{{json (index .HostConfig \"IpcMode\")}},\"ReadonlyRootfs\":{{json (index .HostConfig \"ReadonlyRootfs\")}},\"RestartPolicy\":{{json (index .HostConfig \"RestartPolicy\")}}},\"NetworkSettings\":{\"Networks\":{{json .NetworkSettings.Networks}}},\"State\":{\"StartedAt\":{{json .State.StartedAt}},\"Running\":{{json .State.Running}},\"Health\":{\"Status\":{{json .State.Health.Status}}}}}",
+      "safetwin5g-open5gs",
+      "safetwin5g-gnb",
+      "safetwin5g-ue",
+      "safetwin5g-mongodb",
+      "safetwin5g-prometheus"
+    ],
+    "started_at": "2026-09-05T13:20:50.126738+00:00",
+    "timeout_seconds": 10,
+    "completed_at": "2026-09-05T13:20:50.283446+00:00",
+    "monotonic_elapsed_seconds": 0.15699999989010394,
+    "returncode": 0,
+    "stdout": "{\"Id\":\"6e6b340a37e6de6426cd2829f5eabe8fd63f323619cc093a3557fc5a16ac9256\",\"Name\":\"/safetwin5g-open5gs\",\"Image\":\"sha256:ee78a5756bc0592772d814fbb5746ef4d97b2cf0003416c78d32d7f59a616e9a\",\"RestartCount\":0,\"Mounts\":[],\"Config\":{\"Image\":\"safetwin5g/open5gs:2.7.7-318eeb49\",\"Cmd\":null,\"Entrypoint\":[\"/usr/local/bin/safetwin5g-open5gs-entrypoint\"],\"User\":\"\",\"WorkingDir\":\"/usr/src\",\"Labels\":{\"com.docker.compose.project\":\"safetwin5g-sandbox\",\"safetwin5g.upstream.commit\":\"318eeb49a7dcdff733dec60e02d9c60aefca2fb9\",\"safetwin5g.derived.revision\":null}},\"HostConfig\":{\"CapAdd\":[\"CAP_NET_ADMIN\",\"CAP_NET_RAW\"],\"CapDrop\":null,\"Devices\":[{\"CgroupPermissions\":\"rwm\",\"PathInContainer\":\"/dev/net/tun\",\"PathOnHost\":\"/dev/net/tun\"}],\"Sysctls\":{\"net.ipv4.ip_forward\":\"1\"},\"Binds\":null,\"SecurityOpt\":null,\"Privileged\":false,\"PortBindings\":{},\"NetworkMode\":\"safetwin5g-isolated\",\"PidMode\":\"\",\"IpcMode\":\"private\",\"ReadonlyRootfs\":false,\"RestartPolicy\":{\"MaximumRetryCount\":0,\"Name\":\"no\"}},\"NetworkSettings\":{\"Networks\":{\"safetwin5g-isolated\":{\"Aliases\":[\"safetwin5g-open5gs\",\"open5gs\"],\"DNSNames\":[\"safetwin5g-open5gs\",\"open5gs\",\"6e6b340a37e6\"],\"DriverOpts\":null,\"EndpointID\":\"22911c2d31e03a102cb23d6417825edc85d27890714ff9a7003aed36b7df2e5f\",\"Gateway\":\"\",\"GlobalIPv6Address\":\"\",\"GlobalIPv6PrefixLen\":0,\"GwPriority\":0,\"IPAMConfig\":{\"IPv4Address\":\"10.53.0.3\"},\"IPAddress\":\"10.53.0.3\",\"IPPrefixLen\":24,\"IPv6Gateway\":\"\",\"Links\":null,\"MacAddress\":\"52:c5:08:f9:f5:84\",\"NetworkID\":\"9bac7f8dd7d38c788cc2fbaffd0643b958b647683419f450755f0ddfc16fe9aa\"}}},\"State\":{\"StartedAt\":\"2026-09-05T13:11:54.735058739Z\",\"Running\":true,\"Health\":{\"Status\":\"healthy\"}}}\n{\"Id\":\"616bc5ff04a5fb1c937c595bbd3bf5d95c66067884db2e7dd998bd46dd5ac6ad\",\"Name\":\"/safetwin5g-gnb\",\"Image\":\"sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725\",\"RestartCount\":0,\"Mounts\":[{\"Destination\":\"/etc/ueransim/gnb.yaml\",\"Mode\":\"ro\",\"Propagation\":\"rprivate\",\"RW\":false,\"Source\":\"C:\\\\Users\\\\devel\\\\Documents\\\\Codex\\\\2026-08-22\\\\he\\\\safetwin-5g\\\\sandbox\\\\config\\\\ueransim\\\\gnb.yaml\",\"Type\":\"bind\"}],\"Config\":{\"Image\":\"safetwin5g/ueransim:3.3.0-6bf5a1a9\",\"Cmd\":[\"/opt/ueransim/bin/nr-gnb\",\"-c\",\"/etc/ueransim/gnb.yaml\"],\"Entrypoint\":null,\"User\":\"\",\"WorkingDir\":\"/opt/ueransim\",\"Labels\":{\"com.docker.compose.project\":\"safetwin5g-sandbox\",\"safetwin5g.upstream.commit\":\"6bf5a1a96aaef6ae8778b9d8b477ac6e2bbf8156\",\"safetwin5g.derived.revision\":null}},\"HostConfig\":{\"CapAdd\":null,\"CapDrop\":null,\"Devices\":null,\"Sysctls\":null,\"Binds\":[\"C:\\\\Users\\\\devel\\\\Documents\\\\Codex\\\\2026-08-22\\\\he\\\\safetwin-5g\\\\sandbox\\\\config\\\\ueransim\\\\gnb.yaml:/etc/ueransim/gnb.yaml:ro\"],\"SecurityOpt\":null,\"Privileged\":false,\"PortBindings\":{},\"NetworkMode\":\"safetwin5g-isolated\",\"PidMode\":\"\",\"IpcMode\":\"private\",\"ReadonlyRootfs\":false,\"RestartPolicy\":{\"MaximumRetryCount\":0,\"Name\":\"no\"}},\"NetworkSettings\":{\"Networks\":{\"safetwin5g-isolated\":{\"Aliases\":[\"safetwin5g-gnb\",\"ueransim-gnb\"],\"DNSNames\":[\"safetwin5g-gnb\",\"ueransim-gnb\",\"616bc5ff04a5\"],\"DriverOpts\":null,\"EndpointID\":\"794a0f3a96fd6eabd7a79cc78dc3529287259f65653149084bb26fe68a82e52a\",\"Gateway\":\"\",\"GlobalIPv6Address\":\"\",\"GlobalIPv6PrefixLen\":0,\"GwPriority\":0,\"IPAMConfig\":{\"IPv4Address\":\"10.53.0.4\"},\"IPAddress\":\"10.53.0.4\",\"IPPrefixLen\":24,\"IPv6Gateway\":\"\",\"Links\":null,\"MacAddress\":\"3a:fc:a7:b4:7d:e7\",\"NetworkID\":\"9bac7f8dd7d38c788cc2fbaffd0643b958b647683419f450755f0ddfc16fe9aa\"}}},\"State\":{\"StartedAt\":\"2026-09-05T13:12:01.529782732Z\",\"Running\":true,\"Health\":{\"Status\":\"healthy\"}}}\n{\"Id\":\"1d460cf00e44ca49d645c911d25db31e7b753d4b1b8b048a00d38726e57220ab\",\"Name\":\"/safetwin5g-ue\",\"Image\":\"sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725\",\"RestartCount\":0,\"Mounts\":[{\"Destination\":\"/etc/ueransim/ue.yaml\",\"Mode\":\"ro\",\"Propagation\":\"rprivate\",\"RW\":false,\"Source\":\"C:\\\\Users\\\\devel\\\\Documents\\\\Codex\\\\2026-08-22\\\\he\\\\safetwin-5g\\\\sandbox\\\\config\\\\ueransim\\\\ue.yaml\",\"Type\":\"bind\"}],\"Config\":{\"Image\":\"safetwin5g/ueransim:3.3.0-6bf5a1a9\",\"Cmd\":[\"/opt/ueransim/bin/nr-ue\",\"-c\",\"/etc/ueransim/ue.yaml\"],\"Entrypoint\":null,\"User\":\"\",\"WorkingDir\":\"/opt/ueransim\",\"Labels\":{\"com.docker.compose.project\":\"safetwin5g-sandbox\",\"safetwin5g.upstream.commit\":\"6bf5a1a96aaef6ae8778b9d8b477ac6e2bbf8156\",\"safetwin5g.derived.revision\":null}},\"HostConfig\":{\"CapAdd\":[\"CAP_NET_ADMIN\",\"CAP_NET_RAW\"],\"CapDrop\":null,\"Devices\":[{\"CgroupPermissions\":\"rwm\",\"PathInContainer\":\"/dev/net/tun\",\"PathOnHost\":\"/dev/net/tun\"}],\"Sysctls\":null,\"Binds\":[\"C:\\\\Users\\\\devel\\\\Documents\\\\Codex\\\\2026-08-22\\\\he\\\\safetwin-5g\\\\sandbox\\\\config\\\\ueransim\\\\ue.yaml:/etc/ueransim/ue.yaml:ro\"],\"SecurityOpt\":null,\"Privileged\":false,\"PortBindings\":{},\"NetworkMode\":\"safetwin5g-isolated\",\"PidMode\":\"\",\"IpcMode\":\"private\",\"ReadonlyRootfs\":false,\"RestartPolicy\":{\"MaximumRetryCount\":0,\"Name\":\"no\"}},\"NetworkSettings\":{\"Networks\":{\"safetwin5g-isolated\":{\"Aliases\":[\"safetwin5g-ue\",\"ueransim-ue\"],\"DNSNames\":[\"safetwin5g-ue\",\"ueransim-ue\",\"1d460cf00e44\"],\"DriverOpts\":null,\"EndpointID\":\"a9dd66bd5cb56780d20d3b1bfbc45f3c871ef67678a3842cac2a456f0fdcf4bc\",\"Gateway\":\"\",\"GlobalIPv6Address\":\"\",\"GlobalIPv6PrefixLen\":0,\"GwPriority\":0,\"IPAMConfig\":{\"IPv4Address\":\"10.53.0.5\"},\"IPAddress\":\"10.53.0.5\",\"IPPrefixLen\":24,\"IPv6Gateway\":\"\",\"Links\":null,\"MacAddress\":\"f2:51:1f:ef:0b:49\",\"NetworkID\":\"9bac7f8dd7d38c788cc2fbaffd0643b958b647683419f450755f0ddfc16fe9aa\"}}},\"State\":{\"StartedAt\":\"2026-09-05T13:12:08.42060317Z\",\"Running\":true,\"Health\":{\"Status\":\"healthy\"}}}\n{\"Id\":\"5514b44b708bb5cbde9b911a4698ece3abf219a01767beff06f060078326c1a9\",\"Name\":\"/safetwin5g-mongodb\",\"Image\":\"sha256:021b2d5ae9d253f2cca17491cc8d03aed8df3c840f3252066aa62d3277fc406e\",\"RestartCount\":0,\"Mounts\":[{\"Destination\":\"/data/configdb\",\"Driver\":\"local\",\"Mode\":\"\",\"Name\":\"6369e6d93bbba15f3fa034ca13f1647d296ef8a3243a0cc73186231f1e6eb8fd\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/6369e6d93bbba15f3fa034ca13f1647d296ef8a3243a0cc73186231f1e6eb8fd/_data\",\"Type\":\"volume\"},{\"Destination\":\"/data/db\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"safetwin5g-mongodb-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/safetwin5g-mongodb-data/_data\",\"Type\":\"volume\"},{\"Destination\":\"/docker-entrypoint-initdb.d/10-subscriber.js\",\"Mode\":\"ro\",\"Propagation\":\"rprivate\",\"RW\":false,\"Source\":\"/run/desktop/mnt/host/c/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/sandbox/config/mongodb/10-subscriber.js\",\"Type\":\"bind\"}],\"Config\":{\"Image\":\"docker.io/library/mongo:8.0.29-noble@sha256:021b2d5ae9d253f2cca17491cc8d03aed8df3c840f3252066aa62d3277fc406e\",\"Cmd\":[\"mongod\",\"--bind_ip_all\",\"--quiet\"],\"Entrypoint\":[\"docker-entrypoint.sh\"],\"User\":\"\",\"WorkingDir\":\"\",\"Labels\":{\"com.docker.compose.project\":\"safetwin5g-sandbox\",\"safetwin5g.upstream.commit\":null,\"safetwin5g.derived.revision\":null}},\"HostConfig\":{\"CapAdd\":null,\"CapDrop\":null,\"Devices\":null,\"Sysctls\":null,\"Binds\":[\"safetwin5g-mongodb-data:/data/db:rw\",\"/run/desktop/mnt/host/c/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/sandbox/config/mongodb/10-subscriber.js:/docker-entrypoint-initdb.d/10-subscriber.js:ro\"],\"SecurityOpt\":null,\"Privileged\":false,\"PortBindings\":{},\"NetworkMode\":\"safetwin5g-isolated\",\"PidMode\":\"\",\"IpcMode\":\"private\",\"ReadonlyRootfs\":false,\"RestartPolicy\":{\"MaximumRetryCount\":0,\"Name\":\"no\"}},\"NetworkSettings\":{\"Networks\":{\"safetwin5g-isolated\":{\"Aliases\":[\"safetwin5g-mongodb\",\"mongodb\"],\"DNSNames\":[\"safetwin5g-mongodb\",\"mongodb\",\"5514b44b708b\"],\"DriverOpts\":null,\"EndpointID\":\"c40c97640df0771ea211572289ead262d2507b1aa1ac1b11b803d57db8c082f1\",\"Gateway\":\"\",\"GlobalIPv6Address\":\"\",\"GlobalIPv6PrefixLen\":0,\"GwPriority\":0,\"IPAMConfig\":{\"IPv4Address\":\"10.53.0.2\"},\"IPAddress\":\"10.53.0.2\",\"IPPrefixLen\":24,\"IPv6Gateway\":\"\",\"Links\":null,\"MacAddress\":\"ce:33:3f:d3:3f:a2\",\"NetworkID\":\"9bac7f8dd7d38c788cc2fbaffd0643b958b647683419f450755f0ddfc16fe9aa\"}}},\"State\":{\"StartedAt\":\"2026-09-05T01:52:34.105334659Z\",\"Running\":true,\"Health\":{\"Status\":\"healthy\"}}}\n{\"Id\":\"d6958d142a6d2f1f258c5bd6c634817ef9e10b9b39fd24d78b13daab39c13085\",\"Name\":\"/safetwin5g-prometheus\",\"Image\":\"sha256:508729e0e2d18e11fd742a5a5ca70e557b940a93948c3c95fd0123a6fd538b69\",\"RestartCount\":0,\"Mounts\":[{\"Destination\":\"/prometheus\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"safetwin5g-prometheus-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/safetwin5g-prometheus-data/_data\",\"Type\":\"volume\"},{\"Destination\":\"/etc/prometheus/prometheus.yml\",\"Mode\":\"ro\",\"Propagation\":\"rprivate\",\"RW\":false,\"Source\":\"/run/desktop/mnt/host/c/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/sandbox/config/prometheus/prometheus.yml\",\"Type\":\"bind\"}],\"Config\":{\"Image\":\"docker.io/prom/prometheus:v3.13.2@sha256:508729e0e2d18e11fd742a5a5ca70e557b940a93948c3c95fd0123a6fd538b69\",\"Cmd\":[\"--config.file=/etc/prometheus/prometheus.yml\",\"--storage.tsdb.path=/prometheus\",\"--storage.tsdb.retention.time=7d\",\"--web.enable-lifecycle\"],\"Entrypoint\":[\"/bin/prometheus\"],\"User\":\"nobody\",\"WorkingDir\":\"/prometheus\",\"Labels\":{\"com.docker.compose.project\":\"safetwin5g-sandbox\",\"safetwin5g.upstream.commit\":null,\"safetwin5g.derived.revision\":null}},\"HostConfig\":{\"CapAdd\":null,\"CapDrop\":null,\"Devices\":null,\"Sysctls\":null,\"Binds\":[\"safetwin5g-prometheus-data:/prometheus:rw\",\"/run/desktop/mnt/host/c/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/sandbox/config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro\"],\"SecurityOpt\":null,\"Privileged\":false,\"PortBindings\":{},\"NetworkMode\":\"safetwin5g-isolated\",\"PidMode\":\"\",\"IpcMode\":\"private\",\"ReadonlyRootfs\":false,\"RestartPolicy\":{\"MaximumRetryCount\":0,\"Name\":\"no\"}},\"NetworkSettings\":{\"Networks\":{\"safetwin5g-isolated\":{\"Aliases\":[\"safetwin5g-prometheus\",\"prometheus\"],\"DNSNames\":[\"safetwin5g-prometheus\",\"prometheus\",\"d6958d142a6d\"],\"DriverOpts\":null,\"EndpointID\":\"3f56e8da8ccf00216619777dc7d87fa72a46e8be027b853d16bb0a5224d22104\",\"Gateway\":\"\",\"GlobalIPv6Address\":\"\",\"GlobalIPv6PrefixLen\":0,\"GwPriority\":0,\"IPAMConfig\":{\"IPv4Address\":\"10.53.0.6\"},\"IPAddress\":\"10.53.0.6\",\"IPPrefixLen\":24,\"IPv6Gateway\":\"\",\"Links\":null,\"MacAddress\":\"8e:44:25:22:eb:ed\",\"NetworkID\":\"9bac7f8dd7d38c788cc2fbaffd0643b958b647683419f450755f0ddfc16fe9aa\"}}},\"State\":{\"StartedAt\":\"2026-09-05T01:52:50.469333517Z\",\"Running\":true,\"Health\":{\"Status\":\"healthy\"}}}\n",
+    "stderr": "",
+    "stdout_sha256": "addaaebe76f89e9708b6a474bc8fb82da207ce3341a428e52a2f41551bb8c00c",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

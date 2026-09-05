@@ -105,15 +105,26 @@ instrumented diagnostic now has a [verified prebuild source freeze](docs/RECONNE
 65 parser cases, 61 NAS cases per mode and 272 tests plus 32 subtests pass.
 The [R3 image build](docs/RECONNECT_R3_BUILD_DECISION.md) now passes real-header
 compilation and a versioned independent audit (306 tests plus 32 subtests).
-It has not been applied to a running service. The measured trace gate is still
-pending; no new long campaign is running. The separate
+At that build checkpoint it had not been applied to a running service. The separate
 [R3 execution contract](docs/RECONNECT_R3_EXECUTION.md) is now fixture-verified
 with 339 tests and 122 subtests. An independent replay covers 354 synthetic
 commands, 33 samples and eight scope snapshots; negative fixtures check failed
 baseline, missing trace and partial image-switch rollback. Two earlier
 read-only preflight failures and their source versions remain retained; the
-corrected preflight passes with mutations disabled. These are implementation
+corrected preflight passed with mutations disabled. Those were implementation
 checks, not a measured R3 network result or recovery validation.
+
+The subsequent [R3 diagnostic attempt](docs/RECONNECT_R3_DECISION.md) stopped
+during the first no-fault baseline: 5/5 replies returned, but early required
+trace records were absent. Zero exposures ran; the remaining assignments were
+unexecuted. The source IP changed outside the fixed trace filter after UE-only
+reset, and later read-only probes verified a host/container clock mismatch.
+Clock clipping is supported, not a recovery of the missing historical entries.
+Both official images and final 15/15 service were restored. A separate
+observation audit replays 131 commands, six samples and five scopes while the
+original complete-protocol auditor still rejects the run. There are 355 passing
+tests and 132 subtests. Clock-safe collection and the measured recovery gate
+remain pending; no new long campaign or TNSM-readiness claim is enabled.
 
 Environment Deviation D1 records six unrelated containers that appeared on
 separate Docker networks during the run. No network overlap was observed, but

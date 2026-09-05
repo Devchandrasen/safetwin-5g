@@ -1,0 +1,102 @@
+{
+  "verification_passed": true,
+  "checks": {
+    "full-tests": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T13:35:35.909987+00:00",
+      "completed_at": "2026-09-05T13:35:48.063732+00:00"
+    },
+    "observation-and-clock-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r3_observation.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T13:35:48.063732+00:00",
+      "completed_at": "2026-09-05T13:35:48.194599+00:00"
+    },
+    "original-protocol-rejection": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r3_network.py",
+        "--run",
+        "evidence/engineering/20260905T131024Z-reconnect-r3-network"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "check_passed": true,
+      "started_at": "2026-09-05T13:35:48.194599+00:00",
+      "completed_at": "2026-09-05T13:35:48.328462+00:00"
+    },
+    "frozen-source-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r3_source.py",
+        "--run",
+        "evidence/engineering/20260905T102301Z-reconnect-r3-freeze"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T13:35:48.328462+00:00",
+      "completed_at": "2026-09-05T13:35:48.507188+00:00"
+    },
+    "frozen-build-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r3_build_v2.py",
+        "--run",
+        "evidence/engineering/20260905T111542Z-reconnect-r3-build-release"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T13:35:48.507188+00:00",
+      "completed_at": "2026-09-05T13:35:48.653939+00:00"
+    },
+    "committed-execution-lock": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-c",
+        "from sandbox.run_reconnect_r3 import verify_execution_lock; print(len(verify_execution_lock()['source_sha256']))"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T13:35:48.653939+00:00",
+      "completed_at": "2026-09-05T13:35:51.365200+00:00"
+    },
+    "statistical-lock": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-c",
+        "from tools.run_phase7_analysis import verify_analysis_lock; print(verify_analysis_lock()['lock_id'])"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T13:35:51.365200+00:00",
+      "completed_at": "2026-09-05T13:35:51.509258+00:00"
+    }
+  },
+  "source_sha256": {
+    "tools/capture_reconnect_r3_clock.py": "2effb278229df28af749ac9a9c38bc8fc3112a077240f8b7fa1302850b8c1129",
+    "tools/audit_reconnect_r3_observation.py": "58160218f9d219570108a76e30729aa4b1bae8a859d5d76e15efabc7f8055623",
+    "tools/verify_reconnect_r3_observation.py": "c6fd3ba86ac7708a4aa027bc381576ef07b3cc5bd074a480a9f3cd1798e57aa8",
+    "tests/test_reconnect_r3_observation.py": "a2976bf2b9a25ee877fbf45c215258b4e962f3db84bc6230507d1a1aeec06d4c"
+  },
+  "verification_evidence_label": "fixture",
+  "referenced_network_evidence_label": "sandbox-measured",
+  "network_fix_validated": false,
+  "protocol_execution_valid": false
+}
