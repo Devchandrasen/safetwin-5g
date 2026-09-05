@@ -146,8 +146,13 @@ telemetry and 15/15 packets. This does not retroactively accept R4. A later
 Python wall-clock resolution exposes a compatibility gap with the 1 ms guard,
 not proof of a historical clock adjustment. Independent observation replay,
 425 tests, 200 subtests and twelve checks pass. Next is a prospective
-software-only clock-source/bracket gate. The parent recovery gate and TNSM
-disposition remain open/no-go respectively.
+software-only clock-source/bracket gate. That separate
+[R5 clock gate](docs/RECONNECT_R5_CLOCK_DECISION.md) now passes 493 tests,
+200 subtests and twelve checks, with 37 retained synthetic cases and one
+separate 64-read native local-host clock observation. It is not integrated
+with a network runner and does not prove R4's historical cause or recovery.
+Next is the separately frozen R5 execution-integration fixture gate. The parent
+recovery gate and TNSM disposition remain open/no-go respectively.
 No new long campaign or TNSM-readiness claim is enabled.
 
 Environment Deviation D1 records six unrelated containers that appeared on

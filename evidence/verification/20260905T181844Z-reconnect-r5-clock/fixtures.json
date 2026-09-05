@@ -1,0 +1,714 @@
+{
+  "complete": {
+    "passed": true,
+    "expected_rejection": null,
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": true,
+      "accepted_points": 4,
+      "comparisons": 6,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 4200,
+      "rejection": null
+    },
+    "file": "fixture-complete.json"
+  },
+  "fractional-counter-period": {
+    "passed": true,
+    "expected_rejection": null,
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": true,
+      "accepted_points": 4,
+      "comparisons": 6,
+      "max_bracket_ns_ceil": 7040,
+      "max_abs_residual_ns_ceil": 9040,
+      "rejection": null
+    },
+    "file": "fixture-fractional-counter-period.json"
+  },
+  "constant-UTC-skew": {
+    "passed": true,
+    "expected_rejection": null,
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": true,
+      "accepted_points": 4,
+      "comparisons": 6,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 4200,
+      "rejection": null
+    },
+    "file": "fixture-constant-UTC-skew.json"
+  },
+  "wide-read": {
+    "passed": true,
+    "expected_rejection": "bracket-too-wide",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 0,
+      "comparisons": 0,
+      "max_bracket_ns_ceil": 100200,
+      "max_abs_residual_ns_ceil": 0,
+      "rejection": {
+        "code": "bracket-too-wide",
+        "sequence": 1,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-wide-read.json"
+  },
+  "exact-bracket-bound": {
+    "passed": true,
+    "expected_rejection": null,
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": true,
+      "accepted_points": 4,
+      "comparisons": 6,
+      "max_bracket_ns_ceil": 100000,
+      "max_abs_residual_ns_ceil": 102000,
+      "rejection": null
+    },
+    "file": "fixture-exact-bracket-bound.json"
+  },
+  "within-read-scheduling": {
+    "passed": true,
+    "expected_rejection": null,
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": true,
+      "accepted_points": 4,
+      "comparisons": 6,
+      "max_bracket_ns_ceil": 90200,
+      "max_abs_residual_ns_ceil": 182200,
+      "rejection": null
+    },
+    "file": "fixture-within-read-scheduling.json"
+  },
+  "forward-step": {
+    "passed": true,
+    "expected_rejection": "clock-discontinuity-observed",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 2,
+      "comparisons": 2,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 2004200,
+      "rejection": {
+        "code": "clock-discontinuity-observed",
+        "sequence": 3,
+        "against_sequence": 1
+      }
+    },
+    "file": "fixture-forward-step.json"
+  },
+  "backward-step": {
+    "passed": true,
+    "expected_rejection": "clock-discontinuity-observed",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 2,
+      "comparisons": 2,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 2004200,
+      "rejection": {
+        "code": "clock-discontinuity-observed",
+        "sequence": 3,
+        "against_sequence": 1
+      }
+    },
+    "file": "fixture-backward-step.json"
+  },
+  "near-positive-bound-ambiguous": {
+    "passed": true,
+    "expected_rejection": "clock-consistency-ambiguous",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 2,
+      "comparisons": 2,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 1003200,
+      "rejection": {
+        "code": "clock-consistency-ambiguous",
+        "sequence": 3,
+        "against_sequence": 1
+      }
+    },
+    "file": "fixture-near-positive-bound-ambiguous.json"
+  },
+  "near-negative-bound-ambiguous": {
+    "passed": true,
+    "expected_rejection": "clock-consistency-ambiguous",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 2,
+      "comparisons": 2,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 1003200,
+      "rejection": {
+        "code": "clock-consistency-ambiguous",
+        "sequence": 3,
+        "against_sequence": 1
+      }
+    },
+    "file": "fixture-near-negative-bound-ambiguous.json"
+  },
+  "within-bound": {
+    "passed": true,
+    "expected_rejection": null,
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": true,
+      "accepted_points": 4,
+      "comparisons": 6,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 994200,
+      "rejection": null
+    },
+    "file": "fixture-within-bound.json"
+  },
+  "accumulated-small-steps": {
+    "passed": true,
+    "expected_rejection": "clock-discontinuity-observed",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 2,
+      "comparisons": 2,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 1204200,
+      "rejection": {
+        "code": "clock-discontinuity-observed",
+        "sequence": 3,
+        "against_sequence": 1
+      }
+    },
+    "file": "fixture-accumulated-small-steps.json"
+  },
+  "nonadjacent-drift": {
+    "passed": true,
+    "expected_rejection": "clock-discontinuity-observed",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 3,
+      "comparisons": 5,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 1604200,
+      "rejection": {
+        "code": "clock-discontinuity-observed",
+        "sequence": 4,
+        "against_sequence": 2
+      }
+    },
+    "file": "fixture-nonadjacent-drift.json"
+  },
+  "reordered-records": {
+    "passed": true,
+    "expected_rejection": "point-order-or-domain",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 0,
+      "comparisons": 0,
+      "max_bracket_ns_ceil": 0,
+      "max_abs_residual_ns_ceil": 0,
+      "rejection": {
+        "code": "point-order-or-domain",
+        "sequence": 1,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-reordered-records.json"
+  },
+  "duplicate-record": {
+    "passed": true,
+    "expected_rejection": "point-order-or-domain",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 2,
+      "comparisons": 1,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 4200,
+      "rejection": {
+        "code": "point-order-or-domain",
+        "sequence": 3,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-duplicate-record.json"
+  },
+  "changed-clock-domain": {
+    "passed": true,
+    "expected_rejection": "point-order-or-domain",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 2,
+      "comparisons": 1,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 4200,
+      "rejection": {
+        "code": "point-order-or-domain",
+        "sequence": 3,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-changed-clock-domain.json"
+  },
+  "counter-reversal": {
+    "passed": true,
+    "expected_rejection": "counter-reversal-or-overlap",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 2,
+      "comparisons": 1,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 4200,
+      "rejection": {
+        "code": "counter-reversal-or-overlap",
+        "sequence": 3,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-counter-reversal.json"
+  },
+  "overlapping-reads": {
+    "passed": true,
+    "expected_rejection": "counter-reversal-or-overlap",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 2,
+      "comparisons": 1,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 4200,
+      "rejection": {
+        "code": "counter-reversal-or-overlap",
+        "sequence": 3,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-overlapping-reads.json"
+  },
+  "partial-UTC": {
+    "passed": true,
+    "expected_rejection": "filetime-integer",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 2,
+      "comparisons": 1,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 4200,
+      "rejection": {
+        "code": "filetime-integer",
+        "sequence": 3,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-partial-UTC.json"
+  },
+  "partial-counter": {
+    "passed": true,
+    "expected_rejection": "counter-integer",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 2,
+      "comparisons": 1,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 4200,
+      "rejection": {
+        "code": "counter-integer",
+        "sequence": 3,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-partial-counter.json"
+  },
+  "API-error-retained": {
+    "passed": true,
+    "expected_rejection": "capture-error",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 2,
+      "comparisons": 1,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 4200,
+      "rejection": {
+        "code": "capture-error",
+        "sequence": 3,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-API-error-retained.json"
+  },
+  "unchanged-FILETIME-sentinel": {
+    "passed": true,
+    "expected_rejection": "filetime-conversion",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 2,
+      "comparisons": 1,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 4200,
+      "rejection": {
+        "code": "filetime-conversion",
+        "sequence": 3,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-unchanged-FILETIME-sentinel.json"
+  },
+  "wrong-epoch": {
+    "passed": true,
+    "expected_rejection": "filetime-conversion",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 2,
+      "comparisons": 1,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 4200,
+      "rejection": {
+        "code": "filetime-conversion",
+        "sequence": 3,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-wrong-epoch.json"
+  },
+  "bool-as-counter": {
+    "passed": true,
+    "expected_rejection": "counter-integer",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 2,
+      "comparisons": 1,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 4200,
+      "rejection": {
+        "code": "counter-integer",
+        "sequence": 3,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-bool-as-counter.json"
+  },
+  "float-as-UTC": {
+    "passed": true,
+    "expected_rejection": "utc-integer-or-range",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 2,
+      "comparisons": 1,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 4200,
+      "rejection": {
+        "code": "utc-integer-or-range",
+        "sequence": 3,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-float-as-UTC.json"
+  },
+  "coarse-wall-source": {
+    "passed": true,
+    "expected_rejection": "unsupported-clock-api",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 0,
+      "comparisons": 0,
+      "max_bracket_ns_ceil": 0,
+      "max_abs_residual_ns_ceil": 0,
+      "rejection": {
+        "code": "unsupported-clock-api",
+        "sequence": null,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-coarse-wall-source.json"
+  },
+  "coarse-counter": {
+    "passed": true,
+    "expected_rejection": "unsupported-counter-resolution",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 0,
+      "comparisons": 0,
+      "max_bracket_ns_ceil": 0,
+      "max_abs_residual_ns_ceil": 0,
+      "rejection": {
+        "code": "unsupported-counter-resolution",
+        "sequence": null,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-coarse-counter.json"
+  },
+  "float-frequency": {
+    "passed": true,
+    "expected_rejection": "unsupported-counter-resolution",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 0,
+      "comparisons": 0,
+      "max_bracket_ns_ceil": 0,
+      "max_abs_residual_ns_ceil": 0,
+      "rejection": {
+        "code": "unsupported-counter-resolution",
+        "sequence": null,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-float-frequency.json"
+  },
+  "wrong-runtime": {
+    "passed": true,
+    "expected_rejection": "unsupported-python",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 0,
+      "comparisons": 0,
+      "max_bracket_ns_ceil": 0,
+      "max_abs_residual_ns_ceil": 0,
+      "rejection": {
+        "code": "unsupported-python",
+        "sequence": null,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-wrong-runtime.json"
+  },
+  "wrong-platform": {
+    "passed": true,
+    "expected_rejection": "unsupported-windows",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 0,
+      "comparisons": 0,
+      "max_bracket_ns_ceil": 0,
+      "max_abs_residual_ns_ceil": 0,
+      "rejection": {
+        "code": "unsupported-windows",
+        "sequence": null,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-wrong-platform.json"
+  },
+  "wrong-bitness": {
+    "passed": true,
+    "expected_rejection": "unsupported-process",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 0,
+      "comparisons": 0,
+      "max_bracket_ns_ceil": 0,
+      "max_abs_residual_ns_ceil": 0,
+      "rejection": {
+        "code": "unsupported-process",
+        "sequence": null,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-wrong-bitness.json"
+  },
+  "relaxed-allowance": {
+    "passed": true,
+    "expected_rejection": "changed-read-allowance",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 0,
+      "comparisons": 0,
+      "max_bracket_ns_ceil": 0,
+      "max_abs_residual_ns_ceil": 0,
+      "rejection": {
+        "code": "changed-read-allowance",
+        "sequence": null,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-relaxed-allowance.json"
+  },
+  "missing-source-metadata": {
+    "passed": true,
+    "expected_rejection": "descriptor-schema",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 0,
+      "comparisons": 0,
+      "max_bracket_ns_ceil": 0,
+      "max_abs_residual_ns_ceil": 0,
+      "rejection": {
+        "code": "descriptor-schema",
+        "sequence": null,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-missing-source-metadata.json"
+  },
+  "extra-point-field": {
+    "passed": true,
+    "expected_rejection": "point-schema",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 1,
+      "comparisons": 0,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 0,
+      "rejection": {
+        "code": "point-schema",
+        "sequence": 2,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-extra-point-field.json"
+  },
+  "incomplete-single-point": {
+    "passed": true,
+    "expected_rejection": "point-count",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 0,
+      "comparisons": 0,
+      "max_bracket_ns_ceil": 0,
+      "max_abs_residual_ns_ceil": 0,
+      "rejection": {
+        "code": "point-count",
+        "sequence": null,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-incomplete-single-point.json"
+  },
+  "record-limit": {
+    "passed": true,
+    "expected_rejection": "point-count",
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": false,
+      "accepted_points": 0,
+      "comparisons": 0,
+      "max_bracket_ns_ceil": 0,
+      "max_abs_residual_ns_ceil": 0,
+      "rejection": {
+        "code": "point-count",
+        "sequence": null,
+        "against_sequence": null
+      }
+    },
+    "file": "fixture-record-limit.json"
+  },
+  "unobserved-cancelled-step-not-identifiable": {
+    "passed": true,
+    "expected_rejection": null,
+    "independent": {
+      "observation_audit_passed": true,
+      "evidence_label": "fixture",
+      "measurement_scope": "synthetic-clock-fixture",
+      "clock_capture_valid": true,
+      "accepted_points": 4,
+      "comparisons": 6,
+      "max_bracket_ns_ceil": 2200,
+      "max_abs_residual_ns_ceil": 4200,
+      "rejection": null
+    },
+    "file": "fixture-unobserved-cancelled-step-not-identifiable.json"
+  }
+}

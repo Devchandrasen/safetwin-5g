@@ -1,0 +1,237 @@
+{
+  "verification_passed": true,
+  "checks": {
+    "environment-before": {
+      "passed": true,
+      "states": {
+        "safetwin5g-open5gs": {
+          "Id": "6e6b340a37e6de6426cd2829f5eabe8fd63f323619cc093a3557fc5a16ac9256",
+          "Image": "sha256:ee78a5756bc0592772d814fbb5746ef4d97b2cf0003416c78d32d7f59a616e9a",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T17:02:12.435765187Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        },
+        "safetwin5g-gnb": {
+          "Id": "687b3efdae32e2ce9dac190e1c692e0b01c0a74b037fa18c15c7535ead299305",
+          "Image": "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T17:02:19.509675796Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        },
+        "safetwin5g-ue": {
+          "Id": "ba6d082e924c6ea6ed50fe98909fe1bd9f8efcd880e87cd58c8e1fb663071cda",
+          "Image": "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T17:02:26.645164304Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        },
+        "safetwin5g-mongodb": {
+          "Id": "5514b44b708bb5cbde9b911a4698ece3abf219a01767beff06f060078326c1a9",
+          "Image": "sha256:021b2d5ae9d253f2cca17491cc8d03aed8df3c840f3252066aa62d3277fc406e",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T01:52:34.105334659Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        },
+        "safetwin5g-prometheus": {
+          "Id": "d6958d142a6d2f1f258c5bd6c634817ef9e10b9b39fd24d78b13daab39c13085",
+          "Image": "sha256:508729e0e2d18e11fd742a5a5ca70e557b940a93948c3c95fd0123a6fd538b69",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T01:52:50.469333517Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        }
+      }
+    },
+    "serialized-independent-fixtures": {
+      "passed": true,
+      "cases": 37
+    },
+    "native-clock-observation": {
+      "passed": true,
+      "independent": {
+        "observation_audit_passed": true,
+        "evidence_label": "sandbox-measured",
+        "measurement_scope": "local-host-clock-api-only",
+        "clock_capture_valid": true,
+        "accepted_points": 64,
+        "comparisons": 2016,
+        "max_bracket_ns_ceil": 17500,
+        "max_abs_residual_ns_ceil": 27600,
+        "rejection": null
+      }
+    },
+    "full-tests": {
+      "passed": true,
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-09-05T18:18:45.643177+00:00",
+      "completed_at": "2026-09-05T18:19:24.935307+00:00"
+    },
+    "r4-committed-execution-lock": {
+      "passed": true,
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-c",
+        "from sandbox.run_reconnect_r4 import verify_lock; print(len(verify_lock(committed=True)[0]['source_sha256']))"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-09-05T18:19:24.935307+00:00",
+      "completed_at": "2026-09-05T18:19:28.548117+00:00"
+    },
+    "r4-negative-observation-audit": {
+      "passed": true,
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "tools.audit_reconnect_r4_observation"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-09-05T18:19:28.548117+00:00",
+      "completed_at": "2026-09-05T18:19:28.695317+00:00"
+    },
+    "r3-build-audit": {
+      "passed": true,
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r3_build_v2.py",
+        "--run",
+        "evidence/engineering/20260905T111542Z-reconnect-r3-build-release"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-09-05T18:19:28.695317+00:00",
+      "completed_at": "2026-09-05T18:19:28.860958+00:00"
+    },
+    "statistical-lock": {
+      "passed": true,
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-c",
+        "from tools.run_phase7_analysis import verify_analysis_lock; print(verify_analysis_lock()['lock_id'])"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-09-05T18:19:28.860958+00:00",
+      "completed_at": "2026-09-05T18:19:29.014136+00:00"
+    },
+    "environment-after": {
+      "passed": true,
+      "states": {
+        "safetwin5g-open5gs": {
+          "Id": "6e6b340a37e6de6426cd2829f5eabe8fd63f323619cc093a3557fc5a16ac9256",
+          "Image": "sha256:ee78a5756bc0592772d814fbb5746ef4d97b2cf0003416c78d32d7f59a616e9a",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T17:02:12.435765187Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        },
+        "safetwin5g-gnb": {
+          "Id": "687b3efdae32e2ce9dac190e1c692e0b01c0a74b037fa18c15c7535ead299305",
+          "Image": "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T17:02:19.509675796Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        },
+        "safetwin5g-ue": {
+          "Id": "ba6d082e924c6ea6ed50fe98909fe1bd9f8efcd880e87cd58c8e1fb663071cda",
+          "Image": "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T17:02:26.645164304Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        },
+        "safetwin5g-mongodb": {
+          "Id": "5514b44b708bb5cbde9b911a4698ece3abf219a01767beff06f060078326c1a9",
+          "Image": "sha256:021b2d5ae9d253f2cca17491cc8d03aed8df3c840f3252066aa62d3277fc406e",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T01:52:34.105334659Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        },
+        "safetwin5g-prometheus": {
+          "Id": "d6958d142a6d2f1f258c5bd6c634817ef9e10b9b39fd24d78b13daab39c13085",
+          "Image": "sha256:508729e0e2d18e11fd742a5a5ca70e557b940a93948c3c95fd0123a6fd538b69",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T01:52:50.469333517Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        }
+      }
+    },
+    "unchanged-official-identities": {
+      "passed": true
+    },
+    "clock-source-lock": {
+      "passed": true,
+      "sources": 5
+    },
+    "retained-development-rejection": {
+      "passed": true,
+      "archives": 1
+    }
+  },
+  "source_sha256": {
+    "sandbox/reconnect_r5_clock.py": "1ddd3a349f01ce632a1ecdee4849667c9b5815c486d37f6c999260b9a18d5953",
+    "tools/audit_reconnect_r5_clock.py": "1531da343b632604abd859cd17e8923acd389bca213b6fe8fca7f30dd7761fc7",
+    "tests/test_reconnect_r5_clock.py": "362dad4c8a8fd09d1ff16c372c3f814a33b24045c333ec9acc7f8b99da090cdc",
+    "tools/verify_reconnect_r5_clock.py": "b1116c9cbe7acae132586a5ad09e1a1e972b6ba1c865f7ea93eb20ecb43de01a",
+    "docs/RECONNECT_R5_CLOCK.md": "d5627d9ac4921153c34540a6ef91a6548cefeb27c0f814e78fd7a72c9a0b07a4"
+  },
+  "lock_sha256": "0e2b17156f3aab4d1b9fa8bdf48727561ea1f10051291746e754ac86009c6cf4",
+  "evidence_label": "fixture",
+  "native_evidence_scope": "separately captured local-host-clock-api-only",
+  "actual_network_trials": 0,
+  "actual_clock_settings_changed": false,
+  "actual_image_changes": 0,
+  "network_execution_authorized": false,
+  "network_fix_validated": false,
+  "TNSM_ready": false
+}

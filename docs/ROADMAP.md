@@ -344,8 +344,18 @@ sandbox evidence.
       exceeds the frozen 1 ms predicate. Historical cause remains unresolved
       (`docs/RECONNECT_R4_DECISION.md`; 425 tests, 200 subtests and twelve checks
       at `evidence/verification/20260905T172149Z-reconnect-r4-observation`).
-      Next is a separate prospective software-only clock-source/bracket contract
-      and independent adversarial audit. This parent recovery item remains open.
+      The separate five-source R5 clock contract now passes its software gate:
+      37 retained cases (seven sampled-consistency passes, thirty expected
+      rejections), 493 tests, 200 subtests and twelve checks. A separate fixed
+      64-read local-host API observation passes 2,016 independent interval
+      comparisons, with maximum expanded bracket 17.5 microseconds and worst
+      residual endpoint 27.6 microseconds. This is not network recovery or a
+      historical-cause proof (`docs/RECONNECT_R5_CLOCK_DECISION.md`;
+      `evidence/verification/20260905T181844Z-reconnect-r5-clock`). The oversized
+      pytest-name failure and exact pre-correction sources are preserved.
+      Next is a separate R5 execution-integration fixture gate, preserving all
+      approval, capture, source, telemetry and official rollback requirements.
+      This parent recovery item remains open.
       No R3/R4 rerun, endpoint relaxation, model promotion or new 675-unit
       campaign follows from observation integrity or later service recovery.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
