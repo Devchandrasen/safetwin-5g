@@ -218,8 +218,8 @@ sandbox evidence.
       20260825T081907Z-tnsm-manuscript-gate`; 175 tests plus 9 subtests passed;
       actual gate evaluation remains pending final artifacts).
 - [ ] Execute the fresh 675-unit named-action sandbox campaign; freeze and
-      audit the 135 complete-block dataset before outcome analysis. **Pending
-      a clean full rerun:** the first attempt was rejected after an external
+      audit the 135 complete-block dataset before outcome analysis. **In
+      progress:** the first attempt was rejected after an external
       Docker Desktop Compose stop at 419/675; the second attempt reached a
       435/675 stdout progress line but persisted only 434 traces before a
       Windows Application-API sleep transition stopped the process. Both runs
@@ -228,8 +228,17 @@ sandbox evidence.
       `docs/PHASE7_CAMPAIGN_ABORT_2.md`; host-sleep diagnosis, wrapper probe,
       and 180-test regression verification passed at
       `evidence/verification/20260901T025845Z-phase7-host-resilience`). The
-      next attempt must start at unit 1 under the verified host
-      sleep-inhibition wrapper. D1 records unrelated
+      third attempt started at unit 1 under the verified host sleep-inhibition
+      wrapper on September 1 and was paused at user request after 546 durable
+      units. Metadata and cleanup checks passed before September 5 continuation
+      from unit 547 using the existing resume support
+      (`docs/PHASE7_PAUSE_RESUME_1.md`; checkpoint:
+      `evidence/environment/20260905T015200Z-phase7-resume-checkpoint`;
+      provenance audit and 185 tests plus 9 subtests passed at
+      `evidence/verification/20260905T015825Z-phase7-resume`). All
+      129 remaining units and terminal acceptance audits are pending. P1
+      discloses the time gap, restarts, retained interrupted commands, and
+      original environment preservation. D1 records unrelated
       containers on separate Docker networks and the unresolved shared-host
       contention limitation.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,

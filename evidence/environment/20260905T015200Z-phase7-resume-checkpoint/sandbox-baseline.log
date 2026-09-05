@@ -1,0 +1,18 @@
+uesimtun0        UNKNOWN        10.45.0.2/24 fe80::52ac:2539:d166:954b/64 
+PING 10.45.0.1 (10.45.0.1) from 10.45.0.2 uesimtun0: 56(84) bytes of data.
+64 bytes from 10.45.0.1: icmp_seq=1 ttl=64 time=0.990 ms
+64 bytes from 10.45.0.1: icmp_seq=2 ttl=64 time=0.700 ms
+64 bytes from 10.45.0.1: icmp_seq=3 ttl=64 time=0.772 ms
+64 bytes from 10.45.0.1: icmp_seq=4 ttl=64 time=1.00 ms
+64 bytes from 10.45.0.1: icmp_seq=5 ttl=64 time=0.529 ms
+
+--- 10.45.0.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4084ms
+rtt min/avg/max/mdev = 0.529/0.798/1.003/0.179 ms
+
+job         health scrapeUrl
+---         ------ ---------
+open5gs-amf up     http://10.53.0.3:9090/metrics
+open5gs-smf up     http://10.53.0.3:9091/metrics
+open5gs-upf up     http://10.53.0.3:9092/metrics
+

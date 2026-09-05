@@ -64,8 +64,12 @@ uses 21 calibration blocks, G2 uses 60 faulty test blocks, and G3 includes all
 70 paired test blocks so no-fault false remediation cannot be hidden. Two full
 campaign attempts were externally interrupted and are preserved as
 inadmissible operational evidence: one by a Docker Desktop Compose stop and
-one by a Windows Application-API sleep transition. A fresh run from unit 1 is
-pending under a verified host sleep-inhibition wrapper; partial output is not
+one by a Windows Application-API sleep transition. A third run started on
+September 1, paused at user request after 546 durable units, and continued on
+September 5 with the existing resume support and verified sleep-inhibition
+wrapper. [Pause/resume P1](docs/PHASE7_PAUSE_RESUME_1.md) preserves the original
+environment and command prefix and discloses the collection gap. Terminal
+campaign acceptance and the 129 remaining units are pending; partial output is not
 a result and test outcomes remain unanalysed under a procedural, not
 cryptographic, seal. A
 baseline win, insufficient certificate coverage,

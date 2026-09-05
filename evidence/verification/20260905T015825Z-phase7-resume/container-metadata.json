@@ -1,0 +1,57 @@
+[
+  {
+    "name": "safetwin5g-mongodb",
+    "image_id": "sha256:021b2d5ae9d253f2cca17491cc8d03aed8df3c840f3252066aa62d3277fc406e",
+    "image_reference": "docker.io/library/mongo:8.0.29-noble@sha256:021b2d5ae9d253f2cca17491cc8d03aed8df3c840f3252066aa62d3277fc406e",
+    "started_at": "2026-09-05T01:52:34.105334659Z",
+    "status": "running",
+    "health": "healthy",
+    "networks": [
+      "safetwin5g-isolated"
+    ]
+  },
+  {
+    "name": "safetwin5g-open5gs",
+    "image_id": "sha256:ee78a5756bc0592772d814fbb5746ef4d97b2cf0003416c78d32d7f59a616e9a",
+    "image_reference": "safetwin5g/open5gs:2.7.7-318eeb49",
+    "started_at": "2026-09-05T01:52:40.084297654Z",
+    "status": "running",
+    "health": "healthy",
+    "networks": [
+      "safetwin5g-isolated"
+    ]
+  },
+  {
+    "name": "safetwin5g-gnb",
+    "image_id": "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+    "image_reference": "safetwin5g/ueransim:3.3.0-6bf5a1a9",
+    "started_at": "2026-09-05T01:52:50.468502583Z",
+    "status": "running",
+    "health": "healthy",
+    "networks": [
+      "safetwin5g-isolated"
+    ]
+  },
+  {
+    "name": "safetwin5g-ue",
+    "image_id": "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+    "image_reference": "safetwin5g/ueransim:3.3.0-6bf5a1a9",
+    "started_at": "2026-09-05T01:52:55.933022769Z",
+    "status": "running",
+    "health": "healthy",
+    "networks": [
+      "safetwin5g-isolated"
+    ]
+  },
+  {
+    "name": "safetwin5g-prometheus",
+    "image_id": "sha256:508729e0e2d18e11fd742a5a5ca70e557b940a93948c3c95fd0123a6fd538b69",
+    "image_reference": "docker.io/prom/prometheus:v3.13.2@sha256:508729e0e2d18e11fd742a5a5ca70e557b940a93948c3c95fd0123a6fd538b69",
+    "started_at": "2026-09-05T01:52:50.469333517Z",
+    "status": "running",
+    "health": "healthy",
+    "networks": [
+      "safetwin5g-isolated"
+    ]
+  }
+]
