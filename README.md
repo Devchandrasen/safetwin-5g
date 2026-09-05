@@ -123,8 +123,14 @@ Clock clipping is supported, not a recovery of the missing historical entries.
 Both official images and final 15/15 service were restored. A separate
 observation audit replays 131 commands, six samples and five scopes while the
 original complete-protocol auditor still rejects the run. There are 355 passing
-tests and 132 subtests. Clock-safe collection and the measured recovery gate
-remain pending; no new long campaign or TNSM-readiness claim is enabled.
+tests and 132 subtests at that checkpoint. The separate
+[R4 collection software gate](docs/RECONNECT_R4_COLLECTION_DECISION.md) now
+passes 381 tests, 171 subtests and eleven verification checks. Its bounded
+prefix-based log collector avoids host-time filtering and checks source
+eligibility explicitly. Fourteen retained cases are **fixture-only**, not new
+network evidence. The live adapter and complete approval/telemetry/fresh-PDU/
+rollback integration remain pending before any measured diagnostic. No new
+long campaign or TNSM-readiness claim is enabled.
 
 Environment Deviation D1 records six unrelated containers that appeared on
 separate Docker networks during the run. No network overlap was observed, but

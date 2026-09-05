@@ -1,0 +1,157 @@
+{
+  "verification_passed": true,
+  "checks": {
+    "full-tests": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T14:39:48.267090+00:00",
+      "completed_at": "2026-09-05T14:39:59.965167+00:00"
+    },
+    "r4-fixture-capture": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/fixture_reconnect_r4_collection.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T14:39:59.965167+00:00",
+      "completed_at": "2026-09-05T14:40:00.308226+00:00"
+    },
+    "r4-source-lock": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-c",
+        "from tools.verify_reconnect_r4_collection import verify_lock; print(verify_lock()['lock_id'])"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T14:40:00.308226+00:00",
+      "completed_at": "2026-09-05T14:40:00.410584+00:00"
+    },
+    "r3-negative-observation-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r3_observation.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T14:40:00.410584+00:00",
+      "completed_at": "2026-09-05T14:40:00.533642+00:00"
+    },
+    "r3-original-protocol-rejection": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r3_network.py",
+        "--run",
+        "evidence/engineering/20260905T131024Z-reconnect-r3-network"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "check_passed": true,
+      "started_at": "2026-09-05T14:40:00.534653+00:00",
+      "completed_at": "2026-09-05T14:40:00.660461+00:00"
+    },
+    "r3-committed-execution-lock": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-c",
+        "from sandbox.run_reconnect_r3 import verify_execution_lock; print(len(verify_execution_lock()['source_sha256']))"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T14:40:00.660461+00:00",
+      "completed_at": "2026-09-05T14:40:03.437550+00:00"
+    },
+    "r3-source-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r3_source.py",
+        "--run",
+        "evidence/engineering/20260905T102301Z-reconnect-r3-freeze"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T14:40:03.437550+00:00",
+      "completed_at": "2026-09-05T14:40:03.615488+00:00"
+    },
+    "r3-build-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r3_build_v2.py",
+        "--run",
+        "evidence/engineering/20260905T111542Z-reconnect-r3-build-release"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T14:40:03.615488+00:00",
+      "completed_at": "2026-09-05T14:40:03.764873+00:00"
+    },
+    "statistical-lock": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-c",
+        "from tools.run_phase7_analysis import verify_analysis_lock; print(verify_analysis_lock()['lock_id'])"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T14:40:03.764873+00:00",
+      "completed_at": "2026-09-05T14:40:03.905859+00:00"
+    },
+    "read-only-existing-scope-preflight": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/preflight_reconnect_r3.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T14:40:03.905859+00:00",
+      "completed_at": "2026-09-05T14:40:06.003337+00:00"
+    },
+    "read-only-r4-logging-compatibility": {
+      "argv": [
+        "docker",
+        "inspect",
+        "--format",
+        "{{.Name}} {{.Image}} {{json .HostConfig.LogConfig}} {{.State.Running}}",
+        "safetwin5g-ue",
+        "safetwin5g-gnb"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "check_passed": true,
+      "started_at": "2026-09-05T14:40:06.003853+00:00",
+      "completed_at": "2026-09-05T14:40:06.155514+00:00"
+    }
+  },
+  "source_sha256": {
+    "config/experiments/reconnect-r4-collection.json": "9eea0e9ce5ad05f9b1356c1d4869cfde090608ae935fd0593b6443415949b706",
+    "docs/RECONNECT_R4_COLLECTION.md": "e91d909d40a4f08a9acb3ce75454f2bf7535096ac042fbf20653721e9a519aae",
+    "sandbox/reconnect_r4_collection.py": "93b2a6a3df8857bcad159cb2018e5bc282508df83eaf2d69853cb62b1b02b930",
+    "tools/audit_reconnect_r4_collection.py": "99696099b941cbeade918bd51f5bcfb6a871596dec1711732e721defc1375c7d",
+    "tests/reconnect_r4_fixture.py": "869d4536d1d7b5f69e5793c56a3a3fe58acfa7af69e5d14fae0491ba55f83265",
+    "tests/test_reconnect_r4_collection.py": "b3354e4b08bd5d095fc4eaf3401d13dd53a39dd601418c79f8d83148271ccf62",
+    "tools/fixture_reconnect_r4_collection.py": "3a7fcdf9a24a2054e7693bf8c1b80f7832d9cefbb9d951e8fff2b66b6ff82adb",
+    "tools/verify_reconnect_r4_collection.py": "e13fdc3bcc1b106779bf36acc2f6539d0b47a600eb688dfb780abcb4de9bfc21"
+  },
+  "evidence_label": "fixture",
+  "live_checks": "read-only environment prerequisites, not network trials",
+  "network_trials_executed": 0,
+  "network_fix_validated": false,
+  "network_execution_authorized": false,
+  "rollback_verified_by_r4": false
+}

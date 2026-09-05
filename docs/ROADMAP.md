@@ -316,10 +316,17 @@ sandbox evidence.
       but not uniquely proving historical log-prefix clipping. Seven verification
       checks, 355 tests and 132 subtests pass at
       `evidence/verification/20260905T133535Z-reconnect-r3-observation`.
-      Next freeze a separate clock-safe, source-aware collection contract before
-      any further diagnostic. This parent recovery item remains open. No R3
-      rerun, endpoint relaxation or new 675-unit campaign follows from this
-      rejected attempt.
+      A separate R4 collection contract now passes the fixture-only software
+      gate (`docs/RECONNECT_R4_COLLECTION_DECISION.md`; eight-source lock,
+      independent prefix/clock/source/path replay, fourteen retained fixture
+      cases, 381 tests and 171 subtests, eleven checks at
+      `evidence/verification/20260905T143948Z-reconnect-r4-collection`). No
+      network trial or image application ran; read-only scope and official
+      logging metadata checks passed. Next implement and commit the bounded
+      live adapter and full approval/telemetry/fresh-PDU/rollback execution
+      integration before another diagnostic. This parent recovery item remains
+      open. No R3 rerun, endpoint relaxation or new 675-unit campaign follows
+      from this fixture gate.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
       ablations, OOD stress test, runtime/scalability evaluation, and
       independent artifact audit.

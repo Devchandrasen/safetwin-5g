@@ -1,0 +1,130 @@
+{
+  "fixture_gate_passed": true,
+  "cases": {
+    "complete-skewed": {
+      "collection_audit_passed": true,
+      "commands_replayed": 15,
+      "evidence_label": "fixture",
+      "packet_delivery_complete": true,
+      "rollback_verified": false,
+      "network_fix_validated": false,
+      "expected_collection_valid": true,
+      "expectation_matched": true,
+      "synthetic_commands_retained": 15
+    },
+    "complete-idle-loss": {
+      "collection_audit_passed": true,
+      "commands_replayed": 15,
+      "evidence_label": "fixture",
+      "packet_delivery_complete": false,
+      "rollback_verified": false,
+      "network_fix_validated": false,
+      "expected_collection_valid": true,
+      "expectation_matched": true,
+      "synthetic_commands_retained": 15
+    },
+    "source-ineligible": {
+      "collection_audit_passed": false,
+      "reason": "incomplete or rejected collection",
+      "network_fix_validated": false,
+      "expected_collection_valid": false,
+      "expectation_matched": true,
+      "synthetic_commands_retained": 7
+    },
+    "missing-first-packet-trace": {
+      "collection_audit_passed": false,
+      "reason": "incomplete or rejected collection",
+      "network_fix_validated": false,
+      "expected_collection_valid": false,
+      "expectation_matched": true,
+      "synthetic_commands_retained": 15
+    },
+    "source-clock-step": {
+      "collection_audit_passed": false,
+      "reason": "incomplete or rejected collection",
+      "network_fix_validated": false,
+      "expected_collection_valid": false,
+      "expectation_matched": true,
+      "synthetic_commands_retained": 15
+    },
+    "saturated-capture": {
+      "collection_audit_passed": false,
+      "reason": "incomplete or rejected collection",
+      "network_fix_validated": false,
+      "expected_collection_valid": false,
+      "expectation_matched": true,
+      "synthetic_commands_retained": 15
+    },
+    "partial-command": {
+      "collection_audit_passed": false,
+      "reason": "incomplete or rejected collection",
+      "network_fix_validated": false,
+      "expected_collection_valid": false,
+      "expectation_matched": true,
+      "synthetic_commands_retained": 9
+    },
+    "container-restarted": {
+      "collection_audit_passed": false,
+      "reason": "incomplete or rejected collection",
+      "network_fix_validated": false,
+      "expected_collection_valid": false,
+      "expectation_matched": true,
+      "synthetic_commands_retained": 15
+    },
+    "official-service-changed-source": {
+      "collection_audit_passed": true,
+      "commands_replayed": 15,
+      "evidence_label": "fixture",
+      "packet_delivery_complete": true,
+      "rollback_verified": false,
+      "network_fix_validated": false,
+      "expected_collection_valid": true,
+      "expectation_matched": true,
+      "synthetic_commands_retained": 15
+    },
+    "official-rollback-wrong-image": {
+      "collection_audit_passed": false,
+      "reason": "incomplete or rejected collection",
+      "network_fix_validated": false,
+      "expected_collection_valid": false,
+      "expectation_matched": true,
+      "synthetic_commands_retained": 15
+    },
+    "official-service-4-of-5": {
+      "collection_audit_passed": true,
+      "commands_replayed": 15,
+      "evidence_label": "fixture",
+      "packet_delivery_complete": false,
+      "rollback_verified": false,
+      "network_fix_validated": false,
+      "expected_collection_valid": true,
+      "expectation_matched": true,
+      "synthetic_commands_retained": 15
+    },
+    "recovery-15-of-15": {
+      "expectation_matched": true,
+      "packet_delivery_candidate": true,
+      "rollback_verified": false,
+      "synthetic_commands_retained": 45
+    },
+    "recovery-14-of-15": {
+      "expectation_matched": true,
+      "packet_delivery_candidate": false,
+      "rollback_verified": false,
+      "synthetic_commands_retained": 45
+    },
+    "recovery-wrong-final-image": {
+      "expectation_matched": true,
+      "packet_delivery_candidate": false,
+      "rollback_verified": false,
+      "synthetic_commands_retained": 45
+    }
+  },
+  "evidence_label": "fixture",
+  "actual_docker_commands_executed": 0,
+  "network_execution_authorized": false,
+  "network_fix_validated": false,
+  "rollback_verified": false,
+  "created_at": "2026-09-05T14:40:00.215821+00:00",
+  "synthetic_clock_not_execution_timestamp": true
+}
