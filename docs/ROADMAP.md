@@ -265,9 +265,18 @@ sandbox evidence.
       full derived build and one-file patch replay; the official image and
       UE binary remain unchanged (`docs/RECONNECT_R2_BUILD_DECISION.md`;
       223 tests plus 19 subtests at
-      `evidence/verification/20260905T071849Z-reconnect-r2`). The derived image
-      is separately pinned and not yet applied. The frozen eight-trial network
-      comparison remains pending; no new 675-unit campaign is running.
+      `evidence/verification/20260905T071849Z-reconnect-r2`). The separately
+      frozen R2 network comparison then stopped at six of eight assignments:
+      official drops reproduced 0/15, but the first derived drop returned only
+      14/15 despite Service Accept. The required 15/15 endpoint failed; the
+      final two assignments were not run. The official image and fresh 15/15
+      service were restored. Independent integrity audit replayed 480 commands,
+      48 samples and 10 scope snapshots, with 240 tests and 19 subtests passing
+      (`docs/RECONNECT_R2_DECISION.md`;
+      `evidence/verification/20260905T083007Z-reconnect-r2`). Integrity is
+      verified, not a network fix. Next localize the first-packet loss through
+      a bounded read-only investigation before any separately frozen follow-up;
+      no endpoint relaxation or new 675-unit campaign is authorized by R2.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
       ablations, OOD stress test, runtime/scalability evaluation, and
       independent artifact audit.

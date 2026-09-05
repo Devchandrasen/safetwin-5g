@@ -89,6 +89,16 @@ in both eight-second link-drop trials: post-rollback delivery was 0/15, versus
 Independent audit passed all four trials, 280 commands and 30 samples. This
 validates failure reproduction, not a network fix; the recovery gate stays open.
 
+The separately built and pinned [R2 candidate](docs/RECONNECT_R2_BUILD_DECISION.md)
+was then tested under a frozen comparison. [The R2 decision](docs/RECONNECT_R2_DECISION.md)
+is **not accepted**: official drops returned 0/15, while the first derived drop
+returned 14/15 with Service Accept, failing the required 15/15 endpoint. The
+comparison stopped at six of eight assignments without discarding the first
+lost packet. The official image and fresh 15/15 service were restored.
+Independent integrity audit replayed 480 commands and 48 samples; 240 tests
+plus 19 subtests pass. These do not establish a successful network fix or TNSM
+readiness. First-packet diagnosis is next; no new long campaign is running.
+
 Environment Deviation D1 records six unrelated containers that appeared on
 separate Docker networks during the run. No network overlap was observed, but
 the host was not CPU/memory/scheduler exclusive; CPU-saturation and timing

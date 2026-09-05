@@ -1,0 +1,62 @@
+{
+  "approval_id": "reconnect-r2-943e6a28ab93036fe9e43057d01da2859792de38de30daac5500c935fa03e78a",
+  "approved_by": "user",
+  "authorization_basis": "User authorized scoped reversible local SafeTwin work and automatic sequential continuation.",
+  "containers": [
+    "safetwin5g-open5gs",
+    "safetwin5g-gnb",
+    "safetwin5g-ue"
+  ],
+  "environment": "sandbox",
+  "image_container": "safetwin5g-gnb",
+  "image_ids": [
+    "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+    "sha256:2a5c01c503927c44a6b45f8b074491ac64a42fc3a444ea2af0a8cbe5df8e537e"
+  ],
+  "live_actuation": false,
+  "operations": [
+    "fixed preparation core/gNB/UE restarts",
+    "eight-second UE eth0 loss with handle 7157 and bounded EXIT rollback",
+    "UE restart then full reset restoration",
+    "gNB-only derived/official image replacement via scoped Compose override"
+  ],
+  "operator_validation": false,
+  "recorded_at": "2026-09-05T08:20:14.921504+00:00",
+  "rollback_plan": "Remove exact owned qdisc; restore official gNB image after any candidate attempt, restart core/gNB/UE and verify registration/PDU plus 15/15 packets.",
+  "status": "approved",
+  "trials": [
+    {
+      "drop_ue_egress": false,
+      "trial_id": "official:control-before"
+    },
+    {
+      "drop_ue_egress": true,
+      "trial_id": "official:drop-a"
+    },
+    {
+      "drop_ue_egress": true,
+      "trial_id": "official:drop-b"
+    },
+    {
+      "drop_ue_egress": false,
+      "trial_id": "official:control-after"
+    },
+    {
+      "drop_ue_egress": false,
+      "trial_id": "derived:control-before"
+    },
+    {
+      "drop_ue_egress": true,
+      "trial_id": "derived:drop-a"
+    },
+    {
+      "drop_ue_egress": true,
+      "trial_id": "derived:drop-b"
+    },
+    {
+      "drop_ue_egress": false,
+      "trial_id": "derived:control-after"
+    }
+  ],
+  "type": "standing-project-authorization"
+}

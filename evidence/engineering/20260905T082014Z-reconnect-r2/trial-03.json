@@ -1,0 +1,243 @@
+{
+  "approval_id": "reconnect-r2-943e6a28ab93036fe9e43057d01da2859792de38de30daac5500c935fa03e78a",
+  "automatic_service_recovered": false,
+  "baseline": [
+    {
+      "command_sequences": [
+        166,
+        167,
+        168,
+        169,
+        170
+      ],
+      "metrics": {
+        "configured_packet_loss_pct": 0.0,
+        "packet_loss_pct": 0.0,
+        "packets_received": 5.0,
+        "packets_transmitted": 5.0,
+        "prometheus_targets_up_count": 3,
+        "rtt_avg_ms": 1.771,
+        "rtt_max_ms": 3.284,
+        "rtt_mdev_ms": 0.822,
+        "rtt_min_ms": 0.855,
+        "stress_workers_count": 0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-09-05T08:22:37.633626+00:00"
+    },
+    {
+      "command_sequences": [
+        171,
+        172,
+        173,
+        174,
+        175
+      ],
+      "metrics": {
+        "configured_packet_loss_pct": 0.0,
+        "packet_loss_pct": 0.0,
+        "packets_received": 5.0,
+        "packets_transmitted": 5.0,
+        "prometheus_targets_up_count": 3,
+        "rtt_avg_ms": 0.938,
+        "rtt_max_ms": 1.29,
+        "rtt_mdev_ms": 0.325,
+        "rtt_min_ms": 0.461,
+        "stress_workers_count": 0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-09-05T08:22:39.951835+00:00"
+    },
+    {
+      "command_sequences": [
+        176,
+        177,
+        178,
+        179,
+        180
+      ],
+      "metrics": {
+        "configured_packet_loss_pct": 0.0,
+        "packet_loss_pct": 0.0,
+        "packets_received": 5.0,
+        "packets_transmitted": 5.0,
+        "prometheus_targets_up_count": 3,
+        "rtt_avg_ms": 0.818,
+        "rtt_max_ms": 1.212,
+        "rtt_mdev_ms": 0.223,
+        "rtt_min_ms": 0.59,
+        "stress_workers_count": 0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-09-05T08:22:42.307102+00:00"
+    }
+  ],
+  "candidate_recovery_verified": false,
+  "completed_at": "2026-09-05T08:23:24.062449+00:00",
+  "errors": [],
+  "eth0_rollback_verified": true,
+  "exposure_command_seconds": 8.280999999959022,
+  "exposure_completed_at": "2026-09-05T08:22:53.564237+00:00",
+  "exposure_started_at": "2026-09-05T08:22:45.293552+00:00",
+  "fault_transcript": "2026-09-05T08:22:45.403618038Z\n[{\"kind\":\"netem\",\"handle\":\"7157:\",\"root\":true,\"refcnt\":21,\"options\":{\"limit\":1000,\"loss-random\":{\"loss\":1,\"correlation\":0},\"ecn\":false,\"gap\":0}}]\n2026-09-05T08:22:53.406499276Z\n[{\"kind\":\"noqueue\",\"handle\":\"0:\",\"root\":true,\"refcnt\":2,\"options\":{}}]\n",
+  "final_service_restored": true,
+  "fresh_pdu": true,
+  "fresh_registration": true,
+  "observations": {
+    "amf_selection_failure": true,
+    "missing_pdu_resource": true,
+    "radio_link_failure": true,
+    "service_request": true,
+    "zero_post_packets": true
+  },
+  "post": [
+    {
+      "command_sequences": [
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "metrics": {
+        "configured_packet_loss_pct": 0.0,
+        "packet_loss_pct": 100.0,
+        "packets_received": 0.0,
+        "packets_transmitted": 5.0,
+        "prometheus_targets_up_count": 3,
+        "stress_workers_count": 0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-09-05T08:22:58.761841+00:00"
+    },
+    {
+      "command_sequences": [
+        192,
+        193,
+        194,
+        195,
+        196
+      ],
+      "metrics": {
+        "configured_packet_loss_pct": 0.0,
+        "packet_loss_pct": 100.0,
+        "packets_received": 0.0,
+        "packets_transmitted": 5.0,
+        "prometheus_targets_up_count": 3,
+        "stress_workers_count": 0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-09-05T08:23:02.054977+00:00"
+    },
+    {
+      "command_sequences": [
+        197,
+        198,
+        199,
+        200,
+        201
+      ],
+      "metrics": {
+        "configured_packet_loss_pct": 0.0,
+        "packet_loss_pct": 100.0,
+        "packets_received": 0.0,
+        "packets_transmitted": 5.0,
+        "prometheus_targets_up_count": 3,
+        "stress_workers_count": 0,
+        "upf_process_running": 1.0
+      },
+      "observed_at": "2026-09-05T08:23:05.322646+00:00"
+    }
+  ],
+  "protocol_execution_valid": true,
+  "reconnect_failure_reproduced": true,
+  "restoration_attempts": [
+    {
+      "clean": true,
+      "completed_at": "2026-09-05T08:23:24.062449+00:00",
+      "elapsed_seconds": 14.75,
+      "errors": [],
+      "fresh_pdu": true,
+      "fresh_registration": true,
+      "samples": [
+        {
+          "command_sequences": [
+            211,
+            212,
+            213,
+            214,
+            215
+          ],
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "packet_loss_pct": 0.0,
+            "packets_received": 5.0,
+            "packets_transmitted": 5.0,
+            "prometheus_targets_up_count": 3,
+            "rtt_avg_ms": 1.157,
+            "rtt_max_ms": 1.641,
+            "rtt_mdev_ms": 0.402,
+            "rtt_min_ms": 0.652,
+            "stress_workers_count": 0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-09-05T08:23:16.397226+00:00"
+        },
+        {
+          "command_sequences": [
+            216,
+            217,
+            218,
+            219,
+            220
+          ],
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "packet_loss_pct": 0.0,
+            "packets_received": 5.0,
+            "packets_transmitted": 5.0,
+            "prometheus_targets_up_count": 3,
+            "rtt_avg_ms": 0.904,
+            "rtt_max_ms": 1.494,
+            "rtt_mdev_ms": 0.395,
+            "rtt_min_ms": 0.56,
+            "stress_workers_count": 0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-09-05T08:23:18.764113+00:00"
+        },
+        {
+          "command_sequences": [
+            221,
+            222,
+            223,
+            224,
+            225
+          ],
+          "metrics": {
+            "configured_packet_loss_pct": 0.0,
+            "packet_loss_pct": 0.0,
+            "packets_received": 5.0,
+            "packets_transmitted": 5.0,
+            "prometheus_targets_up_count": 3,
+            "rtt_avg_ms": 1.119,
+            "rtt_max_ms": 1.596,
+            "rtt_mdev_ms": 0.331,
+            "rtt_min_ms": 0.573,
+            "stress_workers_count": 0,
+            "upf_process_running": 1.0
+          },
+          "observed_at": "2026-09-05T08:23:21.089914+00:00"
+        }
+      ],
+      "started_at": "2026-09-05T08:23:09.298850+00:00",
+      "step": "restore-ue"
+    }
+  ],
+  "role": "official",
+  "started_at": "2026-09-05T08:22:16.034730+00:00",
+  "trial": {
+    "drop_ue_egress": true,
+    "trial_id": "official:drop-b"
+  }
+}
