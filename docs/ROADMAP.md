@@ -333,10 +333,21 @@ sandbox evidence.
       the failed initial gate and its exact sources remain preserved. These
       are fixture results, not measured recovery. No R4 image application,
       fault, restart, ping or sleep-inhibition request ran in this gate.
-      Next assess the separate committed/approved bounded R4 diagnostic under
-      freshly verified environment and host prerequisites. This parent recovery
-      item remains open. No R3 rerun, endpoint relaxation, model promotion or
-      new 675-unit campaign follows from this software gate.
+      The subsequent once-only approved R4 diagnostic was rejected before
+      baseline or exposure: 55 command records (54 Docker, one Git), no samples
+      and zero valid assignments. Three wall/QPC flags interrupted trial
+      admission and official rollback verification; both original restoration
+      flags remain false. A separate read-only observation verifies official
+      images, fresh PDU, neutral telemetry and 15/15 packets. Its independent
+      audit does not accept or repair R4. The later 1,000-sample clock probe
+      did not reproduce the failure, although nominal wall resolution 15.625 ms
+      exceeds the frozen 1 ms predicate. Historical cause remains unresolved
+      (`docs/RECONNECT_R4_DECISION.md`; 425 tests, 200 subtests and twelve checks
+      at `evidence/verification/20260905T172149Z-reconnect-r4-observation`).
+      Next is a separate prospective software-only clock-source/bracket contract
+      and independent adversarial audit. This parent recovery item remains open.
+      No R3/R4 rerun, endpoint relaxation, model promotion or new 675-unit
+      campaign follows from observation integrity or later service recovery.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
       ablations, OOD stress test, runtime/scalability evaluation, and
       independent artifact audit.

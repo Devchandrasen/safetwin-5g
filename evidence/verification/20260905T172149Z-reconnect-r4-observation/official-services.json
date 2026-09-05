@@ -1,0 +1,41 @@
+{
+  "sequence": 1,
+  "argv": [
+    "docker",
+    "inspect",
+    "--format",
+    "{{.Name}} {{.Id}} {{.Image}} {{json .HostConfig.LogConfig}} {{.State.Health.Status}}",
+    "safetwin5g-ue",
+    "safetwin5g-gnb"
+  ],
+  "timeout_seconds": 35,
+  "max_output_bytes": 1048576,
+  "wall_start_ns": 1788628951314771300,
+  "monotonic_start_ns": 1222390855643100,
+  "timed_out": false,
+  "truncated": false,
+  "capture_error": null,
+  "job_assigned_before_go": true,
+  "launcher_go_sent": true,
+  "reader_threads_joined": true,
+  "process_reaped": true,
+  "cleanup_grace_seconds": 2,
+  "monotonic_clock": {
+    "api": "perf_counter_ns",
+    "implementation": "QueryPerformanceCounter()",
+    "monotonic": true,
+    "adjustable": false,
+    "resolution": 1e-07
+  },
+  "owned_launcher_pid": 33184,
+  "returncode": 0,
+  "stdout_base64": "L3NhZmV0d2luNWctdWUgYmE2ZDA4MmU5MjRjNmVhNmVkNTBmZTk4OTA5ZmUxYmQ5ZjhlZmNkODgwZTg3Y2Q1OGM4ZTFmYjY2MzA3MWNkYSBzaGEyNTY6MTM3MDVmYzI5OTIyY2YwMTllOGM3OTkyYjViMDRiOWM2YzU4NGQzODQ4ZDI5Njg5ZjFkM2RiNjQzMzRhZTcyNSB7IkNvbmZpZyI6e30sIlR5cGUiOiJqc29uLWZpbGUifSBoZWFsdGh5Ci9zYWZldHdpbjVnLWduYiA2ODdiM2VmZGFlMzJlMmNlOWRhYzE5MGUxYzY5MmUwYjAxYzBhNzRiMDM3ZmExOGMxNWM3NTM1ZWFkMjk5MzA1IHNoYTI1NjoxMzcwNWZjMjk5MjJjZjAxOWU4Yzc5OTJiNWIwNGI5YzZjNTg0ZDM4NDhkMjk2ODlmMWQzZGI2NDMzNGFlNzI1IHsiQ29uZmlnIjp7fSwiVHlwZSI6Impzb24tZmlsZSJ9IGhlYWx0aHkK",
+  "stdout_sha256": "b009125fa417a66cf62ddb16254f3dcdcc85506e468e3def861655a016adfa9c",
+  "stdout": "/safetwin5g-ue ba6d082e924c6ea6ed50fe98909fe1bd9f8efcd880e87cd58c8e1fb663071cda sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725 {\"Config\":{},\"Type\":\"json-file\"} healthy\n/safetwin5g-gnb 687b3efdae32e2ce9dac190e1c692e0b01c0a74b037fa18c15c7535ead299305 sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725 {\"Config\":{},\"Type\":\"json-file\"} healthy\n",
+  "stderr_base64": "",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr": "",
+  "retained_output_bytes": 387,
+  "wall_end_ns": 1788628951570153700,
+  "monotonic_end_ns": 1222391111306900
+}

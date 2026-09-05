@@ -1,0 +1,52 @@
+{
+  "experiment_id": "safetwin5g-reconnect-r4-execution-v1",
+  "execution_lock_sha256": "122b2285104c407eb68bbcb5e7183adc06c25e16c45e91e868dade95425a4da6",
+  "status": "approved",
+  "environment": "sandbox",
+  "type": "standing-project-authorization",
+  "approved_by": "user",
+  "trials": [
+    {
+      "trial_id": "r4:control-before",
+      "drop_ue_egress": false
+    },
+    {
+      "trial_id": "r4:drop-a",
+      "drop_ue_egress": true
+    },
+    {
+      "trial_id": "r4:drop-b",
+      "drop_ue_egress": true
+    },
+    {
+      "trial_id": "r4:control-after",
+      "drop_ue_egress": false
+    }
+  ],
+  "containers": [
+    "safetwin5g-open5gs",
+    "safetwin5g-gnb",
+    "safetwin5g-ue"
+  ],
+  "image_containers": [
+    "safetwin5g-gnb",
+    "safetwin5g-ue"
+  ],
+  "image_ids": [
+    "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+    "sha256:0c9773889f62ee848144b359349014ea8200c5edab995c303a3d38a75cc70c32"
+  ],
+  "rollback_plan": "owned qdisc cleanup; both official images; independent core,gNB,UE resets; fresh PDU and 15/15 plus scope and telemetry",
+  "operator_validation": false,
+  "live_actuation": false,
+  "recorded_at": "2026-09-05T17:01:01.226404+00:00",
+  "authorization_recorded_by": "assistant-under-standing-user-authorization",
+  "authority_context": "User requested continued SafeTwin and TNSM-grade work with isolated sandbox scope, mandatory approval and rollback, no unrestricted live actuation. This records that existing standing authorization for the exact frozen R4 diagnostic; it is not a newly supplied operator signature.",
+  "operator_signature_present": false,
+  "source_user_task_id": "01a031f4-eda5-7993-9d02-cdd896877510",
+  "execution_python": "C:\\Users\\devel\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+  "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "python_executable_sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a",
+  "preflight": "evidence/engineering/20260905T165847Z-reconnect-r4-preflight",
+  "execution_source_commit": "0749ac1ae8cf7cfddb4dd9c0dac069996b7aa064"
+}

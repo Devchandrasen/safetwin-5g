@@ -1,0 +1,136 @@
+{
+  "verification_passed": true,
+  "checks": {
+    "full-tests": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "started_at": "2026-09-05T17:21:49.916788+00:00",
+      "completed_at": "2026-09-05T17:22:26.546604+00:00"
+    },
+    "r4-observation-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "tools.audit_reconnect_r4_observation"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "started_at": "2026-09-05T17:22:26.546604+00:00",
+      "completed_at": "2026-09-05T17:22:26.695469+00:00"
+    },
+    "r4-original-rejection-replay": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "tools.audit_reconnect_r4_execution",
+        "--run",
+        "evidence/engineering/20260905T170131Z-reconnect-r4-network"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "started_at": "2026-09-05T17:22:26.696460+00:00",
+      "completed_at": "2026-09-05T17:22:26.833266+00:00"
+    },
+    "r4-committed-execution-lock": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-c",
+        "from sandbox.run_reconnect_r4 import verify_lock; print(len(verify_lock(committed=True)[0]['source_sha256']))"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "started_at": "2026-09-05T17:22:26.833266+00:00",
+      "completed_at": "2026-09-05T17:22:30.435029+00:00"
+    },
+    "r4-committed-collection-lock": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-c",
+        "from tools.verify_reconnect_r4_collection import verify_lock; print(verify_lock(committed=True)['lock_id'])"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "started_at": "2026-09-05T17:22:30.435029+00:00",
+      "completed_at": "2026-09-05T17:22:30.841548+00:00"
+    },
+    "r3-negative-observation-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r3_observation.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "started_at": "2026-09-05T17:22:30.841548+00:00",
+      "completed_at": "2026-09-05T17:22:30.981841+00:00"
+    },
+    "r3-build-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r3_build_v2.py",
+        "--run",
+        "evidence/engineering/20260905T111542Z-reconnect-r3-build-release"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "started_at": "2026-09-05T17:22:30.981841+00:00",
+      "completed_at": "2026-09-05T17:22:31.144484+00:00"
+    },
+    "statistical-lock": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-c",
+        "from tools.run_phase7_analysis import verify_analysis_lock; print(verify_analysis_lock()['lock_id'])"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "started_at": "2026-09-05T17:22:31.144484+00:00",
+      "completed_at": "2026-09-05T17:22:31.299002+00:00"
+    },
+    "official-services": {
+      "passed": true,
+      "read_only_environment_check": true
+    },
+    "sandbox-status": {
+      "passed": true,
+      "read_only_environment_check": true
+    },
+    "active-experiment-snapshot": {
+      "passed": true,
+      "read_only_environment_check": true
+    },
+    "preflight-sealed-inventory": {
+      "passed": true
+    }
+  },
+  "source_sha256": {
+    "tools/preflight_reconnect_r4.py": "d8d5e2b7faa3965e654f9c0d53250d4be21dbbb16fa64074b6c71fd8639f2c64",
+    "tools/capture_reconnect_r4_aftercare.py": "ee920a9f44a3c06a6a1e068d3c35d55b10bf8c350992419951a6ff883f7432d3",
+    "tools/probe_reconnect_r4_wall_clock.py": "af65bb4c4db4dc0261556b169fd5279e0efb8799d5c22915187fef74887d9728",
+    "tools/audit_reconnect_r4_observation.py": "612d06b3f26dff0f501edb26acb1f7416b10e01eaf557a00bedfc4c3745bbed6",
+    "tools/verify_reconnect_r4_observation.py": "9b1ff1bfd1ac4ac5d4e5cd1f290c5f461d17555f312e1d5b995c15687f2f2d8b",
+    "tests/test_reconnect_r4_observation.py": "66be011af39abfc10975235258c51efe06d8487e9fa448823bfc269a2f60d194"
+  },
+  "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+  "evidence_label": "fixture",
+  "observation_replay": "separate sandbox-measured records, not new network trials",
+  "current_environment": "read-only daemon/process checks",
+  "mutations_executed": 0,
+  "protocol_execution_valid": false,
+  "network_fix_validated": false,
+  "TNSM_ready": false
+}

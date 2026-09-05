@@ -1,0 +1,41 @@
+{
+  "sequence": 2,
+  "argv": [
+    "docker",
+    "ps",
+    "--filter",
+    "label=com.docker.compose.project=safetwin5g-sandbox",
+    "--format",
+    "{{.Names}} {{.Status}}"
+  ],
+  "timeout_seconds": 35,
+  "max_output_bytes": 1048576,
+  "wall_start_ns": 1788628951570153700,
+  "monotonic_start_ns": 1222391111956000,
+  "timed_out": false,
+  "truncated": false,
+  "capture_error": null,
+  "job_assigned_before_go": true,
+  "launcher_go_sent": true,
+  "reader_threads_joined": true,
+  "process_reaped": true,
+  "cleanup_grace_seconds": 2,
+  "monotonic_clock": {
+    "api": "perf_counter_ns",
+    "implementation": "QueryPerformanceCounter()",
+    "monotonic": true,
+    "adjustable": false,
+    "resolution": 1e-07
+  },
+  "owned_launcher_pid": 33336,
+  "returncode": 0,
+  "stdout_base64": "c2FmZXR3aW41Zy11ZSBVcCAyMCBtaW51dGVzIChoZWFsdGh5KQpzYWZldHdpbjVnLWduYiBVcCAyMCBtaW51dGVzIChoZWFsdGh5KQpzYWZldHdpbjVnLXByb21ldGhldXMgVXAgMTUgaG91cnMgKGhlYWx0aHkpCnNhZmV0d2luNWctb3BlbjVncyBVcCAyMCBtaW51dGVzIChoZWFsdGh5KQpzYWZldHdpbjVnLW1vbmdvZGIgVXAgMTUgaG91cnMgKGhlYWx0aHkpCg==",
+  "stdout_sha256": "0cc22b999d1868763e04d978f92999eeb9a3396ad13b398d06d25e41a7e34ee8",
+  "stdout": "safetwin5g-ue Up 20 minutes (healthy)\nsafetwin5g-gnb Up 20 minutes (healthy)\nsafetwin5g-prometheus Up 15 hours (healthy)\nsafetwin5g-open5gs Up 20 minutes (healthy)\nsafetwin5g-mongodb Up 15 hours (healthy)\n",
+  "stderr_base64": "",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr": "",
+  "retained_output_bytes": 205,
+  "wall_end_ns": 1788628951818628700,
+  "monotonic_end_ns": 1222391359623300
+}

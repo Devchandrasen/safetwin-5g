@@ -1,0 +1,55 @@
+{
+  "fixture": false,
+  "owner_pid": 568,
+  "idle_command": {
+    "sequence": 0,
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-NonInteractive",
+      "-Command",
+      "Get-CimInstance Win32_Process | Where-Object { $_.Name -match '^python(?:w)?(?:[.]exe)?$' -and $_.ProcessId -ne 568 -and $_.CommandLine -match 'run_(?:phase7|recovery_pilot|reconnect(?:_r[234])?)[.]py' } | Select-Object -ExpandProperty ProcessId"
+    ],
+    "timeout_seconds": 35,
+    "max_output_bytes": 1048576,
+    "wall_start_ns": 1788627691698233600,
+    "monotonic_start_ns": 1221131239400500,
+    "timed_out": false,
+    "truncated": false,
+    "capture_error": null,
+    "job_assigned_before_go": true,
+    "launcher_go_sent": true,
+    "reader_threads_joined": true,
+    "process_reaped": true,
+    "cleanup_grace_seconds": 2,
+    "monotonic_clock": {
+      "api": "perf_counter_ns",
+      "implementation": "QueryPerformanceCounter()",
+      "monotonic": true,
+      "adjustable": false,
+      "resolution": 1e-07
+    },
+    "owned_launcher_pid": 27848,
+    "returncode": 0,
+    "stdout_base64": "",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "",
+    "stderr_base64": "",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr": "",
+    "retained_output_bytes": 0,
+    "wall_end_ns": 1788627692230044800,
+    "monotonic_end_ns": 1221131771099300
+  },
+  "admitted": true,
+  "errors": [],
+  "sleep": {
+    "mechanism": "SetThreadExecutionState",
+    "requested_flags": 2147483649,
+    "enabled": true,
+    "cleared": false,
+    "previous_state": 2147483648
+  },
+  "started_monotonic_ns": 1221131239395900,
+  "admission_completed_monotonic_ns": 1221131771255500
+}

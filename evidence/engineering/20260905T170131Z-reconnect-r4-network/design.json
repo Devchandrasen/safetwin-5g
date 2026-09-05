@@ -1,0 +1,90 @@
+{
+  "config": {
+    "experiment_id": "safetwin5g-reconnect-r4-execution-v1",
+    "collection_contract": "reconnect-r4-collection-v1",
+    "trials": [
+      {
+        "trial_id": "r4:control-before",
+        "drop_ue_egress": false
+      },
+      {
+        "trial_id": "r4:drop-a",
+        "drop_ue_egress": true
+      },
+      {
+        "trial_id": "r4:drop-b",
+        "drop_ue_egress": true
+      },
+      {
+        "trial_id": "r4:control-after",
+        "drop_ue_egress": false
+      }
+    ],
+    "admission_seconds": 1500,
+    "command_seconds": 35,
+    "health_seconds": 50,
+    "window_seconds": 120,
+    "cleanup_grace_seconds": 2,
+    "max_output_bytes": 1048576,
+    "drop_seconds": 8,
+    "settling_seconds": 5,
+    "recovery_packets": 15,
+    "restart_order": [
+      "safetwin5g-open5gs",
+      "safetwin5g-gnb",
+      "safetwin5g-ue"
+    ],
+    "restoration_ladder": [
+      "ue",
+      "full"
+    ],
+    "rollback_required": true,
+    "require_human_approval": true,
+    "allow_live_actuation": false,
+    "network_fix_validated": false
+  },
+  "images": {
+    "revision": "reconnect-r3-trace",
+    "source_contract_commit": "b7f402fa6969fd88fccb230a79549ef50b1b06b1",
+    "build_release": "evidence/engineering/20260905T111542Z-reconnect-r3-build-release",
+    "private_raw_build": "evidence/engineering/20260905T111542Z-reconnect-r3-build",
+    "official_tag": "safetwin5g/ueransim:3.3.0-6bf5a1a9",
+    "official_image_id": "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+    "base_tag": "safetwin5g/ueransim:3.3.0-reconnect-r2",
+    "base_image_id": "sha256:2a5c01c503927c44a6b45f8b074491ac64a42fc3a444ea2af0a8cbe5df8e537e",
+    "derived_tag": "safetwin5g/ueransim:3.3.0-reconnect-r3-trace",
+    "derived_image_id": "sha256:0c9773889f62ee848144b359349014ea8200c5edab995c303a3d38a75cc70c32",
+    "derived_gnb_sha256": "d36510df120485d9ab4756ed65a23f40e6452548cfeb7f6171017710da5bb796",
+    "derived_ue_sha256": "6a212cf9e389293379506ae022255c84b247e203abb5c6e28831f3810d1f230a",
+    "instrumentation_patch_sha256": "e50a96ad8dfa409cf9344faf0f0cfb4dbea9783caa87185d49f5f435a8ca9f0e",
+    "upstream_commit": "6bf5a1a96aaef6ae8778b9d8b477ac6e2bbf8156",
+    "auditor_revision": "r3-build-v2-mount-order-only",
+    "evidence_label": "fixture",
+    "sandbox_image_applied": false,
+    "network_fix_validated": false
+  },
+  "execution_lock": {
+    "lock_id": "safetwin5g-reconnect-r4-execution-v1",
+    "immutable_collection_lock_sha256": "de219c80803a83584d171511e0be0e5bc24dfbd349f4be61668539bed707d9c5",
+    "source_sha256": {
+      "config/experiments/reconnect-r4-execution.json": "59d4fe8abe38b73e56e5f4340ad3b9f3d8306b9173c57a4c0fc215a03b211c10",
+      "docs/RECONNECT_R4_EXECUTION.md": "6430b9bfc0b9094cb5911aef0f421f63bd01f1dba889d134c01a607bdf49fb6c",
+      "sandbox/reconnect_r4_launcher.py": "03951a86b4d8dcdf900f75a970e6450b328041f08c8f4c9e7e3addd1a0864bd0",
+      "sandbox/reconnect_r4_process.py": "de3b3e872eefdb6ba4f3cd09aa6fa06017ebcafe245ad75e512bb3aede55aa3f",
+      "sandbox/reconnect_r4_host_guard.py": "b3e4ed2faf5459ea82f5a417048eb76dec0899b92d55998d215c912edd9695e6",
+      "sandbox/run_reconnect_r4.py": "18098f20af435cb17744ce9e2203dac971e7d6399190b8b898b09190f629a6eb",
+      "tools/reconnect_r4_window_audit.py": "3dd79cfeb0c5738b8eb171a9fbd88319c2e5752965eddf459520c138008fb7f7",
+      "tools/audit_reconnect_r4_execution.py": "84cc89ad68858b061b954dcd1a08579c66ff7a022a65a560754e5be3a2c445c5",
+      "tests/reconnect_r4_execution_fixture.py": "bbfdfb573c6fbe55f8d611c610cfc1711fbd71cb08295865484bb530227dc3b6",
+      "tests/reconnect_r4_process_child.py": "fb1f435e52fba4ea3ac0725aa7b3b539e2e8e622c503d86c34fd03fc800f6e25",
+      "tests/test_reconnect_r4_process.py": "b3cb428bb0712c3c9bd547e042a7f235c34d58346433ac8a7d0738b2b167e4e9",
+      "tests/test_reconnect_r4_execution.py": "34f0e5cd8a820f834ae1a42cdf1bf58deb84af37cb0df023d7023d6e85c57cb8",
+      "tools/capture_reconnect_r4_development.py": "d4070e2f63c621e0e4db6237a3e0891acb3c80d98b9af5cf554a7a5c8de918ff",
+      "tools/fixture_reconnect_r4_execution.py": "6c8733d9c4f70f71e128c164403dab6c9f3de529913152a3d84a839ac213c200",
+      "tools/verify_reconnect_r4_execution.py": "c10f3166efb0e605b6b93d757b66d6914c42fb4dd24485386af7413fdfceb73f"
+    }
+  },
+  "execution_lock_sha256": "122b2285104c407eb68bbcb5e7183adc06c25e16c45e91e868dade95425a4da6",
+  "execution_mode": "sandbox",
+  "transport": "bounded-windows-job"
+}

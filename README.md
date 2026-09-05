@@ -135,8 +135,19 @@ fresh-PDU/telemetry/rollback integration and independent whole-protocol replay.
 Seventeen retained protocol cases and seven local subprocess cases are still
 **fixture** evidence. Failed cleanup and official restoration remain negative;
 the failed initial software gate and exact source snapshot are preserved.
-No R4 image application, fault, restart or measured assignment has run. The
-parent recovery gate and TNSM disposition remain open/no-go respectively.
+The subsequent once-only [R4 attempt](docs/RECONNECT_R4_DECISION.md) was rejected
+before baseline or exposure by wall/QPC consistency flags. Its 55 command
+records include 54 Docker commands and one Git command; zero valid assignments
+or packet samples were collected. Automatic official-image/reset cleanup ran,
+but its original rollback-verification flags remain false. A separate later
+read-only observation verifies both official images, fresh PDU, neutral
+telemetry and 15/15 packets. This does not retroactively accept R4. A later
+1,000-sample clock probe did not reproduce the failure; the reported 15.625 ms
+Python wall-clock resolution exposes a compatibility gap with the 1 ms guard,
+not proof of a historical clock adjustment. Independent observation replay,
+425 tests, 200 subtests and twelve checks pass. Next is a prospective
+software-only clock-source/bracket gate. The parent recovery gate and TNSM
+disposition remain open/no-go respectively.
 No new long campaign or TNSM-readiness claim is enabled.
 
 Environment Deviation D1 records six unrelated containers that appeared on
