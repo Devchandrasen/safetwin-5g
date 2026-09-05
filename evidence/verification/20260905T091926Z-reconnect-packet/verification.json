@@ -1,0 +1,59 @@
+{
+  "checks": {
+    "full-tests": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0
+    },
+    "statistical-lock": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-c",
+        "from tools.run_phase7_analysis import verify_analysis_lock; print(verify_analysis_lock()['lock_id'])"
+      ],
+      "exit_code": 0
+    },
+    "independent-packet-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_packet.py",
+        "--run",
+        "evidence/engineering/20260905T091635Z-reconnect-packet-diagnosis"
+      ],
+      "exit_code": 0
+    },
+    "unchanged-r2-build-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r2_build.py",
+        "--run",
+        "evidence/engineering/20260905T071413Z-reconnect-r2-build"
+      ],
+      "exit_code": 0
+    },
+    "unchanged-r2-network-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r2.py",
+        "--run",
+        "evidence/engineering/20260905T082014Z-reconnect-r2"
+      ],
+      "exit_code": 0
+    }
+  },
+  "verification_passed": true,
+  "source_sha256": {
+    "tools/diagnose_reconnect_packet.py": "88a726b7c7a9cb2572128b515b76d00561a907b9897e7fee1d5baa47b66fcc66",
+    "tools/audit_reconnect_packet.py": "3ff3e48115b00d7a432a5c92234d285b2f79f5fdea34e7f8799c5a85b47677bd",
+    "tools/packet_diagnosis/fixture.cpp": "6c01dd38768de6525e9607b57ff23b08e01c3dffb0caf959e9fdce9c3cb3a794",
+    "tests/test_reconnect_packet_diagnosis.py": "467296ac5ac88c3901835d8313aa7afed19f8ce795fd865a537d0fa19ecec4fa",
+    "tools/verify_reconnect_packet.py": "96910c5cc86c24b354acf75e120f59b37a15b47e4d6109fab31f0f9ca98e3a5c"
+  },
+  "new_network_trials": 0,
+  "network_fix_validated": false,
+  "TNSM_ready": false
+}

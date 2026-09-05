@@ -274,8 +274,14 @@ sandbox evidence.
       48 samples and 10 scope snapshots, with 240 tests and 19 subtests passing
       (`docs/RECONNECT_R2_DECISION.md`;
       `evidence/verification/20260905T083007Z-reconnect-r2`). Integrity is
-      verified, not a network fix. Next localize the first-packet loss through
-      a bounded read-only investigation before any separately frozen follow-up;
+      verified, not a network fix. The read-only first-packet investigation
+      then verified that the pinned idle NAS branch signals pending data but
+      does not retain/forward its payload: 60 exact-method fixture cases,
+      a failing negative control, 12 official source matches and a 24-command
+      audit (`docs/RECONNECT_PACKET_DIAGNOSIS.md`; 251 tests and 22 subtests at
+      `evidence/verification/20260905T091926Z-reconnect-packet`). This is source
+      fixture evidence consistent with R2, not direct packet localization or
+      a correction. Next freeze a bounded instrumented resumption experiment;
       no endpoint relaxation or new 675-unit campaign is authorized by R2.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
       ablations, OOD stress test, runtime/scalability evaluation, and

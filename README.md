@@ -97,7 +97,11 @@ comparison stopped at six of eight assignments without discarding the first
 lost packet. The official image and fresh 15/15 service were restored.
 Independent integrity audit replayed 480 commands and 48 samples; 240 tests
 plus 19 subtests pass. These do not establish a successful network fix or TNSM
-readiness. First-packet diagnosis is next; no new long campaign is running.
+readiness. The subsequent [source diagnosis](docs/RECONNECT_PACKET_DIAGNOSIS.md)
+verified idle-payload non-retention in 60 exact-method fixture cases, with
+251 tests plus 22 subtests passing. This is consistent with R2's first-packet
+loss, not direct packet localization or a network fix. A separately frozen
+instrumented diagnostic is next; no new long campaign is running.
 
 Environment Deviation D1 records six unrelated containers that appeared on
 separate Docker networks during the run. No network overlap was observed, but
