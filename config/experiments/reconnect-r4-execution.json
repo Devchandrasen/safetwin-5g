@@ -1,0 +1,25 @@
+{
+  "experiment_id": "safetwin5g-reconnect-r4-execution-v1",
+  "collection_contract": "reconnect-r4-collection-v1",
+  "trials": [
+    {"trial_id": "r4:control-before", "drop_ue_egress": false},
+    {"trial_id": "r4:drop-a", "drop_ue_egress": true},
+    {"trial_id": "r4:drop-b", "drop_ue_egress": true},
+    {"trial_id": "r4:control-after", "drop_ue_egress": false}
+  ],
+  "admission_seconds": 1500,
+  "command_seconds": 35,
+  "health_seconds": 50,
+  "window_seconds": 120,
+  "cleanup_grace_seconds": 2,
+  "max_output_bytes": 1048576,
+  "drop_seconds": 8,
+  "settling_seconds": 5,
+  "recovery_packets": 15,
+  "restart_order": ["safetwin5g-open5gs", "safetwin5g-gnb", "safetwin5g-ue"],
+  "restoration_ladder": ["ue", "full"],
+  "rollback_required": true,
+  "require_human_approval": true,
+  "allow_live_actuation": false,
+  "network_fix_validated": false
+}

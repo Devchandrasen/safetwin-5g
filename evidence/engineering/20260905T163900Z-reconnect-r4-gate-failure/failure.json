@@ -1,0 +1,32 @@
+{
+  "verification": "evidence/verification/20260905T163556Z-reconnect-r4-execution",
+  "fixture_release": "evidence/engineering/20260905T163558Z-reconnect-r4-execution-fixtures",
+  "source_archive_member_sha256": {
+    "docs/RECONNECT_R4_EXECUTION.md": "2c7fde4d34cfb45e40f483106bbd665fe7314a721e89404368702b2f5414d34a",
+    "sandbox/reconnect_r4_host_guard.py": "a4a83301df8c7b547f3debdb08ae3b9e78c14572f5d053c6917c8875df02ce79",
+    "sandbox/reconnect_r4_launcher.py": "03951a86b4d8dcdf900f75a970e6450b328041f08c8f4c9e7e3addd1a0864bd0",
+    "sandbox/reconnect_r4_process.py": "1087c14f4d6b18d800021b9b0c9ce2c311c043d067b808917f880c85013e73b6",
+    "sandbox/run_reconnect_r4.py": "cf863535d8d9d9ea8df7df2aa218d97a30d04dcfc04b7738f321760ffeff0c71",
+    "tests/reconnect_r4_execution_fixture.py": "f80bc898eac595320c27cb67394368b99d1e09ee9253474cedb21ed834514ccb",
+    "tests/reconnect_r4_process_child.py": "53618cd604f5138c92003845c73b85ca5c75fb7ec7e21df408ecf0e7d935d63f",
+    "tests/test_reconnect_r4_execution.py": "34f0e5cd8a820f834ae1a42cdf1bf58deb84af37cb0df023d7023d6e85c57cb8",
+    "tests/test_reconnect_r4_process.py": "b3cb428bb0712c3c9bd547e042a7f235c34d58346433ac8a7d0738b2b167e4e9",
+    "tools/audit_reconnect_r4_execution.py": "2e275dec8c50310c5363bf1e10f0b901a27d0b5e902813bdff0702ef187873d0",
+    "tools/capture_reconnect_r4_development.py": "d4070e2f63c621e0e4db6237a3e0891acb3c80d98b9af5cf554a7a5c8de918ff",
+    "tools/fixture_reconnect_r4_execution.py": "6c8733d9c4f70f71e128c164403dab6c9f3de529913152a3d84a839ac213c200",
+    "tools/reconnect_r4_window_audit.py": "3dd79cfeb0c5738b8eb171a9fbd88319c2e5752965eddf459520c138008fb7f7",
+    "tools/verify_reconnect_r4_execution.py": "502b5ecb290d28548e344c1b6854df92a1ac11ee3caf5d8e6bb86765bf79a8db",
+    "config/experiments/reconnect-r4-execution-lock.json": "d030631228c8d15804641984091a88b7c3e078c7bd8352079184f612f744f6b6",
+    "config/experiments/reconnect-r4-execution.json": "59d4fe8abe38b73e56e5f4340ad3b9f3d8306b9173c57a4c0fc215a03b211c10"
+  },
+  "evidence_label": "fixture",
+  "verification_passed": false,
+  "network_trials_executed": 0,
+  "findings": [
+    "system Python lacks src package on import path",
+    "wrong Compose project filter",
+    "JSON object ordering compared textually",
+    "hidden descendant did not inherit intended test pipes",
+    "Python 3.12 Windows GetTickCount64 resolution 0.015625 exceeds 1ms audit tolerance; use monotonic QPC without relaxing tolerance"
+  ]
+}

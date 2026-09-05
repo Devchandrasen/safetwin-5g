@@ -128,9 +128,16 @@ tests and 132 subtests at that checkpoint. The separate
 passes 381 tests, 171 subtests and eleven verification checks. Its bounded
 prefix-based log collector avoids host-time filtering and checks source
 eligibility explicitly. Fourteen retained cases are **fixture-only**, not new
-network evidence. The live adapter and complete approval/telemetry/fresh-PDU/
-rollback integration remain pending before any measured diagnostic. No new
-long campaign or TNSM-readiness claim is enabled.
+network evidence. The separate [R4 execution software gate](docs/RECONNECT_R4_EXECUTION_DECISION.md)
+now passes **398 tests, 200 subtests and twelve verification checks**. Its
+15-source lock covers the byte/time-bounded Windows adapter, mandatory approval,
+fresh-PDU/telemetry/rollback integration and independent whole-protocol replay.
+Seventeen retained protocol cases and seven local subprocess cases are still
+**fixture** evidence. Failed cleanup and official restoration remain negative;
+the failed initial software gate and exact source snapshot are preserved.
+No R4 image application, fault, restart or measured assignment has run. The
+parent recovery gate and TNSM disposition remain open/no-go respectively.
+No new long campaign or TNSM-readiness claim is enabled.
 
 Environment Deviation D1 records six unrelated containers that appeared on
 separate Docker networks during the run. No network overlap was observed, but

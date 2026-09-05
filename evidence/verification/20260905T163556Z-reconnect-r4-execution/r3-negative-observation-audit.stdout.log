@@ -1,0 +1,114 @@
+{
+  "run": {
+    "observation_audit_passed": true,
+    "commands_replayed": 131,
+    "samples_replayed": 6,
+    "scope_snapshots": 5,
+    "attempted_assignments": 1,
+    "valid_completed_assignments": 0,
+    "fault_exposures": 0,
+    "control_exposures": 0,
+    "observations": [
+      {
+        "identifier": 10001,
+        "window": "baseline",
+        "source_address": "10.45.0.2",
+        "sent": 5,
+        "received": 5,
+        "source_matches_fixed_trace_filter": true,
+        "observed_sequences": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "unobserved_sequences": [
+          1
+        ],
+        "observed_paths_have_consistent_fingerprints": true,
+        "missing_trace_is_packet_loss_proof": false
+      },
+      {
+        "identifier": 10002,
+        "window": "restore-ue",
+        "source_address": "10.45.0.3",
+        "sent": 5,
+        "received": 5,
+        "source_matches_fixed_trace_filter": false,
+        "observed_sequences": [],
+        "unobserved_sequences": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "observed_paths_have_consistent_fingerprints": null,
+        "missing_trace_is_packet_loss_proof": false
+      },
+      {
+        "identifier": 10003,
+        "window": "restore-full",
+        "source_address": "10.45.0.2",
+        "sent": 5,
+        "received": 5,
+        "source_matches_fixed_trace_filter": true,
+        "observed_sequences": [
+          3,
+          4,
+          5
+        ],
+        "unobserved_sequences": [
+          1,
+          2
+        ],
+        "observed_paths_have_consistent_fingerprints": true,
+        "missing_trace_is_packet_loss_proof": false
+      },
+      {
+        "identifier": 10004,
+        "window": "final-official",
+        "source_address": "10.45.0.2",
+        "sent": 5,
+        "received": 5,
+        "source_matches_fixed_trace_filter": true
+      },
+      {
+        "identifier": 10005,
+        "window": "final-official",
+        "source_address": "10.45.0.2",
+        "sent": 5,
+        "received": 5,
+        "source_matches_fixed_trace_filter": true
+      },
+      {
+        "identifier": 10006,
+        "window": "final-official",
+        "source_address": "10.45.0.2",
+        "sent": 5,
+        "received": 5,
+        "source_matches_fixed_trace_filter": true
+      }
+    ],
+    "final_official_packets_returned": 15,
+    "final_official_packets_sent": 15,
+    "official_images_restored": true,
+    "protocol_execution_valid": false,
+    "network_fix_validated": false,
+    "evidence_label": "sandbox-measured",
+    "radio_evidence_label": "simulated"
+  },
+  "clock": {
+    "clock_audit_passed": true,
+    "read_only_commands": 15,
+    "paired_clock_probes": 10,
+    "all_clock_upper_bounds_negative": true,
+    "minimum_offset_lower_seconds": -0.327649,
+    "maximum_offset_upper_seconds": -0.071462,
+    "official_service_snapshots_unchanged": true,
+    "historical_missing_trace_recovered": false,
+    "historical_prefix_cause": "clock clipping is supported but not uniquely proven by later probes",
+    "evidence_label": "sandbox-measured",
+    "network_fix_validated": false
+  }
+}

@@ -322,11 +322,21 @@ sandbox evidence.
       cases, 381 tests and 171 subtests, eleven checks at
       `evidence/verification/20260905T143948Z-reconnect-r4-collection`). No
       network trial or image application ran; read-only scope and official
-      logging metadata checks passed. Next implement and commit the bounded
-      live adapter and full approval/telemetry/fresh-PDU/rollback execution
-      integration before another diagnostic. This parent recovery item remains
-      open. No R3 rerun, endpoint relaxation or new 675-unit campaign follows
-      from this fixture gate.
+      logging metadata checks passed. The separate bounded Windows adapter and
+      full approval/telemetry/fresh-PDU/rollback execution integration now pass
+      their software gate (`docs/RECONNECT_R4_EXECUTION_DECISION.md`; 15-source
+      lock, 398 tests, 200 subtests and twelve checks at
+      `evidence/verification/20260905T164055Z-reconnect-r4-execution`). Seventeen
+      whole-protocol and seven local subprocess cases are retained and the
+      protocol archives are freshly extracted and independently replayed.
+      Failed cleanup, reset, health wait and official restoration are covered;
+      the failed initial gate and its exact sources remain preserved. These
+      are fixture results, not measured recovery. No R4 image application,
+      fault, restart, ping or sleep-inhibition request ran in this gate.
+      Next assess the separate committed/approved bounded R4 diagnostic under
+      freshly verified environment and host prerequisites. This parent recovery
+      item remains open. No R3 rerun, endpoint relaxation, model promotion or
+      new 675-unit campaign follows from this software gate.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
       ablations, OOD stress test, runtime/scalability evaluation, and
       independent artifact audit.
