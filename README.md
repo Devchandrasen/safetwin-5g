@@ -82,7 +82,12 @@ The first [recovery pilot R1](docs/RECOVERY_PILOT_R1_DECISION.md) was rejected
 at its no-fault baseline: 0/15 packets despite healthy processes and targets.
 No interruption was injected. An approved UE restart restored 15/15 packets;
 that restoration does not make the six-trial pilot complete. A bounded
-reconnect-path investigation is the current engineering gate.
+reconnect-path investigation is the current engineering gate. The separately
+frozen [reconnect R1](docs/RECONNECT_R1_DECISION.md) then reproduced the failure
+in both eight-second link-drop trials: post-rollback delivery was 0/15, versus
+15/15 in both no-fault controls, and approved UE restarts restored 15/15.
+Independent audit passed all four trials, 280 commands and 30 samples. This
+validates failure reproduction, not a network fix; the recovery gate stays open.
 
 Environment Deviation D1 records six unrelated containers that appeared on
 separate Docker networks during the run. No network overlap was observed, but

@@ -1,0 +1,41 @@
+{
+  "approval_id": "reconnect-r1-b03905c9f65294fd30a7b2ed8c41ece0bac440be1470cb67accb33d05addeb13",
+  "approved_by": "user",
+  "authorization_basis": "User authorized local reversible SafeTwin sandbox work and automatic sequential continuation.",
+  "containers": [
+    "safetwin5g-open5gs",
+    "safetwin5g-gnb",
+    "safetwin5g-ue"
+  ],
+  "environment": "sandbox",
+  "live_actuation": false,
+  "operations": [
+    "fixed core/gNB/UE preparation resets",
+    "UE eth0 100% egress loss for 8 seconds, handle 7157:",
+    "15-second in-container timeout and EXIT rollback",
+    "UE restart then full reset for restoration"
+  ],
+  "operator_validation": false,
+  "recorded_at": "2026-09-05T06:20:44.710395+00:00",
+  "rollback_plan": "Remove exact owned eth0 qdisc in shell trap and verify noqueue; always restore service with UE restart then full core/gNB/UE reset if required.",
+  "status": "approved",
+  "trials": [
+    {
+      "drop_ue_egress": false,
+      "trial_id": "control-before"
+    },
+    {
+      "drop_ue_egress": true,
+      "trial_id": "drop-a"
+    },
+    {
+      "drop_ue_egress": true,
+      "trial_id": "drop-b"
+    },
+    {
+      "drop_ue_egress": false,
+      "trial_id": "control-after"
+    }
+  ],
+  "type": "standing-project-authorization"
+}

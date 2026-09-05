@@ -1,0 +1,36 @@
+{
+  "audit_passed": true,
+  "protocol_execution_valid": true,
+  "reconnect_failure_reproduced": true,
+  "commands_replayed": 280,
+  "samples_replayed": 30,
+  "post_packet_counts": [
+    {
+      "trial": "control-before",
+      "post_received": 15.0,
+      "post_sent": 15.0,
+      "reproduced": false
+    },
+    {
+      "trial": "drop-a",
+      "post_received": 0.0,
+      "post_sent": 15.0,
+      "reproduced": true
+    },
+    {
+      "trial": "drop-b",
+      "post_received": 0.0,
+      "post_sent": 15.0,
+      "reproduced": true
+    },
+    {
+      "trial": "control-after",
+      "post_received": 15.0,
+      "post_sent": 15.0,
+      "reproduced": false
+    }
+  ],
+  "network_fix_validated": false,
+  "long_campaign_ready": false,
+  "TNSM_ready": false
+}

@@ -1,0 +1,48 @@
+{
+  "config": {
+    "confirmatory_data": false,
+    "environment": "sandbox",
+    "experiment_id": "safetwin5g-reconnect-engineering-r1",
+    "exposure_seconds": 8,
+    "fault_handle": "7157:",
+    "in_container_timeout_seconds": 15,
+    "long_campaign_ready": false,
+    "maximum_command_seconds": 35,
+    "maximum_container_health_seconds": 50,
+    "maximum_total_seconds": 900,
+    "packets_per_sample": 5,
+    "samples_per_window": 3,
+    "settle_seconds": 5,
+    "trials": [
+      {
+        "drop_ue_egress": false,
+        "trial_id": "control-before"
+      },
+      {
+        "drop_ue_egress": true,
+        "trial_id": "drop-a"
+      },
+      {
+        "drop_ue_egress": true,
+        "trial_id": "drop-b"
+      },
+      {
+        "drop_ue_egress": false,
+        "trial_id": "control-after"
+      }
+    ]
+  },
+  "source_hash_mode": "utf8-lf-normalized",
+  "source_sha256": {
+    "config/actions.json": "e8d773dfcfb30ea6b984f312f85f76c7c94b4af4db35bba3e05a1031d2c0de77",
+    "config/experiments/reconnect-r1.json": "b03905c9f65294fd30a7b2ed8c41ece0bac440be1470cb67accb33d05addeb13",
+    "docs/RECONNECT_R1_PROTOCOL.md": "df5dc699aa9d49e3969f8881928f941fe72c0e6bafb8389ffa1238e62a8055bd",
+    "sandbox/compose.yaml": "050f8210177bb0651327ac29427a9f99da525ba5602ebc803d86c29f4f2e933e",
+    "sandbox/run_reconnect.py": "8528626ee440d1641d7d07822cfba984152042e0375fd35582fbc1052c6be598",
+    "sandbox/run_recovery_pilot.py": "81f30e2bd94df0798471f458d39ad8a05966e1cef00e7fa080625ca4201b1bcb",
+    "sandbox/versions.lock.json": "0c4a20d5cf481d757231bd5c16744e4298d8cae8352abb652512467b8e67121d",
+    "src/safetwin5g/phase7_runner.py": "c0ad6023d34e542be16bfc1b99ab7b71a41781d417ce5acd5eb309c809732bb4",
+    "tools/audit_reconnect.py": "4e6465396c76faf3ad17925e3bc067e09bcbbfcd07d1702fdf2a968f1ede200d",
+    "tools/audit_recovery_pilot.py": "27386449b75b059a977656e6084c8ad17d540391346f1298f14b52530d5fbbd3"
+  }
+}

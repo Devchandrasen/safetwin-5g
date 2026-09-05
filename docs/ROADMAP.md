@@ -254,8 +254,14 @@ sandbox evidence.
       (0/15 packets), injected no fault, and restored 15/15 packets only after
       an approved UE restart. Independent raw-sample/hash diagnosis preserves
       the failure and a source-supported Service Request/AMF-selection
-      candidate (`docs/RECOVERY_PILOT_R1_DECISION.md`). A bounded reconnect
-      reproduction is next; no new 675-unit campaign is running.
+      candidate (`docs/RECOVERY_PILOT_R1_DECISION.md`). The separately frozen
+      reconnect R1 completed all four trials and independently replayed 280
+      commands and 30 samples: both controls returned 15/15, both eight-second
+      link drops returned 0/15 after qdisc rollback, and approved UE restarts
+      restored 15/15 (`docs/RECONNECT_R1_DECISION.md`; 219 tests and 19 subtests
+      passed at `evidence/verification/20260905T062820Z-reconnect-r1`). Failure
+      reproduction is verified, not a network fix. A separately versioned
+      source-correction validation is next; no new 675-unit campaign is running.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
       ablations, OOD stress test, runtime/scalability evaluation, and
       independent artifact audit.
