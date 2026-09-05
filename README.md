@@ -67,14 +67,17 @@ inadmissible operational evidence: one by a Docker Desktop Compose stop and
 one by a Windows Application-API sleep transition. A third run started on
 September 1, paused at user request after 546 durable units, and continued on
 September 5 with the existing resume support and verified sleep-inhibition
-wrapper. [Pause/resume P1](docs/PHASE7_PAUSE_RESUME_1.md) preserves the original
-environment and command prefix and discloses the collection gap. Terminal
-campaign acceptance and the 129 remaining units are pending; partial output is not
-a result and test outcomes remain unanalysed under a procedural, not
-cryptographic, seal. A
-baseline win, insufficient certificate coverage,
-failed simultaneous coverage, or any dirty recovery produces an explicit
-no-go.
+wrapper. All 675 traces were collected, but the frozen dataset gate rejected
+them: 582 units had failed user-plane recovery and right-censored MTTR.
+[Recovery rejection R1](docs/PHASE7_RECOVERY_REJECTION_1.md) records a validation
+defect: the old runner and auditor checked fault configuration without checking
+actual packet delivery. The defect is corrected, with 188 tests plus 15
+subtests passing. The historical passing flags remain preserved but do not
+establish acceptance. No dataset-v2a release or confirmatory BRACE analysis was
+produced; the current TNSM disposition is **no-go-data-quality**.
+[Pause/resume P1](docs/PHASE7_PAUSE_RESUME_1.md) preserves the original
+environment and command prefix and discloses the collection gap. A bounded
+recovery engineering pilot is required before another confirmatory campaign.
 
 Environment Deviation D1 records six unrelated containers that appeared on
 separate Docker networks during the run. No network overlap was observed, but

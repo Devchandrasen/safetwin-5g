@@ -90,6 +90,12 @@ def main() -> int:
     mutation_count = 0
     for trace in traces:
         unit = trace["unit"]
+        for stage in ("baseline", "recovery"):
+            samples = trace["windows"][stage]["samples"]
+            assert len(samples) == 3 and all(
+                0.0 <= float(sample["metrics"].get("packet_loss_pct", float("inf"))) <= 1.0
+                for sample in samples
+            ), f"user-plane {stage} failed: {unit['unit_id']}"
         recomputed = validate_named_action_trace(unit, trace, 3)
         assert recomputed == trace["checks"], unit["unit_id"]
         assert trace["passed"] is True

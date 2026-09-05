@@ -1,0 +1,82 @@
+{
+  "TNSM_manuscript_gate": "no-go-data-quality",
+  "affected_sample_counts": {
+    "baseline": 1743,
+    "recovery": 1746
+  },
+  "affected_unit_counts": {
+    "baseline": 581,
+    "recovery": 582
+  },
+  "analysis_lock_verified": "safetwin5g-phase7-analysis-v2a-a1-d1-20260825",
+  "collection_completed": true,
+  "configuration_clean_but_service_failed_windows": 1163,
+  "dataset_release_eligible": false,
+  "decision": "Preserve all 675 traces as rejected operational evidence; no v2a release or confirmatory analysis.",
+  "failed_dataset_checks": [
+    "all_recovery_states_clean",
+    "mttr_not_censored"
+  ],
+  "first_failed_windows": {
+    "baseline": {
+      "block_id": "train|network_function_interruption|1000|1103|steady",
+      "configuration_clean": true,
+      "failed_sample_count": 3,
+      "loss_percentages": [
+        100.0,
+        100.0,
+        100.0
+      ],
+      "observed_at": [
+        "2026-09-01T04:07:38.179133+00:00",
+        "2026-09-01T04:07:41.582315+00:00",
+        "2026-09-01T04:07:45.026133+00:00"
+      ],
+      "sample_count": 3,
+      "split": "train",
+      "stage": "baseline",
+      "started_at": "2026-09-01T04:07:36.895416+00:00",
+      "unit_id": "safetwin5g-phase7-brace-v2a-train-network_function_interruption-1000-clear_packet_impairment-1103"
+    },
+    "recovery": {
+      "block_id": "train|network_function_interruption|1000|1103|steady",
+      "configuration_clean": true,
+      "failed_sample_count": 3,
+      "loss_percentages": [
+        100.0,
+        100.0,
+        100.0
+      ],
+      "observed_at": [
+        "2026-09-01T04:08:13.723237+00:00",
+        "2026-09-01T04:08:17.126077+00:00",
+        "2026-09-01T04:08:20.570133+00:00"
+      ],
+      "sample_count": 3,
+      "split": "train",
+      "stage": "recovery",
+      "started_at": "2026-09-01T04:07:36.895416+00:00",
+      "unit_id": "safetwin5g-phase7-brace-v2a-train-network_function_interruption-1000-clear_packet_impairment-1103"
+    }
+  },
+  "generated_at": "2026-09-05T04:02:37.274295+00:00",
+  "limitations": [
+    "P1: collection spans September 1 and September 5 with a host restart; original prefix is preserved separately.",
+    "D1: software sandbox shares host resources with unrelated containers; no exclusive-host evidence.",
+    "The Phase 7 runner's original clean predicate checks configured fault state but omits observed packet loss; the frozen dataset gate checks both.",
+    "This diagnosis inspects baseline/recovery telemetry and censoring status only; it is not BRACE or comparator evidence.",
+    "Intervention is sandbox-measured, radio simulated, hardware not measured, operator not validated."
+  ],
+  "live_actuation": "no-go",
+  "model_fitted": false,
+  "mttr_status_counts": {
+    "not-triggered": 32,
+    "observed": 61,
+    "right-censored": 582
+  },
+  "policy_comparisons_run": false,
+  "schema_version": 1,
+  "source_manifest_sha256": "d8e8b10cba31f7b48c533f0c13b0fda4c41743c9f8161bc8e4be045dd205518f",
+  "source_run": "evidence/scenarios/20260901T030631Z-phase7-campaign-v2a",
+  "submission_authorized": false
+}

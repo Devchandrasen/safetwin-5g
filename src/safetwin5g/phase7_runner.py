@@ -13,12 +13,16 @@ def _samples(trace: dict[str, Any], stage: str) -> list[dict[str, Any]]:
 
 
 def _is_clean(sample: dict[str, Any]) -> bool:
-    metrics = sample["metrics"]
-    return (
-        metrics["configured_packet_loss_pct"] == 0.0
-        and metrics["upf_process_running"] == 1.0
-        and metrics["stress_workers_count"] == 0.0
-    )
+    metrics = sample.get("metrics", {})
+    try:
+        return (
+            float(metrics["configured_packet_loss_pct"]) == 0.0
+            and float(metrics["upf_process_running"]) == 1.0
+            and float(metrics["stress_workers_count"]) == 0.0
+            and 0.0 <= float(metrics["packet_loss_pct"]) <= 1.0
+        )
+    except (KeyError, TypeError, ValueError, OverflowError):
+        return False
 
 
 def expected_fault_state(unit: dict[str, Any]) -> dict[str, float]:
@@ -179,6 +183,7 @@ class Phase7UnitRunner:
         )
         trace["cleanup_verified"] = (
             trace["cleanup_completed"]
+            and trace["checks"].get("recovery_sample_count", False)
             and trace["checks"].get("recovery_clean", False)
         )
         trace["passed"] = not trace["errors"] and all(trace["checks"].values())
@@ -190,3 +195,8 @@ class Phase7UnitRunner:
     ) -> None:
         samples = self.backend.observe_window(stage, unit)
         trace["windows"][stage] = {"samples": samples}
+        if stage == "baseline" and (
+            len(samples) != self.required_samples
+            or not all(_is_clean(sample) for sample in samples)
+        ):
+            raise RuntimeError("baseline user plane or configuration is not clean")

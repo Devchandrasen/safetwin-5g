@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "scope": "fail-closed recovery guard and faithful rejection of invalid campaign",
+  "campaign_acceptance": "rejected",
+  "dataset_release_created": false,
+  "confirmatory_analysis_run": false,
+  "model_comparison_run": false,
+  "TNSM_manuscript_gate": "no-go-data-quality",
+  "next_step": "bounded repeated-interruption recovery engineering pilot before any new campaign",
+  "source_files_sha256": {
+    "src/safetwin5g/phase7_runner.py": "c0ad6023d34e542be16bfc1b99ab7b71a41781d417ce5acd5eb309c809732bb4",
+    "sandbox/run_phase7.py": "c4f655af4c40c949ca958d0f4d1515739e985b12407e836dd2b63e6f8c5c8dc4",
+    "tools/audit_phase7_run.py": "293376406ece4edfeb1ce3c583cdc0cfc4e9d9c9c10bc980c2f6233088e9081a",
+    "tools/diagnose_phase7_recovery.py": "ba0c515466a1db906fbfe0222caf49ab6b89a34f1e0ac6011a0bf99575b9d68d",
+    "tools/verify_phase7_recovery_guard.ps1": "4b78c9dbf2e91d5331dcb1ced78e6a38d7de326fe38d3deff1736c5454a958df",
+    "tests/test_phase7_runner.py": "20c18d7447129813eee3aea4c325da8520b16ab34c589116cf404888a00d1d98",
+    "docs/PHASE7_RECOVERY_REJECTION_1.md": "7c00de57adb4cd5fa319368a5c6389b358af2413f1f75de33bd4ea78eff2f498"
+  },
+  "source_hash_mode": "utf8-lf-normalized",
+  "preserved_bundle_files_sha256": {
+    "evidence/decisions/20260905T040400Z-phase7-recovery-no-go": {
+      "affected-windows.jsonl": "d5a69a0cb69b940ccf56d64d424cbbaebd5cef4ec138f9ac6d45b23b6cd8ce17",
+      "diagnosis.json": "cb8bec381402d39c848a4bf638388cd188441668ee34bea940dbddda25df7511",
+      "manifest.json": "c0ec136ed722a6abb98738b026484c7a8d694c3c00229129cb62dcc3eb2f8c1a",
+      "structural-quality.json": "d6f1a62bf1426bdac3baed01bddb2144b6183b19ebf38d1bfe6c0f13509e1945"
+    },
+    "evidence/environment/20260905T015600Z-phase7-resume-runtime": {
+      "before-recovery-open5gs.log": "fd1ff55efdc95f26c3f3d6a2c4e281abd7580ca4775a4136712710d6aee3ef0d",
+      "before-recovery-ue.log": "fec8afcd12b08a140d06552d8e53509e6842bfdf70f62916e006bccb6ce2fba8",
+      "campaign.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "campaign.stdout.log": "c0a5a4852f221523427b45d432f7fbbd0dbcee012af02db0323e63c4a3a371db",
+      "post-campaign-baseline.log": "ca5c9fee2d276d8d299fc62a75979873854ef521e775aafd4183dcef7c109bb9",
+      "restored-baseline.log": "410b8f3fbca2c35717eff789d34e303bc5257998a22874b7d5b59c3d74f68726",
+      "wrapper.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "wrapper.stdout.log": "97d46842da990ff8bdcaaba73c2e76de6e6534f7277e20f089a03c02bf332364"
+    },
+    "evidence/verification/20260905T040100Z-phase7-campaign-dataset": {
+      "campaign-audit.log": "c2e96b83b83bd2c7d603f6a267f256cdb238534f0a04121e38eef2533c9dc2a0",
+      "dataset-build.log": "b8506c0ccb30b8f0027a7f77518672f8ec5a20cda7908d70ce3281e8c161c65f",
+      "resume-prefix-audit.json": "248384b9e2b0e310d39fec6f0764c62712d92386856ffbcc5fac18ecc8699b13"
+    }
+  },
+  "live_actuation": "no-go",
+  "publication_submission_authorized": false
+}

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\devel\Documents\Codex\2026-08-22\he\safetwin-5g\tools\build_dataset_v2a.py", line 30, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\devel\Documents\Codex\2026-08-22\he\safetwin-5g\tools\build_dataset_v2a.py", line 24, in main
+    manifest = build_release(source, output)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\devel\Documents\Codex\2026-08-22\he\safetwin-5g\src\safetwin5g\dataset_v2a.py", line 424, in build_release
+    raise ValueError(f"v2a data-quality gate failed: {report['checks']}")
+ValueError: v2a data-quality gate failed: {'unit_ids_unique': True, 'complete_five_action_blocks': True, 'four_three_sample_windows_per_unit': True, 'timestamps_monotonic': True, 'all_recovery_states_clean': False, 'approvals_and_fail_closed_decisions_recorded': True, 'mutations_reversible_with_rollback': True, 'claim_labels_separated': True, 'mttr_not_censored': False, 'public_records_exclude_approval_text': True, 'record_count_675': True, 'split_unit_counts_match_amendment': True, 'split_block_counts_match_amendment': True, 'action_portfolio_balanced': True, 'calibration_minimum_met': True, 'test_minimum_met': True, 'false_remediation_denominator_present': True}

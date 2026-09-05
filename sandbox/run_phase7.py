@@ -280,6 +280,7 @@ def main() -> int:
     if aborted_for_cleanup:
         raise RuntimeError("existing run contains an unverified cleanup; resume is blocked")
 
+    aborted_for_validation = False
     for index, unit in enumerate(units, start=1):
         if unit["unit_id"] in results_by_id:
             print(f"[{index}/{len(units)}] SKIP {unit['unit_id']}", flush=True)
@@ -323,6 +324,10 @@ def main() -> int:
             aborted_for_cleanup = True
             print("ABORT: cleanup could not be verified", flush=True)
             break
+        if not trace["passed"]:
+            aborted_for_validation = True
+            print("ABORT: unit validation failed", flush=True)
+            break
 
     results = [results_by_id[unit["unit_id"]] for unit in units if unit["unit_id"] in results_by_id]
     passed = (
@@ -356,6 +361,7 @@ def main() -> int:
         "passed_unit_count": sum(result["passed"] for result in results),
         "split_counts": split_counts,
         "aborted_for_cleanup": aborted_for_cleanup,
+        "aborted_for_validation": aborted_for_validation,
         "experimental_mutation_count": sum(
             result["unit"]["mutates"] for result in results
         ),

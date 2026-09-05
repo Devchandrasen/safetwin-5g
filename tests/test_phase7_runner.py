@@ -51,6 +51,7 @@ class FakeBackend:
             "configured_packet_loss_pct": 0.0,
             "upf_process_running": 1.0,
             "stress_workers_count": 0.0,
+            "packet_loss_pct": 0.0,
         }
 
     def observe_window(self, stage, unit):
@@ -82,6 +83,7 @@ class FakeBackend:
             "configured_packet_loss_pct": 0.0,
             "upf_process_running": 1.0,
             "stress_workers_count": 0.0,
+            "packet_loss_pct": 0.0,
         }
 
 
@@ -132,7 +134,53 @@ class Phase7RunnerTests(unittest.TestCase):
             unit, approval_for([unit])
         )
         self.assertFalse(trace["passed"])
+        self.assertFalse(trace["cleanup_verified"])
+
+    def test_service_outage_is_not_clean_recovery_even_with_neutral_fault_state(self):
+        class FailedRecovery(FakeBackend):
+            def observe_window(self, stage, unit):
+                rows = super().observe_window(stage, unit)
+                if stage == "recovery":
+                    for row in rows:
+                        row["metrics"]["packet_loss_pct"] = 100.0
+                return rows
+
+        unit = unit_for("network_function_interruption", "observe_only")
+        trace = Phase7UnitRunner(FailedRecovery(), 3).run(unit, approval_for([unit]))
+        self.assertFalse(trace["passed"])
+        self.assertFalse(trace["cleanup_verified"])
+        self.assertFalse(trace["checks"]["recovery_clean"])
+
+    def test_invalid_service_baseline_blocks_fault_and_action_but_still_cleans_up(self):
+        class FailedBaseline(FakeBackend):
+            def observe_window(self, stage, unit):
+                rows = super().observe_window(stage, unit)
+                if stage == "baseline":
+                    for row in rows:
+                        row["metrics"]["packet_loss_pct"] = 100.0
+                return rows
+
+        unit = unit_for("no_fault", "apply_packet_impairment_25")
+        backend = FailedBaseline()
+        trace = Phase7UnitRunner(backend, 3).run(unit, approval_for([unit]))
+        self.assertFalse(trace["passed"])
+        self.assertNotIn("inject", backend.events)
+        self.assertNotIn("action", backend.events)
+        self.assertIn("cleanup", backend.events)
         self.assertTrue(trace["cleanup_verified"])
+
+    def test_missing_nonfinite_and_invalid_loss_fail_closed(self):
+        from safetwin5g.phase7_runner import _is_clean
+
+        for loss in (None, float("nan"), float("inf"), -1, 1.01, "invalid"):
+            with self.subTest(loss=loss):
+                self.assertFalse(_is_clean({"metrics": {
+                    "configured_packet_loss_pct": 0,
+                    "upf_process_running": 1,
+                    "stress_workers_count": 0,
+                    "packet_loss_pct": loss,
+                }}))
+        self.assertFalse(_is_clean({"metrics": {}}))
 
     def test_one_pilot_block_contains_all_five_named_actions(self):
         pilot = select_pilot_blocks(UNITS, 1)

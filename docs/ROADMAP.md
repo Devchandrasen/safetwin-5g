@@ -218,8 +218,8 @@ sandbox evidence.
       20260825T081907Z-tnsm-manuscript-gate`; 175 tests plus 9 subtests passed;
       actual gate evaluation remains pending final artifacts).
 - [ ] Execute the fresh 675-unit named-action sandbox campaign; freeze and
-      audit the 135 complete-block dataset before outcome analysis. **In
-      progress:** the first attempt was rejected after an external
+      audit the 135 complete-block dataset before outcome analysis. **No-go
+      pending recovery correction validation:** the first attempt was rejected after an external
       Docker Desktop Compose stop at 419/675; the second attempt reached a
       435/675 stdout progress line but persisted only 434 traces before a
       Windows Application-API sleep transition stopped the process. Both runs
@@ -235,12 +235,21 @@ sandbox evidence.
       (`docs/PHASE7_PAUSE_RESUME_1.md`; checkpoint:
       `evidence/environment/20260905T015200Z-phase7-resume-checkpoint`;
       provenance audit and 185 tests plus 9 subtests passed at
-      `evidence/verification/20260905T015825Z-phase7-resume`). All
-      129 remaining units and terminal acceptance audits are pending. P1
-      discloses the time gap, restarts, retained interrupted commands, and
-      original environment preservation. D1 records unrelated
-      containers on separate Docker networks and the unresolved shared-host
-      contention limitation.
+      `evidence/verification/20260905T015825Z-phase7-resume`). Collection
+      finished at 675/675, but the frozen dataset gate rejected 582 unclean
+      service-recovery units and 582 right-censored MTTR records. The original
+      runner's passing flags omitted observed packet loss and are not
+      acceptance evidence (`docs/PHASE7_RECOVERY_REJECTION_1.md`). No dataset
+      release or confirmatory model analysis was produced. P1 and D1 retain
+      the collection-gap and shared-host limitations.
+- [x] Diagnose the Phase 7 service-recovery validation gap and correct the
+      runtime guard and independent auditor. Invalid/missing service metrics
+      or baseline block mutations, recovery requires all clean samples, and
+      any failed unit stops collection. The corrected auditor rejects the
+      historical bundle; 188 tests plus 15 subtests pass at
+      `evidence/verification/20260905T040812Z-phase7-recovery-guard`.
+- [ ] Validate a bounded repeated-interruption engineering pilot and an
+      explicit PDU reset/rollback protocol before another confirmatory run.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
       ablations, OOD stress test, runtime/scalability evaluation, and
       independent artifact audit.
