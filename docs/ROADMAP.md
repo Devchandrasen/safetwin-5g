@@ -281,8 +281,14 @@ sandbox evidence.
       audit (`docs/RECONNECT_PACKET_DIAGNOSIS.md`; 251 tests and 22 subtests at
       `evidence/verification/20260905T091926Z-reconnect-packet`). This is source
       fixture evidence consistent with R2, not direct packet localization or
-      a correction. Next freeze a bounded instrumented resumption experiment;
-      no endpoint relaxation or new 675-unit campaign is authorized by R2.
+      a correction. The R3 instrumentation-only source and four-trial diagnostic
+      contract are now frozen: 65 parser cases, 61 NAS cases in each of two
+      modes, exact three-file removal and actual Git-patch replay pass
+      (`docs/RECONNECT_R3_SOURCE_FREEZE.md`; 272 tests and 32 subtests at
+      `evidence/verification/20260905T102936Z-reconnect-r3`). R3 image build,
+      real-header compilation, execution runner/auditor and measured traces
+      remain pending. Next verify the separate source build; no endpoint
+      relaxation or new 675-unit campaign is authorized by these fixtures.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
       ablations, OOD stress test, runtime/scalability evaluation, and
       independent artifact audit.

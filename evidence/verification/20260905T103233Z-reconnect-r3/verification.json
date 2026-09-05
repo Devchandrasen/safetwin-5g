@@ -1,0 +1,76 @@
+{
+  "verification_passed": true,
+  "checks": {
+    "full-tests": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0
+    },
+    "independent-r3-source-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r3_source.py",
+        "--run",
+        "evidence/engineering/20260905T102301Z-reconnect-r3-freeze"
+      ],
+      "exit_code": 0
+    },
+    "prior-packet-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_packet.py",
+        "--run",
+        "evidence/engineering/20260905T091635Z-reconnect-packet-diagnosis"
+      ],
+      "exit_code": 0
+    },
+    "prior-r2-build-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r2_build.py",
+        "--run",
+        "evidence/engineering/20260905T071413Z-reconnect-r2-build"
+      ],
+      "exit_code": 0
+    },
+    "prior-r2-network-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r2.py",
+        "--run",
+        "evidence/engineering/20260905T082014Z-reconnect-r2"
+      ],
+      "exit_code": 0
+    },
+    "statistical-lock": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-c",
+        "from tools.run_phase7_analysis import verify_analysis_lock; print(verify_analysis_lock()['lock_id'])"
+      ],
+      "exit_code": 0
+    }
+  },
+  "source_sha256": {
+    "tools/audit_reconnect_r3_source.py": "bc8b674332ddc66478a87bb102f9404e5c8fdda6895accdf26ffae59d9a6636d",
+    "tools/reconnect_r3_source.py": "689a688a75019f29a56ef5fd2483d3b419649ef51c9bfaf762fb7f45766b726e",
+    "tools/reconnect_r3_trace.py": "22c73376d2d5098900e1bcaab0a722fd82022fe7e9c2cd52d9672ea9f3b2d491",
+    "tools/verify_reconnect_r3.py": "8c053cdc8f0a452a6e302d6774dcc98167cb9e6ccb38fc7c23d4f6b987b6d090",
+    "tools/verify_reconnect_r3_gate.py": "8165a80a0eb4d675f6c863064a2a3cb2a0665131b303c22a0073a4fdb5278094",
+    "tests/test_reconnect_r3.py": "2642c7275a95519acc6965fc28bacb4d40460a7d1e69110143599f0408d12a85",
+    "tests/test_reconnect_r3_evidence.py": "a8b3cc08671290c4217472a2dc982f6daebee861d65be89e64417f1c188ffbfb",
+    "config/experiments/reconnect-r3-trace.json": "02ebfc846d6e98a7c358f2aa1554e5a2b865193f7c854e078db0939d256c1d3d",
+    "sandbox/patches/ueransim-reconnect-r3-trace/parser_fixture.cpp": "b19c1039824d4e6b84c27b47792216f4d19baece2e3161658f26c6372195288e",
+    "sandbox/patches/ueransim-reconnect-r3-trace/safetwin_trace_r3.hpp": "9acb36c48bc08a5a38bd2acb75f4120babe41ea22be83a140dbd2bd1b8203d3c",
+    "docs/RECONNECT_R3_SOURCE_FREEZE.md": "59613c954cc8ae745ecd1ddc81763757f5c0dc3445571998b4e3b236956d3a75",
+    "docs/RECONNECT_R3_TRACE_PROTOCOL.md": "114fd0f7d931fc8658c767d214b92c5f1f420f3c8950b18a8042eaffdd2f6af3"
+  },
+  "new_image_built": false,
+  "network_trials": 0,
+  "network_fix_validated": false,
+  "TNSM_ready": false
+}

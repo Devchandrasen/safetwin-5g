@@ -1,0 +1,52 @@
+{
+  "audit_passed": true,
+  "protocol_execution_valid": false,
+  "network_fix_validated": false,
+  "completed_trials": 6,
+  "commands_replayed": 480,
+  "samples_replayed": 48,
+  "scope_snapshots": 10,
+  "post_packet_counts": [
+    {
+      "trial": "official:control-before",
+      "post_received": 15.0,
+      "post_sent": 15.0,
+      "candidate_recovery": false
+    },
+    {
+      "trial": "official:drop-a",
+      "post_received": 0.0,
+      "post_sent": 15.0,
+      "candidate_recovery": false
+    },
+    {
+      "trial": "official:drop-b",
+      "post_received": 0.0,
+      "post_sent": 15.0,
+      "candidate_recovery": false
+    },
+    {
+      "trial": "official:control-after",
+      "post_received": 15.0,
+      "post_sent": 15.0,
+      "candidate_recovery": false
+    },
+    {
+      "trial": "derived:control-before",
+      "post_received": 15.0,
+      "post_sent": 15.0,
+      "candidate_recovery": false
+    },
+    {
+      "trial": "derived:drop-a",
+      "post_received": 14.0,
+      "post_sent": 15.0,
+      "candidate_recovery": false
+    }
+  ],
+  "stop_reason": "candidate_recovery_not_verified",
+  "official_image_restored": true,
+  "final_service_restored": true,
+  "long_campaign_ready": false,
+  "TNSM_ready": false
+}
