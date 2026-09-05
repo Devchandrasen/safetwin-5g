@@ -1,0 +1,598 @@
+{
+  "trial": {
+    "trial_id": "trace:drop-a",
+    "drop_ue_egress": true
+  },
+  "started_at": "2026-09-05T00:00:19.922000+00:00",
+  "errors": [],
+  "restoration_attempts": [
+    {
+      "step": "restore-ue",
+      "started_at": "2026-09-05T00:00:39.685000+00:00",
+      "errors": [],
+      "clean": true,
+      "samples": [
+        {
+          "unit_id": "trace:drop-a",
+          "window": "restore-ue",
+          "index": 0,
+          "identifier": 10013,
+          "started_at": "2026-09-05T00:00:39.707000+00:00",
+          "command_first": 141,
+          "metrics": {
+            "packets_transmitted": 5,
+            "packets_received": 5,
+            "packet_loss_pct": 0.0,
+            "reply_sequences": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "configured_packet_loss_pct": 0,
+            "upf_process_running": 1,
+            "stress_workers_count": 0,
+            "prometheus_targets_up_count": 3
+          },
+          "errors": [],
+          "trace": {
+            "trace_accounting_complete": true,
+            "packets": [
+              {
+                "sequence": 1,
+                "fate": "reply_observed",
+                "reply_observed": true
+              },
+              {
+                "sequence": 2,
+                "fate": "reply_observed",
+                "reply_observed": true
+              },
+              {
+                "sequence": 3,
+                "fate": "reply_observed",
+                "reply_observed": true
+              },
+              {
+                "sequence": 4,
+                "fate": "reply_observed",
+                "reply_observed": true
+              },
+              {
+                "sequence": 5,
+                "fate": "reply_observed",
+                "reply_observed": true
+              }
+            ],
+            "received": 5,
+            "sent": 5,
+            "all_packets_returned": true,
+            "network_fix_validated": false
+          },
+          "capture_until": "2026-09-05T00:00:40.782000+00:00",
+          "completed_at": "2026-09-05T00:00:40.802000+00:00",
+          "command_last": 147
+        },
+        {
+          "unit_id": "trace:drop-a",
+          "window": "restore-ue",
+          "index": 1,
+          "identifier": 10014,
+          "started_at": "2026-09-05T00:00:40.802000+00:00",
+          "command_first": 148,
+          "metrics": {
+            "packets_transmitted": 5,
+            "packets_received": 5,
+            "packet_loss_pct": 0.0,
+            "reply_sequences": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "configured_packet_loss_pct": 0,
+            "upf_process_running": 1,
+            "stress_workers_count": 0,
+            "prometheus_targets_up_count": 3
+          },
+          "errors": [],
+          "trace": {
+            "trace_accounting_complete": true,
+            "packets": [
+              {
+                "sequence": 1,
+                "fate": "reply_observed",
+                "reply_observed": true
+              },
+              {
+                "sequence": 2,
+                "fate": "reply_observed",
+                "reply_observed": true
+              },
+              {
+                "sequence": 3,
+                "fate": "reply_observed",
+                "reply_observed": true
+              },
+              {
+                "sequence": 4,
+                "fate": "reply_observed",
+                "reply_observed": true
+              },
+              {
+                "sequence": 5,
+                "fate": "reply_observed",
+                "reply_observed": true
+              }
+            ],
+            "received": 5,
+            "sent": 5,
+            "all_packets_returned": true,
+            "network_fix_validated": false
+          },
+          "capture_until": "2026-09-05T00:00:41.877000+00:00",
+          "completed_at": "2026-09-05T00:00:41.897000+00:00",
+          "command_last": 154
+        },
+        {
+          "unit_id": "trace:drop-a",
+          "window": "restore-ue",
+          "index": 2,
+          "identifier": 10015,
+          "started_at": "2026-09-05T00:00:41.897000+00:00",
+          "command_first": 155,
+          "metrics": {
+            "packets_transmitted": 5,
+            "packets_received": 5,
+            "packet_loss_pct": 0.0,
+            "reply_sequences": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "configured_packet_loss_pct": 0,
+            "upf_process_running": 1,
+            "stress_workers_count": 0,
+            "prometheus_targets_up_count": 3
+          },
+          "errors": [],
+          "trace": {
+            "trace_accounting_complete": true,
+            "packets": [
+              {
+                "sequence": 1,
+                "fate": "reply_observed",
+                "reply_observed": true
+              },
+              {
+                "sequence": 2,
+                "fate": "reply_observed",
+                "reply_observed": true
+              },
+              {
+                "sequence": 3,
+                "fate": "reply_observed",
+                "reply_observed": true
+              },
+              {
+                "sequence": 4,
+                "fate": "reply_observed",
+                "reply_observed": true
+              },
+              {
+                "sequence": 5,
+                "fate": "reply_observed",
+                "reply_observed": true
+              }
+            ],
+            "received": 5,
+            "sent": 5,
+            "all_packets_returned": true,
+            "network_fix_validated": false
+          },
+          "capture_until": "2026-09-05T00:00:42.972000+00:00",
+          "completed_at": "2026-09-05T00:00:42.992000+00:00",
+          "command_last": 161
+        }
+      ],
+      "fresh_registration": true,
+      "fresh_pdu": true,
+      "completed_at": "2026-09-05T00:00:43.032000+00:00"
+    }
+  ],
+  "preparation_started": true,
+  "baseline": [
+    {
+      "unit_id": "trace:drop-a",
+      "window": "baseline",
+      "index": 0,
+      "identifier": 10007,
+      "started_at": "2026-09-05T00:00:20.014000+00:00",
+      "command_first": 87,
+      "metrics": {
+        "packets_transmitted": 5,
+        "packets_received": 5,
+        "packet_loss_pct": 0.0,
+        "reply_sequences": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "configured_packet_loss_pct": 0,
+        "upf_process_running": 1,
+        "stress_workers_count": 0,
+        "prometheus_targets_up_count": 3
+      },
+      "errors": [],
+      "trace": {
+        "trace_accounting_complete": true,
+        "packets": [
+          {
+            "sequence": 1,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 2,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 3,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 4,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 5,
+            "fate": "reply_observed",
+            "reply_observed": true
+          }
+        ],
+        "received": 5,
+        "sent": 5,
+        "all_packets_returned": true,
+        "network_fix_validated": false
+      },
+      "capture_until": "2026-09-05T00:00:21.089000+00:00",
+      "completed_at": "2026-09-05T00:00:21.109000+00:00",
+      "command_last": 93
+    },
+    {
+      "unit_id": "trace:drop-a",
+      "window": "baseline",
+      "index": 1,
+      "identifier": 10008,
+      "started_at": "2026-09-05T00:00:21.109000+00:00",
+      "command_first": 94,
+      "metrics": {
+        "packets_transmitted": 5,
+        "packets_received": 5,
+        "packet_loss_pct": 0.0,
+        "reply_sequences": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "configured_packet_loss_pct": 0,
+        "upf_process_running": 1,
+        "stress_workers_count": 0,
+        "prometheus_targets_up_count": 3
+      },
+      "errors": [],
+      "trace": {
+        "trace_accounting_complete": true,
+        "packets": [
+          {
+            "sequence": 1,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 2,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 3,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 4,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 5,
+            "fate": "reply_observed",
+            "reply_observed": true
+          }
+        ],
+        "received": 5,
+        "sent": 5,
+        "all_packets_returned": true,
+        "network_fix_validated": false
+      },
+      "capture_until": "2026-09-05T00:00:22.184000+00:00",
+      "completed_at": "2026-09-05T00:00:22.204000+00:00",
+      "command_last": 100
+    },
+    {
+      "unit_id": "trace:drop-a",
+      "window": "baseline",
+      "index": 2,
+      "identifier": 10009,
+      "started_at": "2026-09-05T00:00:22.204000+00:00",
+      "command_first": 101,
+      "metrics": {
+        "packets_transmitted": 5,
+        "packets_received": 5,
+        "packet_loss_pct": 0.0,
+        "reply_sequences": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "configured_packet_loss_pct": 0,
+        "upf_process_running": 1,
+        "stress_workers_count": 0,
+        "prometheus_targets_up_count": 3
+      },
+      "errors": [],
+      "trace": {
+        "trace_accounting_complete": true,
+        "packets": [
+          {
+            "sequence": 1,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 2,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 3,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 4,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 5,
+            "fate": "reply_observed",
+            "reply_observed": true
+          }
+        ],
+        "received": 5,
+        "sent": 5,
+        "all_packets_returned": true,
+        "network_fix_validated": false
+      },
+      "capture_until": "2026-09-05T00:00:23.279000+00:00",
+      "completed_at": "2026-09-05T00:00:23.299000+00:00",
+      "command_last": 107
+    }
+  ],
+  "fresh_registration": true,
+  "fresh_pdu": true,
+  "exposure_started_at": "2026-09-05T00:00:23.339000+00:00",
+  "fault_transcript": "2026-09-05T00:00:23.349000+00:00\n[{\"kind\":\"netem\",\"handle\":\"7157:\",\"root\":true,\"options\":{\"loss-random\":{\"loss\":1}}}]\n2026-09-05T00:00:31.349000+00:00\n[{\"kind\":\"noqueue\",\"root\":true}]\n",
+  "exposure_completed_at": "2026-09-05T00:00:31.353000+00:00",
+  "settling_started_at": "2026-09-05T00:00:31.363000+00:00",
+  "settling_completed_at": "2026-09-05T00:00:36.363000+00:00",
+  "post": [
+    {
+      "unit_id": "trace:drop-a",
+      "window": "post",
+      "index": 0,
+      "identifier": 10010,
+      "started_at": "2026-09-05T00:00:36.363000+00:00",
+      "command_first": 114,
+      "metrics": {
+        "packets_transmitted": 5,
+        "packets_received": 4,
+        "packet_loss_pct": 20.0,
+        "reply_sequences": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "configured_packet_loss_pct": 0,
+        "upf_process_running": 1,
+        "stress_workers_count": 0,
+        "prometheus_targets_up_count": 3
+      },
+      "errors": [],
+      "trace": {
+        "trace_accounting_complete": true,
+        "packets": [
+          {
+            "sequence": 1,
+            "fate": "nas_idle_nonretention_observed",
+            "reply_observed": false
+          },
+          {
+            "sequence": 2,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 3,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 4,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 5,
+            "fate": "reply_observed",
+            "reply_observed": true
+          }
+        ],
+        "received": 4,
+        "sent": 5,
+        "all_packets_returned": false,
+        "network_fix_validated": false
+      },
+      "capture_until": "2026-09-05T00:00:37.435000+00:00",
+      "completed_at": "2026-09-05T00:00:37.455000+00:00",
+      "command_last": 120
+    },
+    {
+      "unit_id": "trace:drop-a",
+      "window": "post",
+      "index": 1,
+      "identifier": 10011,
+      "started_at": "2026-09-05T00:00:37.455000+00:00",
+      "command_first": 121,
+      "metrics": {
+        "packets_transmitted": 5,
+        "packets_received": 5,
+        "packet_loss_pct": 0.0,
+        "reply_sequences": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "configured_packet_loss_pct": 0,
+        "upf_process_running": 1,
+        "stress_workers_count": 0,
+        "prometheus_targets_up_count": 3
+      },
+      "errors": [],
+      "trace": {
+        "trace_accounting_complete": true,
+        "packets": [
+          {
+            "sequence": 1,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 2,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 3,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 4,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 5,
+            "fate": "reply_observed",
+            "reply_observed": true
+          }
+        ],
+        "received": 5,
+        "sent": 5,
+        "all_packets_returned": true,
+        "network_fix_validated": false
+      },
+      "capture_until": "2026-09-05T00:00:38.530000+00:00",
+      "completed_at": "2026-09-05T00:00:38.550000+00:00",
+      "command_last": 127
+    },
+    {
+      "unit_id": "trace:drop-a",
+      "window": "post",
+      "index": 2,
+      "identifier": 10012,
+      "started_at": "2026-09-05T00:00:38.550000+00:00",
+      "command_first": 128,
+      "metrics": {
+        "packets_transmitted": 5,
+        "packets_received": 5,
+        "packet_loss_pct": 0.0,
+        "reply_sequences": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "configured_packet_loss_pct": 0,
+        "upf_process_running": 1,
+        "stress_workers_count": 0,
+        "prometheus_targets_up_count": 3
+      },
+      "errors": [],
+      "trace": {
+        "trace_accounting_complete": true,
+        "packets": [
+          {
+            "sequence": 1,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 2,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 3,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 4,
+            "fate": "reply_observed",
+            "reply_observed": true
+          },
+          {
+            "sequence": 5,
+            "fate": "reply_observed",
+            "reply_observed": true
+          }
+        ],
+        "received": 5,
+        "sent": 5,
+        "all_packets_returned": true,
+        "network_fix_validated": false
+      },
+      "capture_until": "2026-09-05T00:00:39.625000+00:00",
+      "completed_at": "2026-09-05T00:00:39.645000+00:00",
+      "command_last": 134
+    }
+  ],
+  "service_accept_observed": true,
+  "initial_context_observed": true,
+  "trace_accounting_complete": true,
+  "recovery_15_of_15": false,
+  "final_service_restored": true,
+  "protocol_execution_valid": true,
+  "network_fix_validated": false,
+  "completed_at": "2026-09-05T00:00:43.032000+00:00"
+}

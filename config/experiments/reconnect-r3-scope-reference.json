@@ -1,0 +1,300 @@
+{
+  "reference_source": "evidence/engineering/20260905T122339Z-reconnect-r3-preflight",
+  "purpose": "Exact minimal execution configuration; no Env or private labels",
+  "containers": {
+    "safetwin5g-open5gs": {
+      "Name": "/safetwin5g-open5gs",
+      "Image": "sha256:ee78a5756bc0592772d814fbb5746ef4d97b2cf0003416c78d32d7f59a616e9a",
+      "Config": {
+        "Image": "safetwin5g/open5gs:2.7.7-318eeb49",
+        "Cmd": null,
+        "Entrypoint": [
+          "/usr/local/bin/safetwin5g-open5gs-entrypoint"
+        ],
+        "User": "",
+        "WorkingDir": "/usr/src",
+        "Labels": {
+          "com.docker.compose.project": "safetwin5g-sandbox",
+          "safetwin5g.upstream.commit": "318eeb49a7dcdff733dec60e02d9c60aefca2fb9",
+          "safetwin5g.derived.revision": null
+        }
+      },
+      "HostConfig": {
+        "CapAdd": [
+          "CAP_NET_ADMIN",
+          "CAP_NET_RAW"
+        ],
+        "CapDrop": null,
+        "Devices": [
+          {
+            "CgroupPermissions": "rwm",
+            "PathInContainer": "/dev/net/tun",
+            "PathOnHost": "/dev/net/tun"
+          }
+        ],
+        "Sysctls": {
+          "net.ipv4.ip_forward": "1"
+        },
+        "Binds": null,
+        "SecurityOpt": null,
+        "Privileged": false,
+        "PortBindings": {},
+        "NetworkMode": "safetwin5g-isolated",
+        "PidMode": "",
+        "IpcMode": "private",
+        "ReadonlyRootfs": false,
+        "RestartPolicy": {
+          "MaximumRetryCount": 0,
+          "Name": "no"
+        }
+      },
+      "Mounts": []
+    },
+    "safetwin5g-gnb": {
+      "Name": "/safetwin5g-gnb",
+      "Image": "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+      "Config": {
+        "Image": "safetwin5g/ueransim:3.3.0-6bf5a1a9",
+        "Cmd": [
+          "/opt/ueransim/bin/nr-gnb",
+          "-c",
+          "/etc/ueransim/gnb.yaml"
+        ],
+        "Entrypoint": null,
+        "User": "",
+        "WorkingDir": "/opt/ueransim",
+        "Labels": {
+          "com.docker.compose.project": "safetwin5g-sandbox",
+          "safetwin5g.upstream.commit": "6bf5a1a96aaef6ae8778b9d8b477ac6e2bbf8156",
+          "safetwin5g.derived.revision": null
+        }
+      },
+      "HostConfig": {
+        "CapAdd": null,
+        "CapDrop": null,
+        "Devices": null,
+        "Sysctls": null,
+        "Binds": [
+          "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\sandbox\\config\\ueransim\\gnb.yaml:/etc/ueransim/gnb.yaml:ro"
+        ],
+        "SecurityOpt": null,
+        "Privileged": false,
+        "PortBindings": {},
+        "NetworkMode": "safetwin5g-isolated",
+        "PidMode": "",
+        "IpcMode": "private",
+        "ReadonlyRootfs": false,
+        "RestartPolicy": {
+          "MaximumRetryCount": 0,
+          "Name": "no"
+        }
+      },
+      "Mounts": [
+        {
+          "Destination": "/etc/ueransim/gnb.yaml",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\sandbox\\config\\ueransim\\gnb.yaml",
+          "Type": "bind"
+        }
+      ]
+    },
+    "safetwin5g-ue": {
+      "Name": "/safetwin5g-ue",
+      "Image": "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+      "Config": {
+        "Image": "safetwin5g/ueransim:3.3.0-6bf5a1a9",
+        "Cmd": [
+          "/opt/ueransim/bin/nr-ue",
+          "-c",
+          "/etc/ueransim/ue.yaml"
+        ],
+        "Entrypoint": null,
+        "User": "",
+        "WorkingDir": "/opt/ueransim",
+        "Labels": {
+          "com.docker.compose.project": "safetwin5g-sandbox",
+          "safetwin5g.upstream.commit": "6bf5a1a96aaef6ae8778b9d8b477ac6e2bbf8156",
+          "safetwin5g.derived.revision": null
+        }
+      },
+      "HostConfig": {
+        "CapAdd": [
+          "CAP_NET_ADMIN",
+          "CAP_NET_RAW"
+        ],
+        "CapDrop": null,
+        "Devices": [
+          {
+            "CgroupPermissions": "rwm",
+            "PathInContainer": "/dev/net/tun",
+            "PathOnHost": "/dev/net/tun"
+          }
+        ],
+        "Sysctls": null,
+        "Binds": [
+          "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\sandbox\\config\\ueransim\\ue.yaml:/etc/ueransim/ue.yaml:ro"
+        ],
+        "SecurityOpt": null,
+        "Privileged": false,
+        "PortBindings": {},
+        "NetworkMode": "safetwin5g-isolated",
+        "PidMode": "",
+        "IpcMode": "private",
+        "ReadonlyRootfs": false,
+        "RestartPolicy": {
+          "MaximumRetryCount": 0,
+          "Name": "no"
+        }
+      },
+      "Mounts": [
+        {
+          "Destination": "/etc/ueransim/ue.yaml",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\sandbox\\config\\ueransim\\ue.yaml",
+          "Type": "bind"
+        }
+      ]
+    },
+    "safetwin5g-mongodb": {
+      "Name": "/safetwin5g-mongodb",
+      "Image": "sha256:021b2d5ae9d253f2cca17491cc8d03aed8df3c840f3252066aa62d3277fc406e",
+      "Config": {
+        "Image": "docker.io/library/mongo:8.0.29-noble@sha256:021b2d5ae9d253f2cca17491cc8d03aed8df3c840f3252066aa62d3277fc406e",
+        "Cmd": [
+          "mongod",
+          "--bind_ip_all",
+          "--quiet"
+        ],
+        "Entrypoint": [
+          "docker-entrypoint.sh"
+        ],
+        "User": "",
+        "WorkingDir": "",
+        "Labels": {
+          "com.docker.compose.project": "safetwin5g-sandbox",
+          "safetwin5g.upstream.commit": null,
+          "safetwin5g.derived.revision": null
+        }
+      },
+      "HostConfig": {
+        "CapAdd": null,
+        "CapDrop": null,
+        "Devices": null,
+        "Sysctls": null,
+        "Binds": [
+          "safetwin5g-mongodb-data:/data/db:rw",
+          "/run/desktop/mnt/host/c/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/sandbox/config/mongodb/10-subscriber.js:/docker-entrypoint-initdb.d/10-subscriber.js:ro"
+        ],
+        "SecurityOpt": null,
+        "Privileged": false,
+        "PortBindings": {},
+        "NetworkMode": "safetwin5g-isolated",
+        "PidMode": "",
+        "IpcMode": "private",
+        "ReadonlyRootfs": false,
+        "RestartPolicy": {
+          "MaximumRetryCount": 0,
+          "Name": "no"
+        }
+      },
+      "Mounts": [
+        {
+          "Destination": "/data/configdb",
+          "Driver": "local",
+          "Mode": "",
+          "Name": "6369e6d93bbba15f3fa034ca13f1647d296ef8a3243a0cc73186231f1e6eb8fd",
+          "Propagation": "",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/6369e6d93bbba15f3fa034ca13f1647d296ef8a3243a0cc73186231f1e6eb8fd/_data",
+          "Type": "volume"
+        },
+        {
+          "Destination": "/data/db",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "safetwin5g-mongodb-data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/safetwin5g-mongodb-data/_data",
+          "Type": "volume"
+        },
+        {
+          "Destination": "/docker-entrypoint-initdb.d/10-subscriber.js",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "/run/desktop/mnt/host/c/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/sandbox/config/mongodb/10-subscriber.js",
+          "Type": "bind"
+        }
+      ]
+    },
+    "safetwin5g-prometheus": {
+      "Name": "/safetwin5g-prometheus",
+      "Image": "sha256:508729e0e2d18e11fd742a5a5ca70e557b940a93948c3c95fd0123a6fd538b69",
+      "Config": {
+        "Image": "docker.io/prom/prometheus:v3.13.2@sha256:508729e0e2d18e11fd742a5a5ca70e557b940a93948c3c95fd0123a6fd538b69",
+        "Cmd": [
+          "--config.file=/etc/prometheus/prometheus.yml",
+          "--storage.tsdb.path=/prometheus",
+          "--storage.tsdb.retention.time=7d",
+          "--web.enable-lifecycle"
+        ],
+        "Entrypoint": [
+          "/bin/prometheus"
+        ],
+        "User": "nobody",
+        "WorkingDir": "/prometheus",
+        "Labels": {
+          "com.docker.compose.project": "safetwin5g-sandbox",
+          "safetwin5g.upstream.commit": null,
+          "safetwin5g.derived.revision": null
+        }
+      },
+      "HostConfig": {
+        "CapAdd": null,
+        "CapDrop": null,
+        "Devices": null,
+        "Sysctls": null,
+        "Binds": [
+          "safetwin5g-prometheus-data:/prometheus:rw",
+          "/run/desktop/mnt/host/c/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/sandbox/config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro"
+        ],
+        "SecurityOpt": null,
+        "Privileged": false,
+        "PortBindings": {},
+        "NetworkMode": "safetwin5g-isolated",
+        "PidMode": "",
+        "IpcMode": "private",
+        "ReadonlyRootfs": false,
+        "RestartPolicy": {
+          "MaximumRetryCount": 0,
+          "Name": "no"
+        }
+      },
+      "Mounts": [
+        {
+          "Destination": "/etc/prometheus/prometheus.yml",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "/run/desktop/mnt/host/c/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/sandbox/config/prometheus/prometheus.yml",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/prometheus",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "safetwin5g-prometheus-data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/safetwin5g-prometheus-data/_data",
+          "Type": "volume"
+        }
+      ]
+    }
+  }
+}

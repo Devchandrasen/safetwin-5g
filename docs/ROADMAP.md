@@ -294,9 +294,20 @@ sandbox evidence.
       `evidence/verification/20260905T112828Z-reconnect-r3-build`). The original
       mount-order audit rejection and local private raw evidence are retained;
       the Git release uses explicitly audited redaction. No image is applied.
-      Next freeze the execution runner/auditor and scoped override; measured
-      traces remain pending. No endpoint relaxation or new 675-unit campaign
-      is authorized by this build.
+      The separate execution runner, independent raw-ping/trace auditor,
+      two-service override and 74-source execution lock now pass the fixture
+      gate (`docs/RECONNECT_R3_EXECUTION.md`; 339 tests plus 122 subtests and
+      nine verification checks at
+      `evidence/verification/20260905T125506Z-reconnect-r3-execution`). Four
+      fake-transport variants preserve complete and stopped protocol cases;
+      the complete fixture replays 354 synthetic commands, 33 samples and
+      eight scope snapshots, explicitly not network evidence. Two failed
+      read-only preflights are retained with their exact source versions; the
+      corrected scope preflight passes with mutations disabled. Both running
+      UERANSIM services remain on the official image. The bounded measured R3
+      trace diagnostic is next, only after the execution gate is committed.
+      This parent recovery item remains open. No endpoint relaxation or new
+      675-unit campaign is enabled by these software checks.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
       ablations, OOD stress test, runtime/scalability evaluation, and
       independent artifact audit.

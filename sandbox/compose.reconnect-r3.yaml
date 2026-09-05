@@ -1,0 +1,6 @@
+# Instrumentation only. Both services revert through the unchanged base file.
+services:
+  ueransim-gnb:
+    image: safetwin5g/ueransim:3.3.0-reconnect-r3-trace
+  ueransim-ue:
+    image: safetwin5g/ueransim:3.3.0-reconnect-r3-trace

@@ -1,0 +1,160 @@
+{
+  "variants": {
+    "complete": {
+      "runtime_summary": {
+        "experiment_id": "safetwin5g-reconnect-r3-trace",
+        "completed_at": "2026-09-05T00:01:29.306000+00:00",
+        "completed_trials": 4,
+        "protocol_execution_valid": true,
+        "errors": [],
+        "candidate_image_applied": true,
+        "official_image_restored": true,
+        "final_service_restored": true,
+        "admission_budget_exceeded": false,
+        "evidence_label": "fixture",
+        "radio_evidence_label": "simulated",
+        "network_fix_validated": false,
+        "confirmatory_data": false,
+        "long_campaign_ready": false,
+        "TNSM_ready": false,
+        "live_actuation": false,
+        "operator_validated": false,
+        "hardware_measured": false,
+        "actual_docker_commands_executed": 0
+      },
+      "independent_replay": {
+        "audit_passed": true,
+        "execution_mode": "fixture",
+        "protocol_execution_valid": true,
+        "completed_trials": 4,
+        "commands_replayed": 354,
+        "samples_replayed": 33,
+        "scope_snapshots": 8,
+        "post_packet_counts": [
+          {
+            "trial": "trace:control-before",
+            "received": 15,
+            "sent": 15,
+            "recovery_15_of_15": true
+          },
+          {
+            "trial": "trace:drop-a",
+            "received": 14,
+            "sent": 15,
+            "recovery_15_of_15": false
+          },
+          {
+            "trial": "trace:drop-b",
+            "received": 14,
+            "sent": 15,
+            "recovery_15_of_15": false
+          },
+          {
+            "trial": "trace:control-after",
+            "received": 15,
+            "sent": 15,
+            "recovery_15_of_15": true
+          }
+        ],
+        "official_image_restored": true,
+        "network_fix_validated": false,
+        "TNSM_ready": false,
+        "evidence_label": "fixture"
+      },
+      "check_passed": true
+    },
+    "bad-baseline": {
+      "runtime_summary": {
+        "experiment_id": "safetwin5g-reconnect-r3-trace",
+        "completed_at": "2026-09-05T00:00:10.323000+00:00",
+        "completed_trials": 1,
+        "protocol_execution_valid": false,
+        "errors": [],
+        "candidate_image_applied": true,
+        "official_image_restored": true,
+        "final_service_restored": true,
+        "admission_budget_exceeded": false,
+        "evidence_label": "fixture",
+        "radio_evidence_label": "simulated",
+        "network_fix_validated": false,
+        "confirmatory_data": false,
+        "long_campaign_ready": false,
+        "TNSM_ready": false,
+        "live_actuation": false,
+        "operator_validated": false,
+        "hardware_measured": false,
+        "actual_docker_commands_executed": 0
+      },
+      "independent_replay": {
+        "audit_passed": false,
+        "error": "eight required scope snapshots",
+        "network_fix_validated": false
+      },
+      "check_passed": true
+    },
+    "incomplete-trace": {
+      "runtime_summary": {
+        "experiment_id": "safetwin5g-reconnect-r3-trace",
+        "completed_at": "2026-09-05T00:00:44.213000+00:00",
+        "completed_trials": 2,
+        "protocol_execution_valid": false,
+        "errors": [],
+        "candidate_image_applied": true,
+        "official_image_restored": true,
+        "final_service_restored": true,
+        "admission_budget_exceeded": false,
+        "evidence_label": "fixture",
+        "radio_evidence_label": "simulated",
+        "network_fix_validated": false,
+        "confirmatory_data": false,
+        "long_campaign_ready": false,
+        "TNSM_ready": false,
+        "live_actuation": false,
+        "operator_validated": false,
+        "hardware_measured": false,
+        "actual_docker_commands_executed": 0
+      },
+      "independent_replay": {
+        "audit_passed": false,
+        "error": "eight required scope snapshots",
+        "network_fix_validated": false
+      },
+      "check_passed": true
+    },
+    "failed-switch": {
+      "runtime_summary": {
+        "experiment_id": "safetwin5g-reconnect-r3-trace",
+        "completed_at": "2026-09-05T00:00:03.522000+00:00",
+        "completed_trials": 0,
+        "protocol_execution_valid": false,
+        "errors": [
+          "RuntimeError: switch-derived: exit 1"
+        ],
+        "candidate_image_applied": true,
+        "official_image_restored": true,
+        "final_service_restored": true,
+        "admission_budget_exceeded": false,
+        "evidence_label": "fixture",
+        "radio_evidence_label": "simulated",
+        "network_fix_validated": false,
+        "confirmatory_data": false,
+        "long_campaign_ready": false,
+        "TNSM_ready": false,
+        "live_actuation": false,
+        "operator_validated": false,
+        "hardware_measured": false,
+        "actual_docker_commands_executed": 0
+      },
+      "independent_replay": {
+        "audit_passed": false,
+        "error": "failed or loosened command acceptance",
+        "network_fix_validated": false
+      },
+      "check_passed": true
+    }
+  },
+  "transport": "fake-docker-no-io",
+  "actual_docker_commands_executed": 0,
+  "evidence_label": "fixture",
+  "network_fix_validated": false
+}

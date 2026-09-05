@@ -1,0 +1,273 @@
+{
+  "experiment_id": "safetwin5g-reconnect-r3-trace",
+  "inspect_format": "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"Image\":{{json .Image}},\"RestartCount\":{{json .RestartCount}},\"Mounts\":{{json .Mounts}},\"Config\":{\"Image\":{{json .Config.Image}},\"Cmd\":{{json .Config.Cmd}},\"Entrypoint\":{{json .Config.Entrypoint}},\"User\":{{json .Config.User}},\"WorkingDir\":{{json .Config.WorkingDir}},\"Labels\":{\"com.docker.compose.project\":{{json (index .Config.Labels \"com.docker.compose.project\")}},\"safetwin5g.upstream.commit\":{{json (index .Config.Labels \"safetwin5g.upstream.commit\")}},\"safetwin5g.derived.revision\":{{json (index .Config.Labels \"safetwin5g.derived.revision\")}}}},\"HostConfig\":{\"CapAdd\":{{json (index .HostConfig \"CapAdd\")}},\"CapDrop\":{{json (index .HostConfig \"CapDrop\")}},\"Devices\":{{json (index .HostConfig \"Devices\")}},\"Sysctls\":{{json (index .HostConfig \"Sysctls\")}},\"Binds\":{{json (index .HostConfig \"Binds\")}},\"SecurityOpt\":{{json (index .HostConfig \"SecurityOpt\")}},\"Privileged\":{{json (index .HostConfig \"Privileged\")}},\"PortBindings\":{{json (index .HostConfig \"PortBindings\")}},\"NetworkMode\":{{json (index .HostConfig \"NetworkMode\")}},\"PidMode\":{{json (index .HostConfig \"PidMode\")}},\"IpcMode\":{{json (index .HostConfig \"IpcMode\")}},\"ReadonlyRootfs\":{{json (index .HostConfig \"ReadonlyRootfs\")}},\"RestartPolicy\":{{json (index .HostConfig \"RestartPolicy\")}}},\"NetworkSettings\":{\"Networks\":{{json .NetworkSettings.Networks}}},\"State\":{\"StartedAt\":{{json .State.StartedAt}},\"Running\":{{json .State.Running}},\"Health\":{\"Status\":{{json .State.Health.Status}}}}}",
+  "fixed_commands": {
+    "repository-head": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "docker-version": [
+      "docker",
+      "version",
+      "--format",
+      "{{json .Server}}"
+    ],
+    "compose-base": [
+      "docker",
+      "compose",
+      "-f",
+      "sandbox/compose.yaml",
+      "config",
+      "--format",
+      "json"
+    ],
+    "compose-derived": [
+      "docker",
+      "compose",
+      "-f",
+      "sandbox/compose.yaml",
+      "-f",
+      "sandbox/compose.reconnect-r3.yaml",
+      "config",
+      "--format",
+      "json"
+    ],
+    "switch-derived": [
+      "docker",
+      "compose",
+      "-f",
+      "sandbox/compose.yaml",
+      "-f",
+      "sandbox/compose.reconnect-r3.yaml",
+      "up",
+      "-d",
+      "--no-deps",
+      "--no-build",
+      "--pull",
+      "never",
+      "--force-recreate",
+      "ueransim-gnb",
+      "ueransim-ue"
+    ],
+    "switch-official": [
+      "docker",
+      "compose",
+      "-f",
+      "sandbox/compose.yaml",
+      "up",
+      "-d",
+      "--no-deps",
+      "--no-build",
+      "--pull",
+      "never",
+      "--force-recreate",
+      "ueransim-gnb",
+      "ueransim-ue"
+    ],
+    "ping-help": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "ping",
+      "-h"
+    ],
+    "bounded-link-drop": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "timeout",
+      "15",
+      "sh",
+      "-lc",
+      "set -eu\nowned=0\ncleanup() {\n    if [ \"$owned\" = 1 ]; then\n        tc qdisc del dev eth0 root handle 7157:\n        date -u +%Y-%m-%dT%H:%M:%S.%NZ\n        tc -j qdisc show dev eth0\n    fi\n}\ntrap cleanup EXIT\ntrap 'exit 130' INT TERM HUP\ntc qdisc add dev eth0 root handle 7157: netem loss 100%\nowned=1\ndate -u +%Y-%m-%dT%H:%M:%S.%NZ\ntc -j qdisc show dev eth0\nsleep 8\n"
+    ],
+    "control-wait": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "sleep",
+      "8"
+    ],
+    "sample-qdisc": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "tc",
+      "-j",
+      "qdisc",
+      "show",
+      "dev",
+      "uesimtun0"
+    ],
+    "upf-state": [
+      "docker",
+      "exec",
+      "safetwin5g-open5gs",
+      "sh",
+      "-lc",
+      "pid=$(pgrep -x open5gs-upfd); ps -o stat= -p \"$pid\""
+    ],
+    "stress-workers": [
+      "docker",
+      "exec",
+      "safetwin5g-open5gs",
+      "sh",
+      "-lc",
+      "pgrep -x yes || true"
+    ],
+    "targets": [
+      "docker",
+      "exec",
+      "safetwin5g-open5gs",
+      "curl",
+      "--fail",
+      "--silent",
+      "http://10.53.0.6:9090/api/v1/targets"
+    ],
+    "emergency-clear-owned-qdisc": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "tc",
+      "qdisc",
+      "del",
+      "dev",
+      "eth0",
+      "root",
+      "handle",
+      "7157:"
+    ],
+    "preflight-eth0": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "tc",
+      "-j",
+      "qdisc",
+      "show",
+      "dev",
+      "eth0"
+    ],
+    "preparation-eth0": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "tc",
+      "-j",
+      "qdisc",
+      "show",
+      "dev",
+      "eth0"
+    ],
+    "baseline-eth0": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "tc",
+      "-j",
+      "qdisc",
+      "show",
+      "dev",
+      "eth0"
+    ],
+    "post-exposure-eth0": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "tc",
+      "-j",
+      "qdisc",
+      "show",
+      "dev",
+      "eth0"
+    ],
+    "rollback-inspect-eth0": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "tc",
+      "-j",
+      "qdisc",
+      "show",
+      "dev",
+      "eth0"
+    ],
+    "rollback-verify-eth0": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "tc",
+      "-j",
+      "qdisc",
+      "show",
+      "dev",
+      "eth0"
+    ],
+    "restore-ue-eth0": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "tc",
+      "-j",
+      "qdisc",
+      "show",
+      "dev",
+      "eth0"
+    ],
+    "restore-full-eth0": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "tc",
+      "-j",
+      "qdisc",
+      "show",
+      "dev",
+      "eth0"
+    ],
+    "final-eth0": [
+      "docker",
+      "exec",
+      "safetwin5g-ue",
+      "tc",
+      "-j",
+      "qdisc",
+      "show",
+      "dev",
+      "eth0"
+    ],
+    "official-image": [
+      "docker",
+      "image",
+      "inspect",
+      "--format",
+      "{{.Id}}",
+      "safetwin5g/ueransim:3.3.0-6bf5a1a9"
+    ],
+    "switch-official-image": [
+      "docker",
+      "image",
+      "inspect",
+      "--format",
+      "{{.Id}}",
+      "safetwin5g/ueransim:3.3.0-6bf5a1a9"
+    ],
+    "derived-image": [
+      "docker",
+      "image",
+      "inspect",
+      "--format",
+      "{{.Id}}",
+      "safetwin5g/ueransim:3.3.0-reconnect-r3-trace"
+    ],
+    "switch-derived-image": [
+      "docker",
+      "image",
+      "inspect",
+      "--format",
+      "{{.Id}}",
+      "safetwin5g/ueransim:3.3.0-reconnect-r3-trace"
+    ]
+  }
+}

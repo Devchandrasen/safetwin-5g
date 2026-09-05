@@ -106,7 +106,14 @@ instrumented diagnostic now has a [verified prebuild source freeze](docs/RECONNE
 The [R3 image build](docs/RECONNECT_R3_BUILD_DECISION.md) now passes real-header
 compilation and a versioned independent audit (306 tests plus 32 subtests).
 It has not been applied to a running service. The measured trace gate is still
-pending; no new long campaign is running.
+pending; no new long campaign is running. The separate
+[R3 execution contract](docs/RECONNECT_R3_EXECUTION.md) is now fixture-verified
+with 339 tests and 122 subtests. An independent replay covers 354 synthetic
+commands, 33 samples and eight scope snapshots; negative fixtures check failed
+baseline, missing trace and partial image-switch rollback. Two earlier
+read-only preflight failures and their source versions remain retained; the
+corrected preflight passes with mutations disabled. These are implementation
+checks, not a measured R3 network result or recovery validation.
 
 Environment Deviation D1 records six unrelated containers that appeared on
 separate Docker networks during the run. No network overlap was observed, but
