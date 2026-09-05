@@ -1,0 +1,40 @@
+{
+  "sequence": 1,
+  "argv": [
+    "powershell.exe",
+    "-NoProfile",
+    "-NonInteractive",
+    "-Command",
+    "Get-CimInstance Win32_Process | Where-Object { $_.Name -match '^python(?:w)?(?:[.]exe)?$' -and $_.ProcessId -ne 29064 -and $_.CommandLine -match 'run_(?:phase7|recovery_pilot|reconnect(?:_r[234])?)[.]py' } | Select-Object -ExpandProperty ProcessId"
+  ],
+  "timeout_seconds": 35,
+  "max_output_bytes": 1048576,
+  "wall_start_ns": 1788635688297129000,
+  "monotonic_start_ns": 1229127838794900,
+  "timed_out": false,
+  "truncated": false,
+  "capture_error": null,
+  "job_assigned_before_go": true,
+  "launcher_go_sent": true,
+  "reader_threads_joined": true,
+  "process_reaped": true,
+  "cleanup_grace_seconds": 2,
+  "monotonic_clock": {
+    "api": "perf_counter_ns",
+    "implementation": "QueryPerformanceCounter()",
+    "monotonic": true,
+    "adjustable": false,
+    "resolution": 1e-07
+  },
+  "owned_launcher_pid": 14280,
+  "returncode": 0,
+  "stdout_base64": "",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout": "",
+  "stderr_base64": "",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr": "",
+  "retained_output_bytes": 0,
+  "wall_end_ns": 1788635688756627800,
+  "monotonic_end_ns": 1229128297744200
+}

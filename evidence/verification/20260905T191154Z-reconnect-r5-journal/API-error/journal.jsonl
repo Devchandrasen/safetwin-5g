@@ -1,0 +1,11 @@
+{"kind": "header", "contract_id": "safetwin5g-reconnect-r5-journal-v1", "descriptor": {"clock_id": "11111111111111111111111111111111", "counter_api": "QueryPerformanceCounter", "utc_api": "GetSystemTimePreciseAsFileTime", "frequency_hz": 10000000, "python": {"implementation": "cpython", "version": [3, 12, 10]}, "python_executable_sha256": "2222222222222222222222222222222222222222222222222222222222222222", "windows": {"major": 10, "minor": 0, "build": 26100}, "pointer_bits": 64, "owner_pid": 37512, "utc_read_allowance_ns": 1000}, "admission_point_limit": 768, "reserved_cleanup_points": 256, "max_points": 1024, "event": 1}
+{"kind": "point", "label": "normal:0", "cleanup": false, "point": {"sequence": 1, "clock_id": "11111111111111111111111111111111", "qpc_before_ticks": 1000000000, "qpc_after_ticks": 1000000020, "filetime_low": 2122924042, "filetime_high": 31276233, "utc_ns": 1788566400000001000, "capture_error": null}, "event": 2}
+{"kind": "point", "label": "normal:1", "cleanup": false, "point": {"sequence": 2, "clock_id": "11111111111111111111111111111111", "qpc_before_ticks": 1010000000, "qpc_after_ticks": 1010000020, "filetime_low": 2132924042, "filetime_high": 31276233, "utc_ns": 1788566401000001000, "capture_error": null}, "event": 3}
+{"kind": "source-error", "label": "normal:2", "cleanup": false, "error": "OSError: fixture source unavailable after consuming sequence", "event": 4}
+{"kind": "blocked", "label": "normal:3", "cleanup": false, "reason": "capture-source-unavailable", "event": 5}
+{"kind": "blocked", "label": "cleanup:first:before", "cleanup": true, "reason": "capture-source-unavailable", "event": 6}
+{"kind": "blocked", "label": "cleanup:first:after", "cleanup": true, "reason": "capture-source-unavailable", "event": 7}
+{"kind": "blocked", "label": "cleanup:second:before", "cleanup": true, "reason": "capture-source-unavailable", "event": 8}
+{"kind": "blocked", "label": "cleanup:second:after", "cleanup": true, "reason": "capture-source-unavailable", "event": 9}
+{"kind": "blocked", "label": "cleanup:third:before", "cleanup": true, "reason": "capture-source-unavailable", "event": 10}
+{"kind": "blocked", "label": "cleanup:third:after", "cleanup": true, "reason": "capture-source-unavailable", "event": 11}

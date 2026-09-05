@@ -1,0 +1,112 @@
+{
+  "observation_audit_passed": true,
+  "original": {
+    "observation_audit_passed": true,
+    "protocol_execution_valid": false,
+    "commands_replayed": 55,
+    "samples_replayed": 0,
+    "attempted_assignments": 1,
+    "valid_completed_assignments": 0,
+    "official_image_restored": false,
+    "final_service_restored": false,
+    "evidence_label": "sandbox-measured",
+    "network_fix_validated": false,
+    "TNSM_ready": false
+  },
+  "actual_docker_commands": 54,
+  "original_clock_flags": [
+    {
+      "sequence": 25,
+      "name": "trial-scope-containers",
+      "capture_error": "observed host inter-command clock step",
+      "inter_command_residual_ns": -1096800
+    },
+    {
+      "sequence": 36,
+      "name": "switch-official-verified-containers",
+      "capture_error": "observed host inter-command clock step",
+      "inter_command_residual_ns": -2510000
+    },
+    {
+      "sequence": 51,
+      "name": "health-safetwin5g-ue",
+      "capture_error": "observed host inter-command clock step",
+      "inter_command_residual_ns": -3520700
+    }
+  ],
+  "later_service": {
+    "observation_audit_passed": true,
+    "commands_replayed": 18,
+    "scopes_replayed": 2,
+    "packets_received": 15,
+    "packets_transmitted": 15,
+    "source_ip": "10.45.0.2",
+    "identities": [
+      {
+        "Id": "ba6d082e924c6ea6ed50fe98909fe1bd9f8efcd880e87cd58c8e1fb663071cda",
+        "Name": "/safetwin5g-ue",
+        "Image": "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+        "RestartCount": 0,
+        "StartedAt": "2026-09-05T17:02:26.645164304Z",
+        "Running": true,
+        "LogConfig": {
+          "Config": {},
+          "Type": "json-file"
+        }
+      },
+      {
+        "Id": "687b3efdae32e2ce9dac190e1c692e0b01c0a74b037fa18c15c7535ead299305",
+        "Name": "/safetwin5g-gnb",
+        "Image": "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+        "RestartCount": 0,
+        "StartedAt": "2026-09-05T17:02:19.509675796Z",
+        "Running": true,
+        "LogConfig": {
+          "Config": {},
+          "Type": "json-file"
+        }
+      }
+    ],
+    "fresh_PDU_log_markers": [
+      "2026-09-05T17:02:26.784963714Z [2026-09-05 17:02:26.784] [nas] [info] Initial Registration is successful",
+      "2026-09-05T17:02:26.995445290Z [2026-09-05 17:02:26.995] [nas] [info] PDU Session establishment is successful PSI[1]",
+      "2026-09-05T17:02:27.001257308Z [2026-09-05 17:02:27.001] [app] [info] Connection setup for PDU session[1] is successful, TUN interface[uesimtun0, 10.45.0.2] is up."
+    ],
+    "original_R4_verdict_unchanged": true,
+    "R4_clock_consistency_accepted": false,
+    "protocol_execution_valid": false,
+    "network_fix_validated": false,
+    "TNSM_ready": false,
+    "evidence_label": "sandbox-measured",
+    "radio_evidence_label": "simulated"
+  },
+  "later_clock_probe": {
+    "observation_audit_passed": true,
+    "samples": 1000,
+    "clock_info": {
+      "implementation": "GetSystemTimeAsFileTime()",
+      "monotonic": false,
+      "adjustable": true,
+      "resolution": 0.015625
+    },
+    "comparisons": {
+      "python_wall": {
+        "pairs": 999,
+        "beyond_1ms": 0,
+        "max_disagreement_ns": 288400
+      },
+      "precise_UTC": {
+        "pairs": 999,
+        "beyond_1ms": 0,
+        "max_disagreement_ns": 0
+      }
+    },
+    "historical_R4_clock_step_proven": false,
+    "historical_timestamps_repaired": false,
+    "observed_resolution_does_not_prove_historical_cause": true,
+    "network_fix_validated": false
+  },
+  "protocol_execution_valid": false,
+  "network_fix_validated": false,
+  "TNSM_ready": false
+}

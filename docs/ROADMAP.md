@@ -355,6 +355,14 @@ sandbox evidence.
       pytest-name failure and exact pre-correction sources are preserved.
       Next is a separate R5 execution-integration fixture gate, preserving all
       approval, capture, source, telemetry and official rollback requirements.
+      Its first clock-journal component now passes, but the full integration
+      remains pending (`docs/RECONNECT_R5_JOURNAL_DECISION.md`; 563 tests,
+      200 subtests, 21 checks and ten independently replayed synthetic cases at
+      `evidence/verification/20260905T191336Z-reconnect-r5-journal`). This adds
+      a nonrenewable 256-point cleanup reserve, incremental all-pair checks
+      and exception-isolated no-I/O cleanup callbacks. It does not implement
+      command containment, actual official rollback or whole-protocol replay.
+      No network trial, packet probe or sleep-inhibition request ran.
       This parent recovery item remains open.
       No R3/R4 rerun, endpoint relaxation, model promotion or new 675-unit
       campaign follows from observation integrity or later service recovery.

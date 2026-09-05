@@ -1,0 +1,403 @@
+{
+  "verification_passed": true,
+  "development_only": false,
+  "checks": {
+    "committed-clock-and-journal-lock": {
+      "passed": true,
+      "result": {
+        "lock_id": "safetwin5g-reconnect-r5-journal-v1",
+        "source_sha256": {
+          "sandbox/reconnect_r5_journal.py": "1948ce9465b92217675c884bf61eb0093a79fd47df596a0181391d4e54b55ec1",
+          "tools/audit_reconnect_r5_journal.py": "575e2ab5462366045a5bb60ae3c051ba38315f9e20f445c7539e31449de40ee6",
+          "tests/test_reconnect_r5_journal.py": "b53c1585ddb7508f75bacba20bbb32b9e1084e3d2419441152c09daba5d101d6",
+          "tools/verify_reconnect_r5_journal.py": "9497027be1a5c3e49cf78054d4d4e6ce888a661b1cc4a338b975a947a1bd2b7b",
+          "docs/RECONNECT_R5_JOURNAL.md": "a4519c9eede37a286572fffff5abcd8adf77ee8062a7bfc493b96929386db06b"
+        },
+        "immutable_clock_lock_sha256": "0e2b17156f3aab4d1b9fa8bdf48727561ea1f10051291746e754ac86009c6cf4",
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false
+      }
+    },
+    "environment-before": {
+      "passed": true,
+      "states": {
+        "safetwin5g-open5gs": {
+          "Id": "6e6b340a37e6de6426cd2829f5eabe8fd63f323619cc093a3557fc5a16ac9256",
+          "Image": "sha256:ee78a5756bc0592772d814fbb5746ef4d97b2cf0003416c78d32d7f59a616e9a",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T17:02:12.435765187Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        },
+        "safetwin5g-gnb": {
+          "Id": "687b3efdae32e2ce9dac190e1c692e0b01c0a74b037fa18c15c7535ead299305",
+          "Image": "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T17:02:19.509675796Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        },
+        "safetwin5g-ue": {
+          "Id": "ba6d082e924c6ea6ed50fe98909fe1bd9f8efcd880e87cd58c8e1fb663071cda",
+          "Image": "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T17:02:26.645164304Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        },
+        "safetwin5g-mongodb": {
+          "Id": "5514b44b708bb5cbde9b911a4698ece3abf219a01767beff06f060078326c1a9",
+          "Image": "sha256:021b2d5ae9d253f2cca17491cc8d03aed8df3c840f3252066aa62d3277fc406e",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T01:52:34.105334659Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        },
+        "safetwin5g-prometheus": {
+          "Id": "d6958d142a6d2f1f258c5bd6c634817ef9e10b9b39fd24d78b13daab39c13085",
+          "Image": "sha256:508729e0e2d18e11fd742a5a5ca70e557b940a93948c3c95fd0123a6fd538b69",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T01:52:50.469333517Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        }
+      }
+    },
+    "tests": {
+      "passed": true,
+      "exit_code": 0,
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "started_at": "2026-09-05T19:13:38.728750+00:00",
+      "completed_at": "2026-09-05T19:14:28.995888+00:00"
+    },
+    "r4-committed-execution-lock": {
+      "passed": true,
+      "exit_code": 0,
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-c",
+        "from sandbox.run_reconnect_r4 import verify_lock; print(len(verify_lock(committed=True)[0]['source_sha256']))"
+      ],
+      "started_at": "2026-09-05T19:14:28.995888+00:00",
+      "completed_at": "2026-09-05T19:14:32.836812+00:00"
+    },
+    "r4-negative-observation": {
+      "passed": true,
+      "exit_code": 0,
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "tools.audit_reconnect_r4_observation"
+      ],
+      "started_at": "2026-09-05T19:14:32.836812+00:00",
+      "completed_at": "2026-09-05T19:14:32.980081+00:00"
+    },
+    "r3-build-audit": {
+      "passed": true,
+      "exit_code": 0,
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r3_build_v2.py",
+        "--run",
+        "evidence/engineering/20260905T111542Z-reconnect-r3-build-release"
+      ],
+      "started_at": "2026-09-05T19:14:32.980081+00:00",
+      "completed_at": "2026-09-05T19:14:33.142516+00:00"
+    },
+    "statistical-lock": {
+      "passed": true,
+      "exit_code": 0,
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-c",
+        "from tools.run_phase7_analysis import verify_analysis_lock; print(verify_analysis_lock()['lock_id'])"
+      ],
+      "started_at": "2026-09-05T19:14:33.142516+00:00",
+      "completed_at": "2026-09-05T19:14:33.319048+00:00"
+    },
+    "fixture-complete": {
+      "passed": true,
+      "result": {
+        "points": 10,
+        "admission_open": true,
+        "all_cleanup_callbacks_attempted": true,
+        "clock_capture_valid": true
+      }
+    },
+    "fixture-step": {
+      "passed": true,
+      "result": {
+        "points": 9,
+        "admission_open": false,
+        "all_cleanup_callbacks_attempted": true,
+        "clock_capture_valid": false
+      }
+    },
+    "fixture-ambiguous": {
+      "passed": true,
+      "result": {
+        "points": 9,
+        "admission_open": false,
+        "all_cleanup_callbacks_attempted": true,
+        "clock_capture_valid": false
+      }
+    },
+    "fixture-wide": {
+      "passed": true,
+      "result": {
+        "points": 9,
+        "admission_open": false,
+        "all_cleanup_callbacks_attempted": true,
+        "clock_capture_valid": false
+      }
+    },
+    "fixture-partial": {
+      "passed": true,
+      "result": {
+        "points": 9,
+        "admission_open": false,
+        "all_cleanup_callbacks_attempted": true,
+        "clock_capture_valid": false
+      }
+    },
+    "fixture-wrong-domain": {
+      "passed": true,
+      "result": {
+        "points": 9,
+        "admission_open": false,
+        "all_cleanup_callbacks_attempted": true,
+        "clock_capture_valid": false
+      }
+    },
+    "fixture-API-error": {
+      "passed": true,
+      "result": {
+        "points": 2,
+        "admission_open": false,
+        "all_cleanup_callbacks_attempted": true,
+        "clock_capture_valid": true
+      }
+    },
+    "fixture-reserve": {
+      "passed": true,
+      "result": {
+        "points": 774,
+        "admission_open": false,
+        "all_cleanup_callbacks_attempted": true,
+        "clock_capture_valid": true
+      }
+    },
+    "fixture-exhaustion": {
+      "passed": true,
+      "result": {
+        "points": 1024,
+        "admission_open": false,
+        "all_cleanup_callbacks_attempted": true,
+        "clock_capture_valid": true
+      }
+    },
+    "fixture-callback-error": {
+      "passed": true,
+      "result": {
+        "points": 10,
+        "admission_open": true,
+        "all_cleanup_callbacks_attempted": true,
+        "clock_capture_valid": true
+      }
+    },
+    "environment-after": {
+      "passed": true,
+      "states": {
+        "safetwin5g-open5gs": {
+          "Id": "6e6b340a37e6de6426cd2829f5eabe8fd63f323619cc093a3557fc5a16ac9256",
+          "Image": "sha256:ee78a5756bc0592772d814fbb5746ef4d97b2cf0003416c78d32d7f59a616e9a",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T17:02:12.435765187Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        },
+        "safetwin5g-gnb": {
+          "Id": "687b3efdae32e2ce9dac190e1c692e0b01c0a74b037fa18c15c7535ead299305",
+          "Image": "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T17:02:19.509675796Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        },
+        "safetwin5g-ue": {
+          "Id": "ba6d082e924c6ea6ed50fe98909fe1bd9f8efcd880e87cd58c8e1fb663071cda",
+          "Image": "sha256:13705fc29922cf019e8c7992b5b04b9c6c584d3848d29689f1d3db64334ae725",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T17:02:26.645164304Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        },
+        "safetwin5g-mongodb": {
+          "Id": "5514b44b708bb5cbde9b911a4698ece3abf219a01767beff06f060078326c1a9",
+          "Image": "sha256:021b2d5ae9d253f2cca17491cc8d03aed8df3c840f3252066aa62d3277fc406e",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T01:52:34.105334659Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        },
+        "safetwin5g-prometheus": {
+          "Id": "d6958d142a6d2f1f258c5bd6c634817ef9e10b9b39fd24d78b13daab39c13085",
+          "Image": "sha256:508729e0e2d18e11fd742a5a5ca70e557b940a93948c3c95fd0123a6fd538b69",
+          "RestartCount": 0,
+          "State": {
+            "StartedAt": "2026-09-05T01:52:50.469333517Z",
+            "Running": true,
+            "Health": {
+              "Status": "healthy"
+            }
+          }
+        }
+      }
+    },
+    "unchanged-official-identities": {
+      "passed": true
+    },
+    "source-lock-after": {
+      "passed": true,
+      "result": {
+        "lock_id": "safetwin5g-reconnect-r5-journal-v1",
+        "source_sha256": {
+          "sandbox/reconnect_r5_journal.py": "1948ce9465b92217675c884bf61eb0093a79fd47df596a0181391d4e54b55ec1",
+          "tools/audit_reconnect_r5_journal.py": "575e2ab5462366045a5bb60ae3c051ba38315f9e20f445c7539e31449de40ee6",
+          "tests/test_reconnect_r5_journal.py": "b53c1585ddb7508f75bacba20bbb32b9e1084e3d2419441152c09daba5d101d6",
+          "tools/verify_reconnect_r5_journal.py": "9497027be1a5c3e49cf78054d4d4e6ce888a661b1cc4a338b975a947a1bd2b7b",
+          "docs/RECONNECT_R5_JOURNAL.md": "a4519c9eede37a286572fffff5abcd8adf77ee8062a7bfc493b96929386db06b"
+        },
+        "immutable_clock_lock_sha256": "0e2b17156f3aab4d1b9fa8bdf48727561ea1f10051291746e754ac86009c6cf4",
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false
+      }
+    },
+    "captured-source-equality": {
+      "passed": true,
+      "result": true
+    }
+  },
+  "cases": {
+    "complete": {
+      "points": 10,
+      "admission_open": true,
+      "all_cleanup_callbacks_attempted": true,
+      "clock_capture_valid": true
+    },
+    "step": {
+      "points": 9,
+      "admission_open": false,
+      "all_cleanup_callbacks_attempted": true,
+      "clock_capture_valid": false
+    },
+    "ambiguous": {
+      "points": 9,
+      "admission_open": false,
+      "all_cleanup_callbacks_attempted": true,
+      "clock_capture_valid": false
+    },
+    "wide": {
+      "points": 9,
+      "admission_open": false,
+      "all_cleanup_callbacks_attempted": true,
+      "clock_capture_valid": false
+    },
+    "partial": {
+      "points": 9,
+      "admission_open": false,
+      "all_cleanup_callbacks_attempted": true,
+      "clock_capture_valid": false
+    },
+    "wrong-domain": {
+      "points": 9,
+      "admission_open": false,
+      "all_cleanup_callbacks_attempted": true,
+      "clock_capture_valid": false
+    },
+    "API-error": {
+      "points": 2,
+      "admission_open": false,
+      "all_cleanup_callbacks_attempted": true,
+      "clock_capture_valid": true
+    },
+    "reserve": {
+      "points": 774,
+      "admission_open": false,
+      "all_cleanup_callbacks_attempted": true,
+      "clock_capture_valid": true
+    },
+    "exhaustion": {
+      "points": 1024,
+      "admission_open": false,
+      "all_cleanup_callbacks_attempted": true,
+      "clock_capture_valid": true
+    },
+    "callback-error": {
+      "points": 10,
+      "admission_open": true,
+      "all_cleanup_callbacks_attempted": true,
+      "clock_capture_valid": true
+    }
+  },
+  "source_sha256": {
+    "sandbox/reconnect_r5_journal.py": "1948ce9465b92217675c884bf61eb0093a79fd47df596a0181391d4e54b55ec1",
+    "tools/audit_reconnect_r5_journal.py": "575e2ab5462366045a5bb60ae3c051ba38315f9e20f445c7539e31449de40ee6",
+    "tests/test_reconnect_r5_journal.py": "b53c1585ddb7508f75bacba20bbb32b9e1084e3d2419441152c09daba5d101d6",
+    "tools/verify_reconnect_r5_journal.py": "9497027be1a5c3e49cf78054d4d4e6ce888a661b1cc4a338b975a947a1bd2b7b",
+    "docs/RECONNECT_R5_JOURNAL.md": "a4519c9eede37a286572fffff5abcd8adf77ee8062a7bfc493b96929386db06b",
+    "config/experiments/reconnect-r5-journal-lock.json": "a2c000563b7b9674369968fd861e0b02d11896e847bfbb70d25c0e7063abe67b"
+  },
+  "evidence_label": "fixture",
+  "measurement_scope": "clock-journal-component-only",
+  "network_trials_executed": 0,
+  "actual_sleep_inhibition_requested": false,
+  "native_clock_probe_repeated": false,
+  "network_execution_authorized": false,
+  "command_containment_verified": false,
+  "whole_protocol_verified": false,
+  "service_restored": false,
+  "network_fix_validated": false,
+  "TNSM_ready": false
+}

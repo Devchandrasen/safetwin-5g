@@ -153,6 +153,11 @@ separate 64-read native local-host clock observation. It is not integrated
 with a network runner and does not prove R4's historical cause or recovery.
 Next is the separately frozen R5 execution-integration fixture gate. The parent
 recovery gate and TNSM disposition remain open/no-go respectively.
+The first [R5 clock-journal component](docs/RECONNECT_R5_JOURNAL_DECISION.md)
+now passes 563 tests, 200 subtests and 21 checks, with ten retained synthetic
+cases. It reserves clock capacity for cleanup and verifies exception-isolated
+no-I/O callbacks; it does not implement the new bounded command runner or
+prove official rollback. Full execution integration remains pending.
 No new long campaign or TNSM-readiness claim is enabled.
 
 Environment Deviation D1 records six unrelated containers that appeared on
