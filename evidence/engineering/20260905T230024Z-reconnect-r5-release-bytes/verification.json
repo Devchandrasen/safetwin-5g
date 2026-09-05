@@ -1,0 +1,56 @@
+{
+  "verification_passed": true,
+  "expected_pre_correction_failure": false,
+  "commands": {
+    "attributes": {
+      "argv": [
+        "git",
+        "check-attr",
+        "text",
+        "eol",
+        "--",
+        "evidence/verification/20260905T224659Z-reconnect-r5-collection/tests.stdout.log",
+        "evidence/verification/20260905T224927Z-reconnect-r5-collection/before-containers.json"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-09-05T23:00:28.831762+00:00",
+      "completed_at": "2026-09-05T23:00:28.875817+00:00"
+    },
+    "release-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r4_release.py"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-09-05T23:00:28.875817+00:00",
+      "completed_at": "2026-09-05T23:00:38.373453+00:00"
+    },
+    "tests": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-09-05T23:00:38.373453+00:00",
+      "completed_at": "2026-09-05T23:02:15.795508+00:00"
+    }
+  },
+  "mismatches": {},
+  "staged_files": 127,
+  "source_sha256": {
+    "sandbox/reconnect_r5_collection.py": "318e1cf29ada719a8b62d6e936e314e8540db679581ff8c237dc085513f618b2",
+    "tools/audit_reconnect_r5_collection.py": "2c03a0082013e4e1c62b7fad8f4265566275d696315b5a76cef752619cc675e8",
+    "tests/test_reconnect_r5_collection.py": "b84276c09e3c53076e024171c9cc3a5e8fe724442eda7fe0d2d75321cbb027a0",
+    "tools/verify_reconnect_r5_collection.py": "dd391d328d1b37a64ba92e6a33e667e327fd843367b02d6ebef6bdb078afe2a3",
+    "docs/RECONNECT_R5_COLLECTION.md": "a8b9c1fd89ddcd788df8e3bc78e33a75d8847ec98b2a3feda528b00426f7b281",
+    "config/experiments/reconnect-r5-collection-lock.json": "3f10ad67b9b2af7b643f8c3fe4bf33084a99f71827b9dbabb6e81d02de0cf352",
+    ".gitattributes": "baa1abc5daea395b6f2fadce73ced7baa7e0a7a26f2c82b6d775698356c6aa99",
+    "tools/audit_reconnect_r5_collection_release.py": "bf4fa0d10723ad4abd2c292a3cdae4ee1a89967201d9ff9e923bb189d0b5fe04",
+    "tools/verify_reconnect_r5_release_bytes.py": "e0f1b4fab2c0c5b4cc8a87950f39842b78292479405b565b8590412ad8269b0d"
+  },
+  "evidence_label": "fixture",
+  "network_trials_executed": 0,
+  "network_fix_validated": false
+}

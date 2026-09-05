@@ -167,8 +167,13 @@ that checkpoint. The separate [R5 host component](docs/RECONNECT_R5_HOST_DECISIO
 now passes 649 tests, 200 subtests and 36 checks, with 27 retained synthetic
 host/power cases. Its persistent attempt receipt, same-domain admission and
 independent owned-handle cleanup remain fixture evidence, not measured sleep
-inhibition or service recovery. Collector/runner integration, complete point
-inventory and independent whole-protocol rollback validation remain pending.
+inhibition or service recovery. The separate
+[R5 collector component](docs/RECONNECT_R5_COLLECTION_DECISION.md) now passes
+713 tests, 200 subtests and 47 checks with 38 synthetic cases. Durable unique
+packet reservations, exact-prefix accounting and same-clock window closure
+remain fixture evidence. Failed durability and incomplete packets are not
+positive recovery. A complete window needs 16 new points; the full four-trial
+inventory, runner and independent whole-protocol rollback gate remain pending.
 No new long campaign or TNSM-readiness claim is enabled.
 
 Environment Deviation D1 records six unrelated containers that appeared on

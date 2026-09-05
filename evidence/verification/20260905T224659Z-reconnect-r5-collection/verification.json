@@ -1,0 +1,5260 @@
+{
+  "verification_passed": true,
+  "development_only": true,
+  "checks": {
+    "tests": {
+      "passed": true,
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_reconnect_r5_collection.py"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-09-05T22:46:59.271560+00:00",
+      "completed_at": "2026-09-05T22:47:12.745428+00:00"
+    },
+    "fixture-complete": {
+      "passed": true
+    },
+    "fixture-positive-skew": {
+      "passed": true
+    },
+    "fixture-negative-skew": {
+      "passed": true
+    },
+    "fixture-first-idle-loss": {
+      "passed": true
+    },
+    "fixture-source-ineligible": {
+      "passed": true
+    },
+    "fixture-official-source-3": {
+      "passed": true
+    },
+    "fixture-missing-first-trace": {
+      "passed": true
+    },
+    "fixture-saturated-log": {
+      "passed": true
+    },
+    "fixture-empty-prefix": {
+      "passed": true
+    },
+    "fixture-prefix-lost": {
+      "passed": true
+    },
+    "fixture-reused-prefix-id": {
+      "passed": true
+    },
+    "fixture-foreign-packet": {
+      "passed": true
+    },
+    "fixture-wrong-image": {
+      "passed": true
+    },
+    "fixture-restarted": {
+      "passed": true
+    },
+    "fixture-official-trace": {
+      "passed": true
+    },
+    "fixture-source-step": {
+      "passed": true
+    },
+    "fixture-source-precision": {
+      "passed": true
+    },
+    "fixture-stderr": {
+      "passed": true
+    },
+    "fixture-nonzero": {
+      "passed": true
+    },
+    "fixture-partial-command": {
+      "passed": true
+    },
+    "fixture-invalid-utf8": {
+      "passed": true
+    },
+    "fixture-clock-step": {
+      "passed": true
+    },
+    "fixture-source-unavailable": {
+      "passed": true
+    },
+    "fixture-QPC-before": {
+      "passed": true
+    },
+    "fixture-deadline-before": {
+      "passed": true
+    },
+    "fixture-deadline-middle": {
+      "passed": true
+    },
+    "fixture-deadline-closure": {
+      "passed": true
+    },
+    "fixture-point-reserve": {
+      "passed": true
+    },
+    "fixture-cleanup-reserve": {
+      "passed": true
+    },
+    "fixture-cleanup-capacity": {
+      "passed": true
+    },
+    "fixture-ledger-fsync": {
+      "passed": true
+    },
+    "fixture-transport-throw": {
+      "passed": true
+    },
+    "fixture-official-15": {
+      "passed": true
+    },
+    "fixture-official-14": {
+      "passed": true
+    },
+    "fixture-changed-context": {
+      "passed": true
+    },
+    "source-bytes-unchanged": {
+      "passed": true
+    }
+  },
+  "cases": {
+    "complete": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "dc9185f8a64bcbd2ea69d90b2574af1ae71b7158c175294f45a6e5fa21cae295",
+        "clock.jsonl": "4ecde02f49572ac3a409a095c58009ce10ae8aa694860996a59a512d9a1ef268",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 15,
+        "clock_points": 18,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": true,
+            "failure_phases": [],
+            "packet_delivery_complete": true
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 15,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 9,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 10,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 11,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 12,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 13,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 14,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 15,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 19,
+            "points_replayed": 18,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 18,
+              "comparisons": 153,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "positive-skew": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "50b9db2dd81c6fed4aa76ebce498138d5236773785de32213f658a108fee4c07",
+        "clock.jsonl": "4ecde02f49572ac3a409a095c58009ce10ae8aa694860996a59a512d9a1ef268",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 15,
+        "clock_points": 18,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": true,
+            "failure_phases": [],
+            "packet_delivery_complete": true
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 15,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 9,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 10,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 11,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 12,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 13,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 14,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 15,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 19,
+            "points_replayed": 18,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 18,
+              "comparisons": 153,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "negative-skew": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "42f0d90afa5c0058341ba70e299fe0e3bc96587c58b9f5416e4391f6d5f15e4b",
+        "clock.jsonl": "4ecde02f49572ac3a409a095c58009ce10ae8aa694860996a59a512d9a1ef268",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 15,
+        "clock_points": 18,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": true,
+            "failure_phases": [],
+            "packet_delivery_complete": true
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 15,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 9,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 10,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 11,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 12,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 13,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 14,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 15,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 19,
+            "points_replayed": 18,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 18,
+              "comparisons": 153,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "first-idle-loss": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "310483a2d3c64862eee0c31425d25c1281b4ff67d43059ac9a25650b7850ba42",
+        "clock.jsonl": "4ecde02f49572ac3a409a095c58009ce10ae8aa694860996a59a512d9a1ef268",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 15,
+        "clock_points": 18,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": true,
+            "failure_phases": [],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 15,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 9,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 10,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 11,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 12,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 13,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 14,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 15,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 19,
+            "points_replayed": 18,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 18,
+              "comparisons": 153,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "source-ineligible": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "f3eb9381baab84991513a645ba894164408181e11aa1d9bd805a329268158dba",
+        "clock.jsonl": "fcac84cfec1790fb1b73c4e68763930be96dc19ec7bd3032d974329ddb257c6a",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 7,
+        "clock_points": 10,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "precheck"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 7,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 11,
+            "points_replayed": 10,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 10,
+              "comparisons": 45,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "official-source-3": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "7d0b80366ae51cd5481126c3664ceb0e362bf1437ea9465ad9b9c720acafa558",
+        "clock.jsonl": "4ecde02f49572ac3a409a095c58009ce10ae8aa694860996a59a512d9a1ef268",
+        "identifiers.jsonl": "edcd9b8156f543d4aecc978f6693eb7414ef05cef17166d620774b13e6bbfa18"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 15,
+        "clock_points": 18,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": true,
+            "failure_phases": [],
+            "packet_delivery_complete": true
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 15,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 9,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 10,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 11,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 12,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 13,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 14,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 15,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 19,
+            "points_replayed": 18,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 18,
+              "comparisons": 153,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "missing-first-trace": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "55f775f6eb9178c2ac47e62ff56c65c5382de855017a0d8c1706e2252031900a",
+        "clock.jsonl": "4ecde02f49572ac3a409a095c58009ce10ae8aa694860996a59a512d9a1ef268",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 15,
+        "clock_points": 18,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "evaluation"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 15,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 9,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 10,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 11,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 12,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 13,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 14,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 15,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 19,
+            "points_replayed": 18,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 18,
+              "comparisons": 153,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "saturated-log": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "8d6d61cc0f6bf4cecb80fb4bb9347cdeafff16909149ea896b8a7ef88305afc2",
+        "clock.jsonl": "4ecde02f49572ac3a409a095c58009ce10ae8aa694860996a59a512d9a1ef268",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 15,
+        "clock_points": 18,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "evaluation"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 15,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 9,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 10,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 11,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 12,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 13,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 14,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 15,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 19,
+            "points_replayed": 18,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 18,
+              "comparisons": 153,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "empty-prefix": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "cd8fea978e051c81dbe556cd8a55b0552a0d98e00de74a0ac7aeb3630603f36a",
+        "clock.jsonl": "fcac84cfec1790fb1b73c4e68763930be96dc19ec7bd3032d974329ddb257c6a",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 7,
+        "clock_points": 10,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "precheck"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 7,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 11,
+            "points_replayed": 10,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 10,
+              "comparisons": 45,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "prefix-lost": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "7e7589381bcb544e8c0d34cda9f29303ff78813419d034dd827d6fd87a27475f",
+        "clock.jsonl": "4ecde02f49572ac3a409a095c58009ce10ae8aa694860996a59a512d9a1ef268",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 15,
+        "clock_points": 18,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "evaluation"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 15,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 9,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 10,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 11,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 12,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 13,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 14,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 15,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 19,
+            "points_replayed": 18,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 18,
+              "comparisons": 153,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "reused-prefix-id": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "d7f8655ce0c7fd4e0b4d015ba3a0e5f8ef1689ef3f7fcdfd6e2084db697b8147",
+        "clock.jsonl": "fcac84cfec1790fb1b73c4e68763930be96dc19ec7bd3032d974329ddb257c6a",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 7,
+        "clock_points": 10,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "precheck"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 7,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 11,
+            "points_replayed": 10,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 10,
+              "comparisons": 45,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "foreign-packet": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "122a3736cc0e73a16ed9e96564e9fb806532a674d37dfd49054bc9311bb309dc",
+        "clock.jsonl": "4ecde02f49572ac3a409a095c58009ce10ae8aa694860996a59a512d9a1ef268",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 15,
+        "clock_points": 18,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "evaluation"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 15,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 9,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 10,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 11,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 12,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 13,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 14,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 15,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 19,
+            "points_replayed": 18,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 18,
+              "comparisons": 153,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "wrong-image": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "aaa2ceba9fb02a39732bfa852aee22674ab24006b96aee800d11316862ec8cce",
+        "clock.jsonl": "fcac84cfec1790fb1b73c4e68763930be96dc19ec7bd3032d974329ddb257c6a",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 7,
+        "clock_points": 10,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "precheck"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 7,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 11,
+            "points_replayed": 10,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 10,
+              "comparisons": 45,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "restarted": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "6e559200fa63ed638d78918f698a3a1ff57c6b62b3e1f397c6cf88cb20c3b97f",
+        "clock.jsonl": "4ecde02f49572ac3a409a095c58009ce10ae8aa694860996a59a512d9a1ef268",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 15,
+        "clock_points": 18,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "evaluation"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 15,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 9,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 10,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 11,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 12,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 13,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 14,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 15,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 19,
+            "points_replayed": 18,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 18,
+              "comparisons": 153,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "official-trace": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "f14273fe93003eb43ab7aeef0c72fe94b439dcea7f962063fcc3141a5be6255f",
+        "clock.jsonl": "4ecde02f49572ac3a409a095c58009ce10ae8aa694860996a59a512d9a1ef268",
+        "identifiers.jsonl": "edcd9b8156f543d4aecc978f6693eb7414ef05cef17166d620774b13e6bbfa18"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 15,
+        "clock_points": 18,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "evaluation"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 15,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 9,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 10,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 11,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 12,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 13,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 14,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 15,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 19,
+            "points_replayed": 18,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 18,
+              "comparisons": 153,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "source-step": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "69bb910d94bb06f7faa059bed16adef3457dc3a883662f5a34072ae94f2cd0dc",
+        "clock.jsonl": "4ecde02f49572ac3a409a095c58009ce10ae8aa694860996a59a512d9a1ef268",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 15,
+        "clock_points": 18,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "evaluation"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 15,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 9,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 10,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 11,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 12,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 13,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 14,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 15,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 19,
+            "points_replayed": 18,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 18,
+              "comparisons": 153,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "source-precision": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "fc014a89c68418177cf27bb9da7f318c1c542580dbdac928e1ed2ce84d8ebf44",
+        "clock.jsonl": "fcac84cfec1790fb1b73c4e68763930be96dc19ec7bd3032d974329ddb257c6a",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 7,
+        "clock_points": 10,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "precheck"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 7,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 11,
+            "points_replayed": 10,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 10,
+              "comparisons": 45,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "stderr": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "374beb52313e1f15ab33d8e42394f1e988eaa28cb718f2ed1e1fb5864e5356c1",
+        "clock.jsonl": "31f6c9bb4341b6947a3131215e00c5ad772bbbb1eaa0c0a48bc35f58f83bd6af",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 8,
+        "clock_points": 11,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "command"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 8,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 12,
+            "points_replayed": 11,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 11,
+              "comparisons": 55,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "nonzero": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "994a0f75cf2d6bdb4d8840f2ec82f4ac241d8a857c5ce99b14cba69edbf21b04",
+        "clock.jsonl": "31f6c9bb4341b6947a3131215e00c5ad772bbbb1eaa0c0a48bc35f58f83bd6af",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 8,
+        "clock_points": 11,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "command"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 8,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 3
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 12,
+            "points_replayed": 11,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 11,
+              "comparisons": 55,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "partial-command": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "d3ff8d185b8c14db8ac6ae1aca0ad82d20adbcf1cf5385a90cbb48944c3c2b6a",
+        "clock.jsonl": "31f6c9bb4341b6947a3131215e00c5ad772bbbb1eaa0c0a48bc35f58f83bd6af",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 8,
+        "clock_points": 11,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "command"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 8,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": false,
+              "complete": false,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 12,
+            "points_replayed": 11,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 11,
+              "comparisons": 55,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "invalid-utf8": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "0f68219f7a6442fe41198f6061d38e929a541b4265f3ceafb37146b0080703af",
+        "clock.jsonl": "31f6c9bb4341b6947a3131215e00c5ad772bbbb1eaa0c0a48bc35f58f83bd6af",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 8,
+        "clock_points": 11,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "command"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 8,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": false,
+              "complete": false,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 12,
+            "points_replayed": 11,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 11,
+              "comparisons": 55,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "clock-step": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "a261a048572eb0f9841871d9ece5cb2b3018bfc7fba4e93ed7bc66402521362a",
+        "clock.jsonl": "02e86ec13f813b77705eb97171920b8d6bffa39c0fe5219d154593547f283e9b",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 8,
+        "clock_points": 10,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "command",
+              "closure"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 8,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": false,
+              "client_capture_complete": true,
+              "complete": false,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 12,
+            "points_replayed": 10,
+            "admission_open": false,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": false,
+              "accepted_points": 9,
+              "comparisons": 37,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 2003200,
+              "rejection": {
+                "code": "clock-discontinuity-observed",
+                "sequence": 10,
+                "against_sequence": 1
+              }
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "source-unavailable": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "4da2b3630dffa005a39e130e3ea6fd7a070ad2d07f1707b06c30f2f38943b342",
+        "clock.jsonl": "0bd17bd6a8d86fe67346b0f66aabba1fad79796985c3e7ccf1c6c1d7c19e7ca0",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 8,
+        "clock_points": 9,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "command",
+              "closure"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 8,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": false,
+              "client_capture_complete": true,
+              "complete": false,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 12,
+            "points_replayed": 9,
+            "admission_open": false,
+            "capture_source_failed": true,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 9,
+              "comparisons": 36,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "QPC-before": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "f992ab75f76037ef75511864c6abfa43a8759f584455c74424460791f01e56d5",
+        "clock.jsonl": "f5eae35b96bb870d1598a66dcb9c575366c8c4063f77f0a3e4190bd89ffa8057",
+        "identifiers.jsonl": "8a2b6bf426e0aea21657e77ebaa72bff2433b292ae0ab3a3d8e1d0257702f77d"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 0,
+        "clock_points": 3,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "admission",
+              "closure"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": null,
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 4,
+          "points_replayed": 3,
+          "admission_open": false,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": false,
+            "accepted_points": 2,
+            "comparisons": 1,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": {
+              "code": "capture-error",
+              "sequence": 3,
+              "against_sequence": null
+            }
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "deadline-before": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "8cb7ef9ace7962b5d918e8603356d145c6cffa64cfaed318ebee764dd02dab72",
+        "clock.jsonl": "2f12f560329f7719b07cb31f6d466553b3c68e3a781a83cf3e39672d58c12366",
+        "identifiers.jsonl": "b1bf2d6b7329339f39b237feaaeabdf24a404411298982d6edcb6c9dc84cc044"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 0,
+        "clock_points": 3,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "admission"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": null,
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 4,
+          "points_replayed": 3,
+          "admission_open": true,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": true,
+            "accepted_points": 3,
+            "comparisons": 3,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": null
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "deadline-middle": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "70efd54d63f15ef1c248191328c3dd646c7ae4f368bbb0250fceca11129a7e28",
+        "clock.jsonl": "7ae4f0216ecb892f2d300863aa7bb3b8aa7bfe44984134bc82acfab75d9b9e2b",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 7,
+        "clock_points": 10,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "admission"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 7,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 11,
+            "points_replayed": 10,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 10,
+              "comparisons": 45,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "deadline-closure": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "4caef2fff58d9a551e5c658e6cb172256860ca7407730e033dc98cef5d9ade41",
+        "clock.jsonl": "4d9e7801f87f0801c371d6c46f84b444a192d449d391b8029a1302fb5871b3f0",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 15,
+        "clock_points": 18,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "closure"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 15,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 9,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 10,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 11,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 12,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 13,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 14,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 15,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 19,
+            "points_replayed": 18,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 18,
+              "comparisons": 153,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "point-reserve": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "73ad8abc3bc95ecc5577bb0850cea270173d30fb06fea76bb544dd80f5526274",
+        "clock.jsonl": "037c14c42f67ef997dd458500aca5b6d23d72c8670274a5bdbfd2ab7a67ce458",
+        "identifiers.jsonl": "e8b01b5e96186327cc602cc1d98353cf6d28581d5c4717ff35f39c49d7d5c182"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 0,
+        "clock_points": 754,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "admission"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": null,
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 755,
+          "points_replayed": 754,
+          "admission_open": true,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": true,
+            "accepted_points": 754,
+            "comparisons": 283881,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": null
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "cleanup-reserve": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "4bc1c89702fd0d254980c71f6346c605dd924bd789a3d545e4e2332fa4ba7281",
+        "clock.jsonl": "ab91ccd1c1d5943c45fd2bd1f7afa509dcdfca93882013f322d5623ef91a4291",
+        "identifiers.jsonl": "fca2bfc95e695f4aa9ddbe7f244c09e5540f8da072f5303bc76d08426db8007a"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 15,
+        "clock_points": 784,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": true,
+            "failure_phases": [],
+            "packet_delivery_complete": true
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 15,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 9,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 10,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 11,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 12,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 13,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 14,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 15,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 785,
+            "points_replayed": 784,
+            "admission_open": false,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 784,
+              "comparisons": 306936,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "cleanup-capacity": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "a94eec2e2883a7b1116094da572cddf9c442b28712c16af9649c780dd3764c1b",
+        "clock.jsonl": "297a6d88ebc4a63654eff999f2e48e14fc5744df2b60cdb81d7a9bf498f0b79b",
+        "identifiers.jsonl": "fe93ed48afd4dc668dd6da4e182311383eaeaba80c2b6f783d824b406c0ccf22"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 0,
+        "clock_points": 1011,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "admission"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": null,
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 1012,
+          "points_replayed": 1011,
+          "admission_open": false,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": true,
+            "accepted_points": 1011,
+            "comparisons": 510555,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": null
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "ledger-fsync": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "3fd2bd43fac4d4f51a279a88c770206bd0f270ec08b7cd7034515d5be9ae9b0c",
+        "clock.jsonl": "e676ad31c51784398edc6a1fd5bbefeeb977c9d2ddc9c9135df604226d88bb30",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": null,
+      "expected_audit_error": "identifier ledger storage failed; no durability claim"
+    },
+    "transport-throw": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "4e487fb7da945faaea3f03c3eb8812783e4efaba20c1ffac82e537ec9ab760a6",
+        "clock.jsonl": "7f1febd775906f0adbe38ff0c7a690c8d6b4cd5c757a51e7b39e0f52afafc398",
+        "identifiers.jsonl": "a78bb9b1ad5d54c558963d867017a51ce8749e640a4eaea33daa63502142a90e"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 1,
+        "commands_replayed": 0,
+        "clock_points": 3,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": false,
+            "failure_phases": [
+              "transport"
+            ],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": null,
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 4,
+          "points_replayed": 3,
+          "admission_open": true,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": true,
+            "accepted_points": 3,
+            "comparisons": 3,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": null
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "official-15": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "51c213b1627436240efadf86511160e84eb16ae42d534201b407c730d56c7aa6",
+        "clock.jsonl": "e9a554605ea787a27342e5193a9d2f62e5b82eef6c63ea2b7e28abc6d883dd6c",
+        "identifiers.jsonl": "97440b5bcf421dacdb7d68fb30610be4c4bbc32797e8073de6ab5ec28f2d85e6"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 3,
+        "commands_replayed": 45,
+        "clock_points": 50,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": true,
+            "failure_phases": [],
+            "packet_delivery_complete": true
+          },
+          {
+            "number": 2,
+            "identifier": 10002,
+            "collection_valid": true,
+            "failure_phases": [],
+            "packet_delivery_complete": true
+          },
+          {
+            "number": 3,
+            "identifier": 10003,
+            "collection_valid": true,
+            "failure_phases": [],
+            "packet_delivery_complete": true
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 45,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 9,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 10,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 11,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 12,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 13,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 14,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 15,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 16,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 17,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 18,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 19,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 20,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 21,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 22,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 23,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 24,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 25,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 26,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 27,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 28,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 29,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 30,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 31,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 32,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 33,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 34,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 35,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 36,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 37,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 38,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 39,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 40,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 41,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 42,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 43,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 44,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 45,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 51,
+            "points_replayed": 50,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 50,
+              "comparisons": 1225,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "official-14": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "20d69000f3a80f495b224c64402759cc8a5195d543c28a3f7695713b213732b4",
+        "clock.jsonl": "e9a554605ea787a27342e5193a9d2f62e5b82eef6c63ea2b7e28abc6d883dd6c",
+        "identifiers.jsonl": "97440b5bcf421dacdb7d68fb30610be4c4bbc32797e8073de6ab5ec28f2d85e6"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 3,
+        "commands_replayed": 45,
+        "clock_points": 50,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": true,
+            "failure_phases": [],
+            "packet_delivery_complete": true
+          },
+          {
+            "number": 2,
+            "identifier": 10002,
+            "collection_valid": true,
+            "failure_phases": [],
+            "packet_delivery_complete": true
+          },
+          {
+            "number": 3,
+            "identifier": 10003,
+            "collection_valid": true,
+            "failure_phases": [],
+            "packet_delivery_complete": false
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 45,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 9,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 10,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 11,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 12,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 13,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 14,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 15,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 16,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 17,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 18,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 19,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 20,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 21,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 22,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 23,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 24,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 25,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 26,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 27,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 28,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 29,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 30,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 31,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 32,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 33,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 34,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 35,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 36,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 37,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 38,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 39,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 40,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 41,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 42,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 43,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 44,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 45,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 51,
+            "points_replayed": 50,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 50,
+              "comparisons": 1225,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    },
+    "changed-context": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "2f8e02946c954bf5468459d6f93e25a8e6d00a98ae837d384fb4bca02bf9a99b",
+        "clock.jsonl": "e9a554605ea787a27342e5193a9d2f62e5b82eef6c63ea2b7e28abc6d883dd6c",
+        "identifiers.jsonl": "97440b5bcf421dacdb7d68fb30610be4c4bbc32797e8073de6ab5ec28f2d85e6"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "collections_replayed": 3,
+        "commands_replayed": 45,
+        "clock_points": 50,
+        "decisions": [
+          {
+            "number": 1,
+            "identifier": 10001,
+            "collection_valid": true,
+            "failure_phases": [],
+            "packet_delivery_complete": true
+          },
+          {
+            "number": 2,
+            "identifier": 10002,
+            "collection_valid": true,
+            "failure_phases": [],
+            "packet_delivery_complete": true
+          },
+          {
+            "number": 3,
+            "identifier": 10003,
+            "collection_valid": true,
+            "failure_phases": [],
+            "packet_delivery_complete": true
+          }
+        ],
+        "process_audit": {
+          "observation_audit_passed": true,
+          "commands_replayed": 45,
+          "decisions": [
+            {
+              "sequence": 1,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 2,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 3,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 4,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 5,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 6,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 7,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 8,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 9,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 10,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 11,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 12,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 13,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 14,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 15,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 16,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 17,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 18,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 19,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 20,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 21,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 22,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 23,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 24,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 25,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 26,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 27,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 28,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 29,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 30,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 31,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 32,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 33,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 34,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 35,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 36,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 37,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 38,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 39,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 40,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 41,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 42,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 43,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 44,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            },
+            {
+              "sequence": 45,
+              "timing_valid": true,
+              "client_capture_complete": true,
+              "complete": true,
+              "returncode": 0
+            }
+          ],
+          "clock_journal": {
+            "observation_audit_passed": true,
+            "events_replayed": 51,
+            "points_replayed": 50,
+            "admission_open": true,
+            "capture_source_failed": false,
+            "clock": {
+              "clock_capture_valid": true,
+              "accepted_points": 50,
+              "comparisons": 1225,
+              "max_bracket_ns_ceil": 1200,
+              "max_abs_residual_ns_ceil": 3200,
+              "rejection": null
+            },
+            "network_execution_authorized": false,
+            "command_containment_verified": false,
+            "whole_protocol_verified": false,
+            "service_restored": false,
+            "network_fix_validated": false
+          },
+          "network_execution_authorized": false,
+          "whole_protocol_verified": false,
+          "official_rollback_verified": false,
+          "network_fix_validated": false
+        },
+        "clock_journal": null,
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null
+    }
+  },
+  "source_sha256": {
+    "sandbox/reconnect_r5_collection.py": "318e1cf29ada719a8b62d6e936e314e8540db679581ff8c237dc085513f618b2",
+    "tools/audit_reconnect_r5_collection.py": "8ab7c44db17b679b8f4a307c6e2402fd1e02b3698400a1efbb86996c7a518999",
+    "tests/test_reconnect_r5_collection.py": "3c41f0d5efdd512f45a77a39f7c434a6a0feb32fb29f476172bf1b54794f0318",
+    "tools/verify_reconnect_r5_collection.py": "dd391d328d1b37a64ba92e6a33e667e327fd843367b02d6ebef6bdb078afe2a3",
+    "docs/RECONNECT_R5_COLLECTION.md": "a8b9c1fd89ddcd788df8e3bc78e33a75d8847ec98b2a3feda528b00426f7b281"
+  },
+  "evidence_label": "fixture",
+  "measurement_scope": "synthetic-collection-only",
+  "network_trials_executed": 0,
+  "actual_sleep_inhibition_requested": false,
+  "new_native_clock_observation": false,
+  "network_execution_authorized": false,
+  "whole_protocol_verified": false,
+  "official_rollback_verified": false,
+  "network_fix_validated": false,
+  "TNSM_ready": false
+}

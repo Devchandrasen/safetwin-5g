@@ -384,7 +384,19 @@ sandbox evidence.
       recapture ran. Collector/runner integration, full worst-case point
       inventory and independent whole-protocol/official rollback gate remain
       pending; this component is not measured service recovery.
-      This parent recovery item remains open.
+      The separate R5 collector now passes its software-only component gate
+      (`docs/RECONNECT_R5_COLLECTION_DECISION.md`; 713 tests, 200 subtests,
+      47 checks and 38 synthetic cases at
+      `evidence/verification/20260905T224927Z-reconnect-r5-collection`).
+      Durable no-reuse packet reservations, complete-prefix/first-packet
+      accounting, same-domain window admission and post-parser terminal
+      timing are independently replayed. Failed ledger durability explicitly
+      rejects integrity; partial packets and changed contexts are not recovery.
+      One complete window needs 16 new points, not a proof of the four-trial
+      worst-case budget. No real packet trial, restart, power request or native
+      clock recapture ran. The remaining four-trial runner, exact approval,
+      full inventory and independent whole-protocol official rollback gate
+      remain pending. This parent recovery item remains open.
       No R3/R4 rerun, endpoint relaxation, model promotion or new 675-unit
       campaign follows from observation integrity or later service recovery.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,

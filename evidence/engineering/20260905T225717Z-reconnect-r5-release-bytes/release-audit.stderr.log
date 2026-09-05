@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\devel\Documents\Codex\2026-08-22\he\safetwin-5g\tools\audit_reconnect_r4_release.py", line 96, in <module>
+    main()
+  File "C:\Users\devel\Documents\Codex\2026-08-22\he\safetwin-5g\tools\audit_reconnect_r4_release.py", line 79, in main
+    require(subprocess.check_output(["git", "show", ":" + name], cwd=ROOT) == (ROOT / name).read_bytes(), "staged bytes differ: " + name)
+  File "C:\Users\devel\Documents\Codex\2026-08-22\he\safetwin-5g\tools\audit_reconnect_r4_release.py", line 28, in require
+    raise ValueError(message)
+ValueError: staged bytes differ: evidence/verification/20260905T224659Z-reconnect-r5-collection/tests.stdout.log

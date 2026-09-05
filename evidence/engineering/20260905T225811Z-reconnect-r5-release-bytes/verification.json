@@ -1,0 +1,112 @@
+{
+  "verification_passed": false,
+  "expected_pre_correction_failure": false,
+  "commands": {
+    "attributes": {
+      "argv": [
+        "git",
+        "check-attr",
+        "text",
+        "eol",
+        "--",
+        "evidence/verification/20260905T224659Z-reconnect-r5-collection/tests.stdout.log",
+        "evidence/verification/20260905T224927Z-reconnect-r5-collection/before-containers.json"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-09-05T22:58:15.917368+00:00",
+      "completed_at": "2026-09-05T22:58:15.960620+00:00"
+    },
+    "release-audit": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "tools/audit_reconnect_r4_release.py"
+      ],
+      "exit_code": 1,
+      "started_at": "2026-09-05T22:58:15.960620+00:00",
+      "completed_at": "2026-09-05T22:58:23.012055+00:00"
+    },
+    "tests": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-09-05T22:58:23.012055+00:00",
+      "completed_at": "2026-09-05T23:00:06.729122+00:00"
+    }
+  },
+  "mismatches": {
+    "evidence/verification/20260905T224659Z-reconnect-r5-collection/tests.stdout.log": {
+      "working_sha256": "6069d3950f5bbe457dfd5414f674d42dc9925cd2371ad49471489c49877c6c5b",
+      "index_sha256": "ca1ad66e5cd8a24bd0a92ebd2789f41ab205dac3b5eff5b3e3ffef44efe29bb8",
+      "crlf_normalization_only": true
+    },
+    "evidence/verification/20260905T224927Z-reconnect-r5-collection/after-containers.json": {
+      "working_sha256": "77e06655a877404dfd169bd7a32a08ec13801500f2ad4a6e2880dab6fa5d2111",
+      "index_sha256": "f7a780993b95d5f1417524f5e5cba79387d9e576c685411ecd01aa6d7712a7a1",
+      "crlf_normalization_only": true
+    },
+    "evidence/verification/20260905T224927Z-reconnect-r5-collection/after-idle.json": {
+      "working_sha256": "72c77e53850e5a8d691b3fbc77fc3489090c2d59bc2d6908522579c8455b59b8",
+      "index_sha256": "b83bd2195076c38e882e67ef7599304d6f752c1e0477207a34eb3b436509697e",
+      "crlf_normalization_only": true
+    },
+    "evidence/verification/20260905T224927Z-reconnect-r5-collection/after-network.json": {
+      "working_sha256": "e0535beb94aa8d495b5ad8cae48a12b412607828d1f6b7cdd8a919ccbcb37f46",
+      "index_sha256": "a7344f85be0991a9ad617e7fa52662a96c09c4262ffe3cc33a9c707b7bd0cb33",
+      "crlf_normalization_only": true
+    },
+    "evidence/verification/20260905T224927Z-reconnect-r5-collection/before-containers.json": {
+      "working_sha256": "2e80f2a6fb2bdc346f4dd255083a88c5f4e0d9ebebe78b96d896b8faf1da24d1",
+      "index_sha256": "6fe9a9fbeb512dff5162e61ff0558506dfbc1221994957f93fe50376d79b9d79",
+      "crlf_normalization_only": true
+    },
+    "evidence/verification/20260905T224927Z-reconnect-r5-collection/before-idle.json": {
+      "working_sha256": "b357d51562cc00b1fb9a7656e3303556bc5e6f518188560cc8f9f3b25a6b833c",
+      "index_sha256": "3402f5cc5b6d4426c35811222ed1a9a823a6cccea78791ac1145ae1a4a872a2a",
+      "crlf_normalization_only": true
+    },
+    "evidence/verification/20260905T224927Z-reconnect-r5-collection/before-network.json": {
+      "working_sha256": "fc1bee611148dae190e65500353ea9fe2bd0660c6489f20edbd25b68d84d550d",
+      "index_sha256": "d0c9ed40bf31ccab9f8fd788aabfa7c47a11c7eec1b7acd85f13b6e646331900",
+      "crlf_normalization_only": true
+    },
+    "evidence/verification/20260905T224927Z-reconnect-r5-collection/r3-build-audit.stdout.log": {
+      "working_sha256": "6815c5ef598c0d9276b70b30905c6123642d841878592453c99349681094cc1f",
+      "index_sha256": "20d56de6f54ea8c9ce2d69fa830739ed52cd99d493acf5c78a2734d248c0cb21",
+      "crlf_normalization_only": true
+    },
+    "evidence/verification/20260905T224927Z-reconnect-r5-collection/r4-negative-observation.stdout.log": {
+      "working_sha256": "52d3c9f7090c3035beeb42cca04fdc5db6d9ea80e247ecd8ee82f1a526094198",
+      "index_sha256": "94508f4e37c540567314c02754e54349531162aef6102ab3923e5c189cd244de",
+      "crlf_normalization_only": true
+    },
+    "evidence/verification/20260905T224927Z-reconnect-r5-collection/statistical-lock.stdout.log": {
+      "working_sha256": "a2325e7f696d077827d5106dfff75f360454715d7fb5b5496f8da0c1464d9810",
+      "index_sha256": "8297efaef417e26e881b736191fc1e3eff993a5a7b5f8fd132bf5e7b00d7652b",
+      "crlf_normalization_only": true
+    },
+    "evidence/verification/20260905T224927Z-reconnect-r5-collection/tests.stdout.log": {
+      "working_sha256": "0710ff56f00e448c5aa66eea03bc1b19d8f3ed836d20605222546b98b4d4f52d",
+      "index_sha256": "56f4d4f7afaebe78507f3020b44d791a9f42aecc514267ab5ee8152ae3dfc76c",
+      "crlf_normalization_only": true
+    }
+  },
+  "staged_files": 117,
+  "source_sha256": {
+    "sandbox/reconnect_r5_collection.py": "318e1cf29ada719a8b62d6e936e314e8540db679581ff8c237dc085513f618b2",
+    "tools/audit_reconnect_r5_collection.py": "2c03a0082013e4e1c62b7fad8f4265566275d696315b5a76cef752619cc675e8",
+    "tests/test_reconnect_r5_collection.py": "b84276c09e3c53076e024171c9cc3a5e8fe724442eda7fe0d2d75321cbb027a0",
+    "tools/verify_reconnect_r5_collection.py": "dd391d328d1b37a64ba92e6a33e667e327fd843367b02d6ebef6bdb078afe2a3",
+    "docs/RECONNECT_R5_COLLECTION.md": "a8b9c1fd89ddcd788df8e3bc78e33a75d8847ec98b2a3feda528b00426f7b281",
+    "config/experiments/reconnect-r5-collection-lock.json": "3f10ad67b9b2af7b643f8c3fe4bf33084a99f71827b9dbabb6e81d02de0cf352",
+    ".gitattributes": "baa1abc5daea395b6f2fadce73ced7baa7e0a7a26f2c82b6d775698356c6aa99",
+    "tools/audit_reconnect_r5_collection_release.py": "bf4fa0d10723ad4abd2c292a3cdae4ee1a89967201d9ff9e923bb189d0b5fe04",
+    "tools/verify_reconnect_r5_release_bytes.py": "e0f1b4fab2c0c5b4cc8a87950f39842b78292479405b565b8590412ad8269b0d"
+  },
+  "evidence_label": "fixture",
+  "network_trials_executed": 0,
+  "network_fix_validated": false
+}
