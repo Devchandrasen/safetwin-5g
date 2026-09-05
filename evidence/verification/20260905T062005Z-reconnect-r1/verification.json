@@ -1,0 +1,47 @@
+{
+  "software_verification_passed": true,
+  "measured_audit_passed": null,
+  "source_sha256": {
+    "sandbox/run_reconnect.py": "8528626ee440d1641d7d07822cfba984152042e0375fd35582fbc1052c6be598",
+    "config/experiments/reconnect-r1.json": "b03905c9f65294fd30a7b2ed8c41ece0bac440be1470cb67accb33d05addeb13",
+    "docs/RECONNECT_R1_PROTOCOL.md": "df5dc699aa9d49e3969f8881928f941fe72c0e6bafb8389ffa1238e62a8055bd",
+    "tools/audit_reconnect.py": "4e6465396c76faf3ad17925e3bc067e09bcbbfcd07d1702fdf2a968f1ede200d",
+    "tools/verify_reconnect.py": "6174c3f0248c21f262a9f5139537beea2283757666a6c1e7bfb351c48c88c185",
+    "tests/test_reconnect.py": "6bbf222dbb308c0e17ddfadb2bc40e1083855da8f06dd8c9ddb56f46be874d1a"
+  },
+  "source_hash_mode": "utf8-lf-normalized",
+  "checks": {
+    "full-tests": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0
+    },
+    "statistical-lock": {
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-c",
+        "from tools.run_phase7_analysis import verify_analysis_lock; print(verify_analysis_lock()['lock_id'])"
+      ],
+      "exit_code": 0
+    },
+    "fault-shell-syntax": {
+      "argv": [
+        "docker",
+        "exec",
+        "safetwin5g-ue",
+        "sh",
+        "-n",
+        "-c",
+        "set -eu\nowned=0\ncleanup() {\n    if [ \"$owned\" = 1 ]; then\n        tc qdisc del dev eth0 root handle 7157:\n        date -u +%Y-%m-%dT%H:%M:%S.%NZ\n        tc -j qdisc show dev eth0\n    fi\n}\ntrap cleanup EXIT\ntrap 'exit 130' INT TERM HUP\ntc qdisc add dev eth0 root handle 7157: netem loss 100%\nowned=1\ndate -u +%Y-%m-%dT%H:%M:%S.%NZ\ntc -j qdisc show dev eth0\nsleep 8\n"
+      ],
+      "exit_code": 0
+    }
+  },
+  "network_fix_validated": false,
+  "long_campaign_ready": false,
+  "TNSM_ready": false
+}
