@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "experiment_id": "safetwin5g-recovery-engineering-r1",
+  "purpose": "Bounded PDU recovery engineering after the rejected Phase 7 campaign",
+  "environment": "sandbox",
+  "trial_hold_seconds": [0, 1, 30, 30, 45, 0],
+  "samples_per_window": 3,
+  "packets_per_sample": 5,
+  "maximum_packet_loss_percent": 1.0,
+  "recovery_order": ["primitive_cleanup", "ue_restart", "core_gnb_ue_restart"],
+  "maximum_total_seconds": 900,
+  "maximum_command_seconds": 35,
+  "maximum_container_health_seconds": 50,
+  "fault_watchdog_seconds": 65,
+  "acceptance": "Every baseline and final recovery has three clean service samples; fault state is verified; no-fault controls recover with primitive cleanup alone; stop after any failed trial",
+  "claim_limit": "Six engineering trials cannot establish long-campaign reliability, comparative method performance, or TNSM readiness",
+  "confirmatory_data_reuse": false
+}
