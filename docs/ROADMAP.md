@@ -363,6 +363,16 @@ sandbox evidence.
       and exception-isolated no-I/O cleanup callbacks. It does not implement
       command containment, actual official rollback or whole-protocol replay.
       No network trial, packet probe or sleep-inhibition request ran.
+      The separately named R5 owned-client adapter now also passes its component
+      gate (`docs/RECONNECT_R5_PROCESS_DECISION.md`; 596 tests, 200 subtests,
+      30 checks and 21 retained local-process cases at
+      `evidence/verification/20260905T201840Z-reconnect-r5-process`). Same-domain
+      shared-envelope accounting, byte/time caps and a negative-evidence kernel
+      cutoff after QPC failure are verified. A fixed two-command native helper
+      observation uses four points; this remains fixture evidence, not PDU or
+      recovery measurement. Host/collection/runner integration, full point
+      inventory and independent whole-protocol/official rollback replay remain
+      pending. No new network diagnostic was executed.
       This parent recovery item remains open.
       No R3/R4 rerun, endpoint relaxation, model promotion or new 675-unit
       campaign follows from observation integrity or later service recovery.

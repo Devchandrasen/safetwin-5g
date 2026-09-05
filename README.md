@@ -158,6 +158,11 @@ now passes 563 tests, 200 subtests and 21 checks, with ten retained synthetic
 cases. It reserves clock capacity for cleanup and verifies exception-isolated
 no-I/O callbacks; it does not implement the new bounded command runner or
 prove official rollback. Full execution integration remains pending.
+The [R5 owned-client capture component](docs/RECONNECT_R5_PROCESS_DECISION.md)
+now passes 596 tests, 200 subtests and 30 checks. Its 21 retained local-process
+cases include clock failure, bounded cleanup, byte saturation and independent
+shared-envelope replay. This is fixture evidence, not a network trial; the
+host/collection/runner and whole-protocol rollback gate remain pending.
 No new long campaign or TNSM-readiness claim is enabled.
 
 Environment Deviation D1 records six unrelated containers that appeared on

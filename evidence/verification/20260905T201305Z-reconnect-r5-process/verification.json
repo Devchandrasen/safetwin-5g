@@ -1,0 +1,1080 @@
+{
+  "verification_passed": true,
+  "development_only": true,
+  "checks": {
+    "tests": {
+      "passed": true,
+      "argv": [
+        "C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_reconnect_r5_process.py"
+      ],
+      "exit_code": 0,
+      "started_at": "2026-09-05T20:13:05.323820+00:00",
+      "completed_at": "2026-09-05T20:13:18.372527+00:00"
+    },
+    "fixture-streams": {
+      "passed": true
+    },
+    "fixture-flood": {
+      "passed": true
+    },
+    "fixture-sleep": {
+      "passed": true
+    },
+    "fixture-descendant": {
+      "passed": true
+    },
+    "fixture-invalid-utf8": {
+      "passed": true
+    },
+    "fixture-exit-failure": {
+      "passed": true
+    },
+    "fixture-job-denied": {
+      "passed": true
+    },
+    "fixture-timer-denied": {
+      "passed": true
+    },
+    "fixture-QPC-before-normal": {
+      "passed": true
+    },
+    "fixture-QPC-before-cleanup": {
+      "passed": true
+    },
+    "fixture-QPC-after-GO": {
+      "passed": true
+    },
+    "fixture-clock-step": {
+      "passed": true
+    },
+    "fixture-capacity-cleanup": {
+      "passed": true
+    },
+    "fixture-reserve-cleanup": {
+      "passed": true
+    },
+    "fixture-timer-wait-failed": {
+      "passed": true
+    },
+    "fixture-job-close-failed": {
+      "passed": true
+    },
+    "fixture-journal-failed": {
+      "passed": true
+    },
+    "source-bytes-unchanged": {
+      "passed": true
+    }
+  },
+  "cases": {
+    "streams": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "8fb81004f75762749ccd5c263405ecb99667a7f4ba2c5c4066f940f0b6dec6d1",
+        "clock.jsonl": "f413e0ebaeec0295016a5c8bf3758f1cb68cb018a8cb94bf153a76542f57c18c"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "commands_replayed": 1,
+        "decisions": [
+          {
+            "sequence": 1,
+            "timing_valid": true,
+            "client_capture_complete": true,
+            "complete": true,
+            "returncode": 0
+          }
+        ],
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 4,
+          "points_replayed": 3,
+          "admission_open": true,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": true,
+            "accepted_points": 3,
+            "comparisons": 3,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": null
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "official_rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null,
+      "clock_scope": "synthetic-clock",
+      "raw_client_results": [
+        {
+          "sequence": 1,
+          "complete": true,
+          "timing_valid": true,
+          "client_capture_complete": true,
+          "launcher_go_sent": true,
+          "returncode": 0,
+          "timed_out": false
+        }
+      ]
+    },
+    "flood": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "763714696cec1162aea06888fe0d07a91d90f315f21553a12aac280c1b402f22",
+        "clock.jsonl": "641961a118245595029982c752e8fd22b3be7d90c6f28a68a9bf12b6cebcb8f0"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "commands_replayed": 1,
+        "decisions": [
+          {
+            "sequence": 1,
+            "timing_valid": true,
+            "client_capture_complete": false,
+            "complete": false,
+            "returncode": 0
+          }
+        ],
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 4,
+          "points_replayed": 3,
+          "admission_open": true,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": true,
+            "accepted_points": 3,
+            "comparisons": 3,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": null
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "official_rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null,
+      "clock_scope": "synthetic-clock",
+      "raw_client_results": [
+        {
+          "sequence": 1,
+          "complete": false,
+          "timing_valid": true,
+          "client_capture_complete": false,
+          "launcher_go_sent": true,
+          "returncode": 0,
+          "timed_out": false
+        }
+      ]
+    },
+    "sleep": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "580da37fbe8e8ad34780f5a15f7ee3b378fe08ee8967b43da53d2b377a77c59b",
+        "clock.jsonl": "91ffcb1082b7ee57223577eb6eedfb5dd491fdee445052dd01b7ec51cd052e49"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "commands_replayed": 1,
+        "decisions": [
+          {
+            "sequence": 1,
+            "timing_valid": true,
+            "client_capture_complete": false,
+            "complete": false,
+            "returncode": 0
+          }
+        ],
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 4,
+          "points_replayed": 3,
+          "admission_open": true,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": true,
+            "accepted_points": 3,
+            "comparisons": 3,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": null
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "official_rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null,
+      "clock_scope": "synthetic-clock",
+      "raw_client_results": [
+        {
+          "sequence": 1,
+          "complete": false,
+          "timing_valid": true,
+          "client_capture_complete": false,
+          "launcher_go_sent": true,
+          "returncode": 0,
+          "timed_out": true
+        }
+      ]
+    },
+    "descendant": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "31b5877cf3f5aea7010406ee52b7af61ed8f73336f60ce38b0601127f111ade1",
+        "clock.jsonl": "1ee8c528dec3e573751afef1a8fe2e29fa5bc01f85cca004a70d64709c765979"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "commands_replayed": 1,
+        "decisions": [
+          {
+            "sequence": 1,
+            "timing_valid": true,
+            "client_capture_complete": false,
+            "complete": false,
+            "returncode": 0
+          }
+        ],
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 4,
+          "points_replayed": 3,
+          "admission_open": true,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": true,
+            "accepted_points": 3,
+            "comparisons": 3,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": null
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "official_rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null,
+      "clock_scope": "synthetic-clock",
+      "raw_client_results": [
+        {
+          "sequence": 1,
+          "complete": false,
+          "timing_valid": true,
+          "client_capture_complete": false,
+          "launcher_go_sent": true,
+          "returncode": 0,
+          "timed_out": true
+        }
+      ]
+    },
+    "invalid-utf8": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "73fade0a619b3c1ba7e6de98dc95366ee7ab306d5202bde5561bfe5d8b4816ef",
+        "clock.jsonl": "f413e0ebaeec0295016a5c8bf3758f1cb68cb018a8cb94bf153a76542f57c18c"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "commands_replayed": 1,
+        "decisions": [
+          {
+            "sequence": 1,
+            "timing_valid": true,
+            "client_capture_complete": false,
+            "complete": false,
+            "returncode": 0
+          }
+        ],
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 4,
+          "points_replayed": 3,
+          "admission_open": true,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": true,
+            "accepted_points": 3,
+            "comparisons": 3,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": null
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "official_rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null,
+      "clock_scope": "synthetic-clock",
+      "raw_client_results": [
+        {
+          "sequence": 1,
+          "complete": false,
+          "timing_valid": true,
+          "client_capture_complete": false,
+          "launcher_go_sent": true,
+          "returncode": 0,
+          "timed_out": false
+        }
+      ]
+    },
+    "exit-failure": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "7e6988ab70126bc48c5471f57b2738e872f1aa9c643d5a9c8f95857dd9d65bab",
+        "clock.jsonl": "f413e0ebaeec0295016a5c8bf3758f1cb68cb018a8cb94bf153a76542f57c18c"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "commands_replayed": 1,
+        "decisions": [
+          {
+            "sequence": 1,
+            "timing_valid": true,
+            "client_capture_complete": true,
+            "complete": true,
+            "returncode": 7
+          }
+        ],
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 4,
+          "points_replayed": 3,
+          "admission_open": true,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": true,
+            "accepted_points": 3,
+            "comparisons": 3,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": null
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "official_rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null,
+      "clock_scope": "synthetic-clock",
+      "raw_client_results": [
+        {
+          "sequence": 1,
+          "complete": true,
+          "timing_valid": true,
+          "client_capture_complete": true,
+          "launcher_go_sent": true,
+          "returncode": 7,
+          "timed_out": false
+        }
+      ]
+    },
+    "job-denied": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "7762b6cfb181190a2be57eb2252fe265de15a4765ff9edeac1348eaa194b864a",
+        "clock.jsonl": "74d05d7c9217712a20c4e81a06666a65a9f824d4ccb38dd560cd1e96dee7e781"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "commands_replayed": 1,
+        "decisions": [
+          {
+            "sequence": 1,
+            "timing_valid": false,
+            "client_capture_complete": false,
+            "complete": false,
+            "returncode": 1
+          }
+        ],
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 4,
+          "points_replayed": 3,
+          "admission_open": true,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": true,
+            "accepted_points": 3,
+            "comparisons": 3,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": null
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "official_rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null,
+      "clock_scope": "synthetic-clock",
+      "raw_client_results": [
+        {
+          "sequence": 1,
+          "complete": false,
+          "timing_valid": false,
+          "client_capture_complete": false,
+          "launcher_go_sent": false,
+          "returncode": 1,
+          "timed_out": false
+        }
+      ]
+    },
+    "timer-denied": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "f086c552eb14aacd1dd6d1d7043d0505ef1f5577683d2cd2e17c39ded254d4d8",
+        "clock.jsonl": "57c4a7327c22bf72fcbf997932f983a04086c704ac9694187346b88e1b0dbf81"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "commands_replayed": 1,
+        "decisions": [
+          {
+            "sequence": 1,
+            "timing_valid": false,
+            "client_capture_complete": false,
+            "complete": false,
+            "returncode": null
+          }
+        ],
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 4,
+          "points_replayed": 3,
+          "admission_open": true,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": true,
+            "accepted_points": 3,
+            "comparisons": 3,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": null
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "official_rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null,
+      "clock_scope": "synthetic-clock",
+      "raw_client_results": [
+        {
+          "sequence": 1,
+          "complete": false,
+          "timing_valid": false,
+          "client_capture_complete": false,
+          "launcher_go_sent": false,
+          "returncode": null,
+          "timed_out": false
+        }
+      ]
+    },
+    "QPC-before-normal": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "66bbcafac3ca7259b23d42780a91200595dcfe89fc74f9bd89801fba5fd2896e",
+        "clock.jsonl": "d20ad265c673d48c70a4c4f41eb0ca3c7dcbb4e84ed28c596ca9e1e40dccde3d"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "commands_replayed": 1,
+        "decisions": [
+          {
+            "sequence": 1,
+            "timing_valid": false,
+            "client_capture_complete": false,
+            "complete": false,
+            "returncode": null
+          }
+        ],
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 4,
+          "points_replayed": 3,
+          "admission_open": false,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": false,
+            "accepted_points": 2,
+            "comparisons": 1,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": {
+              "code": "capture-error",
+              "sequence": 3,
+              "against_sequence": null
+            }
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "official_rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null,
+      "clock_scope": "synthetic-clock",
+      "raw_client_results": [
+        {
+          "sequence": 1,
+          "complete": false,
+          "timing_valid": false,
+          "client_capture_complete": false,
+          "launcher_go_sent": false,
+          "returncode": null,
+          "timed_out": false
+        }
+      ]
+    },
+    "QPC-before-cleanup": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "5152ff204e1c963e5d513184b8ea6a39b7560d0639fdee8f479f8d6de1c56a09",
+        "clock.jsonl": "865b2def3181a50cdd15f15131120fd75f02013724d306bae3cebdc2ec4505c7"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "commands_replayed": 1,
+        "decisions": [
+          {
+            "sequence": 1,
+            "timing_valid": false,
+            "client_capture_complete": true,
+            "complete": false,
+            "returncode": 0
+          }
+        ],
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 4,
+          "points_replayed": 3,
+          "admission_open": false,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": false,
+            "accepted_points": 2,
+            "comparisons": 1,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": {
+              "code": "capture-error",
+              "sequence": 3,
+              "against_sequence": null
+            }
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "official_rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null,
+      "clock_scope": "synthetic-clock",
+      "raw_client_results": [
+        {
+          "sequence": 1,
+          "complete": false,
+          "timing_valid": false,
+          "client_capture_complete": true,
+          "launcher_go_sent": true,
+          "returncode": 0,
+          "timed_out": false
+        }
+      ]
+    },
+    "QPC-after-GO": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "a3ab26e43301d38b8d2cd500b11937854cae7caeb8c8bfb0ebd2b03945452fb4",
+        "clock.jsonl": "e704071a1458b1fcc4aa7e0695b04486b06d310f9a3e41c373629c7d25c69628"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "commands_replayed": 2,
+        "decisions": [
+          {
+            "sequence": 1,
+            "timing_valid": false,
+            "client_capture_complete": true,
+            "complete": false,
+            "returncode": 0
+          },
+          {
+            "sequence": 2,
+            "timing_valid": false,
+            "client_capture_complete": true,
+            "complete": false,
+            "returncode": 0
+          }
+        ],
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 5,
+          "points_replayed": 4,
+          "admission_open": false,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": false,
+            "accepted_points": 2,
+            "comparisons": 1,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": {
+              "code": "capture-error",
+              "sequence": 3,
+              "against_sequence": null
+            }
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "official_rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null,
+      "clock_scope": "synthetic-clock",
+      "raw_client_results": [
+        {
+          "sequence": 1,
+          "complete": false,
+          "timing_valid": false,
+          "client_capture_complete": true,
+          "launcher_go_sent": true,
+          "returncode": 0,
+          "timed_out": false
+        },
+        {
+          "sequence": 2,
+          "complete": false,
+          "timing_valid": false,
+          "client_capture_complete": true,
+          "launcher_go_sent": true,
+          "returncode": 0,
+          "timed_out": false
+        }
+      ]
+    },
+    "clock-step": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "713293d909fbd51f492cd5398789aad77dd61e97f4eaffea9ac58f58c0c61b15",
+        "clock.jsonl": "3331e396e9718ac2be88e3bfc51f3a4f1428eff780c5a5e2924270aa676985b4"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "commands_replayed": 2,
+        "decisions": [
+          {
+            "sequence": 1,
+            "timing_valid": false,
+            "client_capture_complete": true,
+            "complete": false,
+            "returncode": 0
+          },
+          {
+            "sequence": 2,
+            "timing_valid": false,
+            "client_capture_complete": true,
+            "complete": false,
+            "returncode": 0
+          }
+        ],
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 5,
+          "points_replayed": 4,
+          "admission_open": false,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": false,
+            "accepted_points": 2,
+            "comparisons": 2,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 2003200,
+            "rejection": {
+              "code": "clock-discontinuity-observed",
+              "sequence": 3,
+              "against_sequence": 1
+            }
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "official_rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null,
+      "clock_scope": "synthetic-clock",
+      "raw_client_results": [
+        {
+          "sequence": 1,
+          "complete": false,
+          "timing_valid": false,
+          "client_capture_complete": true,
+          "launcher_go_sent": true,
+          "returncode": 0,
+          "timed_out": false
+        },
+        {
+          "sequence": 2,
+          "complete": false,
+          "timing_valid": false,
+          "client_capture_complete": true,
+          "launcher_go_sent": true,
+          "returncode": 0,
+          "timed_out": false
+        }
+      ]
+    },
+    "capacity-cleanup": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "f153bdcb394296cf3aa53686cff71419d260b2c76d6b1b7dcbc673fb8dc50cf1",
+        "clock.jsonl": "cb440bdfbca3e0283c0d03d178aa95f3db1b2c706a204e9341691834c98ab021"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "commands_replayed": 1,
+        "decisions": [
+          {
+            "sequence": 1,
+            "timing_valid": false,
+            "client_capture_complete": true,
+            "complete": false,
+            "returncode": 0
+          }
+        ],
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 1026,
+          "points_replayed": 1024,
+          "admission_open": false,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": true,
+            "accepted_points": 1024,
+            "comparisons": 523776,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": null
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "official_rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null,
+      "clock_scope": "synthetic-clock",
+      "raw_client_results": [
+        {
+          "sequence": 1,
+          "complete": false,
+          "timing_valid": false,
+          "client_capture_complete": true,
+          "launcher_go_sent": true,
+          "returncode": 0,
+          "timed_out": false
+        }
+      ]
+    },
+    "reserve-cleanup": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "75914a2df29942213a562648318109b4f9947d980fdd095f64d6dafa275f7fcd",
+        "clock.jsonl": "851f8f34b4e60d2976fe61c81f31e0f6209b269a9de9abf1b90fcad8d610a8a9"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "commands_replayed": 1,
+        "decisions": [
+          {
+            "sequence": 1,
+            "timing_valid": true,
+            "client_capture_complete": true,
+            "complete": true,
+            "returncode": 0
+          }
+        ],
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 770,
+          "points_replayed": 769,
+          "admission_open": false,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": true,
+            "accepted_points": 769,
+            "comparisons": 295296,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": null
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "official_rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null,
+      "clock_scope": "synthetic-clock",
+      "raw_client_results": [
+        {
+          "sequence": 1,
+          "complete": true,
+          "timing_valid": true,
+          "client_capture_complete": true,
+          "launcher_go_sent": true,
+          "returncode": 0,
+          "timed_out": false
+        }
+      ]
+    },
+    "timer-wait-failed": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "811afc6972abef7d3c46884e2fbccaa0b3fedd62be3930eb18d2cef4bd6f27da",
+        "clock.jsonl": "57c4a7327c22bf72fcbf997932f983a04086c704ac9694187346b88e1b0dbf81"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "commands_replayed": 1,
+        "decisions": [
+          {
+            "sequence": 1,
+            "timing_valid": false,
+            "client_capture_complete": false,
+            "complete": false,
+            "returncode": 0
+          }
+        ],
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 4,
+          "points_replayed": 3,
+          "admission_open": true,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": true,
+            "accepted_points": 3,
+            "comparisons": 3,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": null
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "official_rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null,
+      "clock_scope": "synthetic-clock",
+      "raw_client_results": [
+        {
+          "sequence": 1,
+          "complete": false,
+          "timing_valid": false,
+          "client_capture_complete": false,
+          "launcher_go_sent": false,
+          "returncode": 0,
+          "timed_out": false
+        }
+      ]
+    },
+    "job-close-failed": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "1c87b79d4b8a0c9bfd4145bbbed4889d0fc1e4465038c3acdff87d5018fc857b",
+        "clock.jsonl": "f413e0ebaeec0295016a5c8bf3758f1cb68cb018a8cb94bf153a76542f57c18c"
+      },
+      "independent": {
+        "observation_audit_passed": true,
+        "commands_replayed": 1,
+        "decisions": [
+          {
+            "sequence": 1,
+            "timing_valid": true,
+            "client_capture_complete": false,
+            "complete": false,
+            "returncode": 0
+          }
+        ],
+        "clock_journal": {
+          "observation_audit_passed": true,
+          "events_replayed": 4,
+          "points_replayed": 3,
+          "admission_open": true,
+          "capture_source_failed": false,
+          "clock": {
+            "clock_capture_valid": true,
+            "accepted_points": 3,
+            "comparisons": 3,
+            "max_bracket_ns_ceil": 1200,
+            "max_abs_residual_ns_ceil": 3200,
+            "rejection": null
+          },
+          "network_execution_authorized": false,
+          "command_containment_verified": false,
+          "whole_protocol_verified": false,
+          "service_restored": false,
+          "network_fix_validated": false
+        },
+        "network_execution_authorized": false,
+        "whole_protocol_verified": false,
+        "official_rollback_verified": false,
+        "network_fix_validated": false
+      },
+      "expected_audit_error": null,
+      "clock_scope": "synthetic-clock",
+      "raw_client_results": [
+        {
+          "sequence": 1,
+          "complete": false,
+          "timing_valid": true,
+          "client_capture_complete": false,
+          "launcher_go_sent": true,
+          "returncode": 0,
+          "timed_out": false
+        }
+      ]
+    },
+    "journal-failed": {
+      "passed": true,
+      "member_sha256": {
+        "capture.json": "0c65e54e70b205dabe8a3e30c13fe0a4b504a94091ded9049695e162277e92bb",
+        "clock.jsonl": "706523994737dd510d69e34f7b4968ce3d5ba836412bd0777f761d486a066d83"
+      },
+      "independent": null,
+      "expected_audit_error": "ValueError: journal storage failed; no durability claim",
+      "clock_scope": "synthetic-clock",
+      "raw_client_results": [
+        {
+          "sequence": 1,
+          "complete": false,
+          "timing_valid": false,
+          "client_capture_complete": false,
+          "launcher_go_sent": true,
+          "returncode": 0,
+          "timed_out": false
+        },
+        {
+          "sequence": 2,
+          "complete": false,
+          "timing_valid": false,
+          "client_capture_complete": false,
+          "launcher_go_sent": true,
+          "returncode": 0,
+          "timed_out": false
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "sandbox/reconnect_r5_process.py": "6f811ff83a30934313b3f809de4d89c5974d92aa029dfce705d09205e33ac4a8",
+    "tools/audit_reconnect_r5_process.py": "eccfe3631b4218bd8c62bd4254e9311164f3c417a5fed94440dcb9739a55cc43",
+    "tests/test_reconnect_r5_process.py": "70ce738418bd1ed91c821dcc4a2e408ef4ca794e9a2c5b973e73737e83f82cf8",
+    "tools/verify_reconnect_r5_process.py": "f11541be455c12c6fee0751a207304285c855b00fdb71f7e6b957e12bdfb6bec"
+  },
+  "evidence_label": "fixture",
+  "measurement_scope": "owned-local-process-component-only",
+  "network_trials_executed": 0,
+  "actual_sleep_inhibition_requested": false,
+  "network_execution_authorized": false,
+  "whole_protocol_verified": false,
+  "official_rollback_verified": false,
+  "network_fix_validated": false,
+  "TNSM_ready": false
+}
