@@ -1,0 +1,2644 @@
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE.            [100%]
+=================================== ERRORS ====================================
+___ ERROR at setup of test_committed_file_gate_and_candidate_disabled_audit ___
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_committed_file_gate_and_c0')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...mmitted_file_gate_and_c0/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_committed_file_gate_and_c0\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+____ ERROR at setup of test_exact_prior_approval_semantics[status-pending] ____
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema0')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...act_prior_approval_sema0/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema0\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+__ ERROR at setup of test_exact_prior_approval_semantics[approved_by-agent] ___
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema1')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...act_prior_approval_sema1/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema1\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_exact_prior_approval_semantics[type-standing-project-authorization] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema2')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...act_prior_approval_sema2/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema2\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+___ ERROR at setup of test_exact_prior_approval_semantics[environment-live] ___
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema3')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...act_prior_approval_sema3/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema3\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_exact_prior_approval_semantics[maximum_attempts-True] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema4')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...act_prior_approval_sema4/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema4\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+__ ERROR at setup of test_exact_prior_approval_semantics[maximum_attempts-2] __
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema5')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...act_prior_approval_sema5/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema5\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+___ ERROR at setup of test_exact_prior_approval_semantics[live_actuation-0] ___
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema6')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...act_prior_approval_sema6/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema6\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_exact_prior_approval_semantics[operator_validation-0] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema7')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...act_prior_approval_sema7/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema7\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+____ ERROR at setup of test_exact_prior_approval_semantics[rollback_plan-] ____
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema8')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...act_prior_approval_sema8/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema8\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_exact_prior_approval_semantics[repository_head-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema9')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...act_prior_approval_sema9/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema9\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_exact_prior_approval_semantics[admission_lock_sha256-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema10')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...xact_prior_approval_sema10/admission-fixture/evidence/engineering/20260905T170131Z-reconnect-r4-network/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema10\\admission-fixture\\evidence\\engineering\\20260905T170131Z-reconnect-r4-network\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+____ ERROR at setup of test_exact_prior_approval_semantics[trials-value11] ____
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema11')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...xact_prior_approval_sema11/admission-fixture/evidence/engineering/20260905T170131Z-reconnect-r4-network/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema11\\admission-fixture\\evidence\\engineering\\20260905T170131Z-reconnect-r4-network\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+__ ERROR at setup of test_exact_prior_approval_semantics[image_ids-value12] ___
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema12')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...xact_prior_approval_sema12/admission-fixture/evidence/engineering/20260905T170131Z-reconnect-r4-network/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema12\\admission-fixture\\evidence\\engineering\\20260905T170131Z-reconnect-r4-network\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+__ ERROR at setup of test_exact_prior_approval_semantics[containers-value13] __
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema13')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...xact_prior_approval_sema13/admission-fixture/evidence/engineering/20260905T170131Z-reconnect-r4-network/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema13\\admission-fixture\\evidence\\engineering\\20260905T170131Z-reconnect-r4-network\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_exact_prior_approval_semantics[output_path-../outside] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema14')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...xact_prior_approval_sema14/admission-fixture/evidence/engineering/20260905T170131Z-reconnect-r4-network/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema14\\admission-fixture\\evidence\\engineering\\20260905T170131Z-reconnect-r4-network\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_exact_prior_approval_semantics[expires_at-2026-09-06T02:00:00+00:00] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema15')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...xact_prior_approval_sema15/admission-fixture/evidence/engineering/20260905T170131Z-reconnect-r4-network/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema15\\admission-fixture\\evidence\\engineering\\20260905T170131Z-reconnect-r4-network\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_exact_prior_approval_semantics[expires_at-2026-09-06T04:00:00+00:00] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema16')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...xact_prior_approval_sema16/admission-fixture/evidence/engineering/20260905T170131Z-reconnect-r4-network/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema16\\admission-fixture\\evidence\\engineering\\20260905T170131Z-reconnect-r4-network\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_exact_prior_approval_semantics[recorded_at-2026-09-06T02:01:00+00:00] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema17')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...xact_prior_approval_sema17/admission-fixture/evidence/engineering/20260905T170131Z-reconnect-r4-network/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema17\\admission-fixture\\evidence\\engineering\\20260905T170131Z-reconnect-r4-network\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_exact_prior_approval_semantics[recorded_at-2026-09-06T01:59:00] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_exact_prior_approval_sema18')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...xact_prior_approval_sema18/admission-fixture/evidence/engineering/20260905T170131Z-reconnect-r4-network/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_exact_prior_approval_sema18\\admission-fixture\\evidence\\engineering\\20260905T170131Z-reconnect-r4-network\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+____________ ERROR at setup of test_malformed_approval[<lambda>0] _____________
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_malformed_approval__lambd0')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...lformed_approval__lambd0/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_malformed_approval__lambd0\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+____________ ERROR at setup of test_malformed_approval[<lambda>1] _____________
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_malformed_approval__lambd1')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...lformed_approval__lambd1/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_malformed_approval__lambd1\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+____________ ERROR at setup of test_malformed_approval[<lambda>2] _____________
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_malformed_approval__lambd2')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...lformed_approval__lambd2/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_malformed_approval__lambd2\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+____________ ERROR at setup of test_malformed_approval[<lambda>3] _____________
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_malformed_approval__lambd3')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...lformed_approval__lambd3/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_malformed_approval__lambd3\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+____________ ERROR at setup of test_malformed_approval[<lambda>4] _____________
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_malformed_approval__lambd4')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...lformed_approval__lambd4/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_malformed_approval__lambd4\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+________ ERROR at setup of test_real_file_and_revision_drift[working] _________
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_real_file_and_revision_dr0')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...al_file_and_revision_dr0/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_real_file_and_revision_dr0\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_________ ERROR at setup of test_real_file_and_revision_drift[staged] _________
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_real_file_and_revision_dr1')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...al_file_and_revision_dr1/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_real_file_and_revision_dr1\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+__________ ERROR at setup of test_real_file_and_revision_drift[head] __________
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_real_file_and_revision_dr2')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...al_file_and_revision_dr2/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_real_file_and_revision_dr2\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+________ ERROR at setup of test_real_file_and_revision_drift[missing] _________
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_real_file_and_revision_dr3')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...al_file_and_revision_dr3/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_real_file_and_revision_dr3\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+__________ ERROR at setup of test_real_file_and_revision_drift[lock] __________
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_real_file_and_revision_dr4')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...al_file_and_revision_dr4/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_real_file_and_revision_dr4\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+__ ERROR at setup of test_real_file_and_revision_drift[approval-whitespace] ___
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_real_file_and_revision_dr5')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...al_file_and_revision_dr5/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_real_file_and_revision_dr5\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+____ ERROR at setup of test_real_file_and_revision_drift[approval-missing] ____
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_real_file_and_revision_dr6')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...al_file_and_revision_dr6/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_real_file_and_revision_dr6\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_committed_manifest_cannot_weaken_contract[missing-source] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_committed_manifest_cannot0')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...mmitted_manifest_cannot0/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_committed_manifest_cannot0\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_committed_manifest_cannot_weaken_contract[extra-source] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_committed_manifest_cannot1')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...mmitted_manifest_cannot1/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_committed_manifest_cannot1\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_committed_manifest_cannot_weaken_contract[enable-native] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_committed_manifest_cannot2')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...mmitted_manifest_cannot2/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_committed_manifest_cannot2\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_committed_manifest_cannot_weaken_contract[enable-network] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_committed_manifest_cannot3')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...mmitted_manifest_cannot3/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_committed_manifest_cannot3\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+___ ERROR at setup of test_committed_manifest_cannot_weaken_contract[tier] ____
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_committed_manifest_cannot4')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...mmitted_manifest_cannot4/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_committed_manifest_cannot4\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_prior_attempt_and_older_guards_preserved[evidence/private/reconnect-r3-runtime.lock] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_prior_attempt_and_older_g0')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...ior_attempt_and_older_g0/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_prior_attempt_and_older_g0\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_prior_attempt_and_older_guards_preserved[evidence/private/reconnect-r4-runtime.lock] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_prior_attempt_and_older_g1')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...ior_attempt_and_older_g1/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_prior_attempt_and_older_g1\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_prior_attempt_and_older_guards_preserved[evidence/private/reconnect-r5-runtime.lock] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_prior_attempt_and_older_g2')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...ior_attempt_and_older_g2/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_prior_attempt_and_older_g2\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_prior_attempt_and_older_guards_preserved[evidence/engineering/20000101T000000Z-reconnect-r5-network] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_prior_attempt_and_older_g3')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...ior_attempt_and_older_g3/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_prior_attempt_and_older_g3\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_prior_attempt_and_older_guards_preserved[evidence/engineering/20260906T020000Z-reconnect-r5-network] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_prior_attempt_and_older_g4')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...ior_attempt_and_older_g4/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_prior_attempt_and_older_g4\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_____ ERROR at setup of test_reservation_is_persistent_and_never_reopens ______
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_reservation_is_persistent0')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...servation_is_persistent0/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_reservation_is_persistent0\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_____ ERROR at setup of test_revocation_latches_even_if_approval_restored _____
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_revocation_latches_even_i0')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...vocation_latches_even_i0/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_revocation_latches_even_i0\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+________ ERROR at setup of test_failed_receipt_fsync_consumes_attempt _________
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_failed_receipt_fsync_cons0')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...iled_receipt_fsync_cons0/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_failed_receipt_fsync_cons0\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+__ ERROR at setup of test_two_actual_filesystem_contenders_only_one_reserves __
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_two_actual_filesystem_con0')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...o_actual_filesystem_con0/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_two_actual_filesystem_con0\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_____________ ERROR at setup of test_hardlinked_approval_rejected _____________
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_hardlinked_approval_rejec0')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...rdlinked_approval_rejec0/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_hardlinked_approval_rejec0\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_independent_auditor_rejects_summary_tampering[file_gate_passed-False] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_independent_auditor_rejec0')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...dependent_auditor_rejec0/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_independent_auditor_rejec0\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_independent_auditor_rejects_summary_tampering[network_execution_authorized-True] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_independent_auditor_rejec1')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...dependent_auditor_rejec1/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_independent_auditor_rejec1\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_independent_auditor_rejects_summary_tampering[native_execution_enabled-True] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_independent_auditor_rejec2')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...dependent_auditor_rejec2/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_independent_auditor_rejec2\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_independent_auditor_rejects_summary_tampering[reserved-True] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_independent_auditor_rejec3')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...dependent_auditor_rejec3/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_independent_auditor_rejec3\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_independent_auditor_rejects_summary_tampering[evidence_label-sandbox-measured] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_independent_auditor_rejec4')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...dependent_auditor_rejec4/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_independent_auditor_rejec4\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_independent_auditor_rejects_summary_tampering[human_identity_verified-True] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_independent_auditor_rejec5')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...dependent_auditor_rejec5/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_independent_auditor_rejec5\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_independent_auditor_rejects_summary_tampering[sources-value6] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_independent_auditor_rejec6')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...dependent_auditor_rejec6/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_independent_auditor_rejec6\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_independent_auditor_rejects_summary_tampering[observed_at-2026-09-06T02:00:01+00:00] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_independent_auditor_rejec7')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...dependent_auditor_rejec7/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_independent_auditor_rejec7\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+__________ ERROR at setup of test_constructor_path_scope[../outside] __________
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_constructor_path_scope___0')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...nstructor_path_scope___0/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_constructor_path_scope___0\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_________ ERROR at setup of test_constructor_path_scope[/tmp/output] __________
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_constructor_path_scope__t0')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...nstructor_path_scope__t0/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_constructor_path_scope__t0\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+___ ERROR at setup of test_constructor_path_scope[evidence\\engineering\\x] ___
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_constructor_path_scope_ev0')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...nstructor_path_scope_ev0/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_constructor_path_scope_ev0\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_constructor_path_scope[evidence/engineering/20260906T020000Z-reconnect-r5-network/..] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_constructor_path_scope_ev1')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...nstructor_path_scope_ev1/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_constructor_path_scope_ev1\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_constructor_path_scope[evidence/engineering/20260906T020000Z-reconnect-r5-network:stream] _
+
+tmp_path = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-reconnect-r5-admission/pytest-temp/test_constructor_path_scope_ev2')
+
+    @pytest.fixture
+    def gate(tmp_path):
+        original_run = subprocess.run
+        def local_git_only(argv, *args, **kwargs):
+            assert argv[0] == "git", "no other process allowed in these fixtures"
+            return original_run(argv, *args, **kwargs)
+        with patch("subprocess.run", side_effect=local_git_only), \
+             patch("socket.socket", side_effect=AssertionError("network forbidden")), \
+             patch("ctypes.WinDLL", side_effect=AssertionError("native API forbidden"), create=True):
+>           yield build(tmp_path/"admission-fixture")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:37: in build
+    write(root/name, (ROOT/name).read_bytes())
+tests\test_reconnect_r5_admission.py:23: in write
+    path.write_bytes(raw)
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/devel/Documents/Codex/2026-08-22/he/safetwin-5g/evidence/verification/20260906T120610518298Z-rec...nstructor_path_scope_ev2/admission-fixture/evidence/engineering/20260905T170620Z-reconnect-r4-aftercare/manifest.json')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\devel\\Documents\\Codex\\2026-08-22\\he\\safetwin-5g\\evidence\\verification\\20260906T120610518298Z-reconnect-r5-admission\\pytest-temp\\test_constructor_path_scope_ev2\\admission-fixture\\evidence\\engineering\\20260905T170620Z-reconnect-r4-aftercare\\manifest.json'
+
+C:\Users\devel\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+=========================== short test summary info ===========================
+ERROR tests/test_reconnect_r5_admission.py::test_committed_file_gate_and_candidate_disabled_audit
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[status-pending]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[approved_by-agent]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[type-standing-project-authorization]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[environment-live]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[maximum_attempts-True]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[maximum_attempts-2]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[live_actuation-0]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[operator_validation-0]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[rollback_plan-]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[repository_head-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[admission_lock_sha256-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[trials-value11]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[image_ids-value12]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[containers-value13]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[output_path-../outside]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[expires_at-2026-09-06T02:00:00+00:00]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[expires_at-2026-09-06T04:00:00+00:00]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[recorded_at-2026-09-06T02:01:00+00:00]
+ERROR tests/test_reconnect_r5_admission.py::test_exact_prior_approval_semantics[recorded_at-2026-09-06T01:59:00]
+ERROR tests/test_reconnect_r5_admission.py::test_malformed_approval[<lambda>0]
+ERROR tests/test_reconnect_r5_admission.py::test_malformed_approval[<lambda>1]
+ERROR tests/test_reconnect_r5_admission.py::test_malformed_approval[<lambda>2]
+ERROR tests/test_reconnect_r5_admission.py::test_malformed_approval[<lambda>3]
+ERROR tests/test_reconnect_r5_admission.py::test_malformed_approval[<lambda>4]
+ERROR tests/test_reconnect_r5_admission.py::test_real_file_and_revision_drift[working]
+ERROR tests/test_reconnect_r5_admission.py::test_real_file_and_revision_drift[staged]
+ERROR tests/test_reconnect_r5_admission.py::test_real_file_and_revision_drift[head]
+ERROR tests/test_reconnect_r5_admission.py::test_real_file_and_revision_drift[missing]
+ERROR tests/test_reconnect_r5_admission.py::test_real_file_and_revision_drift[lock]
+ERROR tests/test_reconnect_r5_admission.py::test_real_file_and_revision_drift[approval-whitespace]
+ERROR tests/test_reconnect_r5_admission.py::test_real_file_and_revision_drift[approval-missing]
+ERROR tests/test_reconnect_r5_admission.py::test_committed_manifest_cannot_weaken_contract[missing-source]
+ERROR tests/test_reconnect_r5_admission.py::test_committed_manifest_cannot_weaken_contract[extra-source]
+ERROR tests/test_reconnect_r5_admission.py::test_committed_manifest_cannot_weaken_contract[enable-native]
+ERROR tests/test_reconnect_r5_admission.py::test_committed_manifest_cannot_weaken_contract[enable-network]
+ERROR tests/test_reconnect_r5_admission.py::test_committed_manifest_cannot_weaken_contract[tier]
+ERROR tests/test_reconnect_r5_admission.py::test_prior_attempt_and_older_guards_preserved[evidence/private/reconnect-r3-runtime.lock]
+ERROR tests/test_reconnect_r5_admission.py::test_prior_attempt_and_older_guards_preserved[evidence/private/reconnect-r4-runtime.lock]
+ERROR tests/test_reconnect_r5_admission.py::test_prior_attempt_and_older_guards_preserved[evidence/private/reconnect-r5-runtime.lock]
+ERROR tests/test_reconnect_r5_admission.py::test_prior_attempt_and_older_guards_preserved[evidence/engineering/20000101T000000Z-reconnect-r5-network]
+ERROR tests/test_reconnect_r5_admission.py::test_prior_attempt_and_older_guards_preserved[evidence/engineering/20260906T020000Z-reconnect-r5-network]
+ERROR tests/test_reconnect_r5_admission.py::test_reservation_is_persistent_and_never_reopens
+ERROR tests/test_reconnect_r5_admission.py::test_revocation_latches_even_if_approval_restored
+ERROR tests/test_reconnect_r5_admission.py::test_failed_receipt_fsync_consumes_attempt
+ERROR tests/test_reconnect_r5_admission.py::test_two_actual_filesystem_contenders_only_one_reserves
+ERROR tests/test_reconnect_r5_admission.py::test_hardlinked_approval_rejected
+ERROR tests/test_reconnect_r5_admission.py::test_independent_auditor_rejects_summary_tampering[file_gate_passed-False]
+ERROR tests/test_reconnect_r5_admission.py::test_independent_auditor_rejects_summary_tampering[network_execution_authorized-True]
+ERROR tests/test_reconnect_r5_admission.py::test_independent_auditor_rejects_summary_tampering[native_execution_enabled-True]
+ERROR tests/test_reconnect_r5_admission.py::test_independent_auditor_rejects_summary_tampering[reserved-True]
+ERROR tests/test_reconnect_r5_admission.py::test_independent_auditor_rejects_summary_tampering[evidence_label-sandbox-measured]
+ERROR tests/test_reconnect_r5_admission.py::test_independent_auditor_rejects_summary_tampering[human_identity_verified-True]
+ERROR tests/test_reconnect_r5_admission.py::test_independent_auditor_rejects_summary_tampering[sources-value6]
+ERROR tests/test_reconnect_r5_admission.py::test_independent_auditor_rejects_summary_tampering[observed_at-2026-09-06T02:00:01+00:00]
+ERROR tests/test_reconnect_r5_admission.py::test_constructor_path_scope[../outside]
+ERROR tests/test_reconnect_r5_admission.py::test_constructor_path_scope[/tmp/output]
+ERROR tests/test_reconnect_r5_admission.py::test_constructor_path_scope[evidence\\engineering\\x]
+ERROR tests/test_reconnect_r5_admission.py::test_constructor_path_scope[evidence/engineering/20260906T020000Z-reconnect-r5-network/..]
+ERROR tests/test_reconnect_r5_admission.py::test_constructor_path_scope[evidence/engineering/20260906T020000Z-reconnect-r5-network:stream]
+1 passed, 60 errors in 9.26s

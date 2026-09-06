@@ -1,0 +1,202 @@
+F.............................................FFFFFFFFF......            [100%]
+================================== FAILURES ===================================
+____________ test_committed_file_gate_and_candidate_disabled_audit ____________
+
+gate = <sandbox.reconnect_r5_admission.FileAdmission object at 0x000001EDECBA05F0>
+
+    def test_committed_file_gate_and_candidate_disabled_audit(gate):
+        report = gate.recheck(observed_at=TIME)
+        with patch.object(candidate.FileAdmission, "recheck", side_effect=AssertionError("candidate disabled")), \
+             patch.object(candidate, "committed_files", side_effect=AssertionError("candidate disabled")), \
+             patch.object(candidate, "dependency_hashes", side_effect=AssertionError("candidate disabled")):
+>           result = independent(gate, report)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_reconnect_r5_admission.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_reconnect_r5_admission.py:83: in independent
+    return audit(gate.root, report, revision=gate.revision, lock_digest=gate.lock_digest,
+tools\audit_reconnect_r5_admission.py:118: in audit
+    check(raw == read(member.name) and digest(raw) == hashes[member.name], "audit uncommitted source")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = False, message = 'audit uncommitted source'
+
+    def check(value, message):
+        if not value:
+>           raise ValueError(message)
+E           ValueError: audit uncommitted source
+
+tools\audit_reconnect_r5_admission.py:23: ValueError
+______________________ test_hardlinked_approval_rejected ______________________
+
+gate = <sandbox.reconnect_r5_admission.FileAdmission object at 0x000001EDEF339F10>
+
+    def test_hardlinked_approval_rejected(gate):
+        p = gate.root/candidate.APPROVAL
+        os.link(p, p.with_name("linked-approval.json"))
+        with pytest.raises(PermissionError, match="unsafe file"):
+            gate.recheck(observed_at=TIME)
+>       with pytest.raises(ValueError, match="unsafe audit file"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'unsafe audit file'
+E         Actual message: 'audit uncommitted source'
+
+tests\test_reconnect_r5_admission.py:259: AssertionError
+_ test_independent_auditor_rejects_summary_tampering[file_gate_passed-False] __
+
+gate = <sandbox.reconnect_r5_admission.FileAdmission object at 0x000001EDEF5D4E00>
+field = 'file_gate_passed', value = False
+
+    @pytest.mark.parametrize("field,value", [("file_gate_passed", False), ("network_execution_authorized", True),
+        ("native_execution_enabled", True), ("reserved", True), ("evidence_label", "sandbox-measured"),
+        ("human_identity_verified", True), ("sources", {}), ("observed_at", "2026-09-06T02:00:01+00:00")])
+    def test_independent_auditor_rejects_summary_tampering(gate, field, value):
+        report = gate.recheck(observed_at=TIME)
+        report[field] = value
+>       with pytest.raises(ValueError, match="snapshot mismatch"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'snapshot mismatch'
+E         Actual message: 'audit uncommitted source'
+
+tests\test_reconnect_r5_admission.py:269: AssertionError
+_ test_independent_auditor_rejects_summary_tampering[network_execution_authorized-True] _
+
+gate = <sandbox.reconnect_r5_admission.FileAdmission object at 0x000001EDEF5D7A10>
+field = 'network_execution_authorized', value = True
+
+    @pytest.mark.parametrize("field,value", [("file_gate_passed", False), ("network_execution_authorized", True),
+        ("native_execution_enabled", True), ("reserved", True), ("evidence_label", "sandbox-measured"),
+        ("human_identity_verified", True), ("sources", {}), ("observed_at", "2026-09-06T02:00:01+00:00")])
+    def test_independent_auditor_rejects_summary_tampering(gate, field, value):
+        report = gate.recheck(observed_at=TIME)
+        report[field] = value
+>       with pytest.raises(ValueError, match="snapshot mismatch"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'snapshot mismatch'
+E         Actual message: 'audit uncommitted source'
+
+tests\test_reconnect_r5_admission.py:269: AssertionError
+_ test_independent_auditor_rejects_summary_tampering[native_execution_enabled-True] _
+
+gate = <sandbox.reconnect_r5_admission.FileAdmission object at 0x000001EDEF3280E0>
+field = 'native_execution_enabled', value = True
+
+    @pytest.mark.parametrize("field,value", [("file_gate_passed", False), ("network_execution_authorized", True),
+        ("native_execution_enabled", True), ("reserved", True), ("evidence_label", "sandbox-measured"),
+        ("human_identity_verified", True), ("sources", {}), ("observed_at", "2026-09-06T02:00:01+00:00")])
+    def test_independent_auditor_rejects_summary_tampering(gate, field, value):
+        report = gate.recheck(observed_at=TIME)
+        report[field] = value
+>       with pytest.raises(ValueError, match="snapshot mismatch"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'snapshot mismatch'
+E         Actual message: 'audit uncommitted source'
+
+tests\test_reconnect_r5_admission.py:269: AssertionError
+______ test_independent_auditor_rejects_summary_tampering[reserved-True] ______
+
+gate = <sandbox.reconnect_r5_admission.FileAdmission object at 0x000001EDEF32BE30>
+field = 'reserved', value = True
+
+    @pytest.mark.parametrize("field,value", [("file_gate_passed", False), ("network_execution_authorized", True),
+        ("native_execution_enabled", True), ("reserved", True), ("evidence_label", "sandbox-measured"),
+        ("human_identity_verified", True), ("sources", {}), ("observed_at", "2026-09-06T02:00:01+00:00")])
+    def test_independent_auditor_rejects_summary_tampering(gate, field, value):
+        report = gate.recheck(observed_at=TIME)
+        report[field] = value
+>       with pytest.raises(ValueError, match="snapshot mismatch"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'snapshot mismatch'
+E         Actual message: 'audit uncommitted source'
+
+tests\test_reconnect_r5_admission.py:269: AssertionError
+_ test_independent_auditor_rejects_summary_tampering[evidence_label-sandbox-measured] _
+
+gate = <sandbox.reconnect_r5_admission.FileAdmission object at 0x000001EDEF608DA0>
+field = 'evidence_label', value = 'sandbox-measured'
+
+    @pytest.mark.parametrize("field,value", [("file_gate_passed", False), ("network_execution_authorized", True),
+        ("native_execution_enabled", True), ("reserved", True), ("evidence_label", "sandbox-measured"),
+        ("human_identity_verified", True), ("sources", {}), ("observed_at", "2026-09-06T02:00:01+00:00")])
+    def test_independent_auditor_rejects_summary_tampering(gate, field, value):
+        report = gate.recheck(observed_at=TIME)
+        report[field] = value
+>       with pytest.raises(ValueError, match="snapshot mismatch"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'snapshot mismatch'
+E         Actual message: 'audit uncommitted source'
+
+tests\test_reconnect_r5_admission.py:269: AssertionError
+_ test_independent_auditor_rejects_summary_tampering[human_identity_verified-True] _
+
+gate = <sandbox.reconnect_r5_admission.FileAdmission object at 0x000001EDEF60BD70>
+field = 'human_identity_verified', value = True
+
+    @pytest.mark.parametrize("field,value", [("file_gate_passed", False), ("network_execution_authorized", True),
+        ("native_execution_enabled", True), ("reserved", True), ("evidence_label", "sandbox-measured"),
+        ("human_identity_verified", True), ("sources", {}), ("observed_at", "2026-09-06T02:00:01+00:00")])
+    def test_independent_auditor_rejects_summary_tampering(gate, field, value):
+        report = gate.recheck(observed_at=TIME)
+        report[field] = value
+>       with pytest.raises(ValueError, match="snapshot mismatch"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'snapshot mismatch'
+E         Actual message: 'audit uncommitted source'
+
+tests\test_reconnect_r5_admission.py:269: AssertionError
+_____ test_independent_auditor_rejects_summary_tampering[sources-value6] ______
+
+gate = <sandbox.reconnect_r5_admission.FileAdmission object at 0x000001EDEF002030>
+field = 'sources', value = {}
+
+    @pytest.mark.parametrize("field,value", [("file_gate_passed", False), ("network_execution_authorized", True),
+        ("native_execution_enabled", True), ("reserved", True), ("evidence_label", "sandbox-measured"),
+        ("human_identity_verified", True), ("sources", {}), ("observed_at", "2026-09-06T02:00:01+00:00")])
+    def test_independent_auditor_rejects_summary_tampering(gate, field, value):
+        report = gate.recheck(observed_at=TIME)
+        report[field] = value
+>       with pytest.raises(ValueError, match="snapshot mismatch"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'snapshot mismatch'
+E         Actual message: 'audit uncommitted source'
+
+tests\test_reconnect_r5_admission.py:269: AssertionError
+_ test_independent_auditor_rejects_summary_tampering[observed_at-2026-09-06T02:00:01+00:00] _
+
+gate = <sandbox.reconnect_r5_admission.FileAdmission object at 0x000001EDEF5D4F20>
+field = 'observed_at', value = '2026-09-06T02:00:01+00:00'
+
+    @pytest.mark.parametrize("field,value", [("file_gate_passed", False), ("network_execution_authorized", True),
+        ("native_execution_enabled", True), ("reserved", True), ("evidence_label", "sandbox-measured"),
+        ("human_identity_verified", True), ("sources", {}), ("observed_at", "2026-09-06T02:00:01+00:00")])
+    def test_independent_auditor_rejects_summary_tampering(gate, field, value):
+        report = gate.recheck(observed_at=TIME)
+        report[field] = value
+>       with pytest.raises(ValueError, match="snapshot mismatch"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'snapshot mismatch'
+E         Actual message: 'audit uncommitted source'
+
+tests\test_reconnect_r5_admission.py:269: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_reconnect_r5_admission.py::test_committed_file_gate_and_candidate_disabled_audit
+FAILED tests/test_reconnect_r5_admission.py::test_hardlinked_approval_rejected
+FAILED tests/test_reconnect_r5_admission.py::test_independent_auditor_rejects_summary_tampering[file_gate_passed-False]
+FAILED tests/test_reconnect_r5_admission.py::test_independent_auditor_rejects_summary_tampering[network_execution_authorized-True]
+FAILED tests/test_reconnect_r5_admission.py::test_independent_auditor_rejects_summary_tampering[native_execution_enabled-True]
+FAILED tests/test_reconnect_r5_admission.py::test_independent_auditor_rejects_summary_tampering[reserved-True]
+FAILED tests/test_reconnect_r5_admission.py::test_independent_auditor_rejects_summary_tampering[evidence_label-sandbox-measured]
+FAILED tests/test_reconnect_r5_admission.py::test_independent_auditor_rejects_summary_tampering[human_identity_verified-True]
+FAILED tests/test_reconnect_r5_admission.py::test_independent_auditor_rejects_summary_tampering[sources-value6]
+FAILED tests/test_reconnect_r5_admission.py::test_independent_auditor_rejects_summary_tampering[observed_at-2026-09-06T02:00:01+00:00]
+10 failed, 51 passed in 110.18s (0:01:50)

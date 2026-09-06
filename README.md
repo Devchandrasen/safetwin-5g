@@ -194,6 +194,14 @@ no new network trial or power request ran. Native execution remains disabled
 until a separately versioned actual-admission and execution gate. The parent
 recovery item remains open and the TNSM disposition remains no-go-data-quality.
 
+The separate [R5 file-prerequisite component](docs/RECONNECT_R5_ADMISSION_DECISION.md)
+now passes **894 tests and 200 subtests** across the full suite. It checks
+actual committed/working/index bytes, exact prior approval-file bytes and
+persistent one-attempt ownership; independent file audit and rejection cases
+are tested. This remains fixture evidence with zero network/native actions.
+The actual native invocation, shared-clock/rollback integration and separate
+human execution approval are still pending. No recovery gate is closed.
+
 Environment Deviation D1 records six unrelated containers that appeared on
 separate Docker networks during the run. No network overlap was observed, but
 the host was not CPU/memory/scheduler exclusive; CPU-saturation and timing

@@ -424,6 +424,16 @@ sandbox evidence.
       admission/invocation variant and later actual diagnostic are still
       pending; the fixture runner refuses non-fixture mode. This parent item
       remains in progress, not accepted; no measured recovery is claimed.
+      The separately frozen file-prerequisite component now passes
+      (`docs/RECONNECT_R5_ADMISSION_DECISION.md`; 894 tests and 200 subtests,
+      including 68 new tests). Actual temporary Git/filesystem fixtures cover
+      committed/index/working-byte binding, exact approval-file scope/expiry,
+      persistent once-only reservations, concurrent contenders and independent
+      file audit. Both development failures, sources and logs are retained.
+      The authoritative approval/receipt paths remain absent and no network
+      action ran. This completes the file-check component only; native
+      invocation/shared-clock/rollback integration and later human execution
+      approval remain pending. This parent item is still in progress.
       No R3/R4 rerun, endpoint relaxation, model promotion or new 675-unit
       campaign follows from observation integrity or later service recovery.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
