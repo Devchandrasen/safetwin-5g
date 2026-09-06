@@ -184,6 +184,16 @@ preserved. The actual runner, approval binding and whole-protocol official
 rollback audit remain pending; the parent recovery item stays open.
 No new long campaign or TNSM-readiness claim is enabled.
 
+The [R5 full-protocol fixture integration](docs/RECONNECT_R5_EXECUTION_DECISION.md)
+now passes **826 tests, 200 subtests and eight additional checks**. Independent
+whole-run replay covers 770 invented commands, 33 windows and 835 clock points
+in the nominal four-trial case. Both drop fixtures retain 14/15, not successful
+15/15 recovery. Seven lossless archives preserve development failures and the
+final independently replayed release. Official sandbox identities are unchanged;
+no new network trial or power request ran. Native execution remains disabled
+until a separately versioned actual-admission and execution gate. The parent
+recovery item remains open and the TNSM disposition remains no-go-data-quality.
+
 Environment Deviation D1 records six unrelated containers that appeared on
 separate Docker networks during the run. No network overlap was observed, but
 the host was not CPU/memory/scheduler exclusive; CPU-saturation and timing

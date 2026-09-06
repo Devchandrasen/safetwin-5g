@@ -410,6 +410,20 @@ sandbox evidence.
       restart, power request or native clock observation ran. Actual runner
       conformance, committed approval and whole-protocol official rollback
       replay still remain pending; this is not an accepted recovery result.
+      The full R5 protocol fixture integration now passes its software gate
+      (`docs/RECONNECT_R5_EXECUTION_DECISION.md`; 826 tests, 200 subtests and
+      eight checks). The lossless seven-archive release at
+      `evidence/engineering/20260906T013154Z-reconnect-r5-execution-release`
+      preserves both failed development runs and fresh independent replay of
+      33 distinct protocol cases. The nominal four-trial fixture has 770
+      commands, 33 windows and 835 points, including 94 cleanup points.
+      Both invented drops retain 14/15, not 15/15 recovery. Approval rejection,
+      changed authority, clock/storage failure, independent rollback and
+      consistently rehashed tampering are tested. Official identities are
+      unchanged and no real network trial/power request ran. The native
+      admission/invocation variant and later actual diagnostic are still
+      pending; the fixture runner refuses non-fixture mode. This parent item
+      remains in progress, not accepted; no measured recovery is claimed.
       No R3/R4 rerun, endpoint relaxation, model promotion or new 675-unit
       campaign follows from observation integrity or later service recovery.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
