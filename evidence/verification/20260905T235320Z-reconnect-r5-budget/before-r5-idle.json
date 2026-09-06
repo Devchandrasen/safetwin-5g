@@ -1,0 +1,40 @@
+{
+  "sequence": 1,
+  "argv": [
+    "powershell.exe",
+    "-NoProfile",
+    "-NonInteractive",
+    "-Command",
+    "$ErrorActionPreference='Stop'; $busy=@(Get-CimInstance Win32_Process | Where-Object { $_.Name -match '^python(?:w)?(?:[.]exe)?$' -and $_.ProcessId -ne 20240 -and ($_.CommandLine -eq $null -or $_.CommandLine -match 'run_(?:phase7|recovery_pilot|reconnect(?:_r[0-9]+)?)[.]py') }); if ($busy.Count -ne 0) { $busy | Select-Object -ExpandProperty ProcessId; exit 3 }; [Console]::Out.WriteLine('SAFETWIN_R5_IDLE_V1')"
+  ],
+  "timeout_seconds": 35,
+  "max_output_bytes": 1048576,
+  "wall_start_ns": 1788652406424682300,
+  "monotonic_start_ns": 1245845965918200,
+  "timed_out": false,
+  "truncated": false,
+  "capture_error": null,
+  "job_assigned_before_go": true,
+  "launcher_go_sent": true,
+  "reader_threads_joined": true,
+  "process_reaped": true,
+  "cleanup_grace_seconds": 2,
+  "monotonic_clock": {
+    "api": "perf_counter_ns",
+    "implementation": "QueryPerformanceCounter()",
+    "monotonic": true,
+    "adjustable": false,
+    "resolution": 1e-07
+  },
+  "owned_launcher_pid": 19820,
+  "returncode": 0,
+  "stdout_base64": "U0FGRVRXSU5fUjVfSURMRV9WMQ0K",
+  "stdout_sha256": "dd6a3b493fc83e85eb2f80ad636a5767441a3dcd1f31fe0606aaf7a27d33122f",
+  "stdout": "SAFETWIN_R5_IDLE_V1\r\n",
+  "stderr_base64": "",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr": "",
+  "retained_output_bytes": 21,
+  "wall_end_ns": 1788652406959777000,
+  "monotonic_end_ns": 1245846500759800
+}

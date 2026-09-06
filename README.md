@@ -174,6 +174,14 @@ packet reservations, exact-prefix accounting and same-clock window closure
 remain fixture evidence. Failed durability and incomplete packets are not
 positive recovery. A complete window needs 16 new points; the full four-trial
 inventory, runner and independent whole-protocol rollback gate remain pending.
+The separate [R5 timing/inventory component](docs/RECONNECT_R5_BUDGET_DECISION.md)
+now passes 766 tests, 200 subtests and 41 checks with 32 synthetic cases.
+Health/settling deadlines and adversarial independent replay are fixture-only.
+The prospective cleanup count is 216 points; the conditional prefix-plus-cleanup
+bound is 984 of 1024. Its unpruned normal upper envelope exceeds 768, so this
+does not guarantee four completed trials. Both development failures are
+preserved. The actual runner, approval binding and whole-protocol official
+rollback audit remain pending; the parent recovery item stays open.
 No new long campaign or TNSM-readiness claim is enabled.
 
 Environment Deviation D1 records six unrelated containers that appeared on

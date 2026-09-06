@@ -1,0 +1,136 @@
+.FF................F.F...........................                        [100%]
+================================== FAILURES ===================================
+________________ test_retained_budget_cases[healthy-last-poll] ________________
+
+tmp_path = WindowsPath('C:/Users/devel/AppData/Local/Temp/pytest-of-devel/pytest-1519/test_retained_budget_cases_hea1')
+case = 'healthy-last-poll'
+
+    @pytest.mark.parametrize("case", CASES)
+    def test_retained_budget_cases(tmp_path, case):
+>       check_case(capture_case(tmp_path/"raw", case))
+
+tests\test_reconnect_r5_budget.py:165: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+b = {'case': 'healthy-last-poll', 'evidence_label': 'fixture', 'measurement_scope': 'synthetic-runner-budget-only', 'actual_processes_executed': 0, ...}
+
+    def check_case(b):
+        name, ops = b["case"], b["budget"]["operations"]
+        assert b["evidence_label"] == "fixture" and b["measurement_scope"] == "synthetic-runner-budget-only"
+        assert b["actual_processes_executed"] == b["network_commands_executed"] == b["actual_power_requests_executed"] == 0
+        assert [o["accepted"] for o in ops] == ([False, True, True] if name == "independent-health-targets" else [name in ACCEPTED])
+        if name == "journal-fsync":
+            assert "journal storage failed" in b["audit_error"]
+        else:
+            assert b["audit_error"] is None, b["audit_error"]
+            assert [d["accepted"] for d in b["independent"]["decisions"]] == [o["accepted"] for o in ops]
+        assert b["budget"]["whole_protocol_verified"] is b["budget"]["network_execution_authorized"] is b["budget"]["rollback_verified"] is False
+        if name in ("healthy-last-poll", "unhealthy-all", "normal-boundary", "cleanup-boundary"):
+            assert len(ops[0]["commands"]) == 25 and len(ops[0]["waits"]) == 24
+            assert ops[0]["end_point"]-ops[0]["start_point"] == 26
+>           assert ops[0]["commands"][-1]["timeout_ms"] < 2001
+E           assert 3999 < 2001
+
+tests\test_reconnect_r5_budget.py:156: AssertionError
+__________________ test_retained_budget_cases[unhealthy-all] __________________
+
+tmp_path = WindowsPath('C:/Users/devel/AppData/Local/Temp/pytest-of-devel/pytest-1519/test_retained_budget_cases_unh0')
+case = 'unhealthy-all'
+
+    @pytest.mark.parametrize("case", CASES)
+    def test_retained_budget_cases(tmp_path, case):
+>       check_case(capture_case(tmp_path/"raw", case))
+
+tests\test_reconnect_r5_budget.py:165: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+b = {'case': 'unhealthy-all', 'evidence_label': 'fixture', 'measurement_scope': 'synthetic-runner-budget-only', 'actual_processes_executed': 0, ...}
+
+    def check_case(b):
+        name, ops = b["case"], b["budget"]["operations"]
+        assert b["evidence_label"] == "fixture" and b["measurement_scope"] == "synthetic-runner-budget-only"
+        assert b["actual_processes_executed"] == b["network_commands_executed"] == b["actual_power_requests_executed"] == 0
+        assert [o["accepted"] for o in ops] == ([False, True, True] if name == "independent-health-targets" else [name in ACCEPTED])
+        if name == "journal-fsync":
+            assert "journal storage failed" in b["audit_error"]
+        else:
+            assert b["audit_error"] is None, b["audit_error"]
+            assert [d["accepted"] for d in b["independent"]["decisions"]] == [o["accepted"] for o in ops]
+        assert b["budget"]["whole_protocol_verified"] is b["budget"]["network_execution_authorized"] is b["budget"]["rollback_verified"] is False
+        if name in ("healthy-last-poll", "unhealthy-all", "normal-boundary", "cleanup-boundary"):
+            assert len(ops[0]["commands"]) == 25 and len(ops[0]["waits"]) == 24
+            assert ops[0]["end_point"]-ops[0]["start_point"] == 26
+>           assert ops[0]["commands"][-1]["timeout_ms"] < 2001
+E           assert 3999 < 2001
+
+tests\test_reconnect_r5_budget.py:156: AssertionError
+_________________ test_retained_budget_cases[normal-boundary] _________________
+
+tmp_path = WindowsPath('C:/Users/devel/AppData/Local/Temp/pytest-of-devel/pytest-1519/test_retained_budget_cases_nor1')
+case = 'normal-boundary'
+
+    @pytest.mark.parametrize("case", CASES)
+    def test_retained_budget_cases(tmp_path, case):
+>       check_case(capture_case(tmp_path/"raw", case))
+
+tests\test_reconnect_r5_budget.py:165: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+b = {'case': 'normal-boundary', 'evidence_label': 'fixture', 'measurement_scope': 'synthetic-runner-budget-only', 'actual_processes_executed': 0, ...}
+
+    def check_case(b):
+        name, ops = b["case"], b["budget"]["operations"]
+        assert b["evidence_label"] == "fixture" and b["measurement_scope"] == "synthetic-runner-budget-only"
+        assert b["actual_processes_executed"] == b["network_commands_executed"] == b["actual_power_requests_executed"] == 0
+        assert [o["accepted"] for o in ops] == ([False, True, True] if name == "independent-health-targets" else [name in ACCEPTED])
+        if name == "journal-fsync":
+            assert "journal storage failed" in b["audit_error"]
+        else:
+            assert b["audit_error"] is None, b["audit_error"]
+            assert [d["accepted"] for d in b["independent"]["decisions"]] == [o["accepted"] for o in ops]
+        assert b["budget"]["whole_protocol_verified"] is b["budget"]["network_execution_authorized"] is b["budget"]["rollback_verified"] is False
+        if name in ("healthy-last-poll", "unhealthy-all", "normal-boundary", "cleanup-boundary"):
+            assert len(ops[0]["commands"]) == 25 and len(ops[0]["waits"]) == 24
+            assert ops[0]["end_point"]-ops[0]["start_point"] == 26
+>           assert ops[0]["commands"][-1]["timeout_ms"] < 2001
+E           assert 3999 < 2001
+
+tests\test_reconnect_r5_budget.py:156: AssertionError
+________________ test_retained_budget_cases[cleanup-boundary] _________________
+
+tmp_path = WindowsPath('C:/Users/devel/AppData/Local/Temp/pytest-of-devel/pytest-1519/test_retained_budget_cases_cle1')
+case = 'cleanup-boundary'
+
+    @pytest.mark.parametrize("case", CASES)
+    def test_retained_budget_cases(tmp_path, case):
+>       check_case(capture_case(tmp_path/"raw", case))
+
+tests\test_reconnect_r5_budget.py:165: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+b = {'case': 'cleanup-boundary', 'evidence_label': 'fixture', 'measurement_scope': 'synthetic-runner-budget-only', 'actual_processes_executed': 0, ...}
+
+    def check_case(b):
+        name, ops = b["case"], b["budget"]["operations"]
+        assert b["evidence_label"] == "fixture" and b["measurement_scope"] == "synthetic-runner-budget-only"
+        assert b["actual_processes_executed"] == b["network_commands_executed"] == b["actual_power_requests_executed"] == 0
+        assert [o["accepted"] for o in ops] == ([False, True, True] if name == "independent-health-targets" else [name in ACCEPTED])
+        if name == "journal-fsync":
+            assert "journal storage failed" in b["audit_error"]
+        else:
+            assert b["audit_error"] is None, b["audit_error"]
+            assert [d["accepted"] for d in b["independent"]["decisions"]] == [o["accepted"] for o in ops]
+        assert b["budget"]["whole_protocol_verified"] is b["budget"]["network_execution_authorized"] is b["budget"]["rollback_verified"] is False
+        if name in ("healthy-last-poll", "unhealthy-all", "normal-boundary", "cleanup-boundary"):
+            assert len(ops[0]["commands"]) == 25 and len(ops[0]["waits"]) == 24
+            assert ops[0]["end_point"]-ops[0]["start_point"] == 26
+>           assert ops[0]["commands"][-1]["timeout_ms"] < 2001
+E           assert 3999 < 2001
+
+tests\test_reconnect_r5_budget.py:156: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_reconnect_r5_budget.py::test_retained_budget_cases[healthy-last-poll]
+FAILED tests/test_reconnect_r5_budget.py::test_retained_budget_cases[unhealthy-all]
+FAILED tests/test_reconnect_r5_budget.py::test_retained_budget_cases[normal-boundary]
+FAILED tests/test_reconnect_r5_budget.py::test_retained_budget_cases[cleanup-boundary]
+4 failed, 45 passed in 22.16s

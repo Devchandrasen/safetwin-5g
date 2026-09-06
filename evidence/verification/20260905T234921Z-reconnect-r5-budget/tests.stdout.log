@@ -1,0 +1,133 @@
+................................................FFF..                    [100%]
+================================== FAILURES ===================================
+____________________ test_raw_budget_tamper[initial-order] ____________________
+
+tmp_path = WindowsPath('C:/Users/devel/AppData/Local/Temp/pytest-of-devel/pytest-1521/test_raw_budget_tamper_initial0')
+target = 'initial-order'
+
+    @pytest.mark.parametrize("target", ["global", "deadline", "reservation", "poll-count", "early-wait", "closure", "status", "sequence", "acceptance", "timer-renewal",
+                                        "initial-order", "poll-wait-order", "poll-type"])
+    def test_raw_budget_tamper(tmp_path, target):
+        b = capture_case(tmp_path/"raw", "healthy-last-poll")
+        budget, w = b["budget"], b["budget"]["operations"][0]
+        if target == "global":
+            budget["global_deadline_ticks"] += 1
+        elif target == "deadline":
+            w["deadline_ticks"] += 1
+        elif target == "reservation":
+            w["checks"][0]["points_needed"] = 1
+        elif target == "poll-count":
+            w["commands"].pop()
+        elif target == "early-wait":
+            w["waits"][0]["after_ticks"] = w["waits"][0]["before_ticks"]
+        elif target == "closure":
+            w["final_ticks"] = 0
+        elif target == "status":
+            w["commands"][0]["stdout"] = "healthy\n"
+        elif target == "sequence":
+            w["commands"][1]["sequence"] = 1
+        elif target == "acceptance":
+            w["accepted"] = False
+        elif target == "timer-renewal":
+            # A full relative timeout renewed AFTER the wait must be rejected.
+            w["commands"][-1]["timer_due_100ns"] = w["commands"][-1]["timeout_ms"]*10000
+        elif target == "initial-order":
+            w["checks"][0]["ticks"] = w["checks"][1]["ticks"]+1
+        elif target == "poll-wait-order":
+            w["checks"][2]["ticks"] = w["waits"][0]["before_ticks"]
+        elif target == "poll-type":
+            w["checks"][1]["poll"] = True
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_reconnect_r5_budget.py:219: Failed
+___________________ test_raw_budget_tamper[poll-wait-order] ___________________
+
+tmp_path = WindowsPath('C:/Users/devel/AppData/Local/Temp/pytest-of-devel/pytest-1521/test_raw_budget_tamper_poll_wa0')
+target = 'poll-wait-order'
+
+    @pytest.mark.parametrize("target", ["global", "deadline", "reservation", "poll-count", "early-wait", "closure", "status", "sequence", "acceptance", "timer-renewal",
+                                        "initial-order", "poll-wait-order", "poll-type"])
+    def test_raw_budget_tamper(tmp_path, target):
+        b = capture_case(tmp_path/"raw", "healthy-last-poll")
+        budget, w = b["budget"], b["budget"]["operations"][0]
+        if target == "global":
+            budget["global_deadline_ticks"] += 1
+        elif target == "deadline":
+            w["deadline_ticks"] += 1
+        elif target == "reservation":
+            w["checks"][0]["points_needed"] = 1
+        elif target == "poll-count":
+            w["commands"].pop()
+        elif target == "early-wait":
+            w["waits"][0]["after_ticks"] = w["waits"][0]["before_ticks"]
+        elif target == "closure":
+            w["final_ticks"] = 0
+        elif target == "status":
+            w["commands"][0]["stdout"] = "healthy\n"
+        elif target == "sequence":
+            w["commands"][1]["sequence"] = 1
+        elif target == "acceptance":
+            w["accepted"] = False
+        elif target == "timer-renewal":
+            # A full relative timeout renewed AFTER the wait must be rejected.
+            w["commands"][-1]["timer_due_100ns"] = w["commands"][-1]["timeout_ms"]*10000
+        elif target == "initial-order":
+            w["checks"][0]["ticks"] = w["checks"][1]["ticks"]+1
+        elif target == "poll-wait-order":
+            w["checks"][2]["ticks"] = w["waits"][0]["before_ticks"]
+        elif target == "poll-type":
+            w["checks"][1]["poll"] = True
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_reconnect_r5_budget.py:219: Failed
+______________________ test_raw_budget_tamper[poll-type] ______________________
+
+tmp_path = WindowsPath('C:/Users/devel/AppData/Local/Temp/pytest-of-devel/pytest-1521/test_raw_budget_tamper_poll_ty0')
+target = 'poll-type'
+
+    @pytest.mark.parametrize("target", ["global", "deadline", "reservation", "poll-count", "early-wait", "closure", "status", "sequence", "acceptance", "timer-renewal",
+                                        "initial-order", "poll-wait-order", "poll-type"])
+    def test_raw_budget_tamper(tmp_path, target):
+        b = capture_case(tmp_path/"raw", "healthy-last-poll")
+        budget, w = b["budget"], b["budget"]["operations"][0]
+        if target == "global":
+            budget["global_deadline_ticks"] += 1
+        elif target == "deadline":
+            w["deadline_ticks"] += 1
+        elif target == "reservation":
+            w["checks"][0]["points_needed"] = 1
+        elif target == "poll-count":
+            w["commands"].pop()
+        elif target == "early-wait":
+            w["waits"][0]["after_ticks"] = w["waits"][0]["before_ticks"]
+        elif target == "closure":
+            w["final_ticks"] = 0
+        elif target == "status":
+            w["commands"][0]["stdout"] = "healthy\n"
+        elif target == "sequence":
+            w["commands"][1]["sequence"] = 1
+        elif target == "acceptance":
+            w["accepted"] = False
+        elif target == "timer-renewal":
+            # A full relative timeout renewed AFTER the wait must be rejected.
+            w["commands"][-1]["timer_due_100ns"] = w["commands"][-1]["timeout_ms"]*10000
+        elif target == "initial-order":
+            w["checks"][0]["ticks"] = w["checks"][1]["ticks"]+1
+        elif target == "poll-wait-order":
+            w["checks"][2]["ticks"] = w["waits"][0]["before_ticks"]
+        elif target == "poll-type":
+            w["checks"][1]["poll"] = True
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_reconnect_r5_budget.py:219: Failed
+=========================== short test summary info ===========================
+FAILED tests/test_reconnect_r5_budget.py::test_raw_budget_tamper[initial-order]
+FAILED tests/test_reconnect_r5_budget.py::test_raw_budget_tamper[poll-wait-order]
+FAILED tests/test_reconnect_r5_budget.py::test_raw_budget_tamper[poll-type]
+3 failed, 50 passed in 21.69s

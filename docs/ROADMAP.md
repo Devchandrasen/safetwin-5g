@@ -397,6 +397,19 @@ sandbox evidence.
       clock recapture ran. The remaining four-trial runner, exact approval,
       full inventory and independent whole-protocol official rollback gate
       remain pending. This parent recovery item remains open.
+      The separate R5 timing/inventory component now passes its software-only
+      gate (`docs/RECONNECT_R5_BUDGET_DECISION.md`; 766 tests, 200 subtests,
+      41 checks and 32 synthetic cases at
+      `evidence/verification/20260905T235320Z-reconnect-r5-budget`).
+      The 216-point prospective cleanup model gives a conditional 984/1024
+      bound when normal admission ends at 768. The 1895-point unpruned normal
+      upper envelope exceeds 768; no four-trial completion is guaranteed.
+      Shared health/settling deadlines, exact remaining timer accounting and
+      independent raw-order/type rejection pass. Two development failures and
+      their original source snapshots remain retained. No new network trial,
+      restart, power request or native clock observation ran. Actual runner
+      conformance, committed approval and whole-protocol official rollback
+      replay still remain pending; this is not an accepted recovery result.
       No R3/R4 rerun, endpoint relaxation, model promotion or new 675-unit
       campaign follows from observation integrity or later service recovery.
 - [ ] Run the preregistered BRACE comparisons, paired-block inference,
